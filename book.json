@@ -13,7 +13,6 @@
         "editlink",
         "katex",
         "splitter",
-        "expandable-chapters-small",
         "anchors",
         "anchor-navigation-ex",
         "sitemap-general"
@@ -29,6 +28,7 @@
             "base": "https://github.com/chuxubank/UNGEE/edit/master/",
             "label": "编辑本页"
         },
+
         "sitemap-general": {
             "prefix": "https://github.com/chuxubank/UNGEE"
         }

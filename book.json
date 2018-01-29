@@ -10,8 +10,13 @@
     "plugins": [
         "-livereload",
         "github",
-        "page-treeview",
-        "editlink"
+        "editlink",
+        "katex",
+        "splitter",
+        "expandable-chapters-small",
+        "anchors",
+        "anchor-navigation-ex",
+        "sitemap-general"
     ],
     "pluginsConfig": {
         "theme-default": {
@@ -21,13 +26,11 @@
             "url": "https://github.com/chuxubank/UNGEE"
         },
         "editlink": {
-            "base": "https://github.com/chuxubank/UNGEE/blob/master/",
+            "base": "https://github.com/chuxubank/UNGEE/edit/master/",
             "label": "编辑本页"
         },
-        "page-treeview": {
-            "copyright": "Copyright &#169; chuxubank",
-            "minHeaderCount": "2",
-            "minHeaderDeep": "2"
+        "sitemap-general": {
+            "prefix": "https://github.com/chuxubank/UNGEE"
         }
     }
 }

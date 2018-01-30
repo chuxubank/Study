@@ -8,13 +8,16 @@
         }
     },
     "plugins": [
-        "-livereload",
+        "-lunr",
+        "-search",
+        "search-plus",
         "github",
         "editlink",
-        "katex",
+        "emphasize",
+        "katex-plus",
         "splitter",
-        "anchors",
         "anchor-navigation-ex",
+        "expandable-chapters-interactive",
         "sitemap-general"
     ],
     "pluginsConfig": {
@@ -28,7 +31,9 @@
             "base": "https://github.com/chuxubank/UNGEE/edit/master/",
             "label": "编辑本页"
         },
-
+        "anchor-navigation-ex": {
+            "multipleH1": false
+        },
         "sitemap-general": {
             "prefix": "https://github.com/chuxubank/UNGEE"
         }

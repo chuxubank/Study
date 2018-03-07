@@ -22,7 +22,7 @@
     ],
     "pluginsConfig": {
         "theme-default": {
-            "showLevel": true
+            "showLevel": false
         },
         "github": {
             "url": "https://github.com/chuxubank/UNGEE"
@@ -32,7 +32,9 @@
             "label": "编辑本页"
         },
         "anchor-navigation-ex": {
-            "multipleH1": false
+            "showLevel": false,
+            "multipleH1": true,
+            "associatedWithSummary": false
         },
         "sitemap-general": {
             "prefix": "https://github.com/chuxubank/UNGEE"

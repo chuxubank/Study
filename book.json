@@ -18,7 +18,8 @@
         "splitter",
         "anchor-navigation-ex",
         "expandable-chapters-interactive",
-        "sitemap-general"
+        "sitemap-general",
+        "theme-comscore"
     ],
     "pluginsConfig": {
         "theme-default": {

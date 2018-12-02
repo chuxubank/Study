@@ -2,6 +2,15 @@
 
 * [简介](README.md)
 
+## 专业课\(961\)
+
+* [数据结构](zhuan-ye-ke-961/shu-ju-jie-gou/README.md)
+  * [栈、队列和向量](zhuan-ye-ke-961/shu-ju-jie-gou/zhan-dui-lie-he-xiang-liang.md)
+  * [树](zhuan-ye-ke-961/shu-ju-jie-gou/shu.md)
+  * [查找](zhuan-ye-ke-961/shu-ju-jie-gou/cha-zhao.md)
+  * [排序](zhuan-ye-ke-961/shu-ju-jie-gou/pai-xu.md)
+  * [图](zhuan-ye-ke-961/shu-ju-jie-gou/tu.md)
+
 ## 数学
 
 * [高等数学](shu-xue/gao-deng-shu-xue/README.md)
@@ -70,8 +79,4 @@
   * [第十一章 多媒体操作系统](zhuan-ye-ke-408/cao-zuo-xi-tong/di-shi-yi-zhang-duo-mei-ti-cao-zuo-xi-tong.md)
   * [第十二章 保护和安全](zhuan-ye-ke-408/cao-zuo-xi-tong/di-shi-er-zhang-bao-hu-he-an-quan.md)
 * [计算机网络](zhuan-ye-ke-408/ji-suan-ji-wang-luo.md)
-
-## 专业课\(961\)
-
-* [数据结构](zhuan-ye-ke-961/shu-ju-jie-gou.md)
 

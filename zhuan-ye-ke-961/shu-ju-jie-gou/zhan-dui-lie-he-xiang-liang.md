@@ -51,7 +51,7 @@ int calSub(float opand1, char op, float opand2, float &result)
   * 左括号入辅助栈
   * 操作符准备入辅助栈
     * 栈空或 栈顶为左括号或 优先级**大于**栈顶时入栈
-    * 否则取**辅助栈栈顶运算符**入结果栈（此时由于需要一直判断所以不自增i）
+    * 否则取辅助栈栈顶运算符入结果栈（此时由于需要一直判断所以不自增i）
   * 右括号则一直出栈到第一个左括号并压入结果栈
 * 遍历结束后辅助栈非空则依次压入结果栈
 {% endtab %}
@@ -122,7 +122,7 @@ void infixToPostFix(char infix[], char s1[], int &top1)
   * 左括号入辅助栈
   * 操作符准备入辅助栈
     * 栈空或 栈顶为右括号或 优先级**大于等于**栈顶时入栈
-    * 否者取**当前运算符**直接入结果栈（此时由于需要一直判断所以不自减i）
+    * 否则取辅助栈栈顶运算符入结果栈（此时由于需要一直判断所以不自减i）
   * 左括号则一直出栈到第一个右括号并压入结果栈
 * 遍历结束后辅助栈非空则依次压入结果栈（此时的结果栈是逆序的）
 {% endtab %}
@@ -158,14 +158,14 @@ void infixToPreFix(char infix[], int len, char s1[], int &top1)
 			//栈空或 栈顶为右括号或 优先级大于等于栈顶时入栈
 			if (top2 == -1 ||
 				s2[top2] == ')' ||
-				getPriority(infix[i] >= getPriority(s2[top2])))
+				getPriority(infix[i]) >= getPriority(s2[top2]))
 			{
 				s2[++top2] = infix[i];
 				--i;
 			}
-			//否则取当前运算符直接入结果栈
+			//否则取辅助栈栈顶运算符入结果栈
 			else
-				s1[++top1] = infix[i];
+				s1[++top1] = s2[top2--];
 		}
 		//左括号则一直出栈到第一个右括号并压入结果栈
 		else if (infix[i] == '(')

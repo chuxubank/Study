@@ -14,3 +14,10 @@ _book
 *.epub
 *.mobi
 *.pdf
+
+# binary files
+*.out
+*dSYM
+
+#temp
+*temp*

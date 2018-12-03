@@ -11,6 +11,25 @@
   * 当前优先级小于等于栈顶：依次出栈并比较
   * 右括号：一直出栈到第一个左括号
 
+{% tabs %}
+{% tab title="First Tab" %}
+```cpp
+#include<cstdio>
+int main()
+{
+    printf("Hello World!");
+    return 0;
+}
+```
+
+Tab Test
+{% endtab %}
+
+{% tab title="Second Tab" %}
+
+{% endtab %}
+{% endtabs %}
+
 ### 中缀转前缀
 
 * 从右往左扫描

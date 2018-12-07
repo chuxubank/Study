@@ -12,7 +12,7 @@ $$
 \int_{-\infty}^\infty g(x) dx
 $$
 
-inline mathjax $a^2$ test.
+inline mathjax $$a = b$$ test.
 
 GitHub Test
 

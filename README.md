@@ -12,6 +12,8 @@ $$
 \int_{-\infty}^\infty g(x) dx
 $$
 
+inline mathjax $a^2$ test.
+
 GitHub Test
 
 GitBook Test

@@ -14,7 +14,7 @@
 		"github",
 		"editlink",
 		"emphasize",
-		"katex-full",
+		"katex@git+https://github.com/gaoxiaosong/plugin-katex.git",
 		"splitter",
 		"anchor-navigation-ex",
 		"expandable-chapters-interactive",

@@ -13,7 +13,6 @@
 		"search-plus",
 		"github",
 		"editlink",
-		"emphasize",
 		"katex@git+https://github.com/gaoxiaosong/plugin-katex.git",
 		"splitter",
 		"anchor-navigation-ex",

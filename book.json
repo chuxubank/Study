@@ -1,44 +1,44 @@
 {
-    "title": "UNGEE",
-    "author": "chuxubank",
-    "language": "zh-hans",
-    "links": {
-        "sidebar": {
-            "GitHub": "https://github.com/chuxubank/UNGEE"
-        }
-    },
-    "plugins": [
-        "-lunr",
-        "-search",
-        "search-plus",
-        "github",
-        "editlink",
-        "emphasize",
-        "katex",
-        "splitter",
-        "anchor-navigation-ex",
-        "expandable-chapters-interactive",
-        "sitemap-general",
-        "theme-comscore"
-    ],
-    "pluginsConfig": {
-        "theme-default": {
-            "showLevel": false
-        },
-        "github": {
-            "url": "https://github.com/chuxubank/UNGEE"
-        },
-        "editlink": {
-            "base": "https://github.com/chuxubank/UNGEE/edit/master/",
-            "label": "编辑本页"
-        },
-        "anchor-navigation-ex": {
-            "showLevel": false,
-            "multipleH1": true,
-            "associatedWithSummary": false
-        },
-        "sitemap-general": {
-            "prefix": "https://github.com/chuxubank/UNGEE"
-        }
-    }
+	"title": "UNGEE",
+	"author": "chuxubank",
+	"language": "zh-hans",
+	"links": {
+		"sidebar": {
+			"GitHub": "https://github.com/chuxubank/UNGEE"
+		}
+	},
+	"plugins": [
+		"-lunr",
+		"-search",
+		"search-plus",
+		"github",
+		"editlink",
+		"emphasize",
+		"katex-plus",
+		"splitter",
+		"anchor-navigation-ex",
+		"expandable-chapters-interactive",
+		"sitemap-general",
+		"theme-comscore"
+	],
+	"pluginsConfig": {
+		"theme-default": {
+			"showLevel": false
+		},
+		"github": {
+			"url": "https://github.com/chuxubank/UNGEE"
+		},
+		"editlink": {
+			"base": "https://github.com/chuxubank/UNGEE/edit/master/",
+			"label": "编辑本页"
+		},
+		"anchor-navigation-ex": {
+			"showLevel": false,
+			"multipleH1": true,
+			"associatedWithSummary": false
+		},
+		"sitemap-general": {
+			"prefix": "https://github.com/chuxubank/UNGEE"
+		}
+	}
 }

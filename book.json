@@ -35,8 +35,8 @@
 			"showLevel": false,
 			"float": {
 				"showLevelIcon": true,
-				"level1Icon": "fa fa-circle-o",
-				"level2Icon": "fa fa-circle-o-notch",
+				"level1Icon": "fa fa-circle-o-notch",
+				"level2Icon": "fa fa-circle-o",
 				"level3Icon": "fa fa-dot-circle-o"
 			}
 		},

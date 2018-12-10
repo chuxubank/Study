@@ -72,3 +72,7 @@ Success Hint
 {% endapi-method-spec %}
 {% endapi-method %}
 
+| Title1 | Title2 |
+| :--- | :--- |
+| Content1 | Content2 |
+

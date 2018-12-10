@@ -4,12 +4,12 @@
 
 ## 专业课\(961\)
 
-* [数据结构与算法](zhuan-ye-ke-961/data-structure-and-algorithm/README.md)
-  * [栈、队列和向量](zhuan-ye-ke-961/data-structure-and-algorithm/zhan-dui-lie-he-xiang-liang.md)
-  * [树](zhuan-ye-ke-961/data-structure-and-algorithm/shu.md)
-  * [查找](zhuan-ye-ke-961/data-structure-and-algorithm/cha-zhao.md)
-  * [排序](zhuan-ye-ke-961/data-structure-and-algorithm/pai-xu.md)
-  * [图](zhuan-ye-ke-961/data-structure-and-algorithm/tu.md)
+* [数据结构与算法](961/data-structure-and-algorithm/README.md)
+  * [栈、队列和向量](961/data-structure-and-algorithm/zhan-dui-lie-he-xiang-liang.md)
+  * [树](961/data-structure-and-algorithm/shu.md)
+  * [查找](961/data-structure-and-algorithm/cha-zhao.md)
+  * [排序](961/data-structure-and-algorithm/pai-xu.md)
+  * [图](961/data-structure-and-algorithm/tu.md)
 
 ## 专业课\(408\)
 

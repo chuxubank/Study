@@ -14,3 +14,7 @@ _book
 *.epub
 *.mobi
 *.pdf
+
+# org build output
+*.el
+*.tex

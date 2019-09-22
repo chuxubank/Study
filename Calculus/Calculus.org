@@ -1,6 +1,9 @@
 #+LATEX_COMPILER: xelatex
 #+LATEX_HEADER: \usepackage{ctex, mathtools, amsthm, booktabs, physics}
 #+LATEX_HEADER: \renewcommand\arraystretch{1.5}
+#+LATEX_HEADER: \newtheorem{theorem}{定理}[section]
+#+LATEX_HEADER: \newtheorem{deduction}{推论}[section]
+#+LATEX_HEADER: \theoremstyle{definition} \newtheorem{definition}{定义}[section]
 #+STARTUP: align
 
 * 函数、极限、连续
@@ -60,11 +63,10 @@ D(x)=\lim _{k \to \infty}\left(\lim _{j \to \infty}(\cos (k ! \pi x))^{2 j}\righ
 由基本初等函数经过有限次四则运算或有限次复合运算而得到的, 并且可以用一个数学式子表示的函数, 称为初等函数.
 
 ** 函数关系的建立
-实际问题注意定义域
 
 ** 数列极限与函数极限的定义及其性质
-
 *** 数列极限的定义
+\begin{definition}
 给定数列 ${x_n}$, $a$ 为常数, 如果对于任意 $\varepsilon > 0$, 存在正整数 $N$, 当 $n>N$ 时, 有
 \[
 \abs{x_n-a} <\varepsilon
@@ -73,8 +75,57 @@ D(x)=\lim _{k \to \infty}\left(\lim _{j \to \infty}(\cos (k ! \pi x))^{2 j}\righ
 \[
 \lim_{n \to \infty} x_n = a \qq{或} x_n \to a (n \to \infty)
 \]
+\end{definition}
+
+*** 收敛数列的性质
+**** 唯一性
+**** 有界性
+**** 保号性
+**** 一致性
+\begin{theorem}[收敛数列与其子数列的关系]
+如果数列 ${x_n}$ 收敛于 $a$, 那么它的任一子数列也收敛, 且极限也是 $a$.
+\end{theorem}
+
+*** 函数极限的定义
+#+CAPTION: 函数极限的定义
+#+ATTR_LATEX: :float nil :booktabs t :center t
+|                 | $f(x) \to A$                                                                 |
+|-----------------+------------------------------------------------------------------------------|
+| $x \to x_0$     | $\forall \varepsilon >0$, $\exists \delta>0$, 使当 $0<\abs{x-x_0}<\delta$ 时 |
+| $x \to x_{0^+}$ | $\forall \varepsilon >0$, $\exists \delta>0$, 使当 $0<x-x_0<\delta$ 时       |
+| $x \to x_{0^-}$ | $\forall \varepsilon >0$, $\exists \delta>0$, 使当 $0>x-x_0>-\delta$ 时      |
+| $x \to \infty$  | $\forall \varepsilon >0$, $\exists X>0$, 使当 $\abs{x}>X$ 时                 |
+| $x \to +\infty$ | $\forall \varepsilon >0$, $\exists X>0$, 使当 $x>X$ 时                       |
+| $x \to -\infty$ | $\forall \varepsilon >0$, $\exists X>0$, 使当 $x<-X$ 时                      |
+|-----------------+------------------------------------------------------------------------------|
+|                 | 即有 $\abs{f(x)-A}<\varepsilon$                                              |
+
+*** 函数极限的性质
+**** 唯一性
+
+**** 局部有界性
+\begin{theorem}
+若 $\lim f(x) = A$, 则存在 $\mathring{U}$, 在 $\mathring{U}$ 内 $f(x)$ 有界.
+\end{theorem}
+(对于 $x \to x_0$, $\mathring{U}$ 表示 $0<\abs{x-x_0}<\delta$; 对于 $x \to \infty$, $\mathring{U}$ 表示 $\abs{x}>X$)
+
+**** 局部保号性
+\begin{theorem}
+若 $\lim f(x) = A>B$, 则存在 $\mathring{U}$, 在 $\mathring{U}$ 内 $f(x)>B$.
+\end{theorem}
+
+\begin{deduction}
+若存在 $\mathring{U}$, 在 $\mathring{U}$ 内 $f(x) \geq B$, 且 $\lim f(x) = A$, 则 $A \geq B$.
+\end{deduction}
+
+**** 一致性
+\begin{theorem}[函数极限与数列极限的关系]
+如果极限 $\lim_{x \to x_0}f(x)$ 存在, ${x_n}$ 为函数 $f(x)$ 的定义域内任一收敛于 $x_0$ 的数列,
+且满足: $x_n \neq x_0 (n \in N_+)$, 那么相应的函数值数列 ${f(x_n)}$ 必收敛, 且 $\lim_{n \to +\infty} f(x_n) = \lim_{x \to x_0} f(x)$.
+\end{theorem}
 
 ** 函数的左极限和右极限
+[[函数极限的定义]]
 
 ** 无穷小量和无穷大量大概念及其关系
 
@@ -106,7 +157,6 @@ D(x)=\lim _{k \to \infty}\left(\lim _{j \to \infty}(\cos (k ! \pi x))^{2 j}\righ
 ** 导数和微分的四则运算
 
 ** 基本初等函数的导数
-
 \begin{align*}
   (\arcsin x)' &= \frac{1}{\sqrt{1-x^2}} & (\arctan x)' &= \frac{1}{1+x^2}  \\
   (\arccos x)' &= -\frac{1}{\sqrt{1-x^2}} & (\arccot x)' &= -\frac{1}{1+x^2}

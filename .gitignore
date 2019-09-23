@@ -18,3 +18,4 @@ _book
 # org build output
 *.el
 *.tex
+*.svg

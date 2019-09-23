@@ -1,0 +1,16 @@
+* 极限
+** $\frac{\infty}{\infty}(\frac{0}{0})$ 型
+*** 约去分子、分母中极限为 $\infty(0)$ 的因子, 然后用四则运算法则.
+**** 660-3
+设 $a, \alpha$ 为非零常数, 则
+\[
+I=\lim _{x \rightarrow 0} \frac{\operatorname{atan} x+b(1-\cos x)}{\alpha \ln (1-x)+\beta\left(1-\mathrm{e}^{-x^{2}}\right)}
+\]
+分子分母同除 $x$
+
+**** 660-5
+\[
+I=\lim _{x \rightarrow+\infty} \frac{x^{3} \mathrm{e}^{x}\left(3 \mathrm{e}^{x}+1\right)}{\left[1+\left(\mathrm{e}^{x}+1\right)^{2}\right]\left(1+\mathrm{e}^{x}\right)}
+\]
+
+分子分母同除 $(e^x)^3$

@@ -58,6 +58,34 @@ D(x)=\lim _{k \to \infty}\left(\lim _{j \to \infty}(\cos (k ! \pi x))^{2 j}\righ
 **** 指数函数
 **** 对数函数
 **** 三角函数
+\begin{align*}
+\sin(A+B) &= \sin(A) \cos(B) + \cos(A) \sin(B) \\
+\cos(A+B) &= \cos(A) \cos(B) - \sin(A) \sin(B)
+\end{align*}
+
+***** 倍角公式
+\begin{align*}
+\sin 2x &= 2 \sin x \cos x \\
+\cos 2x &= \cos^2 x - \sin^2 x = 2 \cos^2 x - 1 = 1 - 2\sin^2 x
+\end{align*}
+
+***** 降幂公式
+\begin{align*}
+\sin^2 x &= \frac{1}{2} (1 - \cos 2x) \\
+\cos^2 x &= \frac{1}{2} (1 + \cos 2x)
+\end{align*}
+
+***** 半角公式
+\begin{align*}
+\tan \frac{x}{2} &= \frac{1-\cos}{\sin x} = \frac{\sin x}{1+\cos x}\\
+\cot \frac{x}{2} &= \frac{\sin x}{1-\cos x} = \frac{1+\cos}{\sin x}
+\end{align*}
+
+:hint:
+分式上下同乘 $\sin \frac{x}{2}$ 或 $\cos \frac{x}{2}$.
+:END:
+
+
 **** 反三角函数
 
 ** 初等函数
@@ -201,17 +229,30 @@ D(x)=\lim _{k \to \infty}\left(\lim _{j \to \infty}(\cos (k ! \pi x))^{2 j}\righ
 * 一元函数微分学
 ** 导数和微分的概念
 *** 导数的定义
-*** 微分的定义
-**** 可微
+\begin{definition}
+设函数 $f(x)$ 在 $U(x_0)$ 内有定义, 若极限
+\[ \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim_{\Delta x \to 0} \frac{f(x_0+\Delta x) - f(x_0)}{\Delta x} \]
+存在, 则称函数 $f(x)$ 在点 $x=x_0$ 处可导,并称这个极限为 $f(x)$ 在点 $x_0$ 处的导数,
+记为 $f'(x_0)$ 或 $\eval{\dv{y}{x}}_{x=x_0}$ 等.
+\end{definition}
 
-设 $f(x)$ 在 $U(x_0)$ 内有定义, $x_0+\Delta x \in U(x_0)$, 如果
+导数定义的等价形式:
+\[
+f'(x_0) = \lim_{h \to 0} \frac{f(x_0)+h - f(x_0)}{h} = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0}
+\]
+
+*** 微分的定义
+\begin{definition}
+设函数 $f(x)$ 在 $U(x_0)$ 内有定义, $x_0+\Delta x \in U(x_0)$, 如果
 \[ \Delta y = f(x_0+\Delta x) - f(x_0) = A \Delta x + o(\Delta x), \]
 则称函数 $f(x)$ 在点 $x=x_0$ 处可微,
 称 $\dd{y} = A \Delta x$ 为 $f(x)$ 在点 $x=x_0$ 处的微分.
+\end{definition}
 
 ** 导数的几何意义和物理意义
 
 ** 函数的可导性与连续性之间的关系
+可导 $\Rightarrow$ 连续
 
 ** 平面曲线的切线和法线
 
@@ -225,17 +266,78 @@ D(x)=\lim _{k \to \infty}\left(\lim _{j \to \infty}(\cos (k ! \pi x))^{2 j}\righ
 
 ** 复合函数、反函数、隐函数以及参数方程所确定的函数的微分法
 
+*** 复合函数的导数
+\begin{align*}
+{f[g(x)]}' &= \dv{\{f[g(x)]\}}{x} \\
+f'[g(x)] &= \dv{\{f[g(x)]\}}{[g(x)]}
+\end{align*}
+
 ** 高阶导数
 
-** 一阶微分形式的不变性
+*** 运算法则
 
-** 微分中值定理
-*** 泰勒公式
+**** 莱布尼茨(Leibniz)公式
 \[
-f(x)=\sum_{n=0}^{N} \frac{f^{(n)}(a)}{n!}(x-a)^{n} + R_n(x)
+(uv)^{(n)} = \sum_{k=0}^n \mathrm{C}_n^k u^{(n-k)} v^{(k)}
 \]
 
-- 拉格朗日(Lagrange)余项 :: $R_n(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-a)^{n+1}$, $\xi$ 介于 $x$ 和 $a$ 之间.
+:remarks:
+可以参考二项式定理(binomial theorem):
+\[
+(x+y)^n = \sum_{k=0}^n \mathrm{C}_n^k x^{n-k} y^k
+\]
+其中 $\mathrm{C}_n^k = \frac{n!}{k!(n-k)!}$
+:END:
+
+*** 常用的 $n$ 阶导数公式
+\begin{align*}
+(\sin x)^{(n)} &= \sin(x+\frac{n \pi}{2}) & \left( \frac{1}{ax+b} \right)^{(n)} &= (-1)^n \frac{a^n n!}{(ax+b)^{n+1}} \\
+(\cos x)^{(n)} &= \cos(x+\frac{n \pi}{2}) & [\ln(ax+b)]^{(n)} &= (-1)^{n-1} \frac{a^n (n-1)!}{(ax+b)^n}
+\end{align*}
+
+*** 由参数方程所确定的函数的二阶导数
+设 $\begin{cases} x=x(t), \\ y=y(t). \end{cases}$ $x(t)$ 和 $y(t)$ 可导, 且 $x'(t) \neq 0$, 则
+\[
+\dv[2]{y}{x} = \dv{t}(\frac{y'_t}{x'_t}) \dv{t}{x} = \frac{y''_{tt} x'_t - y'_t x''_{tt}}{(x'_t)^3}
+\]
+
+*** 反函数的二阶导数
+设 $y=f(x)$ 二阶可导, 记 $f'(x) = y'_x$, 记其反函数 $x=\varphi(y)$ 的导数 $\varphi'(y) = x'_y \neq 0$, 则有
+\[
+y''_{xx} = \dv[2]{y}{x} = \dv{\dv{y}{x}}{x} = \dv{\frac{1}{x'_y}}{y} \dv{y}{x} = - \frac{x''_{yy}}{(x'_y)^2} \frac{1}{x'_y} = 
+-\frac{x''_{yy}}{(x'_y)^3}
+\]
+
+** 一阶微分形式的不变性
+对 $y=f(u)$, 不论 $u$ 是自变量还是中间变量, 均有 $\dd{y} = f'(u) \dd{u}$.
+
+** 微分中值定理
+*** 费马(Fermat)定理
+\begin{theorem}[费马引理]
+设函数 $f(x)$ 在点 $x_0$ 的某领域 $U(x_0)$ 内有定义, 并且在 $x_0$ 处可导, 如果对任意的 $x \in U(x_0)$, 有
+$f(x) \leqslant f(x_0)$ (或 $f(x) \geqslant f(x_0)$), 则 $f'(x_0) = 0$.
+\end{theorem}
+
+*** 罗尔(Rolle)定理
+\begin{theorem}
+设 $f(x)$ 在 $[a,b]$ 上连续, 在 $(a,b)$ 内可导, 且 $f(a)=f(b)$, 则存在 $\xi \in (a,b)$, 使
+\[ f'(\xi) = 0 \]
+\end{theorem}
+
+*** 拉格朗日(Lagrange)中值定理
+设 $f(x)$ 在 $[a,b]$ 上连续, 在 $(a,b)$ 内可导, 则存在 $\xi \in (a,b)$, 使
+\[ f(b)-f(a) = f'(\xi)(b-a) \]
+
+*** 柯西(Cauchy)中值定理
+设 $f(x), g(x)$ 在 $[a,b]$ 上连续, 在 $(a,b)$ 内可导, 且 $g'(x) \neq 0$, 则存在 $\xi \in (a,b)$, 使
+\[ \frac{f(b)-f(a)}{g(b)-g(a)} = \frac{f'(\xi)}{g'(\xi)} \]
+
+*** 泰勒(Taylor)公式
+\[
+f(x)=\sum_{n=0}^N \frac{f^{(n)}(a)}{n!}(x-a)^n + R_n(x)
+\]
+
+- 拉格朗日余项 :: $R_n(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-a)^{n+1}$, $\xi$ 介于 $x$ 和 $a$ 之间.
 
 - 佩亚诺(Peano)余项 :: $R_n(x)=o(x^n)$
 

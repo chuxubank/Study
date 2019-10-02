@@ -9,11 +9,18 @@
 #+STARTUP: align
 
 * 函数、极限、连续
-** 函数的概念及表示法
-#+begin_quote
-理解函数的概念, 掌握函数的表示法, 会建立应用问题的函数关系.
-#+end_quote
+1. 理解函数的概念, 掌握函数的表示法, 会建立应用问题的函数关系.
+2. 了解函数的有界性、单调性、周期性和奇偶性.
+3. 理解复合函数及分段函数的概念, 了解反函数及隐函数的概念.
+4. 掌握基本初等函数的性质及其图形, 了解初等函数的概念.
+5. 理解极限的概念, 理解函数左极限与右极限的概念以及函数极限存在与左极限、右极限之间的关系.
+6. 理解无穷小量、无穷大量的概念, 掌握无穷小量的比较方法, 会用等价无穷小量求极限.
+7. 掌握极限的性质及四则运算法则.
+8. 掌握极限存在的两个法则, 并会利用它们求极限, 掌握利用两个重要极限求极限的方法.
+9. 理解函数连续性的概念(含左连续与右连续), 会判别函数间断点的类型.
+10. 了解连续函数的性质和初等函数的连续性, 理解闭区间上连续函数的性质(有界性、最大值和最小值定理、介值定理), 并会应用这些性质.
 
+** 函数的概念及表示法
 *** 函数的概念
 设 $x$ 与 $y$ 是两个变量, 变量 $x$ 的取值范围是非空数集 $D$, 如果对 $D$ 中任意一个 $x$, 
 变量 $y$ 按照一定的法则总有 *唯一* 的数值与之对应, 则称变量 $y$ 是变量 $x$ 的函数. 记为
@@ -28,20 +35,12 @@ y=f(x) \qq{或} y=y(x)
 - 解析法
 
 ** 函数的有界性、单调性、周期性和奇偶性
-#+begin_quote
-了解函数的有界性、单调性、周期性和奇偶性.
-#+end_quote
-
 *** 有界性
 设函数 $f(x)$ 的定义域为 $D$, $I \subset D$, 如果存在正数 $M$, 使得对任意 $x \in I$, 
 都有 $\abs{f(x)} \leqslant M$, 则称函数 $f(x)$ 在 $I$ 上有界. 如果这样的 $M$ 不存在, 
 则称函数 $f(x)$ 在 $I$ 上无界.
  
 ** 复合函数、反函数、分段函数和隐函数
-#+begin_quote
-理解复合函数及分段函数的概念, 了解反函数及隐函数的概念.
-#+end_quote
-
 *** 分段函数
 **** 狄利克雷(Dirichlet)函数
 \[
@@ -49,10 +48,6 @@ D(x)=\lim _{k \to \infty}\left(\lim _{j \to \infty}(\cos (k ! \pi x))^{2 j}\righ
 \]
 
 ** 基本初等函数的性质及其图形
-#+begin_quote
-掌握基本初等函数的性质及其图形, 了解初等函数的概念.
-#+end_quote
-
 *** 基本初等函数
 **** 常值函数
 **** 幂函数
@@ -85,18 +80,30 @@ D(x)=\lim _{k \to \infty}\left(\lim _{j \to \infty}(\cos (k ! \pi x))^{2 j}\righ
 分式上下同乘 $\sin \frac{x}{2}$ 或 $\cos \frac{x}{2}$.
 :END:
 
-
 **** 反三角函数
 
 ** 初等函数
 由基本初等函数经过有限次四则运算或有限次复合运算而得到的, 并且可以用一个数学式子表示的函数, 称为初等函数.
+*** 双曲函数
+\begin{align*}
+\sinh x &= \frac{e^x-e^{-x}}{2} \\
+\cosh x &= \frac{e^x+e^{-x}}{2}
+\end{align*}
+
+\begin{align*}
+\sinh(x+y) &= \sinh x \cosh y + \cosh x \sinh y \\
+\cosh(x+y) &= \cosh x \cosh y + \sinh x \sinh y
+\end{align*}
+
+*** 反双曲函数
+\begin{align*}
+\asin x &= \ln(x+\sqrt{x^2+1}) \qc x \in (- \infty, + \infty) \\
+\acos x &= \ln(x+\sqrt{x^2-1}) \qc x \in [1, + \infty) \\
+\atan x &= \frac{1}{2} \ln \frac{1+x}{1-x} \qc x \in (-1,1)
+\end{align*}
 
 ** 函数关系的建立
-
 ** 数列极限与函数极限的定义及其性质
-#+begin_quote
-理解极限的概念, 理解函数左极限与右极限的概念以及函数极限存在与左极限、右极限之间的关系.
-#+end_quote
 *** 数列极限的定义
 \begin{definition}
 给定数列 ${x_n}$, $a$ 为常数, 如果对于任意 $\varepsilon > 0$, 存在正整数 $N$, 当 $n>N$ 时, 有
@@ -119,6 +126,14 @@ D(x)=\lim _{k \to \infty}\left(\lim _{j \to \infty}(\cos (k ! \pi x))^{2 j}\righ
 \end{theorem}
 
 *** 函数极限的定义
+\begin{definition}
+设函数 $f(x)$ 在点 $x_0$ 的某去心邻域内有定义, A 为一个常数, 如果对于任意 $\varepsilon > 0$, 存在 $\delta > 0$,
+使得当 $0<\abs{x-x_0}<\delta$ 时, 有 
+\[ \abs{f(x)-A}<\varepsilon \],
+则称函数 $f(x)$ 当 $x \to x_0$ 时以 $A$ 为极限, 记为
+\[ \lim_{x \to x_0} f(x) = A \qq{或} f(x) \to A \quad (x \to x_0) \]
+\end{definition}
+
 #+CAPTION: 函数极限的定义
 #+ATTR_LATEX: :float nil :booktabs t :center t
 |                 | $f(x) \to A$                                                                 |
@@ -130,7 +145,7 @@ D(x)=\lim _{k \to \infty}\left(\lim _{j \to \infty}(\cos (k ! \pi x))^{2 j}\righ
 | $x \to +\infty$ | $\forall \varepsilon >0$, $\exists X>0$, 使当 $x>X$ 时                       |
 | $x \to -\infty$ | $\forall \varepsilon >0$, $\exists X>0$, 使当 $x<-X$ 时                      |
 |-----------------+------------------------------------------------------------------------------|
-|                 | 即有 $\abs{f(x)-A}<\varepsilon$                                              |
+|                 | 有 $\abs{f(x)-A}<\varepsilon$                                                |
 
 *** 函数极限的性质
 **** 唯一性
@@ -160,9 +175,6 @@ D(x)=\lim _{k \to \infty}\left(\lim _{j \to \infty}(\cos (k ! \pi x))^{2 j}\righ
 [[函数极限的定义]]
 
 ** 无穷小量和无穷大量大概念及其关系
-#+begin_quote
-理解无穷小量、无穷大量的概念, 掌握无穷小量的比较方法, 会用等价无穷小量求极限.
-#+end_quote
 *** 无穷小量与极限的关系
 \[
 \lim_{x \to x_0} f(x) = A \Leftrightarrow A + \alpha(x)
@@ -174,15 +186,9 @@ D(x)=\lim _{k \to \infty}\left(\lim _{j \to \infty}(\cos (k ! \pi x))^{2 j}\righ
 若 $\lim \dfrac{\beta}{\alpha^k}=c \neq 0 \quad (k>0)$, 称 $\beta$ 是 $\alpha$ 的 $k$ 阶无穷小量.
 
 ** 极限的四则运算
-#+begin_quote
-掌握极限的性质及四则运算法则.
-#+end_quote
 设 $\lim f(x)$ 存在, $\lim g(x)$ 不存在, 则 $\lim[f(x) \pm g(x)]$ 不存在.
 
 ** 极限存在的两个准则：单调有界准则和夹逼准则
-#+begin_quote
-掌握极限存在的两个法则, 并会利用它们求极限, 掌握利用两个重要极限求极限的方法.
-#+end_quote
 *** 单调有界准则
 若数列 ${x_n}$ 单调增加(或单调减少)且有上界 $M$ (或有下界 $m$ ), 则 $x_n$ 收敛,
 且 $\lim_{n \to \infty} x_n \leqslant M$(或 $\lim_{n \to \infty} x_n \geqslant m$).
@@ -201,9 +207,6 @@ D(x)=\lim _{k \to \infty}\left(\lim _{j \to \infty}(\cos (k ! \pi x))^{2 j}\righ
 \]
 
 ** 函数连续的概念
-#+begin_quote
-理解函数连续性的概念(含左连续与右连续), 会判别函数间断点的类型.
-#+end_quote
 设函数 $y=f(x)$ 在点 $x_0$ 的某一领域内有定义, 极限 $\lim_{x \to x_0}f(x)$ 存在, 且 $\lim_{x \to x_0}f(x) = f(x_0)$,
 则称函数 $y=f(x)$ 在点 $x_0$ 处连续, 并称 $x_0$ 是 $f(x)$ 的连续点.
 
@@ -214,9 +217,6 @@ D(x)=\lim _{k \to \infty}\left(\lim _{j \to \infty}(\cos (k ! \pi x))^{2 j}\righ
 - 振荡间断点
 
 ** 初等函数的连续性
-#+begin_quote
-了解连续函数的性质和初等函数的连续性, 理解闭区间上连续函数的性质(有界性、最大值和最小值定理、介值定理), 并会应用这些性质.
-#+end_quote
 一切初等函数在其定义区间内都连续.
 
 ** 闭区间上连续函数的性质
@@ -446,9 +446,7 @@ K = \frac{\abs{\psi''(t) \varphi'(t) - \psi'(t) \varphi''(t)}}{[\varphi'^2(t) + 
 
 * 一元函数积分学
 ** 原函数和不定积分的概念
-
 ** 不定积分的基本性质
-
 ** 基本积分公式
 \begin{align*}
   \int \sec ^{2} x \dd{x} &= \tan x+C & \int \sec x \dd{x} &= \ln \abs{\sec x+\tan x} + C \\

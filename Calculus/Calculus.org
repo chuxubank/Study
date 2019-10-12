@@ -24,12 +24,8 @@
 
 ** 函数的概念及表示法
 *** 函数的概念
-设 $x$ 与 $y$ 是两个变量, 变量 $x$ 的取值范围是非空数集 $D$, 如果对 $D$ 中任意一个 $x$, 
-变量 $y$ 按照一定的法则总有 *唯一* 的数值与之对应, 则称变量 $y$ 是变量 $x$ 的函数. 记为
-\[
-y=f(x) \qq{或} y=y(x)
-\]
-其中 $x$ 称为自变量, $y$ 称为因变量, $D$ 称为函数 $y=f(x)$ 的定义域.
+设 $D \subset \mathbf{R}$, 则称映射 $f:D \to \mathbf{R}$ 为定义在 $D$ 上的函数, 通常简记为
+\[ y=f(x), x \in D \]
 
 *** 函数的表示法
 - 列表法
@@ -452,7 +448,7 @@ K = \frac{\abs{\psi''(t) \varphi'(t) - \psi'(t) \varphi''(t)}}{[\varphi'^2(t) + 
 ** 曲率圆与曲率半径
 \[ \rho = \frac{1}{K} \]
 
-* 一元函数积分学
+* 一元函数积分学 
 1. 理解原函数的概念, 理解不定积分和定积分的概念
 2. 掌握不定积分的基本公式, 掌握不定积分和定积分的性质及定积分中值定理, 掌握换元积分法与分部积分法.
 3. 会求有理函数、三角函数有理式和简单无理函数的积分.
@@ -599,6 +595,76 @@ t = \tan \frac{x}{2} \\
 
 *** 简单无理数积分
 **** 变量代换使有理化
+** 关于定积分的几个重要结论
+- 利用圆的面积
+\[ \int_0^a \sqrt{a^2 - x^2} \dd{x} = \frac{1}{4} \pi a^2 \]
+
+- 利用奇函数/偶函数的对称性
+\begin{equation*}
+\int_{-a}^a f(x) \dd{x} =
+\begin{cases}
+0 & f \text{为奇函数}, \\
+2 \int_0^a f(x) \dd{x} & f \text{为偶函数}, \\
+\int_{-a}^a \frac{f(x)+f(-x)}{2} & f \text{非奇非偶}.
+\end{cases}
+\end{equation*}
+
+- 利用函数的周期性
+\begin{align*}
+\int_a^{a+T} f(x) \dd{x} &= \int_0^T f(x) \dd{x} \\
+\int_a^{a+nT} f(x) \dd{x} &= n \int_0^T f(x) \dd{x}, n \in \mathbf{N}.
+\end{align*}
+
+- 区间再现公式
+\[ \int_a^b f(x) \dd{x} = \int_a^b f(a+b-x) \dd{x} \]
+
+\[ \int_0^{\pi} xf(\sin x) \dd{x} = \frac{\pi}{2} \int_0^{\pi} f(\sin x) \dd{x} \]
+
+- 华里士(Wallis)公式
+\[
+\lim _{n \to +\infty}\left(\frac{(2n)!!}{(2n-1)!!}\right)^2 \frac{1}{2n+1}=\frac{\pi}{2}
+\]
+
+- 点火公式
+\begin{equation*}
+I_n = \int_0^{\frac{\pi}{2}} \sin^n x \dd{x} = \int_0^{\frac{\pi}{2}} \cos^n x \dd{x} = 
+\begin{cases}
+\frac{n-1}{n} \cdot \frac{n-3}{n-2} \cdot \cdots \cdot \frac{4}{5} \cdot \frac{2}{3} \cdot 1 & n=2k+1, \\
+\frac{n-1}{n} \cdot \frac{n-3}{n-2} \cdot \cdots \cdot \frac{3}{4} \cdot \frac{1}{2} \cdot \frac{\pi}{2} & n=2k,
+\end{cases}
+k \in \mathbf{N}^*.
+\end{equation*}
+
+\[
+I_n = \frac{n-1}{n} I_{n-2}
+\]
+
+\[
+\int_0^{\frac{\pi}{4}} \sin x \dd{x} = 1 - \frac{\sqrt{2}}{2}
+\]
+
+\[
+\int_0^{\frac{\pi}{2}} f(\sin x, \cos x) \dd{x} = \int_0^{\frac{\pi}{2}} f(\cos x, \sin x) \dd{x}
+\]
+
+\begin{align*}
+\int_0^{\pi} \sin^n x \dd{x} &= 2 I_n
+\\
+\int_0^{\pi} \cos^n x \dd{x} &= 
+\begin{cases}
+0 & n=2k-1, \\
+2 I_n & n=2k,
+\end{cases}
+k \in \mathbf{N}^*.
+\\
+\int_0^{2\pi} \sin^n x \dd{x} &= \int_0^{2\pi} \cos^n x \dd{x} = 
+\begin{cases}
+0 & n=2k-1, \\
+4 I_n & n=2k,
+\end{cases}
+k \in \mathbf{N}^*.
+\end{align*}
+
 ** 反常(广义)积分
 *** 常用的反常积分
 \begin{align*}
@@ -672,10 +738,10 @@ t = \tan \frac{x}{2} \\
 \[ s = \int_{\alpha}^{\beta} \sqrt{r^2(\theta) + r'^2(\theta)} \dd{\theta} \]
 
 *** 旋转体的体积及侧面积
-**** 绕 $x$ 轴旋转
+- 由曲线 $y=f(x)$ 与直线 $y=0, x=a, x=b (a<b)$ 所围成的平面图形绕 $x$ 轴旋转一周, 生成旋转体的体积和侧面积分别为
 \[ V_x = \pi \int_a^b f^2(x) \dd{x}, S_x = 2\pi \int_a^b f(x) \sqrt{1+f'^2(x)} \dd{x} \]
 
-**** 绕 $y$ 轴旋转
+- 设 $f(x)$ 在区间 $[a,b]$ 上连续, 且 $f(x)$ 非负, $a>0$, 则曲线 $y=f(x)$ 与直线 $x=a, x=b$ 及 $x$ 轴所围成的平面图形绕 $y$ 轴旋转所得旋转体体积为
 \[ V = 2\pi \int_a^b xf(x) \dd{x} \]
 
 *** 平行截面面积为已知的立体体积
@@ -684,26 +750,105 @@ t = \tan \frac{x}{2} \\
 *** 函数的平均值
 \[ \bar{y} = \frac{1}{b-a} \int_a^b f(x) \dd{x} \]
 
-* 多元函数微积分学
+* 多元函数微分学
+1. 了解多元函数的概念, 了解二元函数的几何意义.
+2. 了解二元函数的极限与连续的概念, 了解有界闭区域上二元连续函数的性质.
+3. 了解多元函数偏导数和全微分的概念, 会求多元复合函数一阶、二阶偏导数, 会求全微分, 了解隐函数存在定理, 会求多元隐函数的偏导数.
+4. 了解多元函数极值和条件极值的概念, 掌握多元函数极值存在的必要条件, 了解二元函数极值存在的充分条件, 会求二元函数的极值, 会用拉格朗日乘数法求条件极值, 会求简单多元函数的最大值和最小值, 并会解决一些简单的应用问题.
+
 ** 多元函数的概念
+设 $D \subset \mathbf{R}^n \neq \emptyset$, 称映射 $f: D \to \mathbf{R}$ 为定义在 $D$ 上的 $n$ 元函数, 通常记为
+\[ u = f(x_1, x_2, \cdots, x_n), (x_1, x_2, \cdots, x_n) \in D \]
 
 ** 二元函数的几何意义
+二元函数 $z=f(x,y)$ 在几何上一般表示空间直角坐标系中的一个曲面.
 
 ** 二元函数的极限与连续的概念
+*** 二元函数极限的定义
+设函数 $z=f(x,y)$ 在点 $(x_0,y_0)$ 的某去心邻域内有定义, $A$ 为常数. 如果对于任意 $\varepsilon > 0$, 存在 $\delta > 0$,
+当 $0<\sqrt{(x-x_0)^2 + (y-y_0)^2}<\delta$ 时, 有 $\abs{f(x,y)-A} < \varepsilon$, 则称函数 $z=f(x,y)$ 当 $(x,y)$ 趋于 $(x_0, y_0)$ 时,
+以 $A$ 为极限, 记作 \[ \lim_{(x,y) \to (x_0,y_0)} f(x,y) = A \]
+
+*** 二元函数的连续性
+设函数 $z=f(x,y)$ 在点 $P_0(x_0, y_0)$ 的某领域内有定义, 若 $\lim_{(x,y) \to (x_0,y_0)} f(x,y) = f(x_0, y_0)$,
+则称函数 $z=f(x,y)$ 在点 $P_0(x_0, y_0)$ 处连续.
 
 ** 有界闭区域上二元连续函数的性质
+设 $z=f(x,y)$ 在有界闭区域 $D$ 上连续, 则
+1. (有界性定理) $f(x,y)$ 在 $D$ 上有界.
+2. (最值定理) $f(x,y)$ 在 $D$ 上必取得最大值 $M$ 和最小值 $m$, 即 \[ m \leqslant f(x,y) \leqslant M \]
+3. (介值定理) 若 $m \leqslant c \leqslant M$, 存在 $(\xi, \eta) \in D$, 使 $f(\xi, \eta)=c$.
 
 ** 多元函数的偏导数和全微分
+*** 全微分
+如果函数 $z=f(x,y)$ 在点 $(x,y)$ 处的全增量 $\Delta z = f(x+\Delta x, y+\Delta y) - f(x,y)$ 可以表示为
+\[ \Delta z = A \Delta x + B \Delta y + o(\rho) \]
+其中 $A,B$ 不依赖于 $\Delta x, \Delta y$, 而仅与 $x,y$ 有关, $\rho = \sqrt{(\Delta x)^2 + (\Delta y)^2}$, 则称函数 $z=f(x,y)$ 在点 $(x,y)$
+处可微, 称 $A\Delta x+B \Delta y$ 为函数 $z=f(x,y)$ 处的全微分, 记作 $\dd{z}$.
+
+*** 可微的条件
+- 必要条件 :: 如果函数 $z=f(x,y)$ 在点 $(x,y)$ 处可微, 则偏导数 $\pdv{z}{x}, \pdv{z}{y}$ 都存在, 且 $\dd{z} = \pdv{z}{x}\dd{x} + \pdv{z}{y}\dd{y}$.
+- 充分条件 :: 如果函数 $z=f(x,y)$ 的偏导数 $\pdv{z}{x}, \pdv{z}{y}$ 在点 $(x,y)$ 处连续, 则函数在该点可微.
 
 ** 多元复合函数、隐函数的求导法
+*** 隐函数求导法则
+- 对于由方程 $F(x,y) = 0$ 确定的隐函数 $y=f(x)$, 当 $F'_y(x,y) \neq 0$ 时, 有
+\[ \dv{y}{x} = -\frac{F'_x}{F'_y} \]
+
+- 对于由方程 $F(x,y,z)=0$ 确定的隐函数 $z=f(x,y)$, 当 $F'_z(x,y,z) \neq 0$ 时, 有
+\[ \pdv{z}{x} = -\frac{F'_x}{F'_z}, \pdv{z}{y} = -\frac{F'_y}{F'_z} \]
+
+- 对于由方程组 $\begin{cases} F(x,y,u,v)=0, \\ G(x,y,u,v)=0, \end{cases}$ 确定的隐函数 $\begin{cases} u=u(x), \\ v=v(x),\end{cases}$ 
+当雅可比(Jacobi) 式 \[ J = \pdv{(F,G)}{(u,v)} = \mdet{F'_u & F'_v \\ G'_u & G'_v} \neq 0 \] 时, 有
+\[ 
+\pdv{u}{x} = -\frac{1}{J} \pdv{(F,G)}{(x,v)} 
+= -\frac{\pdv{(F,G)}{(x,v)}}{\pdv{(F,G)}{(u,v)}} 
+= -\frac{\mdet{F'_x & F'_v \\ G'_x & G'_v}}{\mdet{F'_u & F'_v \\ G'_u & G'_v}}
+\]
+
+$\pdv{u}{y}, \pdv{v}{x}, \pdv{v}{y}$ 可类似得出.
 
 ** 二阶偏导数
+$\pdv{z}{x}{y}, \pdv{z}{y}{x}$ 为 $z=f(x,y)$ 的两个混合二阶偏导数. 当这两个混合二阶偏导数都连续时, \[ z''_{xy}=z''_{yx} \]
 
 ** 多元函数的极值和条件极值、最大值和最小值
+*** 二元函数取得极值的必要条件
+若 $f(x,y)$ 在点 $(x_0, y_0)$ 处具有偏导数且取得极值, 则 $f'_x=0, f'_y=0$. 这样的点称为驻点.
 
+*** 二元函数取得极值的充分条件
+设函数 $z=f(x,y)$ 在点 $(x_0, y_0)$ 的某个领域内具有连续的二阶偏导数, 且 $f'_x=0, f'_y=0$, 令
+\[ A=f''_{xx}, B=f''_{xy}, C=f''_{yy} \]
+则有:
+1. $B^2-AC<0$ 时具有极值, 且当 $A<0$ 时具有极大值, 当 $A>0$ 时具有极小值;
+2. $B^2-AC>0$ 时没有极值;
+3. $B^2-AC=0$ 时可能有极值, 也可能没有极值, 还需另作讨论.
+
+*** 条件极值与拉格朗日乘数法
+为了求函数 $f(x,y)$ 在条件 $\varphi(x,y)=0$ 下的极值, 先构造函数
+\[ F(x,y,\lambda) = f(x,y)+\lambda \varphi(x,y) \]
+然后解方程组
+\begin{cases}
+F'_x=0, \\
+F'_y=0, \\
+F'_{\lambda} = 0,
+\end{cases}
+
+得到的点 $(x,y,z)$ 就是可能的极值点.
+在实际问题中, 可以通过实际问题本身的背景加以确定.
+
+* 多元函数积分学
+了解二重积分的概念与基本性质, 掌握二重积分的计算方法(直角座标、极坐标).
 ** 二重积分的概念、基本性质和计算
 
 * 常微分方程
+1. 了解微分方程及其阶、解、通解、初始条件和特解等概念
+2. 掌握变量可分离的微分方程及一阶线性微分方程的解法, 会解齐次方程.
+3. 会用降阶法解下列形式的微分方程: $y^{(n)} = f(x), y''=f(x, y')$ 和 $y''=f(y,y')$
+4. 理解二阶线性微分方程解的性质及解的结构定理.
+5. 掌握二阶常系数齐次线性微分方程的解法, 并会解某些高于二阶的常系数齐次线性微分方程.
+6. 会解自由项为多项式、指数函数、正弦函数、余弦函数以及它们的和与积的二阶常系数非齐次线性微分方程.
+7. 会用微分方程解决一些简单的应用问题.
+
 ** 常微分方程的基本概念
 
 ** 变量可分离的微分方程

@@ -1,12 +1,35 @@
 #+LATEX_COMPILER: xelatex
-#+LATEX_HEADER: \usepackage{ctex, mathtools, amsthm, booktabs, physics}
+#+LATEX_HEADER: \usepackage{ctex, mathtools, amsthm, booktabs, physics, geometry}
+#+LATEX_HEADER: \geometry{left=2.5cm, right=2.5cm, top=2cm, bottom=2cm}
+#+OPTIONS: toc:nil
 
 * 软件过程
-
 ** 软件过程的概念
+软件过程是工作产品构建时所只想的一系列活动、动作和任务的集合。
+- 活动(Activity) :: 主要实现宽泛的目标(如与利益相关者进行沟通)，与应用领域、项目大小、结果复杂性或者实施软件工程的重要程度没有直接关系。
+- 动作(Action) :: (如体系结构设计) 包含了主要工作产品(如体系结构设计模型) 生产过程中的一些列任务。
+- 任务(Task) :: 关注小而明确的目标，能够产生实际产品(如构件一个单元测试)。
+
+目标：及时、高质量地交付软件，以满足软件项目资助方和最终用户的需求。
+
+*** 过程框架(process framework)
+- 沟通
+- 策划
+- 建模
+- 构建
+- 部署
+
+*** 普适性活动(umbrella activity)
+- 软件项目跟踪和控制
+- 风险管理
+- 软件质量保证
+- 技术评审
+- 测量
+- 软件配置管理
+- 可复用管理
+- 工作产品的准备和生产
 
 ** 经典软件过程模型的特点
-
 *** 瀑布模型
 
 *** 增量模型

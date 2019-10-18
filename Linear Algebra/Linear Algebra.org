@@ -1,36 +1,155 @@
-#+LATEX_COMPILER: xelatex
-#+LATEX_HEADER: \usepackage{ctex, mathtools, amsthm, booktabs, physics}
+#+LATEX_HEADER: \usepackage{ctex, mathtools, amsthm, booktabs, physics, geometry, hyperref, bm, extarrows}
+#+LATEX_HEADER: \hypersetup{colorlinks=true}
+#+LATEX_HEADER: \geometry{left=2.5cm, right=2.5cm, top=2cm, bottom=2cm}
 #+LATEX_HEADER: \renewcommand\arraystretch{1.5}
-#+LATEX_HEADER: \newtheorem{theorem}{定理}[section]
-#+LATEX_HEADER: \newtheorem{deduction}{推论}[section]
 #+LATEX_HEADER: \theoremstyle{definition} \newtheorem{definition}{定义}[section]
+#+LATEX_HEADER: \theoremstyle{plain} \newtheorem{theorem}{定理}[section]
+#+LATEX_HEADER: \theoremstyle{plain} \newtheorem{deduction}{推论}[section]
+#+LATEX_HEADER: \theoremstyle{remark} \newtheorem{remark}{注释}[section]
+#+LATEX_HEADER: \DeclareMathOperator{\diag}{diag}
 #+STARTUP: align
+#+OPTIONS: toc:nil
 
 * 行列式
-
 ** 行列式的概念和基本性质
+*** 排列(Permutation)及其逆序数
+\[ P_n^m = n(n-1)(n-2)\cdots(n-m+1) = \frac{n!}{(n-m)!} \]
+
+\[ t = \sum_{i=1}^n t_i \]
+
+*** 对换
+\begin{theorem}
+一个排列中的任意两个元素对换, 排列改变奇偶性.
+\end{theorem}
+
+\begin{deduction}
+奇排列对换成标准排列的对换次数为奇数, 偶排列对换成标准排列的对换次数为偶数.
+\end{deduction}
+
+*** $n$ 阶行列式(Determinant)
+\[ 
+D_n = \mdet {
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots &        & \vdots \\ 
+a_{n1} & a_{n2} & \cdots & a_{nn} \\
+}
+= \sum_{j_1 j_2 \cdots j_n} (-1)^{\tau(j_1 j_2 \cdots j_n)} a_{1j_1} a_{2j_2} \cdots a_{nj_n}
+= \det(a_{ij})
+\]
+
+*** 行列式的性质
+- $D=D^{\mathrm{T}}$
+- 对换行列式的两行(列), 行列式变号.
+  - 如果行列式有两行(列)完全相同, 则此行列式等于零.
+- 行列式的某一行(列)中所有的元素都乘同一数 $k$, 等于用数 $k$ 乘此行列式.
+  - 行列式中某一行(列)的所有元素的公因子可以提到行列式记号的外面.
+  - 行列式中如果有两行(列)元素成比例, 则此行列式等于零.
+- 行列式具有分行(列)的可加性.
+- 行列式的某一行(列)中所有元素的 $k$ 倍加到另一行(列)对应的元素上去, 行列式不变.
 
 ** 行列式按行(列)展开定理
+- 余子式 :: 在 $n$ 阶行列式中, 把 $(i,j)$ 元 $a_{ij}$ 所在的第 $i$ 行和第 $j$ 列划去后, 留下来的 $n-1$ 阶行列式叫做 $(i,j)$ 元 $a_{ij}$ 的余子式, 记作 $M_{ij}$.
+- 代数余子式 :: $A_{ij} = (-1)^{i+j} M_{ij}$
+
+\begin{equation*}
+\sum_{k=1}^n a_{ki}A_{kj} = 
+\begin{cases}
+D & i=j. \\
+0 & i \neq j.
+\end{cases}
+\end{equation*}
+或
+\begin{equation*}
+\sum_{k=1}^n a_{ik}A_{jk} = 
+\begin{cases}
+D & i=j. \\
+0 & i \neq j.
+\end{cases}
+\end{equation*}
 
 * 矩阵
-
 ** 矩阵的概念
+- 对角(Diagonal)矩阵 :: $\bm{\varLambda} = \diag(\lambda_1,\lambda_2,\dots,\lambda_n)$
+- 单位矩阵 :: $\bm{E} = \diag(1,1,\dots,1)$
+- 三角矩阵 :: 以主对角线为分界的 $n$ 阶矩阵
 
 ** 矩阵的线性运算
+数乘可交换
+\[ \lambda \bm{A} = \bm{A} \lambda \]
 
 ** 矩阵的乘法
+\begin{definition}
+设 $\bm{A}=(a_{ij})$ 是一个 $m \times s$ 矩阵, $\bm{B}=(b_{ij})$ 是一个 $s \times n$ 矩阵,
+那么规定矩阵 $\bm{A}$ 与矩阵 $\bm{B}$ 的乘积是一个 $m \times n$ 的矩阵 $\bm{C}=(c_{ij})$,
+其中 \[ c_{ij} = \sum_{k=1}^s a_{ik}j_{kj} \quad (i=1,2,\dots,m; j=1,2,\dots,n) \]
+\end{definition}
+- 可交换的方阵 :: $\bm{AB} = \bm{BA}$
+  \[ \bm{EA} = \bm{AE} = \bm{A} \]
+- 纯量阵 :: $\lambda \bm{E} = \diag(\lambda,\lambda,\dots,\lambda)$
 
 ** 方阵的幂
+\[ \bm{A}^k \bm{A}^l = \bm{A}^{k+l} \qc (\bm{A}^k)^l = \bm{A}^{kl} \]
 
 ** 方阵乘积的行列式
+\[ |\bm{AB}| = |\bm{A}||\bm{B}| \]
+#+begin_proof
+设 $\bm{A}=(a_{ij}), \bm{B}=(b_{ij})$. 记四阶行列式 $D = \mdet{\bm{A} & \bm{O} \\ -\bm{E} & \bm{B}}$
+\[
+D \xlongequal[c_4+b_{12}c_1+b_{22}c_2]{c_3+b_{11}c_1+b_{21}c_2} \mdet{\bm{A} & \bm{X} \\ -\bm{E} & \bm{O}}
+= (-1)^2 \mdet{-\bm{E} & \bm{O} \\ \bm{A} & \bm{X}} = |-\bm{E}||\bm{X}| = |\bm{X}| = |\bm{AB}|
+\qedhere
+\]
+#+end_proof
 
 ** 矩阵的转置
+\[ (\bm{AB})^{\mathrm{T}} = \bm{B}^{\mathrm{T}} \bm{A}^{\mathrm{T}} \]
+- 对称矩阵 :: $\bm{A}^{\mathrm{T}} = \bm{A}$
 
 ** 逆矩阵的概念和性质
+\begin{definition}
+对于 $n$ 阶矩阵 $\bm{A}$ 如果有一个 $n$ 阶矩阵 $\bm{B}$, 使
+\[ \bm{AB} = \bm{BA} = \bm{E} \]
+则说矩阵 $\bm{A}$ 是可逆的, 并把矩阵 $\bm{B}$ 称为 $\bm{A}$ 的逆矩阵, 简称逆阵.
+\end{definition}
+
+如果矩阵 $\bm{A}$ 是可逆的, 则$\bm{A}$ 的逆矩阵是 _惟一_ 的.
+
+\begin{theorem}
+若矩阵 $\bm{A}$ 可逆, 则 $|\bm{A}| \neq 0$
+\end{theorem}
+
+\begin{theorem}
+若 $|\bm{A}| \neq 0$, 则矩阵 $\bm{A}$ 可逆, 且
+\[ \bm{A}^{-1} = \frac{1}{|\bm{A}|} \bm{A}^{*} \]
+\end{theorem}
+当 $|\bm{A}| = 0$ 时, $\bm{A}$ 称为 _奇异矩阵_, 否则称为 _非奇异矩阵_.
+
+\begin{deduction}
+若 $\bm{AB}=\bm{E}$ (或 $\bm{BA}=\bm{E}$), 则 $\bm{B} = \bm{A}^{-1}$
+\end{deduction}
+
+*** 逆矩阵的性质
+- 若 $\bm{A}$ 、 $\bm{B}$ 为同阶矩阵, 则 $\bm{AB}$ 亦可逆, 且 \[ (\bm{AB})^{-1} = \bm{B}^{-1} \bm{A}^{-1} \]
+- 若 $\bm{A}$ 可逆, 则 $\bm{A}^{\mathrm{T}}$ 亦可逆, 且 \[ (\bm{A}^{\mathrm{T}})^{-1} = (\bm{A}^{-1})^{\mathrm{T}} \]
+
+*** 逆矩阵的初步应用
+设 $\varphi(x) = a_0 + a_1 x + \cdots + a_m x^m$ 为 $x$ 的 $m$ 次多项式, $\bm{A}$ 为 $n$ 阶矩阵, 记
+\[ \varphi(\bm{A}) = a_0 \bm{E} + a_1 \bm{A} + \cdots + a_m \bm{A}^m \]
+$\varphi(\bm{A})$ 称为矩阵 $\bm{A}$ 的 $m$ 次多项式.
+
+**** $\varphi(\bm{A})$ 的计算方法
+1. 若 $\bm{A} = \bm{P\varLambda}\bm{P}^{-1}$, 则 $\bm{A}^k = \bm{P} \bm{\varLambda}^k \bm{P}^{-1}$, 从而
+   \[ \varphi(\bm{A}) = \bm{P} \varphi(\bm{\varLambda}) \bm{P}^{-1} \]
+2. 如果 $\bm{\varLambda} = \diag(\lambda_1,\lambda_2,\dots,\lambda_n)$ 为对角矩阵, 则 $\bm{\varLambda}^k = \diag(\lambda_1^k,\lambda_2^k,\dots,\lambda_n^k)$, 从而
+   \[ \varphi(\bm{\varLambda}) = \mqty(\dmat{\varphi(\lambda_1),\varphi(\lambda_2),\ddots,\varphi(\lambda_n)}) \]
 
 ** 矩阵可逆的充分必要条件
+$\bm{A}$ 是可逆矩阵的充分必要条件是 $|\bm{A}| \neq 0$, 即可逆矩阵就是非奇异矩阵.
 
 ** 伴随矩阵
+\[ \bm{A}^{*} = (A_{ij})^{\mathrm{T}} \]
+\[ \bm{A} \bm{A}^{*} = \bm{A}^{*} \bm{A} = |\bm{A}| \bm{E} \]
 
 ** 矩阵的初等变换
 
@@ -41,9 +160,17 @@
 ** 矩阵的等价
 
 ** 分块矩阵及其运算
+- 分块矩阵的线性运算和乘法与矩阵的相关运算相似.
+- 设 $\bm{A} = \smqty(\bm{A}_{11} & \cdots & \bm{A}_{1r} \\ \vdots & & \vdots \\ \bm{A}_{s1} & \cdots & \bm{A}_{sr})$, 
+  则 $\bm{A}^{\mathrm{T}} = \smqty(\bm{A}_{11}^{\mathrm{T}} & \cdots & \bm{A}_{s1}^{\mathrm{T}} \\ \vdots & & \vdots \\ \bm{A}_{1r}^{\mathrm{T}} & \cdots & \bm{A}_{sr}^{\mathrm{T}})$.
 
+*** 分块对角矩阵
+\[ \bm{A} = \mqty(\dmat{\bm{A}_1,\bm{A}_2,\ddots,\bm{A}_s}) \]
+其中 $\bm{A}_i \quad (i=1,2,\dots,s)$ 
+- $|\bm{A}| = |\bm{A}_1| |\bm{A}_2| \cdots |\bm{A}_s|$.
+- 若 $|\bm{A}| \neq 0 \quad (i=1,2,\dots,s)$, 则 $|\bm{A}| \neq 0$, 并有
+  \[ \bm{A}^{-1} = \mqty(\dmat{\bm{A}_1^{-1},\bm{A}_2^{-1},\ddots,\bm{A}_s^{-1}}) \]
 * 向量
-
 ** 向量的概念
 
 ** 向量的线性组合和线性表示
@@ -63,8 +190,23 @@
 ** 线性无关向量组的正交规范化方法
 
 * 线性方程组
-
 ** 线性方程组的克拉默(Cramer)法则
+含有 $n$ 个未知数 $x_1, x_2, \cdots, x_n$ 的 $n$ 个线性方程的方程组
+\begin{equation}
+\label{eq:1}
+\begin{cases}
+a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = b_1 ,\\
+a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n = b_2 ,\\
+\cdots \\
+a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n = b_n .
+\end{cases}
+\end{equation}
+它的解可以用 $n$ 阶行列式表示, 即有
+- 克拉默法则 :: 如果线性方程组 \eqref{eq:1} 的系数矩阵 $\bm{A}$ 的行列式不等于零, 即
+  \[ |\bm{A}| = \mdet{a_{11} & \cdots & a_{1n} \\ \vdots & & \vdots \\ a_{n1} & \cdots & a_{nn}} \neq 0 \]
+  那么, 该方程组有惟一解
+  \[ x_j = \frac{|\bm{A}_j|}{|\bm{A}|} \qc j=1,2,\dots,n \]
+  其中 $\bm{A}_j$ 是把系数矩阵 $\bm{A}$ 中第 $j$ 列的元素用方程组右端的常数项代替后所得到的 $n$ 阶矩阵.
 
 ** 齐次线性方程组有非零解的充分必要条件
 
@@ -77,7 +219,6 @@
 ** 非齐次线性方程组的通解
 
 * 矩阵的特征值和特征向量
-
 ** 矩阵的特征值和特征向量的概念、性质
 
 ** 相似矩阵的概念及性质

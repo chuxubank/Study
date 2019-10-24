@@ -1,9 +1,25 @@
 #+LATEX_COMPILER: xelatex
-#+LATEX_HEADER: \usepackage{ctex, mathtools, amsthm, booktabs, physics}
+#+LATEX_HEADER: \usepackage{ctex, mathtools, amsthm, booktabs, physics, hyperref, geometry}
+#+LATEX_HEADER: \hypersetup{colorlinks=true}
+#+LATEX_HEADER: \geometry{left=2.5cm, right=2.5cm, top=2cm, bottom=2cm}
+#+OPTIONS: toc:nil
+
+* 信息的表示和处理
+** 信息存储
+*** 寻址和字节顺序
+- 小端法(little endian) :: 最低有效字节在最前面
+  - Intel
+  - ARM
+    - iOS
+    - Android
+
+- 大端法(big endian) :: 最高有效字节在最前面
+  - IBM
+  - Oracle
 
 * 处理器体系结构
-
 ** CPU 中的时序电路
+
 
 ** 单周期处理器的设计
 
@@ -14,7 +30,6 @@
 ** 流水线设计中的其他问题
 
 * 优化程序性能
-
 ** 优化程序性能
 
 ** 优化编译器的能力和局限性以及表示程序性能
@@ -26,7 +41,6 @@
 ** 确认和消除性能瓶颈
 
 * 存储器结构及虚拟存储器
-
 ** 局部性
 
 ** 存储器层级结构
@@ -48,7 +62,6 @@
 ** 动态存储器分配和垃圾收集
 
 * 链接、进程及并发编程
-
 ** 静态链接
 
 ** 目标文件
@@ -76,7 +89,6 @@
 ** 其他并行问题
 
 * 系统级 I/O 和网络编程
-
 ** I/O 相关概念
 
 ** 文件及文件操作

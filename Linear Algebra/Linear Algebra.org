@@ -70,13 +70,12 @@ D & i=j. \\
 
 * 矩阵
 ** 矩阵的概念
+线性变换和矩阵之间存在着一一对应的关系.
 - 对角(Diagonal)矩阵 :: $\bm{\varLambda} = \diag(\lambda_1,\lambda_2,\dots,\lambda_n)$
 - 单位矩阵 :: $\bm{E} = \diag(1,1,\dots,1)$
-- 三角矩阵 :: 以主对角线为分界的 $n$ 阶矩阵
 
 ** 矩阵的线性运算
-数乘可交换
-\[ \lambda \bm{A} = \bm{A} \lambda \]
+满足交换、结合、分配律.
 
 ** 矩阵的乘法
 \begin{definition}
@@ -84,12 +83,17 @@ D & i=j. \\
 那么规定矩阵 $\bm{A}$ 与矩阵 $\bm{B}$ 的乘积是一个 $m \times n$ 的矩阵 $\bm{C}=(c_{ij})$,
 其中 \[ c_{ij} = \sum_{k=1}^s a_{ik}j_{kj} \quad (i=1,2,\dots,m; j=1,2,\dots,n) \]
 \end{definition}
-- 可交换的方阵 :: $\bm{AB} = \bm{BA}$
+满足结合律和分配律, 不满足交换律.
+- 可交换 :: $\bm{AB} = \bm{BA}$
   \[ \bm{EA} = \bm{AE} = \bm{A} \]
 - 纯量阵 :: $\lambda \bm{E} = \diag(\lambda,\lambda,\dots,\lambda)$
 
 ** 方阵的幂
 \[ \bm{A}^k \bm{A}^l = \bm{A}^{k+l} \qc (\bm{A}^k)^l = \bm{A}^{kl} \]
+
+** 矩阵的转置
+\[ (\bm{AB})^{\mathrm{T}} = \bm{B}^{\mathrm{T}} \bm{A}^{\mathrm{T}} \]
+- 对称矩阵 :: $\bm{A}^{\mathrm{T}} = \bm{A}$
 
 ** 方阵乘积的行列式
 \[ |\bm{AB}| = |\bm{A}||\bm{B}| \]
@@ -102,36 +106,26 @@ D \xlongequal[c_4+b_{12}c_1+b_{22}c_2]{c_3+b_{11}c_1+b_{21}c_2} \mdet{\bm{A} & \
 \]
 #+end_proof
 
-** 矩阵的转置
-\[ (\bm{AB})^{\mathrm{T}} = \bm{B}^{\mathrm{T}} \bm{A}^{\mathrm{T}} \]
-- 对称矩阵 :: $\bm{A}^{\mathrm{T}} = \bm{A}$
+** 伴随矩阵
+\[ \bm{A}^{*} = (A_{ij})^{\mathrm{T}} \]
+\[ \bm{A} \bm{A}^{*} = \bm{A}^{*} \bm{A} = |\bm{A}| \bm{E} \]
 
 ** 逆矩阵的概念和性质
 \begin{definition}
-对于 $n$ 阶矩阵 $\bm{A}$ 如果有一个 $n$ 阶矩阵 $\bm{B}$, 使
+对于 $n$ 阶 \uline{方阵} $\bm{A}$, 如果有一个 $n$ 阶 \uline{方阵} $\bm{B}$, 使
 \[ \bm{AB} = \bm{BA} = \bm{E} \]
 则说矩阵 $\bm{A}$ 是可逆的, 并把矩阵 $\bm{B}$ 称为 $\bm{A}$ 的逆矩阵, 简称逆阵.
 \end{definition}
 
 如果矩阵 $\bm{A}$ 是可逆的, 则$\bm{A}$ 的逆矩阵是 _惟一_ 的.
 
-\begin{theorem}
-若矩阵 $\bm{A}$ 可逆, 则 $|\bm{A}| \neq 0$
-\end{theorem}
-
-\begin{theorem}
-若 $|\bm{A}| \neq 0$, 则矩阵 $\bm{A}$ 可逆, 且
-\[ \bm{A}^{-1} = \frac{1}{|\bm{A}|} \bm{A}^{*} \]
-\end{theorem}
 当 $|\bm{A}| = 0$ 时, $\bm{A}$ 称为 _奇异矩阵_, 否则称为 _非奇异矩阵_.
 
-\begin{deduction}
-若 $\bm{AB}=\bm{E}$ (或 $\bm{BA}=\bm{E}$), 则 $\bm{B} = \bm{A}^{-1}$
-\end{deduction}
-
 *** 逆矩阵的性质
-- 若 $\bm{A}$ 、 $\bm{B}$ 为同阶矩阵, 则 $\bm{AB}$ 亦可逆, 且 \[ (\bm{AB})^{-1} = \bm{B}^{-1} \bm{A}^{-1} \]
-- 若 $\bm{A}$ 可逆, 则 $\bm{A}^{\mathrm{T}}$ 亦可逆, 且 \[ (\bm{A}^{\mathrm{T}})^{-1} = (\bm{A}^{-1})^{\mathrm{T}} \]
+1. $(\bm{A}^{-1})^{-1}=\bm{A}$.
+2. $(\lambda \bm{A})^{-1}=\frac{1}{\lambda}\bm{A}^{-1} \quad (\lambda \neq 0)$.
+3. $(\bm{AB})^{-1} = \bm{B}^{-1} \bm{A}^{-1}$ ($\bm{A}, \bm{B}$ 为同阶数的可逆矩阵).
+4. $(\bm{A}^{\mathrm{T}})^{-1} = (\bm{A}^{-1})^{\mathrm{T}}$.
 
 *** 逆矩阵的初步应用
 设 $\varphi(x) = a_0 + a_1 x + \cdots + a_m x^m$ 为 $x$ 的 $m$ 次多项式, $\bm{A}$ 为 $n$ 阶矩阵, 记
@@ -145,12 +139,18 @@ $\varphi(\bm{A})$ 称为矩阵 $\bm{A}$ 的 $m$ 次多项式.
    \[ \varphi(\bm{\varLambda}) = \mqty(\dmat{\varphi(\lambda_1),\varphi(\lambda_2),\ddots,\varphi(\lambda_n)}) \]
 
 ** 矩阵可逆的充分必要条件
-- $\bm{A}$ 是可逆矩阵的充分必要条件是 $|\bm{A}| \neq 0$, 即可逆矩阵就是非奇异矩阵.
+$\bm{A}$ 是可逆矩阵的充分必要条件是 $|\bm{A}| \neq 0$, 即可逆矩阵就是非奇异矩阵.
 
-** 伴随矩阵
-\[ \bm{A}^{*} = (A_{ij})^{\mathrm{T}} \]
-\[ \bm{A} \bm{A}^{*} = \bm{A}^{*} \bm{A} = |\bm{A}| \bm{E} \]
+** 分块矩阵及其运算
+- 分块矩阵的线性运算和乘法与矩阵的相关运算相似.
+- 设 $\bm{A} = \smqty(\bm{A}_{11} & \cdots & \bm{A}_{1r} \\ \vdots & & \vdots \\ \bm{A}_{s1} & \cdots & \bm{A}_{sr})$, 则 $\bm{A}^{\mathrm{T}} = \smqty(\bm{A}_{11}^{\mathrm{T}} & \cdots & \bm{A}_{s1}^{\mathrm{T}} \\ \vdots & & \vdots \\ \bm{A}_{1r}^{\mathrm{T}} & \cdots & \bm{A}_{sr}^{\mathrm{T}})$.
 
+*** 分块对角矩阵
+\[ \bm{A} = \mqty(\dmat{\bm{A}_1,\bm{A}_2,\ddots,\bm{A}_s}) \]
+其中 $\bm{A}_i \quad (i=1,2,\dots,s)$ 都是方阵.
+- $|\bm{A}| = |\bm{A}_1| |\bm{A}_2| \cdots |\bm{A}_s|$.
+- 若 $|\bm{A}| \neq 0 \quad (i=1,2,\dots,s)$, 则 $|\bm{A}| \neq 0$, 并有
+  \[ \bm{A}^{-1} = \mqty(\dmat{\bm{A}_1^{-1},\bm{A}_2^{-1},\ddots,\bm{A}_s^{-1}}) \]
 ** 矩阵的初等变换
 \begin{definition}[矩阵的初等变换]
 初等行变换: \\
@@ -160,27 +160,48 @@ $\varphi(\bm{A})$ 称为矩阵 $\bm{A}$ 的 $m$ 次多项式.
 将记号 $r$ 换成 $c$ 即为矩阵的初等列变换, 其与初等行变换统称为初等变换.
 \end{definition}
 
+*** 阶梯形、最简形、标准形
 \begin{definition}[行阶梯形矩阵]
 1. 非零行在零行的上面;
 2. 非零行的首非零元所在列在上一行的首非零元的右面.
 \end{definition}
 
-\begin{definition}[行最简矩阵]
+\begin{definition}[行最简形矩阵]
 1. 非零行的首非零元为1;
 2. 首非零元所在的列的其他元均为0,
 的行阶梯矩阵
 \end{definition}
 
 用归纳法可证: 对于任何非零矩阵 $\bm{A}_{m \times n}$, 总可经有限次初等行变换把它变为行阶梯形矩阵和行最简形矩阵.
-
-- 一个矩阵的行最简形矩阵是惟一确定的.
 - 行阶梯形矩阵中非零行的行数是惟一确定的.
+- 一个矩阵的行最简形矩阵是惟一确定的.
 
 \begin{definition}[标准形]
 \[ \bm{F} = \mqty(\bm{E}_r & \bm{O} \\ \bm{O} & \bm{O})_{m \times n} \]
 \end{definition}
 
-** 初等矩阵
+*** 矩阵的等价
+- 如果矩阵 $\bm{A}$ 经过有限次初等行变换变成矩阵 $\bm{B}$, 就称矩阵 $\bm{A}$ 与 $\bm{B}$ 行等价, 记作 $\bm{A} \stackrel{r}{\sim} \bm{B}$.
+- 如果矩阵 $\bm{A}$ 经过有限次初等列变换变成矩阵 $\bm{B}$, 就称矩阵 $\bm{A}$ 与 $\bm{B}$ 列等价, 记作 $\bm{A} \stackrel{c}{\sim} \bm{B}$.
+- 如果矩阵 $\bm{A}$ 经过有限次初等变换变成矩阵 $\bm{B}$, 就称矩阵 $\bm{A}$ 与 $\bm{B}$ 等价, 记作 $\bm{A} \sim \bm{B}$.
+
+矩阵等价的性质:
+1. 反身性
+2. 对称性
+3. 传递性
+
+\begin{theorem}
+设 $\bm{A}$ 与 $\bm{B}$ 为 $m \times n$ 矩阵, 那么 \\
+1. $\bm{A} \stackrel{r}{\sim} \bm{B} \iff$ 存在可逆矩阵 $\bm{P}_m$, 使 $\bm{PA}=\bm{B}$; \\
+2. $\bm{A} \stackrel{c}{\sim} \bm{B} \iff$ 存在可逆矩阵 $\bm{Q}_n$, 使 $\bm{AQ}=\bm{B}$; \\
+3. $\bm{A} \sim \bm{B} \iff$ 存在可逆矩阵 $\bm{P}_m,\bm{Q}_n$, 使 $\bm{PAQ}=\bm{B}$.
+\end{theorem}
+
+\begin{deduction}
+方阵 $\bm{A}$ 可逆的充分必要条件是 $\bm{A} \stackrel{r}{\sim} \bm{E}$.
+\end{deduction}
+
+**** 初等矩阵
 \begin{definition}
 由单位矩阵 $\bm{E}$ 经过一次初等变换得到的矩阵称为初等矩阵.
 \end{definition}
@@ -189,6 +210,17 @@ $\varphi(\bm{A})$ 称为矩阵 $\bm{A}$ 的 $m$ 次多项式.
 1. 设 $\bm{A}_{m \times n}$, 对 $\bm{A}$ 施行一次初等行变换, 相当于 $\bm{A}$ 左乘一个相应的 $m$ 阶初等矩阵.
    对 $\bm{A}$ 施行一次初等列变换, 相当于 $\bm{A}$ 右乘一个相应的 $n$ 阶初等矩阵.
 2. 方阵 $\bm{A}$ 可逆的充分必要条件是存在有限个初等矩阵 $\bm{P}_1, \bm{P}_2, \dots, \bm{P}_l$, 使 $\bm{A}=\bm{P}_1\bm{P}_2 \cdots \bm{P}_l$
+
+*** 求线性变换
+\begin{equation*}
+\bm{PA}=\bm{B} \iff
+\begin{cases}
+\bm{PA}=\bm{B},\\
+\bm{PE}=\bm{P}.
+\end{cases}
+\iff \bm{P}(\bm{A}, \bm{E}) = (\bm{B}, \bm{P})
+\iff (\bm{A},\bm{E}) \stackrel{r}{\sim} (\bm{B},\bm{P})
+\end{equation*}
 
 ** 矩阵的秩
 \begin{definition}
@@ -211,44 +243,17 @@ $\varphi(\bm{A})$ 称为矩阵 $\bm{A}$ 的 $m$ 次多项式.
 1. $0 \leqslant R(\bm{A}_{m \times n}) \leqslant \min \qty{m,n}$.
 2. $R(\bm{A}^{\mathrm{T}}) = R(\bm{A})$.
 3. 若 $\bm{A} \sim \bm{B}$, 则 $R(\bm{A}) = R(\bm{B})$.
-4. 若 $\bm{P}, \bm{Q}$ 可逆, 则 $R(\bm{PAQ})=R(\bm{A})$.
-5. $\max \qty{R(\bm{A}), R(\bm{B})} \leqslant R(\bm{A}, \bm{B}) \leqslant R(\bm{A}) + R(\bm{B})$.
+   1. 若 $\bm{P}, \bm{Q}$ 可逆, 则 $R(\bm{PAQ})=R(\bm{A})$.
+4. $\max \qty{R(\bm{A}), R(\bm{B})} \leqslant R(\bm{A}, \bm{B}) \leqslant R(\bm{A}) + R(\bm{B})$.
    1. 特别地, 当 $\bm{B}=\bm{b}$ 为非零列向量时, 有 $R(\bm{A}) \leqslant R(\bm{A},\bm{b}) \leqslant R(A)+1$.
-6. $R(\bm{A}+\bm{B}) \leqslant R(\bm{A}) + R(\bm{B})$.
-7. $R(\bm{AB}) \leqslant \min \qty{R(\bm{A}), R(\bm{B})}$.
-8. 若 $\bm{A}_{m \times n} \bm{B}_{n \times l} = \bm{O}$, 则 $R(\bm{A})+R(\bm{B}) \leqslant n$.
+5. $R(\bm{A}+\bm{B}) \leqslant R(\bm{A}) + R(\bm{B})$.
+6. $R(\bm{AB}) \leqslant \min \qty{R(\bm{A}), R(\bm{B})}$.
+7. 若 $\bm{A}_{m \times n} \bm{B}_{n \times l} = \bm{O}$, 则 $R(\bm{A})+R(\bm{B}) \leqslant n$.
 
 
 - 列满秩矩阵 :: 矩阵的秩数等于它的列数.
 - 矩阵乘法的消去律 :: 设 $\bm{AB} = \bm{O}$, 若 $\bm{A}$ 为列满秩矩阵, 则 $\bm{B}=\bm{O}$.
 
-** 矩阵的等价
-- 如果矩阵 $\bm{A}$ 经过有限次初等行变换变成矩阵 $\bm{B}$, 就称矩阵 $\bm{A}$ 与 $\bm{B}$ 行等价, 记作 $\bm{A} \stackrel{r}{\sim} \bm{B}$.
-- 如果矩阵 $\bm{A}$ 经过有限次初等列变换变成矩阵 $\bm{B}$, 就称矩阵 $\bm{A}$ 与 $\bm{B}$ 列等价, 记作 $\bm{A} \stackrel{c}{\sim} \bm{B}$.
-- 如果矩阵 $\bm{A}$ 经过有限次初等变换变成矩阵 $\bm{B}$, 就称矩阵 $\bm{A}$ 与 $\bm{B}$ 等价, 记作 $\bm{A} \sim \bm{B}$.
-
-\begin{theorem}
-设 $\bm{A}$ 与 $\bm{B}$ 为 $m \times n$ 矩阵, 那么 \\
-1. $\bm{A} \stackrel{r}{\sim} \bm{B} \iff$ 存在可逆矩阵 $\bm{P}_m$, 使 $\bm{PA}=\bm{B}$; \\
-2. $\bm{A} \stackrel{c}{\sim} \bm{B} \iff$ 存在可逆矩阵 $\bm{Q}_n$, 使 $\bm{AQ}=\bm{B}$; \\
-3. $\bm{A} \sim \bm{B} \iff$ 存在可逆矩阵 $\bm{P}_m,\bm{Q}_n$, 使 $\bm{PAQ}=\bm{B}$.
-\end{theorem}
-
-\begin{deduction}
-方阵 $\bm{A}$ 可逆的充分必要条件是 $\bm{A} \stackrel{r}{\sim} \bm{E}$.
-\end{deduction}
-
-** 分块矩阵及其运算
-- 分块矩阵的线性运算和乘法与矩阵的相关运算相似.
-- 设 $\bm{A} = \smqty(\bm{A}_{11} & \cdots & \bm{A}_{1r} \\ \vdots & & \vdots \\ \bm{A}_{s1} & \cdots & \bm{A}_{sr})$, 
-  则 $\bm{A}^{\mathrm{T}} = \smqty(\bm{A}_{11}^{\mathrm{T}} & \cdots & \bm{A}_{s1}^{\mathrm{T}} \\ \vdots & & \vdots \\ \bm{A}_{1r}^{\mathrm{T}} & \cdots & \bm{A}_{sr}^{\mathrm{T}})$.
-
-*** 分块对角矩阵
-\[ \bm{A} = \mqty(\dmat{\bm{A}_1,\bm{A}_2,\ddots,\bm{A}_s}) \]
-其中 $\bm{A}_i \quad (i=1,2,\dots,s)$ 
-- $|\bm{A}| = |\bm{A}_1| |\bm{A}_2| \cdots |\bm{A}_s|$.
-- 若 $|\bm{A}| \neq 0 \quad (i=1,2,\dots,s)$, 则 $|\bm{A}| \neq 0$, 并有
-  \[ \bm{A}^{-1} = \mqty(\dmat{\bm{A}_1^{-1},\bm{A}_2^{-1},\ddots,\bm{A}_s^{-1}}) \]
 * 向量
 ** 向量的概念
 
@@ -290,9 +295,9 @@ a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n = b_n .
 ** *线性方程组的解
 \begin{theorem}
 $n$ 元线性方程组 $\bm{Ax}=\bm{b}$ \\
-1. 无解 \iff $R(\bm{A}) < R(\bm{A},\bm{b})$; \\
-2. 有惟一解 \iff $R(\bm{A})=R(\bm{A},\bm{b})=n$; \\
-3. 有无限多解 \iff $R(\bm{A})=R(\bm{A},\bm{b})<n$.
+1. 无解 $\iff R(\bm{A}) < R(\bm{A},\bm{b})$; \\
+2. 有惟一解 $\iff R(\bm{A})=R(\bm{A},\bm{b})=n$; \\
+3. 有无限多解 $\iff R(\bm{A})=R(\bm{A},\bm{b})<n$.
 \end{theorem}
 
 ** 齐次线性方程组有非零解的充分必要条件
@@ -303,6 +308,10 @@ $n$ 元齐次线性方程组 $\bm{Ax}=0$ 有非零解的充分必要条件是 $R
 ** 非齐次线性方程组有解的充分必要条件
 \begin{theorem}
 线性方程组 $\bm{Ax}=\bm{b}$ 有解的充分必要条件是 $R(\bm{A})=R(\bm{A},\bm{b})$.
+\end{theorem}
+
+\begin{theorem}
+矩阵方程 $\bm{AX}=\bm{B}$ 有解的充分必要条件是 $R(\bm{A}) = R(\bm{A},\bm{B})$.
 \end{theorem}
 
 ** 线性方程组解的性质和解的结构

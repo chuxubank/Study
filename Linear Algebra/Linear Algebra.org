@@ -1,14 +1,12 @@
-#+LATEX_HEADER: \usepackage{ctex, mathtools, amsthm, booktabs, physics, geometry, hyperref, bm, extarrows}
+#+LATEX_HEADER: \usepackage{ctex, mathtools, amsthm, booktabs, physics, hyperref, bm, extarrows}
+#+LATEX_HEADER: \usepackage[left=2.5cm, right=2.5cm, top=2cm, bottom=2cm]{geometry}
 #+LATEX_HEADER: \hypersetup{colorlinks=true}
-#+LATEX_HEADER: \geometry{left=2.5cm, right=2.5cm, top=2cm, bottom=2cm}
 #+LATEX_HEADER: \renewcommand\arraystretch{1.5}
 #+LATEX_HEADER: \theoremstyle{definition} \newtheorem{definition}{定义}[section]
 #+LATEX_HEADER: \theoremstyle{plain} \newtheorem{theorem}{定理}[section]
 #+LATEX_HEADER: \theoremstyle{plain} \newtheorem{deduction}{推论}[section]
 #+LATEX_HEADER: \theoremstyle{remark} \newtheorem{remark}{注释}[section]
 #+LATEX_HEADER: \DeclareMathOperator{\diag}{diag}
-#+STARTUP: align, latexpreview
-#+OPTIONS: toc:nil
 
 * 行列式
 ** 行列式的概念和基本性质
@@ -148,9 +146,9 @@ $\bm{A}$ 是可逆矩阵的充分必要条件是 $|\bm{A}| \neq 0$, 即可逆矩
 *** 分块对角矩阵
 \[ \bm{A} = \mqty(\dmat{\bm{A}_1,\bm{A}_2,\ddots,\bm{A}_s}) \]
 其中 $\bm{A}_i \quad (i=1,2,\dots,s)$ 都是方阵.
-- $|\bm{A}| = |\bm{A}_1| |\bm{A}_2| \cdots |\bm{A}_s|$.
-- 若 $|\bm{A}| \neq 0 \quad (i=1,2,\dots,s)$, 则 $|\bm{A}| \neq 0$, 并有
-  \[ \bm{A}^{-1} = \mqty(\dmat{\bm{A}_1^{-1},\bm{A}_2^{-1},\ddots,\bm{A}_s^{-1}}) \]
+1. $|\bm{A}| = |\bm{A}_1| |\bm{A}_2| \cdots |\bm{A}_s|$.
+   1. 若 $|\bm{A_i}| \neq 0 \quad (i=1,2,\dots,s)$, 则 $|\bm{A}| \neq 0$, 并有
+      \[ \bm{A}^{-1} = \mqty(\dmat{\bm{A}_1^{-1},\bm{A}_2^{-1},\ddots,\bm{A}_s^{-1}}) \]
 ** 矩阵的初等变换
 \begin{definition}[矩阵的初等变换]
 初等行变换: \\
@@ -239,16 +237,18 @@ $\bm{A}$ 是可逆矩阵的充分必要条件是 $|\bm{A}| \neq 0$, 即可逆矩
 
 可逆矩阵又称 _满秩矩阵_, 不可逆矩阵(奇异矩阵)又称 _降秩矩阵_.
 
-*** 矩阵的秩的性质
+*** *矩阵的秩的性质                                                 :drill:
 1. $0 \leqslant R(\bm{A}_{m \times n}) \leqslant \min \qty{m,n}$.
-2. $R(\bm{A}^{\mathrm{T}}) = R(\bm{A})$.
-3. 若 $\bm{A} \sim \bm{B}$, 则 $R(\bm{A}) = R(\bm{B})$.
+2. $R(\bm{A}^{\mathrm{T}}) = R(\bm{A}) = R(\bm{A}\bm{A}^{\mathrm{T}}) = R(\bm{A}^{\mathrm{T}}A)$.
+3. $R(\bm{A}^n) = R(\bm{A}^{n+1})$.
+4. 若 $\bm{A} \sim \bm{B}$, 则 $R(\bm{A}) = R(\bm{B})$.
    1. 若 $\bm{P}, \bm{Q}$ 可逆, 则 $R(\bm{PAQ})=R(\bm{A})$.
-4. $\max \qty{R(\bm{A}), R(\bm{B})} \leqslant R(\bm{A}, \bm{B}) \leqslant R(\bm{A}) + R(\bm{B})$.
+5. $\max \qty{R(\bm{A}), R(\bm{B})} \leqslant R(\bm{A}, \bm{B}) \leqslant R(\bm{A}) + R(\bm{B})$.
    1. 特别地, 当 $\bm{B}=\bm{b}$ 为非零列向量时, 有 $R(\bm{A}) \leqslant R(\bm{A},\bm{b}) \leqslant R(A)+1$.
-5. $R(\bm{A}+\bm{B}) \leqslant R(\bm{A}) + R(\bm{B})$.
-6. $R(\bm{AB}) \leqslant \min \qty{R(\bm{A}), R(\bm{B})}$.
-7. 若 $\bm{A}_{m \times n} \bm{B}_{n \times l} = \bm{O}$, 则 $R(\bm{A})+R(\bm{B}) \leqslant n$.
+6. $R(\bm{A}+\bm{B}) \leqslant R(\bm{A}) + R(\bm{B})$.
+7. $R(\bm{A})+R(\bm{B})-n \leqslant R(\bm{AB}) \leqslant \min \qty{R(\bm{A}), R(\bm{B})} \quad (\bm{A}_{m \times n}, \bm{B}_{n \times l})$.
+8. 若 $\bm{A}_{m \times n} \bm{B}_{n \times l} = \bm{O}$, 则 $R(\bm{A})+R(\bm{B}) \leqslant n$.
+9. $R(\bm{A}^{*}) = \begin{cases} n & R(\bm{A})=n,\\ 1 & R(\bm{A})=n-1,\\ 0 & R(\bm{A})<n-1. \end{cases}$
 
 
 - 列满秩矩阵 :: 矩阵的秩数等于它的列数.
@@ -256,26 +256,87 @@ $\bm{A}$ 是可逆矩阵的充分必要条件是 $|\bm{A}| \neq 0$, 即可逆矩
 
 * 向量
 ** 向量的概念
+$n$ 维列向量 \[ \bm{a}=\mqty(a_1 \\ a_2 \\ \vdots \\ a_n) \] 与 
+$n$ 维行向量 \[ \bm{a}^{\mathrm{T}}=\qty(a_1, a_2, \dots, a_n) \] 总是看做是两个不同的向量.
+
+- 向量组 :: 若干个同维数的列向量所组成的集合.
 
 ** 向量的线性组合和线性表示
+\begin{definition}[线性组合]
+给定向量组 $A:\bm{a}_1, \bm{a}_2, \dots, \bm{a}_m$ 对于任何一组实数 $k_1, k_2, \dots, k_m$, 表达式
+\[k_1\bm{a}_1+k_2\bm{a}_2+ \cdots +k_m\bm{a}_m\]
+称为向量组 $A$ 的一个线性组合, $k_1, k_2, \dots, k_m$ 称为这个线性组合的系数.
+\end{definition}
 
-** 向量组的线性相关与线性无关
+\begin{definition}[线性表示]
+给定向量组 $A:\bm{a}_1, \bm{a}_2, \dots, \bm{a}_m$ 和向量 $\bm{b}$, 如果存在一组数 $\lambda_1, \lambda_2, \dots, \lambda_m$, 使
+\[\bm{b}=\lambda_1\bm{a}_1+\lambda_2\bm{a}_2+\cdots +\lambda_m\bm{a}_m\]
+则向量 $\bm{b}$ 是向量组 $A$ 的线性组合, 这是称向量 $\bm{b}$ 能由向量组 $A$ 线性表示.
+\end{definition}
 
-** 向量组的极大线性无关组
+\begin{theorem}
+向量组 $B$ 能由向量组 $A$ 线性表示的充分必要条件是 $R(\bm{A})=R(\bm{A},\bm{B})$.
+\end{theorem}
+
+\begin{theorem}
+设向量组 $B$ 能由向量组 $A$ 线性表示, 则 $R(\bm{B}) \leqslant R(\bm{A})$.
+\end{theorem}
 
 ** 等价向量组
+\begin{definition}[向量组等价]
+设有两个向量组 $A:\bm{a}_1, \bm{a}_2, \dots, \bm{a}_m$ 及 $B:\bm{b}_1,\bm{b}_2,\dots,\bm{b}_l$, 若 $B$ 组中的每个向量都能由向量组 $A$ 线性表示,
+则称向量组 $B$ 能由向量组 $A$ 线性表示. 若向量组 $A$ 与向量组 $B$ 能相互线性表示, 则称这两个向量组等价.
+\end{definition}
+
+\begin{deduction}
+向量组 $A$ 与向量组 $B$ 等价的充分必要条件是 \[R(\bm{A})=R(\bm{B})=R(\bm{A},\bm{B})\]
+\end{deduction}
+
+** 向量组的线性相关与线性无关
+\begin{definition}
+给定向量组 $A:\bm{a}_1, \bm{a}_2, \dots, \bm{a}_m$, 如果存在不全为零的数 $k_1, k_2, \dots, k_m$, 使
+\[k_1\bm{a}_1+k_2\bm{a}_2+ \cdots +k_m\bm{a}_m = 0\]
+则称向量组 $A$ 是线性相关的, 否则称它线性无关.
+\end{definition}
+
+\begin{theorem}
+向量组 $A:\bm{a}_1, \bm{a}_2, \dots, \bm{a}_m$ 线性相关的充分必要条件是它所构成的矩阵 
+$\bm{A}=(\bm{a}_1, \bm{a}_2, \dots, \bm{a}_m)$ 的秩小于向量个数 $m$;
+向量组 $A$ 线性无关的充分必要条件是 $R(\bm{A})=m$.
+\end{theorem}
+即齐次方程有无穷多解(非零解) $\iff$ 其有效方程个数少于未知数个数.
+
+*** *线性相关的一些结论
+1. 一个向量组若含有线性相关的部分组, 则该向量组线性相关. 反之, 一个向量组若线性无关, 则它的任何部分组都线性无关.
+2. $m$ 个 $n$ 维向量组成的向量组, 当维数 $n$ 小于向量个数 $m$ 时一定线性相关.
+3. 设列向量组 $A$ 线性无关, 而向量组 $(A,\bm{b})$ 线性相关, 则 $\bm{b}$ 必能由向量组 $A$ 线性表示, 且表达式是惟一的.
 
 ** 向量组的秩
+\begin{definition}
+设有向量组 $A$, 如果在 $A$ 中能选出 $r$ 个向量 $\bm{a}_1,\bm{a}_2, \dots, \bm{a}_r$, 满足 \\
+1. 向量组 $A_0:\bm{a}_1, \bm{a}_2, \dots, \bm{a}_r$ 线性无关; \\
+2. 向量组 $A$ 中任意 $r+1$ 个向量都线性相关, \\
+那么称向量组 $A_0$ 是向量组 $A$ 的一个最大线性无关向量组, 其所含向量个数 $r$ 称为向量组 $A$ 的秩, 记作 $R_A$.
+\end{definition}
+
+*** 向量组的极大线性无关组
+向量组 $A$ 和它自己的最大无关组 $A_0$ 是等价的.
+
+\begin{deduction}[最大无关组的等价定义]
+设列向量组 $A_0$ 是向量组 $A$ 的一个部分组, 且满足 \\
+1. 向量组 $A_0$ 线性无关; \\
+2. 向量组 $A$ 的任一向量都能由向量组 $A_0$ 线性表示, \\
+那么向量组 $A_0$ 便是向量组 $A$ 的一个最大无关组.
+\end{deduction}
 
 ** 向量组的秩与矩阵的秩之间的关系
-
-** 向量的内积
-
-** 线性无关向量组的正交规范化方法
+\begin{theorem}
+矩阵的秩等于它的列向量组的秩, 也等于它的行向量组的秩.
+\end{theorem}
 
 * 线性方程组
 ** 线性方程组的克拉默(Cramer)法则
-含有 $n$ 个未知数 $x_1, x_2, \cdots, x_n$ 的 $n$ 个线性方程的方程组
+含有 $n$ 个未知数 $x_1, x_2, \dots, x_n$ 的 $n$ 个线性方程的方程组
 \begin{equation}
 \label{eq:1}
 \begin{cases}
@@ -315,12 +376,31 @@ $n$ 元齐次线性方程组 $\bm{Ax}=0$ 有非零解的充分必要条件是 $R
 \end{theorem}
 
 ** 线性方程组解的性质和解的结构
+*** 齐次线性方程组的基础解系和通解
+对于向量方程 $\bm{Ax}=\bm{0}$:
+1. 若 $\bm{x}=\bm{\xi}_1,x=\bm{\xi}_2$ 为该方程的解, 则 $\bm{x}=\bm{\xi}_1+\bm{\xi}_2$ 也是该方程的解.
+2. 若 $\bm{x}=\bm{\xi}_1$ 为该方程的解, $k$ 为实数, 则 $x=k\bm{\xi}_1$ 也是该方程的解.
 
-** 齐次线性方程组的基础解系和通解
+齐次线性方程组的解集的最大无关组 $S_0:\bm{\xi}_1,\bm{\xi}_2,\dots,\bm{\xi}_t$ 称为该齐次线性方程组的 _基础解系_. \\
+则该方程的解的 _通解_ 即为 $\bm{x}=k_1\bm{\xi}_1+k_2\bm{\xi}_2+\cdots+k_t\bm{\xi}_t$.
 
-** 非齐次线性方程组的通解
+\begin{theorem}
+设矩阵 $\bm{A}_{m \times n}$ 的秩 $R(\bm{A})=r$, 则 $n$ 元齐次线性方程组 $\bm{Ax}=\bm{0}$ 的解集 $S$ 的秩 $R_s=n-r$.
+\end{theorem}
+
+*** 非齐次线性方程组的通解
+对于向量方程 $\bm{Ax}=\bm{b}$:
+1. 设 $\bm{x}=\bm{\eta}_1,\bm{x}=\bm{\eta}_2$ 都是该方程的解, 则 $x=\bm{\eta}_1-\bm{\eta}_2$ 为对应的齐次线性方程组 $\bm{Ax}=0$ 的解.
+2. 设 $\bm{x}=\bm{\eta}$ 是该方程的解, $\bm{x}=\bm{\xi}$ 是对应的齐次方程的解, 则 $\bm{x}=\bm{\xi}+\bm{\eta}$ 仍是该方程的解.
+
+若求得该方程的 _特解_ 为 $\bm{\eta}^{*}$, 那么其 _通解_ 为 $\bm{x}=k_1\bm{\xi}_1+\cdots+k_{n-r}\bm{\xi}_{n-r}+\bm{\eta}^{*}$.
 
 * 矩阵的特征值和特征向量
+
+** 向量的内积
+
+** 线性无关向量组的正交规范化方法
+
 ** 矩阵的特征值和特征向量的概念、性质
 
 ** 相似矩阵的概念及性质
@@ -330,7 +410,6 @@ $n$ 元齐次线性方程组 $\bm{Ax}=0$ 有非零解的充分必要条件是 $R
 ** 实对称矩阵的特征值、特征向量及其相似对角矩阵
 
 * 二次型
-
 ** 二次型及其矩阵表示
 
 ** 合同变换与合同矩阵

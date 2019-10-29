@@ -2,7 +2,6 @@
 #+LATEX_HEADER: \usepackage{ctex, mathtools, amsthm, booktabs, physics, hyperref, geometry}
 #+LATEX_HEADER: \hypersetup{colorlinks=true}
 #+LATEX_HEADER: \geometry{left=2.5cm, right=2.5cm, top=2cm, bottom=2cm}
-#+OPTIONS: toc:nil
 
 * 信息的表示和处理
 ** 信息存储

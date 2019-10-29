@@ -2,7 +2,6 @@
 #+LATEX_HEADER: \usepackage{ctex, geometry, booktabs}
 #+LATEX_HEADER: \geometry{left=2.5cm, right=2.5cm, top=2cm, bottom=2cm}
 #+STARTUP: entitiespretty
-#+OPTIONS: toc:nil
 
 * 马克思主义基本原理概论
 ** 马克思主义是关于无产阶级和人类解放的科学

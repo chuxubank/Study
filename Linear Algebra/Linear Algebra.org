@@ -1,5 +1,6 @@
-#+LATEX_HEADER: \usepackage{ctex, mathtools, amsthm, booktabs, physics, hyperref, bm, extarrows}
+#+LATEX_HEADER: \usepackage{ctex, mathtools, amsthm, booktabs, physics, bm, extarrows}
 #+LATEX_HEADER: \usepackage[left=2.5cm, right=2.5cm, top=2cm, bottom=2cm]{geometry}
+#+LATEX_HEADER: \usepackage[capitalise, nameinlink]{cleveref}
 #+LATEX_HEADER: \hypersetup{colorlinks=true}
 #+LATEX_HEADER: \renewcommand\arraystretch{1.5}
 #+LATEX_HEADER: \theoremstyle{definition} \newtheorem{definition}{定义}[section]
@@ -8,6 +9,7 @@
 #+LATEX_HEADER: \theoremstyle{remark} \newtheorem{remark}{注释}[section]
 #+LATEX_HEADER: \DeclareMathOperator{\diag}{diag}
 #+LATEX_HEADER: \newcommand{\inner}[2]{[\bm{#1},\bm{#2}]}
+#+LATEX_HEADER: \newcommand{\trans}[1]{\bm{#1}^{\mathrm{T}}}
 
 * 行列式
 ** 行列式的概念和基本性质
@@ -362,7 +364,7 @@ a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n = b_n .
 \end{cases}
 \end{equation}
 它的解可以用 $n$ 阶行列式表示, 即有
-- 克拉默法则 :: 如果线性方程组 \eqref{eq:1} 的系数矩阵 $\bm{A}$ 的行列式不等于零, 即
+- 克拉默法则 :: 如果线性方程组 eqref:eq:1 的系数矩阵 $\bm{A}$ 的行列式不等于零, 即
   \[ |\bm{A}| = \mdet{a_{11} & \cdots & a_{1n} \\ \vdots & & \vdots \\ a_{n1} & \cdots & a_{nn}} \neq 0 \]
   那么, 该方程组有惟一解
   \[ x_j = \frac{|\bm{A}_j|}{|\bm{A}|} \qc j=1,2,\dots,n \]
@@ -513,7 +515,7 @@ $V$ 中任一向量 $\bm{a}$ 应能由 $\bm{e}_1,\dots,\bm{e}_r$ 线性表示, �
 \end{definition}
 
 设 $\bm{y}= \bm{Px}$ 为正交变换, 则有
-\[ \norm{\bm{y}}= \sqrt{\bm{y}^{\mathrm{T}}\bm{y}}= \sqrt{\bm{x}^{\mathrm{T}}\bm{P}^{\mathrm{T}}\bm{Px}}= \sqrt{\bm{x}^{\mathrm{T}}\bm{x}}= \norm{\bm{x}}$ \]
+\[ \norm{\bm{y}}= \sqrt{\bm{y}^{\mathrm{T}}\bm{y}}= \sqrt{\bm{x}^{\mathrm{T}}\bm{P}^{\mathrm{T}}\bm{Px}}= \sqrt{\bm{x}^{\mathrm{T}}\bm{x}}= \norm{\bm{x}} \]
 
 ** 矩阵的特征值和特征向量的概念、性质
 \begin{definition}
@@ -554,7 +556,7 @@ $V$ 中任一向量 $\bm{a}$ 应能由 $\bm{e}_1,\dots,\bm{e}_r$ 线性表示, �
 
 ** 相似矩阵的概念及性质
 \begin{definition}
-设 $\bm{A},\bm{B}$ 都是 $n$ 阶矩阵, 若有可逆矩阵 $\bm{P}$, 使
+设 $\bm{A}$ 和 $\bm{B}$ 都是 $n$ 阶矩阵, 若有可逆矩阵 $\bm{P}$, 使
 \[ \bm{P}^{-1}\bm{AP} = \bm{B} \]
 则称 $\bm{B}$ 是 $\bm{A}$ 的相似矩阵, 或说矩阵 $\bm{A}$ 与 $\bm{B}$ 相似.
 对 $\bm{A}$ 进行运算 $\bm{P}^{-1}\bm{AP}$ 称为对 $\bm{A}$ 进行相似变换,
@@ -586,6 +588,7 @@ $n$ 阶矩阵 $\bm{A}$ 与对角矩阵相似(即 $\bm{A}$ 能对角化) 的充�
   若 $\lambda_1 \neq \lambda_2$, 则 $\bm{p}_1$ 与 $\bm{p}_2$ 正交.
 
 \begin{theorem}
+\label{thr:1}
 设 $\bm{A}$ 为 $n$ 阶对称矩阵, 则必有正交矩阵 $\bm{P}$, 使 $\bm{P}^{-1}\bm{AP} = \bm{P}^{\mathrm{T}}\bm{AP} = \bm{\varLambda}$,
 其中 $\bm{\varLambda}$ 是以 $\bm{A}$ 的 $n$ 个特征值为对角元的对角矩阵.
 \end{theorem}
@@ -607,16 +610,77 @@ $n$ 阶矩阵 $\bm{A}$ 与对角矩阵相似(即 $\bm{A}$ 能对角化) 的充�
 
 * 二次型
 ** 二次型及其矩阵表示
-
-** 合同变换与合同矩阵
-
-** 二次型的秩
-
-** 惯性定理
+\begin{definition}[二次型]
+含有 $n$ 个变量 $x_1,x_2,\dots,x_n$ 的二次齐次函数
+\begin{align*}
+f(x_1,x_2,\dots,x_n) ={} & a_{11}x_1^2+a_{22}x_2^2+\cdots+a_{nn}x_n^2+ \\
+& 2a_{12}x_1x_2+2a_{13}x_1x_3+\cdots+2a_{n-1,n}x_{n-1}x_n \\
+={} & \sum_{i,j=1}^n a_{ij}x_ix_j \quad (a_{ji}=a_{ij}) \\
+={} & \bm{x}^{\mathrm{T}}\bm{Ax}
+\end{align*}
+称为二次型.
+\end{definition}
 
 ** 二次型的标准形和规范形
+- 二次型的标准形(法式) :: \[ f=k_1y_1^2+k_2y_2^2+\cdots+k_ny_n^2 \]
+- 二次型的规范形 :: \[ f=y_1^2+\cdots+y_p^2-y_{p+1}^2-\cdots-y_r^2 \quad (p+r\leqslant n) \]
+
+** 二次型的秩
+二次型与其对称矩阵 $\bm{A}$ 之间存在一一对应的关系.
+对称矩阵 $\bm{A}$ 的秩就叫做 _二次型 $f$ 的秩_.
+
+** 合同变换与合同矩阵
+记对二次型做的可逆变换为 \[\bm{x} = \bm{Cy}\]
+则有 $f=\bm{x}^{\mathrm{T}}\bm{Ax} = (\bm{Cy})^{\mathrm{T}}\bm{ACy} = \bm{y}^{\mathrm{T}}(\bm{C}^{\mathrm{T}}\bm{AC})\bm{y}$.
+
+\begin{definition}[合同]
+设 $\bm{A}$ 和 $\bm{B}$ 是 $n$ 阶矩阵, 若有可逆矩阵 $\bm{C}$, 使
+\[ \bm{B} = \bm{C}^{\mathrm{T}}\bm{AC} \]
+则称矩阵 $\bm{A}$ 与 $\bm{B}$ 合同.
+\end{definition}
+若 $\bm{A}$ 为对称矩阵, 则 $\bm{B} = \bm{C}^{\mathrm{T}}\bm{AC}$ 也为对称矩阵, 且 $R(\bm{B}) = R(\bm{A})$.
+经可逆变换 $\bm{x} = \bm{Cy}$ 后, 二次型 $f$ 的矩阵由 $\bm{A}$ 变为与 $\bm{A}$ 合同的矩阵 $\bm{C}^{\mathrm{T}}\bm{AC}$, 且二次型的秩不变.
 
 ** 用正交变换和配方法化二次型为标准形
+- 合同对角化 :: 对于对称矩阵 $\bm{A}$, 寻求可逆矩阵 $\bm{C}$, 使 $\bm{C}^{\mathrm{T}}\bm{AC}$ 为对角矩阵.
+
+由 cref:thr:1 知, 任给对称矩阵 $\bm{A}$, 总有正交矩阵 $\bm{P}$, 使 $\bm{P}^{-1}\bm{AP} = \bm{\varLambda}$,
+即 $\bm{P}^{\mathrm{T}}\bm{AP} = \bm{\varLambda}$. 由此
+\begin{theorem}
+\label{thr:2}
+任给二次型 $f=\sum\limits_{i,j=1}^n a_{ij}x_ix_j \quad (a_{ji}=a_{ij})$, 总有正交变换 $\bm{x} = \bm{Py}$, 使 $f$ 化为标准形
+\[ f=\lambda_1y_1^2+\lambda_2y_2^2+\cdots+\lambda_ny_n^2 \]
+其中 $\lambda_1,\lambda_2,\dots,\lambda_n$ 是 $f(\bm{Cz})$ 的矩阵 $\bm{A}= (a_{ij})$ 的特征值.
+\end{theorem}
+
+\begin{deduction}
+任给 $n$ 元二次型 $f(\bm{x})= \bm{x}^{\mathrm{T}}\bm{Ax} (\bm{A}^{\mathrm{T}}=\bm{A})$, 总有可逆变换 $\bm{x}=\bm{Cz}$,
+使 $f(\bm{Cz})$ 为规范形.
+\end{deduction}
+
+#+begin_proof
+由 cref:thr:2, 有
+\[ f(\bm{Py})=\bm{y}^{\mathrm{T}}\bm{\varLambda y}=\lambda_1y_1^2+\cdots+\lambda_ny_n^2 \]
+设二次型 $f$ 的秩为 $r$, 则特征值 $\lambda_i$ 中恰有 $r$ 个不为 $0$, 不妨设 $\lambda_1,\dots,\lambda_r \neq 0$,
+$\lambda_{r+1},\dots,\lambda_n = 0$, 令
+\[ \bm{K}=\diag(k_1,k_2,\dots,k_n) \]
+其中
+\begin{equation*}
+k_i=
+\begin{cases}
+\frac{1}{\sqrt{\abs{\lambda_i}}} & i \leqslant r,\\
+1 & i>r.
+\end{cases}
+\end{equation*}
+则 $\bm{K}$ 可逆, 变换 $\bm{y}=\bm{Kz}$ 把 $f(\bm{Py})$ 化为
+\[ f(\bm{PKz})=\trans{z}\trans{K}\trans{P}\bm{APKz}=\trans{z}\trans{K}\bm{\varLambda Kz} \]
+而
+\[ \trans{K}\bm{\varLambda K} = \diag(\frac{\lambda_1}{\abs{\lambda_1}},\dots,\frac{\lambda_r}{\abs{\lambda_r}},0,\dots,0) \]
+记 $\bm{C}=\bm{PK}$, 即知可逆变换 $x=\bm{Cz}$ 把 $f$ 化成规范形
+\[ f(\bm{Cz})=\frac{\lambda_1}{\abs{\lambda_1}}z_1^2+\cdots+\frac{\lambda_r}{\abs{\lambda_r}}z_r^2 \qedhere \]
+#+end_proof
+
+** 惯性定理
 
 ** 二次型及其矩阵的正定性
 

@@ -1,7 +1,5 @@
-#+LATEX_HEADER: \usepackage{ctex, mathtools, amsthm, booktabs, physics, bm, extarrows}
-#+LATEX_HEADER: \usepackage[left=2.5cm, right=2.5cm, top=2cm, bottom=2cm]{geometry}
+#+LATEX_HEADER: \usepackage{mathtools, amsthm, booktabs, physics, bm, extarrows}
 #+LATEX_HEADER: \usepackage[capitalise, nameinlink]{cleveref}
-#+LATEX_HEADER: \hypersetup{colorlinks=true}
 #+LATEX_HEADER: \renewcommand\arraystretch{1.5}
 #+LATEX_HEADER: \theoremstyle{definition} \newtheorem{definition}{定义}[section]
 #+LATEX_HEADER: \theoremstyle{plain} \newtheorem{theorem}{定理}[section]

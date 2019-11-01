@@ -1,8 +1,3 @@
-#+LATEX_COMPILER: xelatex
-#+LATEX_HEADER: \usepackage{ctex, mathtools, amsthm, booktabs, physics, hyperref, geometry}
-#+LATEX_HEADER: \hypersetup{colorlinks=true}
-#+LATEX_HEADER: \geometry{left=2.5cm, right=2.5cm, top=2cm, bottom=2cm}
-
 * 信息的表示和处理
 ** 信息存储
 *** 寻址和字节顺序

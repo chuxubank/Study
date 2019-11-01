@@ -1,10 +1,8 @@
-#+LATEX_HEADER: \usepackage{ctex, mathtools, amsthm, booktabs, physics, geometry, hyperref}
-#+LATEX_HEADER: \hypersetup{colorlinks=true}
-#+LATEX_HEADER: \geometry{left=2.5cm, right=2.5cm, top=2cm, bottom=2cm}
+#+LATEX_HEADER: \usepackage{mathtools, amsthm, booktabs, physics}
 #+LATEX_HEADER: \renewcommand\arraystretch{1.5}
 #+LATEX_HEADER: \theoremstyle{definition} \newtheorem{definition}{定义}[section]
 #+LATEX_HEADER: \theoremstyle{plain} \newtheorem{theorem}{定理}[section]
-#+LATEX_HEADER: \theoremstyle{plain} \newtheorem{deduction}{推论}[section]
+#+LATEX_HEADER: \theoremstyle{plain} \newtheorem*{deduction}{推论}
 #+LATEX_HEADER: \theoremstyle{remark} \newtheorem{remark}{注释}[section]
 #+LATEX_HEADER: \DeclareMathOperator{\lcm}{lcm}
 

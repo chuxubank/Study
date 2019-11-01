@@ -1,18 +1,10 @@
-#+LATEX_HEADER: \usepackage{ctex}
-#+LATEX_HEADER: \usepackage[left=2.5cm, right=2.5cm, top=2cm, bottom=2cm]{geometry}
-#+LATEX_HEADER: \hypersetup{colorlinks=true}
-
 * Composition
-** 2010 年英语(二)写作真题
-:PROPERTIES:
-:CUSTOM_ID: 054
-:END:
+** 2010 年英语(二)大作文真题
 Directions:
 In this section, you are asked to write an essay based on the following table, in which you should
 1) interpret the chart and
 2) give your comments.
-You should write at least 150 English words. \\
-Write your essay neatly on the ANSWER SHEET.
+You should write at least 150 English words.
 
 #+CAPTION: Mobile-phone Subscriptions (billion/year)
 [[./img/054.jpg]]
@@ -55,3 +47,59 @@ Write your essay neatly on the ANSWER SHEET.
 3. If people could imbue themselves with intelligence, prudence and discretion, I am sure that most of them will be able to sidestep the potential drawbacks of mobile phones while taking advantage of all the merits.
 
    假如人们多动脑、谨慎些、具有判断力, 我确信大多数人都能克服手机的弊端, 并且利用其优势.
+
+** 2011 年英语(二)大作文真题
+Directions:
+Write an essay based on the following table. In your writing you should
+1) describe the table, and
+2) give your comments.
+You should write at least 150 words.
+
+#+CAPTION: ﻿某公司员工工作满意度调查
+#+ATTR_LATEX: :float nil
+[[./img/055.jpg]]
+
+*** P1
+1. The table clearly reflects the statistics of staff's job satisfaction in a certain company.
+
+   ﻿这张表格清楚地反映了某公司员工工作满意度的统计数据.
+
+2. According to the data given above, we can conclude that the percentage of people satisfied with their jobs is highest among those over 50 years old, at about 40%.
+
+   ﻿根据给出的数据, 我们可以看出 50 岁以上的人工作满意度最高, 约为 40%.
+
+3. In contrast, the percentage of the staff not satisfied with their jobs is about 64% among those in their forties,the highest among all the three age groups.
+
+   ﻿相反, 41 至 50 岁之间的人在三个群体中不满意度最高, 约为 64%.
+
+*** P2
+1. The major determinant of satisfaction lies in people's attitudes.
+
+   ﻿主要的决定因素是人们的态度.
+
+2. On the one hand, staff members in their forties usually have to undertake a lot of responsibilities from both their families and their career.
+
+   ﻿一方面, 41 至 50 岁之间的员工通常不得不承担来自于家庭和事业的双重责任.
+
+3. Sometimes they are even under pressure to pursue money, power, high social status, and so on, which are all symbols of success.
+
+   ﻿有时他们甚至承受着获取金钱、权力、较高的社会地位等压力, 而这些都象征着成功.
+
+4. So, they have the least satisfaction in their job.
+
+   ﻿因此, 他们对工作的满意度最低.
+
+5. On the other hand, people over 50 generally have shifted their life goals from achieving the ultimate success to a relatively easy and comfortable life, and therefore are inclined to be much more satisfied with their jobs.
+
+   ﻿另一方面, 50 岁以上的人通常已经将人生目标从实现最终的成功转变为一种相对轻松、舒适的生活, 因而更容易对工作感到满意.
+
+*** P3
+1. In view of the above reasoning, I am convinced that it is difficult for everyone to be content with their jobs.
+
+   ﻿鉴于上述论证, 我认为很难做到每个人都对工作满意.
+
+2. And it is advisable that people should adjust their expectations for work, and that companies should pay more attention to the welfare of their staff.
+
+   ﻿建议人们调整对工作的期望, 而企业也应对员工的幸福多加重视.
+
+** 2012 年英语(二)大作文真题

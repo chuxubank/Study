@@ -1,5 +1,17 @@
-* Composition
-** 2010 年英语(二)大作文真题
+#+LATEX_HEADER: \setmainfont{Source Serif Pro}
+#+LATEX_HEADER: \setCJKmainfont{Source Han Serif SC}
+#+LATEX_HEADER: \setlist{nosep}
+
+* Writing
+** Part A
+*** Private letter / e-mail
+*** Business letter / e-mail
+*** Memorandum
+*** Report
+*** Notice / Announcement / Bulletin
+
+** Part B
+*** 2010 年: 手机入网
 Directions:
 In this section, you are asked to write an essay based on the following table, in which you should
 1) interpret the chart and
@@ -7,9 +19,9 @@ In this section, you are asked to write an essay based on the following table, i
 You should write at least 150 English words.
 
 #+CAPTION: Mobile-phone Subscriptions (billion/year)
-[[./img/054.jpg]]
+[[./img/2010.jpg]]
 
-*** P1
+**** P1
 1. From the information given in the above column chart, we can see a striking contrast between developing and developed countries in mobile-phone subscriptions from 2000 to 2008.
 
    根据以上柱状图提供的信息, 我们可以看出, 从 2000 年到 2008 年, 发展中国家和发达国家在手机入网方面存在着惊人的对比.
@@ -18,7 +30,7 @@ You should write at least 150 English words.
 
    在此期间, 发展中国家手机入网数从 4 亿急速增长到 40 亿, 而发达国家的相关数据在 10 亿之下保持平稳.
 
-*** P2
+**** P2
 1. At least two fundamental factors could have contributed to this phenomenon.
 
    至少有两点主要原因造成了这种现象.
@@ -35,7 +47,7 @@ You should write at least 150 English words.
 
    另一方面,发达国家极端先进的文明在私人电信工具等诸多领域意味着更少的发展潜力, 他们对进一步开发此类工具的需求趋于饱和.
 
-*** P3
+**** P3
 1. In conclusion, while mobile phones subscriptions, if used carelessly or without restraint, could prove to be a double-edged sword,
 
    因此, 如果不小心或没有节制, 手机入网就是一把双刃剑.
@@ -48,7 +60,7 @@ You should write at least 150 English words.
 
    假如人们多动脑、谨慎些、具有判断力, 我确信大多数人都能克服手机的弊端, 并且利用其优势.
 
-** 2011 年英语(二)大作文真题
+*** 2012 年: 年龄与工作满意度
 Directions:
 Write an essay based on the following table. In your writing you should
 1) describe the table, and
@@ -57,9 +69,9 @@ You should write at least 150 words.
 
 #+CAPTION: ﻿某公司员工工作满意度调查
 #+ATTR_LATEX: :float nil
-[[./img/055.jpg]]
+[[./img/2012.jpg]]
 
-*** P1
+**** P1
 1. The table clearly reflects the statistics of staff's job satisfaction in a certain company.
 
    ﻿这张表格清楚地反映了某公司员工工作满意度的统计数据.
@@ -72,7 +84,7 @@ You should write at least 150 words.
 
    ﻿相反, 41 至 50 岁之间的人在三个群体中不满意度最高, 约为 64%.
 
-*** P2
+**** P2
 1. The major determinant of satisfaction lies in people's attitudes.
 
    ﻿主要的决定因素是人们的态度.
@@ -93,7 +105,7 @@ You should write at least 150 words.
 
    ﻿另一方面, 50 岁以上的人通常已经将人生目标从实现最终的成功转变为一种相对轻松、舒适的生活, 因而更容易对工作感到满意.
 
-*** P3
+**** P3
 1. In view of the above reasoning, I am convinced that it is difficult for everyone to be content with their jobs.
 
    ﻿鉴于上述论证, 我认为很难做到每个人都对工作满意.
@@ -102,4 +114,95 @@ You should write at least 150 words.
 
    ﻿建议人们调整对工作的期望, 而企业也应对员工的幸福多加重视.
 
-** 2012 年英语(二)大作文真题
+*** 2016 年: 学生旅游目的
+Directions:
+Write an essay based on the following chart. In your writing, you should
+1) interpret the chart, and
+2) give your comments.
+You should write about 150 words on the ANSWER SHEET.
+
+#+CAPTION: ﻿某高校学生旅游目的调查
+#+ATTR_LATEX: :float nil
+[[./img/2016.jpg]]
+
+**** P1
+1. This pie chart clearly illustrates the purposes of touring for students in a certain university.
+
+   ﻿这幅饼状图清楚地揭示了某高校大学生的旅游目的.
+
+2. As is reflected by the diagram 37 percent of college students travel in order to appreciate the scenery. Next comes the aim of relieving pressure, accounting for 33 percent.
+
+   ﻿如图表所示, 37%的大学生为了欣赏风景而旅游, 接下来是为了缓解压力的目的, 占了 33%.
+
+3. By contrast, the percentages of students travelling aiming at other goals, making friends and cultivating independence account for 15%, 9% and 6% respectively.
+
+   ﻿相反, 为了其他、广交朋友、培养独立能力旅游的大学生百分比分别各占 15%、9%和 6%.
+
+**** P2
+1. Several primary factors could contribute to this phenomenon. 
+
+   ﻿一些主要原因可以解释这种现象.
+
+2. In the first place, travel can offer us a wide range of experiences. 
+
+   ﻿一方面, 旅游能够充实我们的人生经历.
+
+3. In travelling, we may join tourists marveling at the incredible power of Niagara Falls, mingle with the happy throngs strolling in the Paris boulevards and experience the bitterness and joy of people on different lands and in different times.
+
+   ﻿在旅行中, 我们可以和游客一起, 赞叹尼亚加拉瀑布那雷霆万钧之势, 和喜洋洋的人群一起穿过巴黎的林荫大道, 还可以体验不同时代、不同国土上人们的酸甜苦辣.
+
+4. In the second place, college students, who have to juggle academic work, romantic relationships and a busy social calendar, are particularly susceptible to pressure. 
+
+   ﻿另一方面, 大学生不得不应对学习、恋爱和繁忙的社交日程, 很容易感受到压力.
+
+5. By touring,they can successfully manage and reduce stress.
+
+   ﻿通过旅游, 他们可以成功地应对并缓解压力.
+
+**** P3
+1. Taking all these factors into consideration, we may predict that with the quickening pace and ever-increasing pressure of campus life, the number of university students touring will keep growing in the forthcoming decade.
+
+   ﻿考虑到所有这些因素, 我们可以预计：随着校园生活节奏的加快和日益增大的压力, 旅游的大学生数量在未来几年将持续增加.
+
+*** 2018 年: 选择餐厅的关注因素
+Directions:
+Write an essay based on the following chart. In your essay, you should
+1) interpret the chart, and
+2) give your comments.
+You should write about 150 words neatly on the ANSWER SHEET.
+
+#+CAPTION: 2017 年某市消费者选择餐厅时的关注因素
+#+ATTR_LATEX: :float nil
+[[./img/2018.jpg]]
+
+**** P1
+1. The pie chart above clearly reveals the factors of consumers’ concern on choosing restaurants in a certain city in 2017.
+
+   ﻿上述饼状图清晰揭示了 2017 年某市消费者选择餐厅时关注的因素.
+
+2. Among all the five categories, the percentages of feature, service and environment are the highest, accounting for 36.3%, 27.4% and 24.3% respectively.
+
+   ﻿在所有五组数据中, 特色、服务、环境的百分比是最高的, 分别占 36.3%, 27.4% 和 24.3%.
+
+3. On the contrary, the statistics of price and other factors take up merely 7.3%and 4.7% respectively, the lowest among the five groups.
+
+   ﻿相反, 价格和其他因素的数据只占 7.3%和 4.7%, 在这五组中是最低的.
+
+**** P2
+1. Several primary causes that contribute to the above-mentioned phenomenon could be summarized as follows.
+
+   ﻿造成上述现象的主要原因可以概括如下.
+
+2. In the first place, with the prosperity of economy in China and the increase of people’s income in recent decades, a large number of people are paying more attention to the features of a restaurant instead of prices.
+
+   ﻿首先, 随着中国经济的繁荣和近几十年来人们收入的增加, 很多人越来越关注餐厅的特色, 而不是价格.
+
+3. In the second place, in a bid to develop interpersonal relationship and enjoy comfortable life, consumers in mounting numbers prefer service and environment to other factors.
+
+   ﻿其次, 为了拓展人际关系, 享受舒适的生活, 越来越多的消费者选择服务与环境而非其他.
+
+**** P3
+1. With due consideration of all these contributors, we may predict that with the speedy development of our society, customers in expanding numbers will attach utmost significance to the feature, service as well as environment of a restaurant rather than prices or other factors.
+
+   ﻿考虑到所有这些因素, 我们可以预计, 随着社会的迅速发展, 越来越多的消费者将更加重视餐厅的特色、服务、环境, 而不是价格或其他因素.
+

@@ -1,5 +1,4 @@
-#+LATEX_COMPILER: xelatex
-#+LATEX_HEADER: \usepackage{ctex, mathtools, amsthm, booktabs, physics}
+#+LATEX_HEADER: \usepackage{mathtools, amsthm, booktabs, physics}
 
 * 表(List)、栈(Stack)、队列(Queue)
 ** 表的基本概念和性质
@@ -19,6 +18,8 @@
 ** 栈 ADT 及其顺序、链接实现
 
 ** 栈的应用
+- 卡特兰(Catalan) 数 :: $n$ 个不同元素进栈后, 不同出栈序列的个数. [[https://en.wikipedia.org/wiki/Catalan_number][wikipedia]]
+  \[ C_n = \frac{1}{n+1} \binom{2n}{n} = \frac{(2n)!}{(n+1)!n!} = \prod_{k=2}^n \frac{n+k}{k} \qfor n \geqslant 0 \]
 
 ** 栈与递归
 

@@ -91,12 +91,13 @@ D & i=j. \\
 \[ \bm{A}^k \bm{A}^l = \bm{A}^{k+l} \qc (\bm{A}^k)^l = \bm{A}^{kl} \]
 
 ** 矩阵的转置
-\[ (\bm{AB})^{\mathrm{T}} = \bm{B}^{\mathrm{T}} \bm{A}^{\mathrm{T}} \]
-- 对称矩阵 :: $\bm{A}^{\mathrm{T}} = \bm{A}$
+\[ (\bm{AB})^{\mathrm{T}} = \bm{B}^{\mathrm{T}} \trans{A} \]
+- 对称矩阵 :: $\trans{A} = \bm{A}$
 
 ** 方阵乘积的行列式
 \[ |\bm{AB}| = |\bm{A}||\bm{B}| \]
 #+begin_proof
+仅就 $n=2$ 的情形写出证明, $n\geqslant 3$ 的情形类似可证.
 设 $\bm{A}=(a_{ij}), \bm{B}=(b_{ij})$. 记四阶行列式 $D = \mdet{\bm{A} & \bm{O} \\ -\bm{E} & \bm{B}}$
 \[
 D \xlongequal[c_4+b_{12}c_1+b_{22}c_2]{c_3+b_{11}c_1+b_{21}c_2} \mdet{\bm{A} & \bm{X} \\ -\bm{E} & \bm{O}}
@@ -124,7 +125,7 @@ D \xlongequal[c_4+b_{12}c_1+b_{22}c_2]{c_3+b_{11}c_1+b_{21}c_2} \mdet{\bm{A} & \
 1. $(\bm{A}^{-1})^{-1}=\bm{A}$.
 2. $(\lambda \bm{A})^{-1}=\frac{1}{\lambda}\bm{A}^{-1} \quad (\lambda \neq 0)$.
 3. $(\bm{AB})^{-1} = \bm{B}^{-1} \bm{A}^{-1}$ ($\bm{A}, \bm{B}$ 为同阶数的可逆矩阵).
-4. $(\bm{A}^{\mathrm{T}})^{-1} = (\bm{A}^{-1})^{\mathrm{T}}$.
+4. $(\trans{A})^{-1} = (\bm{A}^{-1})^{\mathrm{T}}$.
 
 *** 逆矩阵的初步应用
 设 $\varphi(x) = a_0 + a_1 x + \cdots + a_m x^m$ 为 $x$ 的 $m$ 次多项式, $\bm{A}$ 为 $n$ 阶矩阵, 记
@@ -144,7 +145,7 @@ $\bm{A}$ 是可逆矩阵的充分必要条件是 $|\bm{A}| \neq 0$, 即可逆矩
 
 ** 分块矩阵及其运算
 - 分块矩阵的线性运算和乘法与矩阵的相关运算相似.
-- 设 $\bm{A} = \smqty(\bm{A}_{11} & \cdots & \bm{A}_{1r} \\ \vdots & & \vdots \\ \bm{A}_{s1} & \cdots & \bm{A}_{sr})$, 则 $\bm{A}^{\mathrm{T}} = \smqty(\bm{A}_{11}^{\mathrm{T}} & \cdots & \bm{A}_{s1}^{\mathrm{T}} \\ \vdots & & \vdots \\ \bm{A}_{1r}^{\mathrm{T}} & \cdots & \bm{A}_{sr}^{\mathrm{T}})$.
+- 设 $\bm{A} = \smqty(\bm{A}_{11} & \cdots & \bm{A}_{1r} \\ \vdots & & \vdots \\ \bm{A}_{s1} & \cdots & \bm{A}_{sr})$, 则 $\trans{A} = \smqty(\bm{A}_{11}^{\mathrm{T}} & \cdots & \bm{A}_{s1}^{\mathrm{T}} \\ \vdots & & \vdots \\ \bm{A}_{1r}^{\mathrm{T}} & \cdots & \bm{A}_{sr}^{\mathrm{T}})$.
 
 *** 分块对角矩阵
 \[ \bm{A} = \mqty(\dmat{\bm{A}_1,\bm{A}_2,\ddots,\bm{A}_s}) \]
@@ -242,8 +243,11 @@ $\bm{A}$ 是可逆矩阵的充分必要条件是 $|\bm{A}| \neq 0$, 即可逆矩
 可逆矩阵又称 _满秩矩阵_, 不可逆矩阵(奇异矩阵)又称 _降秩矩阵_.
 
 *** *矩阵的秩的性质                                                 :drill:
+:PROPERTIES:
+:ID:       5723E5CF-AF31-4350-86B3-ECCA9D100A17
+:END:
 1. $0 \leqslant R(\bm{A}_{m \times n}) \leqslant \min \qty{m,n}$.
-2. $R(\bm{A}^{\mathrm{T}}) = R(\bm{A}) = R(\bm{A}\bm{A}^{\mathrm{T}}) = R(\bm{A}^{\mathrm{T}}\bm{A})$.
+2. $R(\trans{A}) = R(\bm{A}) = R(\bm{A}\trans{A}) = R(\trans{A}\bm{A})$.
 3. $R(\bm{A}^n) = R(\bm{A}^{n+1})$.
 4. 若 $\bm{A} \sim \bm{B}$, 则 $R(\bm{A}) = R(\bm{B})$.
    1. 若 $\bm{P}, \bm{Q}$ 可逆, 则 $R(\bm{PAQ})=R(\bm{A})$.
@@ -255,10 +259,10 @@ $\bm{A}$ 是可逆矩阵的充分必要条件是 $|\bm{A}| \neq 0$, 即可逆矩
 9. $R(\bm{A}^{*}) = \begin{cases} n & R(\bm{A})=n,\\ 1 & R(\bm{A})=n-1,\\ 0 & R(\bm{A})<n-1. \end{cases}$
 
 #+begin_proof
-(2.)即证明齐次方程 $\bm{Ax}= 0$ 与 $(\bm{A}^{\mathrm{T}}\bm{A})\bm{x}= 0$ 同解:
-1. 若 $\bm{x}$ 满足 $\bm{Ax}= \bm{0}$, 则有 $\bm{A}^{\mathrm{T}}(\bm{Ax})= \bm{0}$,
-   即 $(\bm{A}^{\mathrm{T}})\bm{Ax}= \bm{0}$;
-2. 若 $\bm{x}$ 满足 $\bm{A}^{\mathrm{T}}(\bm{Ax})= \bm{0}$, 则 $\bm{x}^{\bm{T}}\bm{A}^{\mathrm{T}}(\bm{Ax})= 0$,
+(2. P102 例 15)即证明齐次方程 $\bm{Ax}= 0$ 与 $(\trans{A}\bm{A})\bm{x}= 0$ 同解:
+1. 若 $\bm{x}$ 满足 $\bm{Ax}= \bm{0}$, 则有 $\trans{A}(\bm{Ax})= \bm{0}$,
+   即 $(\trans{A}\bm{A})\bm{x}= \bm{0}$;
+2. 若 $\bm{x}$ 满足 $(\trans{A}\bm{A})\bm{x}= \bm{0}$, 则 $\trans{x}(\trans{A}\bm{A})\bm{x}= 0$,
    即 $(\bm{Ax})^{\mathrm{T}}(\bm{Ax})= 0$, 从而 $\bm{Ax}= \bm{0}$.
 #+end_proof
 
@@ -347,7 +351,9 @@ $\bm{A}=(\bm{a}_1, \bm{a}_2, \dots, \bm{a}_m)$ 的秩小于向量个数 $m$; \\
 
 - 齐次方程组同解 ::  如果矩阵 $\bm{A}_{m \times n}, \bm{B}_{l \times n}$ 的行向量组等价
   (此时 $\bm{Ax}= \bm{0}$ 与 $\bm{Bx}= \bm{0}$ 可互推), 则方程 $\bm{Ax}= \bm{0}$ 与 $\bm{Bx}= \bm{0}$ 同解.
-  从而两个方程的列向量组之间的线性关系相同.
+  从而两个方程的列向量组各向量之间的线性关系相同.
+  
+若方程组 $\bm{A}$ 与方程组 $\bm{B}$ 能相互线性表示, 就称这两个方程组可互推, 可互推的线性方程组一定同解.
 
 * 线性方程组
 ** 线性方程组的克拉默(Cramer)法则
@@ -422,7 +428,7 @@ $\inner{x}{y}$ 称为向量 $\bm{x}$ 与 $\bm{y}$ 的 \uline{内积}.
 \end{definition}
 
 当 $x$ 与 $y$ 都是列向量时, 有
-\[\inner{x}{y}=\bm{x}^{\mathrm{T}}\bm{y}\]
+\[\inner{x}{y}=\trans{x}\bm{y}\]
 
 内积满足交换律, 结合律, 分配律.
 
@@ -488,7 +494,7 @@ $V$ 中任一向量 $\bm{a}$ 应能由 $\bm{e}_1,\dots,\bm{e}_r$ 线性表示, �
 ** 正交矩阵和正交变换
 \begin{definition}[正交矩阵]
 如果 $n$ 阶矩阵 $\bm{A}$ 满足
-\[\bm{A}^{\mathrm{T}}\bm{A}=\bm{E}(\text{即}\bm{A}^{-1}=\bm{A}^{\mathrm{T}})\]
+\[\trans{A}\bm{A}=\bm{E}(\text{即}\bm{A}^{-1}=\trans{A})\]
 那么称 $\bm{A}$ 为正交矩阵, 简称正交阵.
 \end{definition}
 
@@ -505,7 +511,7 @@ $V$ 中任一向量 $\bm{a}$ 应能由 $\bm{e}_1,\dots,\bm{e}_r$ 线性表示, �
 即方阵 $\bm{A}$ 为正交矩阵 $\iff \bm{A}$ 的列(行)向量都是单位向量, 且两两正交.
 
 *** 正交矩阵的性质
-1. 若 $\bm{A}$ 为正交矩阵, 则 $\bm{A}^{-1}=\bm{A}^{\mathrm{T}}$ 也是正交矩阵, 且 $|\bm{A}|=1 \text{或} (-1)$.
+1. 若 $\bm{A}$ 为正交矩阵, 则 $\bm{A}^{-1}=\trans{A}$ 也是正交矩阵, 且 $|\bm{A}|=1 \text{或} (-1)$.
 2. 若 $\bm{A}, \bm{B}$ 都为正交矩阵, 则 $\bm{AB}$ 也是正交矩阵.
 
 \begin{definition}[正交变换]
@@ -513,7 +519,7 @@ $V$ 中任一向量 $\bm{a}$ 应能由 $\bm{e}_1,\dots,\bm{e}_r$ 线性表示, �
 \end{definition}
 
 设 $\bm{y}= \bm{Px}$ 为正交变换, 则有
-\[ \norm{\bm{y}}= \sqrt{\bm{y}^{\mathrm{T}}\bm{y}}= \sqrt{\bm{x}^{\mathrm{T}}\bm{P}^{\mathrm{T}}\bm{Px}}= \sqrt{\bm{x}^{\mathrm{T}}\bm{x}}= \norm{\bm{x}} \]
+\[ \norm{\bm{y}}= \sqrt{\bm{y}^{\mathrm{T}}\bm{y}}= \sqrt{\trans{x}\bm{P}^{\mathrm{T}}\bm{Px}}= \sqrt{\trans{x}\bm{x}}= \norm{\bm{x}} \]
 
 ** 矩阵的特征值和特征向量的概念、性质
 \begin{definition}
@@ -613,7 +619,7 @@ $n$ 阶矩阵 $\bm{A}$ 与对角矩阵相似(即 $\bm{A}$ 能对角化) 的充�
 f(x_1,x_2,\dots,x_n) ={} & a_{11}x_1^2+a_{22}x_2^2+\cdots+a_{nn}x_n^2+ \\
 & 2a_{12}x_1x_2+2a_{13}x_1x_3+\cdots+2a_{n-1,n}x_{n-1}x_n \\
 ={} & \sum_{i,j=1}^n a_{ij}x_ix_j \quad (a_{ji}=a_{ij}) \\
-={} & \bm{x}^{\mathrm{T}}\bm{Ax}
+={} & \trans{x}\bm{Ax}
 \end{align*}
 称为二次型.
 \end{definition}
@@ -628,7 +634,7 @@ f(x_1,x_2,\dots,x_n) ={} & a_{11}x_1^2+a_{22}x_2^2+\cdots+a_{nn}x_n^2+ \\
 
 ** 合同变换与合同矩阵
 记对二次型做的可逆变换为 \[\bm{x} = \bm{Cy}\]
-则有 $f=\bm{x}^{\mathrm{T}}\bm{Ax} = (\bm{Cy})^{\mathrm{T}}\bm{ACy} = \bm{y}^{\mathrm{T}}(\bm{C}^{\mathrm{T}}\bm{AC})\bm{y}$.
+则有 $f=\trans{x}\bm{Ax} = (\bm{Cy})^{\mathrm{T}}\bm{ACy} = \bm{y}^{\mathrm{T}}(\bm{C}^{\mathrm{T}}\bm{AC})\bm{y}$.
 
 \begin{definition}[合同]
 设 $\bm{A}$ 和 $\bm{B}$ 是 $n$ 阶矩阵, 若有可逆矩阵 $\bm{C}$, 使
@@ -653,7 +659,7 @@ f(x_1,x_2,\dots,x_n) ={} & a_{11}x_1^2+a_{22}x_2^2+\cdots+a_{nn}x_n^2+ \\
 \end{theorem}
 
 \begin{deduction}
-任给 $n$ 元二次型 $f(\bm{x})= \bm{x}^{\mathrm{T}}\bm{Ax} (\bm{A}^{\mathrm{T}}=\bm{A})$, 总有可逆变换 $\bm{x}=\bm{Cz}$,
+任给 $n$ 元二次型 $f(\bm{x})= \trans{x}\bm{Ax} (\trans{A}=\bm{A})$, 总有可逆变换 $\bm{x}=\bm{Cz}$,
 使 $f(\bm{Cz})$ 为规范形.
 \end{deduction}
 

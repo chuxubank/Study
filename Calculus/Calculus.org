@@ -401,8 +401,17 @@ f(x)=\sum_{n=0}^N \frac{f^{(n)}(a)}{n!}(x-a)^n + R_n(x)
 ** 函数单调性的判别
 ** 函数的极值
 *** 函数取得极值的条件                                              :drill:
+SCHEDULED: <2019-11-08 Fri>
 :PROPERTIES:
 :ID:       876376B1-A998-4BCB-9DAF-BAD1B61734A3
+:DRILL_LAST_INTERVAL: 3.86
+:DRILL_REPEATS_SINCE_FAIL: 2
+:DRILL_TOTAL_REPEATS: 1
+:DRILL_FAILURE_COUNT: 0
+:DRILL_AVERAGE_QUALITY: 3.0
+:DRILL_EASE: 2.36
+:DRILL_LAST_QUALITY: 3
+:DRILL_LAST_REVIEWED: [2019-11-04 Mon 21:11]
 :END:
 
 - 必要条件 :: 设 $f(x)$ 在点 $x_0$ 处取得极值, 且 $f'(x_0)$ 存在, 则 $f'(x_0)=0$.
@@ -422,8 +431,17 @@ f'(x_0) = f''(x_0) = \cdots = f^{(n-1)}(x_0) = 0, f^{(n)}(x_0) \neq 0 (n \geqsla
 
 ** 函数图形的凹凸性、拐点及渐近线
 *** 拐点的判别方法                                                  :drill:
+SCHEDULED: <2019-11-08 Fri>
 :PROPERTIES:
 :ID:       605F18CB-C0FA-4A1C-B855-6943C07061A8
+:DRILL_LAST_INTERVAL: 3.86
+:DRILL_REPEATS_SINCE_FAIL: 2
+:DRILL_TOTAL_REPEATS: 1
+:DRILL_FAILURE_COUNT: 0
+:DRILL_AVERAGE_QUALITY: 3.0
+:DRILL_EASE: 2.36
+:DRILL_LAST_QUALITY: 3
+:DRILL_LAST_REVIEWED: [2019-11-04 Mon 21:18]
 :END:
 
 - 必要条件 :: 设 $(x_0, f(x_0))$ 是曲线 $y=f(x)$ 的拐点, 且 $f''(x)$ 存在, 则 $f''(x_0)=0$.
@@ -431,7 +449,7 @@ f'(x_0) = f''(x_0) = \cdots = f^{(n-1)}(x_0) = 0, f^{(n)}(x_0) \neq 0 (n \geqsla
 - 第一充分条件 :: 设 $f(x)$ 在点 $x_0$ 处连续, 在 $\mathring{U}(x_0)$ 内二阶可导.
 若在点 $x_0$ 的左右邻域内 $f''(x)$ 反号, 则 $(x_0, f(x_0))$ 是曲线 $y=f(x)$ 的拐点.
 
-- 第二充分条件 :: 设 $f(x)$ 在点 $x_0$ 处 $n$ 阶可导, $n \geq 2$, $n$ 为奇数, 且
+- 第二充分条件 :: 设 $f(x)$ 在点 $x_0$ 处 $n$ 阶可导, $n \geqslant 2$, $n$ 为奇数, 且
 \[
 f''(x_0) = \cdots = f^{(n-1)}(x_0) = 0, f^{(n)}(x_0) \neq 0
 \]
@@ -457,7 +475,7 @@ f''(x_0) = \cdots = f^{(n-1)}(x_0) = 0, f^{(n)}(x_0) \neq 0
 \dd{s} = \sqrt{1+y'^2} \dd{x}
 \]
 
-** 曲率的概念
+** 曲率的概念                                                        :drill:
 \[
 K = \lim_{\Delta s \to 0} \abs{\frac{\Delta \alpha}{\Delta s}} = \abs{\dv{\alpha}{s}} 
 = \frac{\frac{\Delta s}{a}}{\Delta s} = \frac{1}{a}

@@ -6,8 +6,10 @@
 #+LATEX_HEADER: \theoremstyle{plain} \newtheorem*{deduction}{推论}
 #+LATEX_HEADER: \theoremstyle{remark} \newtheorem{remark}{注释}[section]
 #+LATEX_HEADER: \DeclareMathOperator{\diag}{diag}
+#+LATEX_HEADER: \DeclareMathOperator{\tr}{tr}
 #+LATEX_HEADER: \newcommand{\inner}[2]{[\bm{#1},\bm{#2}]}
 #+LATEX_HEADER: \newcommand{\trans}[1]{\bm{#1}^{\mathrm{T}}}
+#+LATEX_HEADER: \newcommand{\vg}[1]{\mathrm{(\uppercase\expandafter{\romannumeral#1})}}
 
 * 行列式
 ** 行列式的概念和基本性质
@@ -17,13 +19,13 @@
 \[ t = \sum_{i=1}^n t_i \]
 
 *** 对换
-\begin{theorem}
+#+begin_theorem
 一个排列中的任意两个元素对换, 排列改变奇偶性.
-\end{theorem}
+#+end_theorem
 
-\begin{deduction}
+#+begin_deduction
 奇排列对换成标准排列的对换次数为奇数, 偶排列对换成标准排列的对换次数为偶数.
-\end{deduction}
+#+end_deduction
 
 *** $n$ 阶行列式(Determinant)
 \[ 
@@ -77,11 +79,11 @@ D & i=j. \\
 满足交换、结合、分配律.
 
 ** 矩阵的乘法
-\begin{definition}
+#+begin_definition
 设 $\bm{A}=(a_{ij})$ 是一个 $m \times s$ 矩阵, $\bm{B}=(b_{ij})$ 是一个 $s \times n$ 矩阵,
 那么规定矩阵 $\bm{A}$ 与矩阵 $\bm{B}$ 的乘积是一个 $m \times n$ 的矩阵 $\bm{C}=(c_{ij})$,
 其中 \[ c_{ij} = \sum_{k=1}^s a_{ik}j_{kj} \quad (i=1,2,\dots,m; j=1,2,\dots,n) \]
-\end{definition}
+#+end_definition
 满足结合律和分配律, 不满足交换律.
 - 可交换 :: $\bm{AB} = \bm{BA}$
   \[ \bm{EA} = \bm{AE} = \bm{A} \]
@@ -94,7 +96,19 @@ D & i=j. \\
 \[ (\bm{AB})^{\mathrm{T}} = \bm{B}^{\mathrm{T}} \trans{A} \]
 - 对称矩阵 :: $\trans{A} = \bm{A}$
 
-** 方阵乘积的行列式
+** 方阵乘积的行列式                                                  :drill:
+SCHEDULED: <2019-11-11 Mon>
+:PROPERTIES:
+:ID:       6E4AF1BC-2B94-4835-B931-B3044C25D1D4
+:DRILL_LAST_INTERVAL: 3.86
+:DRILL_REPEATS_SINCE_FAIL: 2
+:DRILL_TOTAL_REPEATS: 1
+:DRILL_FAILURE_COUNT: 0
+:DRILL_AVERAGE_QUALITY: 3.0
+:DRILL_EASE: 2.36
+:DRILL_LAST_QUALITY: 3
+:DRILL_LAST_REVIEWED: [2019-11-07 Thu 14:56]
+:END:
 \[ |\bm{AB}| = |\bm{A}||\bm{B}| \]
 #+begin_proof
 仅就 $n=2$ 的情形写出证明, $n\geqslant 3$ 的情形类似可证.
@@ -111,11 +125,11 @@ D \xlongequal[c_4+b_{12}c_1+b_{22}c_2]{c_3+b_{11}c_1+b_{21}c_2} \mdet{\bm{A} & \
 \[ \bm{A} \bm{A}^{*} = \bm{A}^{*} \bm{A} = |\bm{A}| \bm{E} \]
 
 ** 逆矩阵的概念和性质
-\begin{definition}
-对于 $n$ 阶 \uline{方阵} $\bm{A}$, 如果有一个 $n$ 阶 \uline{方阵} $\bm{B}$, 使
+#+begin_definition
+对于 $n$ 阶 _方阵_ $\bm{A}$, 如果有一个 $n$ 阶 _方阵_ $\bm{B}$, 使
 \[ \bm{AB} = \bm{BA} = \bm{E} \]
 则说矩阵 $\bm{A}$ 是可逆的, 并把矩阵 $\bm{B}$ 称为 $\bm{A}$ 的逆矩阵, 简称逆阵.
-\end{definition}
+#+end_definition
 
 如果矩阵 $\bm{A}$ 是可逆的, 则$\bm{A}$ 的逆矩阵是 _惟一_ 的.
 
@@ -153,34 +167,40 @@ $\bm{A}$ 是可逆矩阵的充分必要条件是 $|\bm{A}| \neq 0$, 即可逆矩
 1. $|\bm{A}| = |\bm{A}_1| |\bm{A}_2| \cdots |\bm{A}_s|$.
    1. 若 $|\bm{A_i}| \neq 0 \quad (i=1,2,\dots,s)$, 则 $|\bm{A}| \neq 0$, 并有
       \[ \bm{A}^{-1} = \mqty(\dmat{\bm{A}_1^{-1},\bm{A}_2^{-1},\ddots,\bm{A}_s^{-1}}) \]
+
+*** TODO 分块矩阵的逆
 ** 矩阵的初等变换
-\begin{definition}[矩阵的初等变换]
+#+attr_latex: :options [矩阵的初等变换]
+#+begin_definition
 初等行变换: \\
 1. $r_i \leftrightarrow r_j$ \\
 2. $r_i \times k$ \\
 3. $r_i+kr_j$ \\
 将记号 $r$ 换成 $c$ 即为矩阵的初等列变换, 其与初等行变换统称为初等变换.
-\end{definition}
+#+end_definition
 
 *** 阶梯形、最简形、标准形
-\begin{definition}[行阶梯形矩阵]
+#+attr_latex: :options [行阶梯形矩阵]
+#+begin_definition
 1. 非零行在零行的上面;
 2. 非零行的首非零元所在列在上一行的首非零元的右面.
-\end{definition}
+#+end_definition
 
-\begin{definition}[行最简形矩阵]
-1. 非零行的首非零元为1;
-2. 首非零元所在的列的其他元均为0,
+#+attr_latex: :options [行最简形矩阵]
+#+begin_definition
+1. 非零行的首非零元为 1;
+2. 首非零元所在的列的其他元均为 0,
 的行阶梯矩阵
-\end{definition}
+#+end_definition
 
 用归纳法可证: 对于任何非零矩阵 $\bm{A}_{m \times n}$, 总可经有限次初等行变换把它变为行阶梯形矩阵和行最简形矩阵.
 - 行阶梯形矩阵中非零行的行数是惟一确定的.
 - 一个矩阵的行最简形矩阵是惟一确定的.
 
-\begin{definition}[标准形]
+#+attr_latex: :options [标准形]
+#+begin_definition
 \[ \bm{F} = \mqty(\bm{E}_r & \bm{O} \\ \bm{O} & \bm{O})_{m \times n} \]
-\end{definition}
+#+end_definition
 
 *** 矩阵的等价
 - 如果矩阵 $\bm{A}$ 经过有限次初等行变换变成矩阵 $\bm{B}$, 就称矩阵 $\bm{A}$ 与 $\bm{B}$ 行等价, 记作 $\bm{A} \stackrel{r}{\sim} \bm{B}$.
@@ -192,22 +212,22 @@ $\bm{A}$ 是可逆矩阵的充分必要条件是 $|\bm{A}| \neq 0$, 即可逆矩
 2. 对称性
 3. 传递性
 
-\begin{theorem}
+#+begin_theorem
 设 $\bm{A}$ 与 $\bm{B}$ 为 $m \times n$ 矩阵, 那么 \\
 1. $\bm{A} \stackrel{r}{\sim} \bm{B} \iff$ 存在可逆矩阵 $\bm{P}_m$, 使 $\bm{PA}=\bm{B}$; \\
 2. $\bm{A} \stackrel{c}{\sim} \bm{B} \iff$ 存在可逆矩阵 $\bm{Q}_n$, 使 $\bm{AQ}=\bm{B}$; \\
 3. $\bm{A} \sim \bm{B} \iff$ 存在可逆矩阵 $\bm{P}_m,\bm{Q}_n$, 使 $\bm{PAQ}=\bm{B}$.
-\end{theorem}
+#+end_theorem
 
-\begin{deduction}
+#+begin_deduction
 方阵 $\bm{A}$ 可逆的充分必要条件是 $\bm{A} \stackrel{r}{\sim} \bm{E}$.
-\end{deduction}
+#+end_deduction
 <<jzkn:1>> [[矩阵可逆的充分必要条件]]
 
 **** 初等矩阵
-\begin{definition}
+#+begin_definition
 由单位矩阵 $\bm{E}$ 经过一次初等变换得到的矩阵称为初等矩阵.
-\end{definition}
+#+end_definition
 
 初等矩阵的两个重要性质:
 1. 设 $\bm{A}_{m \times n}$, 对 $\bm{A}$ 施行一次初等行变换, 相当于 $\bm{A}$ 左乘一个相应的 $m$ 阶初等矩阵.
@@ -226,25 +246,34 @@ $\bm{A}$ 是可逆矩阵的充分必要条件是 $|\bm{A}| \neq 0$, 即可逆矩
 \end{equation*}
 
 ** 矩阵的秩
-\begin{definition}
+#+begin_definition
 在 $m \times n$ 矩阵 $\bm{A}$ 中, 任取 $k$ 行与 $k$ 列 ($k \leqslant m, k \leqslant n$), 位于这些行列交叉处的 $k^2$ 个元素,
-不改变它们在 $\bm{A}$ 中所处的位置次序而得的 $k$ 阶 \uline{行列式}, 称为矩阵 $\bm{A}$ 的 $k$ 阶子式.
-\end{definition}
+不改变它们在 $\bm{A}$ 中所处的位置次序而得的 $k$ 阶 _行列式_, 称为矩阵 $\bm{A}$ 的 $k$ 阶子式.
+#+end_definition
 
-\begin{theorem}
+#+begin_theorem
 设 $\bm{A} \stackrel{r}{\sim} \bm{B}$, 则 $\bm{A}$ 与 $\bm{B}$ 中非零子式的最高阶数相等.
-\end{theorem}
+#+end_theorem
 
-\begin{definition}
+#+begin_definition
 设在矩阵 $\bm{A}$ 中有一个不等于 $0$ 的 $r$ 阶子式 $\bm{D}$, 且所有 $r+1$ 阶子式(如果存在的话)全等于 $0$, 那么 $\bm{D}$ 称为矩阵 $\bm{A}$ 的最高阶非零子式,
 数 $r$ 称为矩阵 $\bm{A}$ 的秩, 记作 $R(\bm{A})$. 并规定零矩阵的秩等于 $0$.
-\end{definition}
+#+end_definition
 
 可逆矩阵又称 _满秩矩阵_, 不可逆矩阵(奇异矩阵)又称 _降秩矩阵_.
 
-*** *矩阵的秩的性质                                                 :drill:
+*** TODO *矩阵的秩的性质                                            :drill:
+SCHEDULED: <2019-11-11 Mon>
 :PROPERTIES:
 :ID:       5723E5CF-AF31-4350-86B3-ECCA9D100A17
+:DRILL_LAST_INTERVAL: 3.86
+:DRILL_REPEATS_SINCE_FAIL: 2
+:DRILL_TOTAL_REPEATS: 1
+:DRILL_FAILURE_COUNT: 0
+:DRILL_AVERAGE_QUALITY: 3.0
+:DRILL_EASE: 2.36
+:DRILL_LAST_QUALITY: 3
+:DRILL_LAST_REVIEWED: [2019-11-07 Thu 17:28]
 :END:
 1. $0 \leqslant R(\bm{A}_{m \times n}) \leqslant \min \qty{m,n}$.
 2. $R(\trans{A}) = R(\bm{A}) = R(\bm{A}\trans{A}) = R(\trans{A}\bm{A})$.
@@ -253,17 +282,36 @@ $\bm{A}$ 是可逆矩阵的充分必要条件是 $|\bm{A}| \neq 0$, 即可逆矩
    1. 若 $\bm{P}, \bm{Q}$ 可逆, 则 $R(\bm{PAQ})=R(\bm{A})$.
 5. $\max \qty{R(\bm{A}), R(\bm{B})} \leqslant R(\bm{A}, \bm{B}) \leqslant R(\bm{A}) + R(\bm{B})$.
    1. 特别地, 当 $\bm{B}=\bm{b}$ 为非零列向量时, 有 $R(\bm{A}) \leqslant R(\bm{A},\bm{b}) \leqslant R(\bm{A})+1$.
-6. $R(\bm{A}+\bm{B}) \leqslant R(\bm{A}) + R(\bm{B})$.
+6. $R(\bm{A}+\bm{B}) \leqslant R(\bm{A},\bm{B}) \leqslant R(\bm{A}) + R(\bm{B})$.
 7. $R(\bm{A})+R(\bm{B})-n \leqslant R(\bm{AB}) \leqslant \min \qty{R(\bm{A}), R(\bm{B})} \quad (\bm{A}_{m \times n}, \bm{B}_{n \times l})$.
 8. 若 $\bm{A}_{m \times n} \bm{B}_{n \times l} = \bm{O}$, 则 $R(\bm{A})+R(\bm{B}) \leqslant n$.
 9. $R(\bm{A}^{*}) = \begin{cases} n & R(\bm{A})=n,\\ 1 & R(\bm{A})=n-1,\\ 0 & R(\bm{A})<n-1. \end{cases}$
 
+#+attr_latex: :options [证明 2. 同济六版 P102 例 15]
 #+begin_proof
-(2. P102 例 15)即证明齐次方程 $\bm{Ax}= 0$ 与 $(\trans{A}\bm{A})\bm{x}= 0$ 同解:
+即证明齐次方程 $\bm{Ax}= 0$ 与 $(\trans{A}\bm{A})\bm{x}= 0$ 同解:
 1. 若 $\bm{x}$ 满足 $\bm{Ax}= \bm{0}$, 则有 $\trans{A}(\bm{Ax})= \bm{0}$,
    即 $(\trans{A}\bm{A})\bm{x}= \bm{0}$;
 2. 若 $\bm{x}$ 满足 $(\trans{A}\bm{A})\bm{x}= \bm{0}$, 则 $\trans{x}(\trans{A}\bm{A})\bm{x}= 0$,
    即 $(\bm{Ax})^{\mathrm{T}}(\bm{Ax})= 0$, 从而 $\bm{Ax}= \bm{0}$.
+#+end_proof
+
+#+attr_latex: :options [证明 6.]
+#+begin_proof
+\[ \underbrace{(\bm{A}+\bm{B})}_{\vg{1}} = \underbrace{(\bm{A},\bm{B})}_{\vg{2}} \mqty(\diag(1,\dots,1) \\ \diag(1,\dots,1)) \]
+即 \vg{1} 可由 \vg{2} 线性表出, 即 $R \vg{1} \leqslant R \vg{2}$ 
+#+end_proof
+
+#+attr_latex: :options [证明 7.]
+#+begin_proof
+\[
+\mqty(\dmat{\bm{AB}, \bm{E}}) \stackrel{c}{\sim}
+\mqty(\bm{AB} & \\ \bm{A} & \bm{E}) \stackrel{r}{\sim}
+\mqty(\bm{0} & \bm{-B} \\ \bm{A} & \bm{E}) \stackrel{r}{\sim}
+\mqty(\bm{0} & \bm{B} \\ \bm{A} & \bm{E}) \stackrel{r}{\sim}
+\mqty(\bm{A} & \bm{E} \\ & \bm{B})
+\]
+即 $R(\bm{AB})+n \geqslant R(\bm{A})+R(\bm{B})$. 
 #+end_proof
 
 - 列满秩矩阵 :: 矩阵的秩数等于它的列数.
@@ -277,48 +325,51 @@ $n$ 维行向量 \[ \bm{a}^{\mathrm{T}}=\qty(a_1, a_2, \dots, a_n) \] 总是看�
 - 向量组 :: 若干个同维数的列向量所组成的集合.
 
 ** 向量的线性组合和线性表示
-\begin{definition}[线性组合]
+#+attr_latex: :options [线性组合]
+#+begin_definition
 给定向量组 $A:\bm{a}_1, \bm{a}_2, \dots, \bm{a}_m$ 对于任何一组实数 $k_1, k_2, \dots, k_m$, 表达式
 \[k_1\bm{a}_1+k_2\bm{a}_2+ \cdots +k_m\bm{a}_m\]
 称为向量组 $A$ 的一个线性组合, $k_1, k_2, \dots, k_m$ 称为这个线性组合的系数.
-\end{definition}
+#+end_definition
 
-\begin{definition}[线性表示]
+#+attr_latex: :options [线性表示]
+#+begin_definition
 给定向量组 $A:\bm{a}_1, \bm{a}_2, \dots, \bm{a}_m$ 和向量 $\bm{b}$, 如果存在一组数 $\lambda_1, \lambda_2, \dots, \lambda_m$, 使
 \[\bm{b}=\lambda_1\bm{a}_1+\lambda_2\bm{a}_2+\cdots +\lambda_m\bm{a}_m\]
 则向量 $\bm{b}$ 是向量组 $A$ 的线性组合, 这是称向量 $\bm{b}$ 能由向量组 $A$ 线性表示.
-\end{definition}
+#+end_definition
 
-\begin{theorem}
+#+begin_theorem
 向量组 $B$ 能由向量组 $A$ 线性表示的充分必要条件是 $R(\bm{A})=R(\bm{A},\bm{B})$.
-\end{theorem}
+#+end_theorem
 
-\begin{theorem}
+#+begin_theorem
 设向量组 $B$ 能由向量组 $A$ 线性表示, 则 $R(\bm{B}) \leqslant R(\bm{A})$.
-\end{theorem}
+#+end_theorem
 
 ** 等价向量组
-\begin{definition}[向量组等价]
+#+attr_latex: :options [向量组等价]
+#+begin_definition
 设有两个向量组 $A:\bm{a}_1, \bm{a}_2, \dots, \bm{a}_m$ 及 $B:\bm{b}_1,\bm{b}_2,\dots,\bm{b}_l$, 若 $B$ 组中的每个向量都能由向量组 $A$ 线性表示,
 则称向量组 $B$ 能由向量组 $A$ 线性表示. 若向量组 $A$ 与向量组 $B$ 能相互线性表示, 则称这两个向量组等价.
-\end{definition}
+#+end_definition
 
-\begin{deduction}
+#+begin_deduction
 向量组 $A$ 与向量组 $B$ 等价的充分必要条件是 \[R(\bm{A})=R(\bm{B})=R(\bm{A},\bm{B})\]
-\end{deduction}
+#+end_deduction
 
 ** 向量组的线性相关与线性无关
-\begin{definition}
+#+begin_definition
 给定向量组 $A:\bm{a}_1, \bm{a}_2, \dots, \bm{a}_m$, 如果存在不全为零的数 $k_1, k_2, \dots, k_m$, 使
 \[k_1\bm{a}_1+k_2\bm{a}_2+ \cdots +k_m\bm{a}_m = 0\]
 则称向量组 $A$ 是线性相关的, 否则称它线性无关.
-\end{definition}
+#+end_definition
 
-\begin{theorem}
+#+begin_theorem
 向量组 $A:\bm{a}_1, \bm{a}_2, \dots, \bm{a}_m$ 线性相关的充分必要条件是它所构成的矩阵 
 $\bm{A}=(\bm{a}_1, \bm{a}_2, \dots, \bm{a}_m)$ 的秩小于向量个数 $m$; \\
 向量组 $A$ 线性无关的充分必要条件是 $R(\bm{A})=m$.
-\end{theorem}
+#+end_theorem
 即齐次方程有无穷多解(非零解) $\iff$ 其有效方程个数少于未知数个数.
 
 *** *线性相关的一些结论
@@ -327,27 +378,40 @@ $\bm{A}=(\bm{a}_1, \bm{a}_2, \dots, \bm{a}_m)$ 的秩小于向量个数 $m$; \\
 3. 设列向量组 $A$ 线性无关, 而向量组 $(A,\bm{b})$ 线性相关, 则 $\bm{b}$ 必能由向量组 $A$ 线性表示, 且表达式是惟一的.
 
 ** 向量组的秩
-\begin{definition}
+#+begin_definition
 设有向量组 $A$, 如果在 $A$ 中能选出 $r$ 个向量 $\bm{a}_1,\bm{a}_2, \dots, \bm{a}_r$, 满足 \\
 1. 向量组 $A_0:\bm{a}_1, \bm{a}_2, \dots, \bm{a}_r$ 线性无关; \\
 2. 向量组 $A$ 中任意 $r+1$ 个向量都线性相关, \\
 那么称向量组 $A_0$ 是向量组 $A$ 的一个最大线性无关向量组, 其所含向量个数 $r$ 称为向量组 $A$ 的秩, 记作 $R_A$.
-\end{definition}
+#+end_definition
 
 *** 向量组的极大线性无关组
 向量组 $A$ 和它自己的最大无关组 $A_0$ 是等价的.
 
-\begin{deduction}[最大无关组的等价定义]
+#+attr_latex: :options [最大无关组的等价定义]
+#+begin_deduction
 设列向量组 $A_0$ 是向量组 $A$ 的一个部分组, 且满足 \\
 1. 向量组 $A_0$ 线性无关; \\
 2. 向量组 $A$ 的任一向量都能由向量组 $A_0$ 线性表示, \\
 那么向量组 $A_0$ 便是向量组 $A$ 的一个最大无关组.
-\end{deduction}
+#+end_deduction
 
-** 向量组的秩与矩阵的秩之间的关系
-\begin{theorem}
+** 向量组的秩与矩阵的秩之间的关系                                    :drill:
+SCHEDULED: <2019-11-11 Mon>
+:PROPERTIES:
+:ID:       A7F06235-EEBC-4DEE-A15A-8622E5860D1E
+:DRILL_LAST_INTERVAL: 3.86
+:DRILL_REPEATS_SINCE_FAIL: 2
+:DRILL_TOTAL_REPEATS: 1
+:DRILL_FAILURE_COUNT: 0
+:DRILL_AVERAGE_QUALITY: 3.0
+:DRILL_EASE: 2.36
+:DRILL_LAST_QUALITY: 3
+:DRILL_LAST_REVIEWED: [2019-11-07 Thu 17:00]
+:END:
+#+begin_theorem
 矩阵的秩等于它的列向量组的秩, 也等于它的行向量组的秩.
-\end{theorem}
+#+end_theorem
 
 - 齐次方程组同解 ::  如果矩阵 $\bm{A}_{m \times n}, \bm{B}_{l \times n}$ 的行向量组等价
   (此时 $\bm{Ax}= \bm{0}$ 与 $\bm{Bx}= \bm{0}$ 可互推), 则方程 $\bm{Ax}= \bm{0}$ 与 $\bm{Bx}= \bm{0}$ 同解.
@@ -375,26 +439,26 @@ a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n = b_n .
   其中 $\bm{A}_j$ 是把系数矩阵 $\bm{A}$ 中第 $j$ 列的元素用方程组右端的常数项代替后所得到的 $n$ 阶矩阵.
 
 ** *线性方程组的解
-\begin{theorem}
+#+begin_theorem
 $n$ 元线性方程组 $\bm{Ax}=\bm{b}$ \\
 1. 无解 $\iff R(\bm{A}) < R(\bm{A},\bm{b})$; \\
 2. 有惟一解 $\iff R(\bm{A})=R(\bm{A},\bm{b})=n$; \\
 3. 有无限多解 $\iff R(\bm{A})=R(\bm{A},\bm{b})<n$.
-\end{theorem}
+#+end_theorem
 
 ** 齐次线性方程组有非零解的充分必要条件
-\begin{theorem}
+#+begin_theorem
 $n$ 元齐次线性方程组 $\bm{Ax}=0$ 有非零解的充分必要条件是 $R(\bm{A})<n$.
-\end{theorem}
+#+end_theorem
 
 ** 非齐次线性方程组有解的充分必要条件
-\begin{theorem}
+#+begin_theorem
 线性方程组 $\bm{Ax}=\bm{b}$ 有解的充分必要条件是 $R(\bm{A})=R(\bm{A},\bm{b})$.
-\end{theorem}
+#+end_theorem
 
-\begin{theorem}
+#+begin_theorem
 矩阵方程 $\bm{AX}=\bm{B}$ 有解的充分必要条件是 $R(\bm{A}) = R(\bm{A},\bm{B})$.
-\end{theorem}
+#+end_theorem
 
 ** 线性方程组解的性质和解的结构
 *** 齐次线性方程组的基础解系和通解
@@ -405,9 +469,9 @@ $n$ 元齐次线性方程组 $\bm{Ax}=0$ 有非零解的充分必要条件是 $R
 齐次线性方程组的解集的最大无关组 $S_0:\bm{\xi}_1,\bm{\xi}_2,\dots,\bm{\xi}_t$ 称为该齐次线性方程组的 _基础解系_. \\
 则该方程的解的 _通解_ 即为 $\bm{x}=k_1\bm{\xi}_1+k_2\bm{\xi}_2+\cdots+k_t\bm{\xi}_t$.
 
-\begin{theorem}
+#+begin_theorem
 设矩阵 $\bm{A}_{m \times n}$ 的秩 $R(\bm{A})=r$, 则 $n$ 元齐次线性方程组 $\bm{Ax}=\bm{0}$ 的解集 $S$ 的秩 $R_s=n-r$.
-\end{theorem}
+#+end_theorem
 
 *** 非齐次线性方程组的通解
 对于向量方程 $\bm{Ax}=\bm{b}$:
@@ -419,49 +483,51 @@ $n$ 元齐次线性方程组 $\bm{Ax}=0$ 有非零解的充分必要条件是 $R
 * 矩阵的特征值和特征向量
 
 ** 向量的内积
-\begin{definition}
+#+begin_definition
 设有 $n$ 维向量
 \[\bm{x}=\mqty(x_1\\x_2\\\vdots\\x_n),\bm{y}=\mqty(y_1\\y_2\\\vdots\\y_n)\]
 令
 \[[\bm{x},\bm{y}]=x_1y_1+x_2y_2+\cdots +x_ny_n\]
-$\inner{x}{y}$ 称为向量 $\bm{x}$ 与 $\bm{y}$ 的 \uline{内积}.
-\end{definition}
+$\inner{x}{y}$ 称为向量 $\bm{x}$ 与 $\bm{y}$ 的 _内积_.
+#+end_definition
 
 当 $x$ 与 $y$ 都是列向量时, 有
 \[\inner{x}{y}=\trans{x}\bm{y}\]
 
 内积满足交换律, 结合律, 分配律.
 
-\begin{theorem}[施瓦茨(Schwarz) 不等式]
+#+attr_latex: :options [施瓦茨(Schwarz) 不等式]
+#+begin_theorem
 \[\inner{x}{y}\leqslant\inner{x}{x}\inner{y}{y}\]
-\end{theorem}
+#+end_theorem
 
-\begin{definition}
+#+begin_definition
 令
 \[\norm{x}=\sqrt{\inner{x}{x}}\]
-称为 $n$ 维向量 $\bm{x}$ 的 \uline{长度} 或 \uline{范数}.
-\end{definition}
+称为 $n$ 维向量 $\bm{x}$ 的 _长度_ 或 _范数_.
+#+end_definition
 
 向量的长度具有非负性和齐次性.
 
 - 单位向量 :: $\norm{x}=1$
 
-\begin{definition}[向量的夹角]
+#+attr_latex: :options [向量的夹角]
+#+begin_definition
 \[\theta=\arccos \frac{\inner{x}{y}}{\norm{x}\norm{y}} \quad \bm{x}\neq 0,y\neq 0\]
-\end{definition}
+#+end_definition
 
 - 正交 :: $\inner{x}{y}=0$
 - 正交向量组 :: 一组两两正交的非零向量.
 
-\begin{theorem}
+#+begin_theorem
 正交向量组必线性无关.
-\end{theorem}
+#+end_theorem
 
 ** 线性无关向量组的正交规范化方法
-\begin{definition}
+#+begin_definition
 设 $n$ 维向量 $\bm{e}_1,\bm{e}_2,\dots,\bm{e}_r$ 是向量空间 $V (V \subseteq \mathbb{R}^n)$ 的一个基,
-如果 $\bm{e}_1,\dots,\bm{e}_r$ 两两正交, 且都是单位向量, 则称 $\bm{e}_1,\dots,\bm{e}_r$ 是 $V$ 的一个 \uline{标准正交基}.
-\end{definition}
+如果 $\bm{e}_1,\dots,\bm{e}_r$ 两两正交, 且都是单位向量, 则称 $\bm{e}_1,\dots,\bm{e}_r$ 是 $V$ 的一个 _标准正交基_.
+#+end_definition
 
 $V$ 中任一向量 $\bm{a}$ 应能由 $\bm{e}_1,\dots,\bm{e}_r$ 线性表示, 设表达式为
 \[\bm{a}=\lambda_1\bm{e}_1+\lambda_2\bm{e}_2+ \cdots +\lambda_r\bm{e}_r\]
@@ -492,11 +558,12 @@ $V$ 中任一向量 $\bm{a}$ 应能由 $\bm{e}_1,\dots,\bm{e}_r$ 线性表示, �
 \end{equation*}
 
 ** 正交矩阵和正交变换
-\begin{definition}[正交矩阵]
+#+attr_latex: :options [正交矩阵]
+#+begin_definition
 如果 $n$ 阶矩阵 $\bm{A}$ 满足
 \[\trans{A}\bm{A}=\bm{E}(\text{即}\bm{A}^{-1}=\trans{A})\]
 那么称 $\bm{A}$ 为正交矩阵, 简称正交阵.
-\end{definition}
+#+end_definition
 
 用列向量表示即为
 \begin{equation*}
@@ -514,27 +581,30 @@ $V$ 中任一向量 $\bm{a}$ 应能由 $\bm{e}_1,\dots,\bm{e}_r$ 线性表示, �
 1. 若 $\bm{A}$ 为正交矩阵, 则 $\bm{A}^{-1}=\trans{A}$ 也是正交矩阵, 且 $|\bm{A}|=1 \text{或} (-1)$.
 2. 若 $\bm{A}, \bm{B}$ 都为正交矩阵, 则 $\bm{AB}$ 也是正交矩阵.
 
-\begin{definition}[正交变换]
+#+attr_latex: :options [正交变换]
+#+begin_definition
 若 $\bm{P}$ 为正交矩阵, 则线性变换 $\bm{y}=\bm{Px}$ 称为正交变换.
-\end{definition}
+#+end_definition
 
 设 $\bm{y}= \bm{Px}$ 为正交变换, 则有
 \[ \norm{\bm{y}}= \sqrt{\bm{y}^{\mathrm{T}}\bm{y}}= \sqrt{\trans{x}\bm{P}^{\mathrm{T}}\bm{Px}}= \sqrt{\trans{x}\bm{x}}= \norm{\bm{x}} \]
 
 ** 矩阵的特征值和特征向量的概念、性质
-\begin{definition}
+#+begin_definition
 设 $\bm{A}$ 是 $n$ 阶矩阵, 如果数 $\lambda$ 和 $n$ 维非零列向量 $x$ 使关系式
 \[ \bm{Ax} = \lambda \bm{x}\]
 成立, 那么, 这样的数称为矩阵 $\bm{A}$ 的特征值, 非零向量 $\bm{x}$ 称为 $\bm{A}$ 的对应于特征值 $\lambda$ 的特征向量.
-\end{definition}
-即 $(\bm{A}-\lambda \bm{E})\bm{x}=0$
+#+end_definition
+即 $(\bm{A}-\lambda \bm{E})\bm{x}=0$ 或 $(\lambda \bm{E}-\bm{A})\bm{x}=0$
 
 - 特征方程 :: $|\bm{A}-\lambda \bm{E}|=0$
 - 特征多项式 :: $f(\lambda)=|\bm{A}-\lambda \bm{E}|$
 
+- 方阵 $\bm{A}$ 的迹 :: $\tr \bm{A} = a_{11}+a_{22}+\cdots +a_{nn}$
+
 *** 特征值的性质
 设 $n$ 阶矩阵 $\bm{A}=(a_{ij})$ 的特征值为 $\lambda_1,\lambda_2,\dots,\lambda_n$, 不难证明[fn:1]:
-1. $\lambda_1+\lambda_2+\cdots+\lambda_n=a_{11}+a_{22}+\cdots +a_{nn}$;
+1. $\lambda_1+\lambda_2+\cdots+\lambda_n=\tr \bm{A}$;
 2. $\lambda_1\lambda_2\cdots\lambda_n=|\bm{A}|$.
    1. $\bm{A}$ 可逆的充分必要条件是它的特征值不含零. <<jzkn:2>> [[矩阵可逆的充分必要条件]]
 
@@ -544,64 +614,68 @@ $V$ 中任一向量 $\bm{a}$ 应能由 $\bm{e}_1,\dots,\bm{e}_r$ 线性表示, �
    (其中 $\varphi(\lambda)=a_0+ a_1\lambda+\cdots+a_m\lambda^m$ 是 $\lambda$ 的多项式,
    $\varphi(\bm{A})=a_0\bm{E}+a_1\bm{A}+\cdots+a_m\bm{A}^m$ 是矩阵 $\bm{A}$ 的多项式).
 
-\begin{theorem}
+#+begin_theorem
 设 $\lambda_1, \lambda_2, \dots, \lambda_m$ 是方阵 $\bm{A}$ 的 $m$ 个特征值, $\bm{p}_1,\bm{p}_2,\dots,\bm{p}_m$ 依次是与之对应的特征向量,
 如果 $\lambda_1, \lambda_2, \dots, \lambda_m$ 各不相等, 则 $\bm{p}_1,\bm{p}_2,\dots,\bm{p}_m$ 线性无关.
-\end{theorem}
+#+end_theorem
 
-\begin{deduction}
+#+begin_deduction
 设 $\lambda_1$ 和 $\lambda_2$ 是方阵 $\bm{A}$ 的两个不同特征值, $\bm{\xi}_1,\bm{\xi}_2,\dots,\bm{\xi}_s$ 和 $\bm{\eta}_1,\bm{\eta}_2,\dots,\bm{\eta}_t$
 分别是对应于 $\lambda_1$ 和 $\lambda_2$ 的线性无关的特征向量, 则 $\bm{\xi}_1,\bm{\xi}_2,\dots,\bm{\xi}_s, \bm{\eta}_1,\bm{\eta}_2,\dots,\bm{\eta}_t$ 线性无关.
-\end{deduction}
+#+end_deduction
 #+begin_proof
 留作习题?
 #+end_proof
 上述推论表明: 对应于两个不同特征值的线性无关的特征向量组, 合起来仍是线性无关的. 这一结论对 $m(\geqslant 2)$ 个特征值的情形也成立.
 
 ** 相似矩阵的概念及性质
-\begin{definition}
+#+begin_definition
 设 $\bm{A}$ 和 $\bm{B}$ 都是 $n$ 阶矩阵, 若有可逆矩阵 $\bm{P}$, 使
 \[ \bm{P}^{-1}\bm{AP} = \bm{B} \]
 则称 $\bm{B}$ 是 $\bm{A}$ 的相似矩阵, 或说矩阵 $\bm{A}$ 与 $\bm{B}$ 相似.
 对 $\bm{A}$ 进行运算 $\bm{P}^{-1}\bm{AP}$ 称为对 $\bm{A}$ 进行相似变换,
 可逆矩阵 $\bm{P}$ 称为把 $\bm{A}$ 变成 $\bm{B}$ 的相似变换矩阵.
-\end{definition}
+#+end_definition
 
-\begin{theorem}
-若 $n$ 阶矩阵 $\bm{A}$ 与 $\bm{B}$ 相似, 则 $\bm{A}$ 与 $\bm{B}$ 的特征多项式相同, 从而 $\bm{A}$ 与 $\bm{B}$ 的特征值亦相同.
-\end{theorem}
+#+begin_theorem
+若 $n$ 阶矩阵 $\bm{A}$ 与 $\bm{B}$ 相似, 则 $\bm{A}$ 与 $\bm{B}$ 的 _特征多项式相同_, 从而 $\bm{A}$ 与 $\bm{B}$ 的特征值亦相同.
+#+end_theorem
 
-\begin{deduction}
+事实上, 若 $n$ 阶矩阵 $\bm{A}$ 与 $\bm{B}$ 相似, 则 $\lambda \bm{E}-\bm{A}$ 与 $\lambda \bm{E}-\bm{B}$ 相似,
+从而有 $R(\lambda \bm{E}-\bm{A}) = R(\lambda \bm{E}-\bm{B})$. 与上述定理都有可以用相似的定义证明.
+可以通过此必要条件判断两个矩阵不相似.
+
+#+begin_deduction
 若 $n$ 阶矩阵 $\bm{A}$ 与对角矩阵
 \[ \bm{\varLambda} = \diag(\lambda_1, \lambda_2, \dots, \lambda_n) \]
 相似, 则 $\lambda_1, \lambda_2, \dots, \lambda_n$ 即是 $\bm{\varLambda}$ 的 $n$ 个特征值.
-\end{deduction}
+#+end_deduction
 
 ** 矩阵可相似对角化的充分必要条件及相似对角矩阵
-\begin{theorem}
-$n$ 阶矩阵 $\bm{A}$ 与对角矩阵相似(即 $\bm{A}$ 能对角化) 的充分必要条件是 $\bm{A}$ 由 $n$ 个线性无关的特征向量.
-\end{theorem}
+#+begin_theorem
+$n$ 阶矩阵 $\bm{A}$ 与对角矩阵相似(即 $\bm{A}$ 能对角化) 的充分必要条件是 $\bm{A}$ 有 $n$ 个线性无关的特征向量.
+#+end_theorem
 
-\begin{deduction}
+#+begin_deduction
 如果 $n$ 阶矩阵 $\bm{A}$ 的 $n$ 个特征值互不相等, 则 $\bm{A}$ 与对角矩阵相似.
-\end{deduction}
+#+end_deduction
 
 ** 实对称矩阵的特征值、特征向量及其相似对角矩阵
 - 对称矩阵的特征值为实数.
 - 设 $\lambda_1, \lambda_2$ 是对称矩阵 $\bm{A}$ 的两个特征值, $\bm{p}_1,\bm{p}_2$ 是对应的特征向量.
   若 $\lambda_1 \neq \lambda_2$, 则 $\bm{p}_1$ 与 $\bm{p}_2$ 正交.
 
-\begin{theorem}
-\label{thr:1}
+#+begin_theorem
+label:thr:1
 设 $\bm{A}$ 为 $n$ 阶对称矩阵, 则必有正交矩阵 $\bm{P}$, 使 $\bm{P}^{-1}\bm{AP} = \bm{P}^{\mathrm{T}}\bm{AP} = \bm{\varLambda}$,
 其中 $\bm{\varLambda}$ 是以 $\bm{A}$ 的 $n$ 个特征值为对角元的对角矩阵.
-\end{theorem}
+#+end_theorem
 不证
 
-\begin{deduction}
+#+begin_deduction
 设 $\bm{A}$ 为 $n$ 阶对称矩阵, $\lambda$ 是 $\bm{A}$ 的特征方程的 $k$ 重根, 则矩阵 $\bm{A}-\lambda \bm{E}$ 的秩 $R(\bm{A}-\lambda \bm{E})= n-k$,
 从而对应特征值 $\lambda$ 恰有 $k$ 个线性无关的特征向量.
-\end{deduction}
+#+end_deduction
 
 *** 对称矩阵对角化的步骤
 1. 求出 $\bm{A}$ 的全部互不相等的特征值 $\lambda_1, \dots, \lambda_s$, 它们的重数依次为 $k_1,\dots,k_s \quad (k_1+\cdots+k_s=n)$.
@@ -613,7 +687,8 @@ $n$ 阶矩阵 $\bm{A}$ 与对角矩阵相似(即 $\bm{A}$ 能对角化) 的充�
 
 * 二次型
 ** 二次型及其矩阵表示
-\begin{definition}[二次型]
+#+attr_latex: :options [二次型]
+#+begin_definition
 含有 $n$ 个变量 $x_1,x_2,\dots,x_n$ 的二次齐次函数
 \begin{align*}
 f(x_1,x_2,\dots,x_n) ={} & a_{11}x_1^2+a_{22}x_2^2+\cdots+a_{nn}x_n^2+ \\
@@ -622,7 +697,7 @@ f(x_1,x_2,\dots,x_n) ={} & a_{11}x_1^2+a_{22}x_2^2+\cdots+a_{nn}x_n^2+ \\
 ={} & \trans{x}\bm{Ax}
 \end{align*}
 称为二次型.
-\end{definition}
+#+end_definition
 
 ** 二次型的标准形和规范形
 - 二次型的标准形(法式) :: \[ f=k_1y_1^2+k_2y_2^2+\cdots+k_ny_n^2 \]
@@ -636,11 +711,12 @@ f(x_1,x_2,\dots,x_n) ={} & a_{11}x_1^2+a_{22}x_2^2+\cdots+a_{nn}x_n^2+ \\
 记对二次型做的可逆变换为 \[\bm{x} = \bm{Cy}\]
 则有 $f=\trans{x}\bm{Ax} = (\bm{Cy})^{\mathrm{T}}\bm{ACy} = \bm{y}^{\mathrm{T}}(\bm{C}^{\mathrm{T}}\bm{AC})\bm{y}$.
 
-\begin{definition}[合同]
+#+attr_latex: :options [合同]
+#+begin_definition
 设 $\bm{A}$ 和 $\bm{B}$ 是 $n$ 阶矩阵, 若有可逆矩阵 $\bm{C}$, 使
 \[ \bm{B} = \bm{C}^{\mathrm{T}}\bm{AC} \]
 则称矩阵 $\bm{A}$ 与 $\bm{B}$ 合同.
-\end{definition}
+#+end_definition
 若 $\bm{A}$ 为对称矩阵, 则 $\bm{B} = \bm{C}^{\mathrm{T}}\bm{AC}$ 也为对称矩阵, 且 $R(\bm{B}) = R(\bm{A})$.
 经可逆变换 $\bm{x} = \bm{Cy}$ 后, 二次型 $f$ 的矩阵由 $\bm{A}$ 变为与 $\bm{A}$ 合同的矩阵 $\bm{C}^{\mathrm{T}}\bm{AC}$, 且二次型的秩不变.
 
@@ -651,17 +727,17 @@ f(x_1,x_2,\dots,x_n) ={} & a_{11}x_1^2+a_{22}x_2^2+\cdots+a_{nn}x_n^2+ \\
 由 cref:thr:1 知, 任给对称矩阵 $\bm{A}$, 总有正交矩阵 $\bm{P}$, 使 $\bm{P}^{-1}\bm{AP} = \bm{\varLambda}$,
 即 $\bm{P}^{\mathrm{T}}\bm{AP} = \bm{\varLambda}$. 由此
 
-\begin{theorem}
-\label{thr:2}
+#+begin_theorem
+label:thr:2
 任给二次型 $f=\sum\limits_{i,j=1}^n a_{ij}x_ix_j \quad (a_{ji}=a_{ij})$, 总有正交变换 $\bm{x} = \bm{Py}$, 使 $f$ 化为标准形
 \[ f=\lambda_1y_1^2+\lambda_2y_2^2+\cdots+\lambda_ny_n^2 \]
 其中 $\lambda_1,\lambda_2,\dots,\lambda_n$ 是 $f(\bm{Cz})$ 的矩阵 $\bm{A}= (a_{ij})$ 的特征值.
-\end{theorem}
+#+end_theorem
 
-\begin{deduction}
+#+begin_deduction
 任给 $n$ 元二次型 $f(\bm{x})= \trans{x}\bm{Ax} (\trans{A}=\bm{A})$, 总有可逆变换 $\bm{x}=\bm{Cz}$,
 使 $f(\bm{Cz})$ 为规范形.
-\end{deduction}
+#+end_deduction
 
 #+begin_proof
 由 cref:thr:2, 有
@@ -695,7 +771,8 @@ k_i=
 
 ** 惯性定理
 二次型的标准形不惟一, 但所含项数确定且为二次型的秩.
-\begin{theorem}[惯性定理(不证)]
+#+attr_latex: :options [惯性定理(不证)]
+#+begin_theorem
 设二次型 $f=\trans{x}\bm{Ax}$ 的秩为 $r$, 且由两个可逆变换
 \[ \bm{x}=\bm{Cy} \qq{及} \bm{x}=\bm{Pz} \]
 使
@@ -703,28 +780,29 @@ k_i=
 及
 \[ f=\lambda_1z_1^2+\lambda_2z_2^2+\cdots+\lambda_rz_r^2 \quad (\lambda_i \neq 0) \]
 则 $k_1,\dots,k_r$ 中正数的个数与 $\lambda_1,\dots,\lambda_r$ 中正数的个数相等.
-\end{theorem}
+#+end_theorem
 
 二次型的标准形中正系数的个数称为二次型的 _正惯性指数_, 负系数的个数称为 _负惯性指数_.
 确定两者, 则 $f$ 的规范形便可确定.
 
 ** 二次型及其矩阵的正定性
-\begin{definition}
+#+begin_definition
 设二次型 $f(\bm{x})=\trans{x}\bm{Ax}$, 如果对任何 $\bm{x}\neq\bm{0}$, 都有 $f(\bm{x})>0$ (显然 $f(\bm{0})=0$),
-则称 $f$ 为 \uline{正定二次型}, 并称 \uline{对称矩阵 $\bm{A}$ 是正定的}; 如果对任何 $\bm{x}\neq\bm{0}$, 都有 $f(\bm{x})<0$,
-则称 $f$ 为 \uline{负定二次型}, 并称 \uline{对称矩阵 $\bm{A}$ 是负定的}.
-\end{definition}
+则称 $f$ 为 _正定二次型_, 并称 _对称矩阵 $\bm{A}$ 是正定的_; 如果对任何 $\bm{x}\neq\bm{0}$, 都有 $f(\bm{x})<0$,
+则称 $f$ 为 _负定二次型_, 并称 _对称矩阵 $\bm{A}$ 是负定的_.
+#+end_definition
 
-\begin{theorem}
+#+begin_theorem
 $n$ 元二次型 $f=\trans{x}\bm{Ax}$ 为正定的充分必要条件是: 它的标准形的 $n$ 个系数全为正,
 即它的规范形的 $n$ 个系数全为 $1$, 亦即它的正惯性指数等于 $n$.
-\end{theorem}
+#+end_theorem
 
-\begin{deduction}
+#+begin_deduction
 对称矩阵 $\bm{A}$ 为正定的充分必要条件是: $\bm{A}$ 的特征值全为正.
-\end{deduction}
+#+end_deduction
 
-\begin{theorem}[赫尔维茨定理(不证)]
+#+attr_latex: :options [赫尔维茨定理(不证)]
+#+begin_theorem
 对称矩阵 $\bm{A}$ 为正定的充分必要条件是: $\bm{A}$ 的各阶主子式都为正, 即
 \[ 
 a_{11}>0,
@@ -736,7 +814,7 @@ a_{11}>0,
 \[
 (-1)^r\mqty|a_{11} & \cdots & a_{1r} \\ \vdots & & \vdots \\ a_{r1} & \cdots & a_{rr}| >0 \quad (r=1,2,\dots,n)
 \]
-\end{theorem}
+#+end_theorem
 
 
 * Footnotes

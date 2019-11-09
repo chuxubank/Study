@@ -1,13 +1,15 @@
-#+LATEX_COMPILER: xelatex
-#+LATEX_HEADER: \usepackage{ctex, mathtools, amsthm, booktabs, physics}
-#+STARTUP: latexpreview
+#+TITLE: 错题整理
+#+LATEX_HEADER: \usepackage{mathtools, amsthm, booktabs, physics}
 
-* 极限
+* 函数、极限、连续
 ** $\frac{\infty}{\infty}(\frac{0}{0})$ 型
 *** 约去分子、分母中极限为 $\infty(0)$ 的因子, 然后用四则运算法则.
 - 660-3
 - 660-5
-* 积分
+
+* 一元函数微分学
+
+* 一元函数积分学
 ** 变形
 \[ I = \int_a^b f(x) \dd{x} \to I = \int_a^b g(x) \dd{x} \]
 \[ 2 I=\int_a^b[f(x)+g(x)] \dd{x} \]
@@ -26,4 +28,9 @@
 \]
 
 - 660-120
+* 多元函数微分学
+* 多元函数积分学
+** 对称区域上的二重积分
+
+* 常微分方程
 

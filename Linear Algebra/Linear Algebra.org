@@ -11,6 +11,8 @@
 #+LATEX_HEADER: \newcommand{\trans}[1]{\bm{#1}^{\mathrm{T}}}
 #+LATEX_HEADER: \newcommand{\vg}[1]{\mathrm{(\uppercase\expandafter{\romannumeral#1})}}
 
+#+PROPERTY: ex
+
 * 行列式
 1. 了解行列式的概念, 掌握行列式的性质
 2. 会应用行列式的性质和行列式按行(列)展开定理计算行列式.
@@ -155,11 +157,11 @@ D \xlongequal[c_4+b_{12}c_1+b_{22}c_2]{c_3+b_{11}c_1+b_{21}c_2} \mdet{\bm{A} & \
 \[ \varphi(\bm{A}) = a_0 \bm{E} + a_1 \bm{A} + \cdots + a_m \bm{A}^m \]
 $\varphi(\bm{A})$ 称为矩阵 $\bm{A}$ 的 $m$ 次多项式.
 
-**** $\varphi(\bm{A})$ 的计算方法
-1. 若 $\bm{A} = \bm{P\varLambda}\bm{P}^{-1}$, 则 $\bm{A}^k = \bm{P} \bm{\varLambda}^k \bm{P}^{-1}$, 从而
-   \[ \varphi(\bm{A}) = \bm{P} \varphi(\bm{\varLambda}) \bm{P}^{-1} \]
-2. 如果 $\bm{\varLambda} = \diag(\lambda_1,\lambda_2,\dots,\lambda_n)$ 为对角矩阵, 则 $\bm{\varLambda}^k = \diag(\lambda_1^k,\lambda_2^k,\dots,\lambda_n^k)$, 从而
-   \[ \varphi(\bm{\varLambda}) = \mqty(\dmat{\varphi(\lambda_1),\varphi(\lambda_2),\ddots,\varphi(\lambda_n)}) \]
+- $\varphi(\bm{A})$ 的计算方法
+  1. 若 $\bm{A} = \bm{P\varLambda}\bm{P}^{-1}$, 则 $\bm{A}^k = \bm{P} \bm{\varLambda}^k \bm{P}^{-1}$, 从而
+     \[ \varphi(\bm{A}) = \bm{P} \varphi(\bm{\varLambda}) \bm{P}^{-1} \]
+  2. 如果 $\bm{\varLambda} = \diag(\lambda_1,\lambda_2,\dots,\lambda_n)$ 为对角矩阵, 则 $\bm{\varLambda}^k = \diag(\lambda_1^k,\lambda_2^k,\dots,\lambda_n^k)$, 从而
+     \[ \varphi(\bm{\varLambda}) = \mqty(\dmat{\varphi(\lambda_1),\varphi(\lambda_2),\ddots,\varphi(\lambda_n)}) \]
 
 ** 矩阵可逆的充分必要条件
 $\bm{A}$ 是可逆矩阵的充分必要条件是 $|\bm{A}| \neq 0$, 即可逆矩阵就是非奇异矩阵.
@@ -171,9 +173,9 @@ $\bm{A}$ 是可逆矩阵的充分必要条件是 $|\bm{A}| \neq 0$, 即可逆矩
 *** 分块对角矩阵
 \[ \bm{A} = \mqty(\dmat{\bm{A}_1,\bm{A}_2,\ddots,\bm{A}_s}) \]
 其中 $\bm{A}_i \quad (i=1,2,\dots,s)$ 都是方阵.
-1. $|\bm{A}| = |\bm{A}_1| |\bm{A}_2| \cdots |\bm{A}_s|$.
-   1. 若 $|\bm{A_i}| \neq 0 \quad (i=1,2,\dots,s)$, 则 $|\bm{A}| \neq 0$, 并有
-      \[ \bm{A}^{-1} = \mqty(\dmat{\bm{A}_1^{-1},\bm{A}_2^{-1},\ddots,\bm{A}_s^{-1}}) \]
+- $|\bm{A}| = |\bm{A}_1| |\bm{A}_2| \cdots |\bm{A}_s|$.
+  - 若 $|\bm{A_i}| \neq 0 \quad (i=1,2,\dots,s)$, 则 $|\bm{A}| \neq 0$, 并有
+    \[ \bm{A}^{-1} = \mqty(\dmat{\bm{A}_1^{-1},\bm{A}_2^{-1},\ddots,\bm{A}_s^{-1}}) \]
 
 *** TODO 分块矩阵的逆
 
@@ -276,6 +278,7 @@ SCHEDULED: <2019-11-11 Mon>
 :DRILL_EASE: 2.36
 :DRILL_LAST_QUALITY: 3
 :DRILL_LAST_REVIEWED: [2019-11-07 Thu 17:28]
+:ex:       2018-8
 :END:
 1. $0 \leqslant R(\bm{A}_{m \times n}) \leqslant \min \qty{m,n}$.
 2. $R(\trans{A}) = R(\bm{A}) = R(\bm{A}\trans{A}) = R(\trans{A}\bm{A})$.
@@ -634,6 +637,9 @@ $\bm{A}$ 的 $k$ 重特征值对应线性无关的特征向量的个数小于或
 上述推论表明: 对应于两个不同特征值的线性无关的特征向量组, 合起来仍是线性无关的. 这一结论对 $m(\geqslant 2)$ 个特征值的情形也成立.
 
 ** 相似矩阵的概念及性质
+:PROPERTIES:
+:ex:       2018-7
+:END:
 #+begin_definition
 设 $\bm{A}$ 和 $\bm{B}$ 都是 $n$ 阶矩阵, 若有可逆矩阵 $\bm{P}$, 使
 \[ \bm{P}^{-1}\bm{AP} = \bm{B} \]

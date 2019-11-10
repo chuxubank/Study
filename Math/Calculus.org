@@ -105,30 +105,31 @@
 ** 函数关系的建立
 ** 数列极限与函数极限的定义及其性质
 *** 数列极限的定义
-\begin{definition}
+#+begin_definition
 给定数列 ${x_n}$, $a$ 为常数, 如果对于任意 $\varepsilon > 0$, 存在正整数 $N$, 当 $n>N$ 时, 有
 \[ \abs{x_n-a} <\varepsilon \]
 则称数列 ${x_n}$ 以 $a$ 为极限, 或称数列 ${x_n}$ 收敛于 $a$, 记为
 \[ \lim_{n \to \infty} x_n = a \qq{或} x_n \to a (n \to \infty) \]
-\end{definition}
+#+end_definition
 
 *** 收敛数列的性质
 **** 唯一性
 **** 有界性
 **** 保号性
 **** 一致性
-\begin{theorem}[收敛数列与其子数列的关系]
+#+attr_latex: :options [收敛数列与其子数列的关系]
+#+begin_theorem
 如果数列 ${x_n}$ 收敛于 $a$, 那么它的任一子数列也收敛, 且极限也是 $a$.
-\end{theorem}
+#+end_theorem
 
 *** 函数极限的定义
-\begin{definition}
+#+begin_definition
 设函数 $f(x)$ 在点 $x_0$ 的某去心邻域内有定义, A 为一个常数, 如果对于任意 $\varepsilon > 0$, 存在 $\delta > 0$,
 使得当 $0<\abs{x-x_0}<\delta$ 时, 有 
 \[ \abs{f(x)-A}<\varepsilon \]
 则称函数 $f(x)$ 当 $x \to x_0$ 时以 $A$ 为极限, 记为
 \[ \lim_{x \to x_0} f(x) = A \qq{或} f(x) \to A \quad (x \to x_0) \]
-\end{definition}
+#+end_definition
 
 #+CAPTION: 函数极限的定义
 #+ATTR_LATEX: :float nil :booktabs t :center t
@@ -147,34 +148,33 @@
 **** 唯一性
 
 **** 局部有界性
-\begin{theorem}
+#+begin_theorem
 若 $\lim f(x) = A$, 则存在 $\mathring{U}$, 在 $\mathring{U}$ 内 $f(x)$ 有界.
-\end{theorem}
+#+end_theorem
 (对于 $x \to x_0$, $\mathring{U}$ 表示 $0<\abs{x-x_0}<\delta$; 对于 $x \to \infty$, $\mathring{U}$ 表示 $\abs{x}>X$)
 
 **** 局部保号性
-\begin{theorem}
+#+begin_theorem
 若 $\lim f(x) = A>B$, 则存在 $\mathring{U}$, 在 $\mathring{U}$ 内 $f(x)>B$.
-\end{theorem}
+#+end_theorem
 
-\begin{deduction}
+#+begin_deduction
 若存在 $\mathring{U}$, 在 $\mathring{U}$ 内 $f(x) \geqslant B$, 且 $\lim f(x) = A$, 则 $A \geqslant B$.
-\end{deduction}
+#+end_deduction
 
 **** 一致性
-\begin{theorem}[函数极限与数列极限的关系]
+#+attr_latex: :options [函数极限与数列极限的关系]
+#+begin_theorem
 如果极限 $\lim_{x \to x_0}f(x)$ 存在, ${x_n}$ 为函数 $f(x)$ 的定义域内任一收敛于 $x_0$ 的数列,
 且满足: $x_n \neq x_0 (n \in N_+)$, 那么相应的函数值数列 ${f(x_n)}$ 必收敛, 且 $\lim_{n \to +\infty} f(x_n) = \lim_{x \to x_0} f(x)$.
-\end{theorem}
+#+end_theorem
 
 ** 函数的左极限和右极限
 [[函数极限的定义]]
 
 ** 无穷小量和无穷大量大概念及其关系
 *** 无穷小量与极限的关系
-\[
-\lim_{x \to x_0} f(x) = A \Leftrightarrow A + \alpha(x)
-\]
+\[ \lim_{x \to x_0} f(x) = A \Leftrightarrow A + \alpha(x) \]
 其中 $\lim_{x \to x_0} \alpha(x) = 0$.
 
 ** 无穷小量的性质及无穷小量的比较
@@ -238,25 +238,26 @@ $f(x_0 + 0)$ 与 $f(x_0 - 0)$ 至少有一个不存在
 
 ** 导数和微分的概念
 *** 导数的定义
-\begin{definition}
+#+begin_definition
 设函数 $f(x)$ 在 $U(x_0)$ 内有定义, 若极限
 \[ \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim_{\Delta x \to 0} \frac{f(x_0+\Delta x) - f(x_0)}{\Delta x} \]
 存在, 则称函数 $f(x)$ 在点 $x=x_0$ 处可导,并称这个极限为 $f(x)$ 在点 $x_0$ 处的导数,
 记为 $f'(x_0)$ 或 $\eval{\dv{y}{x}}_{x=x_0}$ 等.
-\end{definition}
+#+end_definition
 
 导数定义的等价形式:
 \[
-f'(x_0) = \lim_{h \to 0} \frac{f(x_0)+h - f(x_0)}{h} = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0}
+f'(x_0) = \lim_{h \to 0} \frac{f(x_0)+h - f(x_0)}{h}
+= \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0}
 \]
 
 *** 微分的定义
-\begin{definition}
+#+begin_definition
 设函数 $f(x)$ 在 $U(x_0)$ 内有定义, $x_0+\Delta x \in U(x_0)$, 如果
 \[ \Delta y = f(x_0+\Delta x) - f(x_0) = A \Delta x + o(\Delta x), \]
 则称函数 $f(x)$ 在点 $x=x_0$ 处可微,
 称 $\dd{y} = A \Delta x$ 为 $f(x)$ 在点 $x=x_0$ 处的微分.
-\end{definition}
+#+end_definition
 
 ** 导数的几何意义和物理意义
 ** 函数的可导性与连续性之间的关系
@@ -311,31 +312,32 @@ y''_{xx} = \dv[2]{y}{x} = \dv{\dv{y}{x}}{x}
 
 ** 微分中值定理
 *** 费马(Fermat)定理
-\begin{theorem}[费马引理]
+#+attr_latex: :options [费马引理]
+#+begin_theorem
 设函数 $f(x)$ 在点 $x_0$ 的某领域 $U(x_0)$ 内有定义, 并且在 $x_0$ 处可导, 如果对任意的 $x \in U(x_0)$, 有
 $f(x) \leqslant f(x_0)$ (或 $f(x) \geqslant f(x_0)$), 则 $f'(x_0) = 0$.
-\end{theorem}
+#+end_theorem
 
 *** 罗尔(Rolle)定理
-\begin{theorem}
+#+begin_theorem
 设 $f(x)$ 在 $[a,b]$ 上连续, 在 $(a,b)$ 内可导, 且 $f(a)=f(b)$, 则存在 $\xi \in (a,b)$, 使
 \[ f'(\xi) = 0 \]
-\end{theorem}
+#+end_theorem
 
 *** 拉格朗日(Lagrange)中值定理
 :PROPERTIES:
 :ex:       2018-9
 :END:
-\begin{theorem}
+#+begin_theorem
 设 $f(x)$ 在 $[a,b]$ 上连续, 在 $(a,b)$ 内可导, 则存在 $\xi \in (a,b)$, 使
 \[ f(b)-f(a) = f'(\xi)(b-a) \]
-\end{theorem}
+#+end_theorem
 
 *** 柯西(Cauchy)中值定理
-\begin{theorem}
+#+begin_theorem
 设 $f(x), g(x)$ 在 $[a,b]$ 上连续, 在 $(a,b)$ 内可导, 且 $g'(x) \neq 0$, 则存在 $\xi \in (a,b)$, 使
 \[ \frac{f(b)-f(a)}{g(b)-g(a)} = \frac{f'(\xi)}{g'(\xi)} \]
-\end{theorem}
+#+end_theorem
 
 *** 泰勒(Taylor)公式                                                :drill:
 SCHEDULED: <2019-11-17 Sun>
@@ -443,10 +445,8 @@ SCHEDULED: <2019-11-13 Wed>
 2. 求出 $f(x)$ 在区间端点的函数值
 3. 比较 1. 和 2. 中的函数值, 最大者为最大值, 最小者为最小值.
 
-** 弧微分
-\[
-\dd{s} = \sqrt{1+y'^2} \dd{x}
-\]
+** TODO 弧微分
+\[ \dd{s} = \sqrt{1+y'^2} \dd{x} \]
 
 ** 曲率的概念                                                        :drill:
 SCHEDULED: <2019-11-13 Wed>
@@ -584,55 +584,55 @@ SCHEDULED: <2019-11-16 Sat>
 **** 定积分的线性性质
 **** 定积分的可加性
 **** 定积分的保号性
-\begin{theorem}
+#+begin_theorem
 如果在区间 $[a,b]$ 上 $f(x) \geqslant 0$, 那么
 \[ \int_a^b f(x) \dd{x} \geqslant 0 \quad (a<b) \]
-\end{theorem}
+#+end_theorem
 
-\begin{deduction}
+#+begin_deduction
 如果在区间 $[a,b]$ 上 $f(x) \leqslant g(x)$, 那么
 \[ \int_a^b f(x) \dd{x} \leqslant \int_a^b g(x) \dd{x} \quad (a<b) \]
-\end{deduction}
+#+end_deduction
 
-\begin{deduction}
-\[
-\abs{\int_a^b f(x) \dd{x}} \leqslant \int_a^b \abs{f(x)} \dd{x} \quad (a<b)
-\]
-\end{deduction}
+#+begin_deduction
+\[ \abs{\int_a^b f(x) \dd{x}} \leqslant \int_a^b \abs{f(x)} \dd{x} \quad (a<b) \]
+#+end_deduction
 
 **** 定积分的估值定理
-\begin{theorem}
+#+begin_theorem
 设 $M$ 及 $m$ 分别是函数 $f(x)$ 在区间 $[a,b]$ 上的最大值及最小值, 则
 \[ m(b-a) \leqslant \int_a^b f(x) \dd{x} \leqslant M(b-a) \quad (a<b) \]
-\end{theorem}
+#+end_theorem
 
 ** 定积分中值定理
-\begin{theorem}
+#+begin_theorem
 如果函数 $f(x)$ 在积分区间 $[a,b]$ 上连续, 那么在 $[a,b]$ 上至少存在一个点 $\xi$, 使得
 \[ \int_a^b f(x) \dd{x} = f(\xi)(b-a) \quad (a \leqslant \xi \leqslant b) \]
-\end{theorem}
+#+end_theorem
 
-\begin{deduction}
+#+begin_deduction
 设 $f(x)$ 在 $[a,b]$ 上连续, $g(x)$ 在 $[a,b]$ 上可积且不变号, 则存在 $\xi \in [a,b]$, 使得
 \[ \int_a^b f(x)g(x) \dd{x} = f(\xi) \int_a^b g(x) \dd{x} \]
-\end{deduction}
+#+end_deduction
 
 ** 积分上限的函数及其导数
-\begin{theorem}[原函数存在定理]
+:PROPERTIES:
+:ex:       2018-16
+:END:
+#+attr_latex: :options [原函数存在定理]
+#+begin_theorem
 设函数 $f(x)$ 在区间 $[a,b]$ 上连续, 则积分上限的函数 $F(x) = \int_a^x f(t) \dd{t}$ 在 $[a,b]$ 上可导, 且
 \[ F'(x) = \dv{x} \int_a^x f(t) \dd{t} = f(x) \]
 即 $F(x)$ 是 $f(x)$ 在 $[a,b]$ 上的一个原函数.
-\end{theorem}
+#+end_theorem
 
-\[
-\qty[\int_{v(x)}^{u(x)} f(t) \dd{t}]' = f[u(x)]u'(x) - f[v(x)]v'(x)
-\]
+\[ \qty[\int_{v(x)}^{u(x)} f(t) \dd{t}]' = f[u(x)]u'(x) - f[v(x)]v'(x) \]
 
 ** 牛顿-莱布尼兹(Newton-Leibniz)公式
-\begin{theorem}
+#+begin_theorem
 若函数 $f(x)$ 在 $[a,b]$ 上可积, $F(x)$ 为 $f(x)$ 的一个原函数, 则
 \[ \int_a^b f(x) \dd{x} = \eval{F(x)}_a^b = F(b) - F(a) \]
-\end{theorem}
+#+end_theorem
 
 ** 不定积分和定积分的换元积分法与分部积分法
 *** 第一类换元积分法(凑微分法)
@@ -658,9 +658,11 @@ SCHEDULED: <2019-11-16 Sat>
 2. 对分母进行因式分解. 使用二次公式或 _猜想一个根, 然后再做除法_ .
 3. 分部. (分部仅由分母决定)
    - 线性式 $(x+a)$ :: \[ \frac{A}{x+a} \]
-   - 线性式的平方 $(x+a)^2$ :: \[ \frac{A}{(x+a)^2} + \frac{B}{x+a} \] 高阶可递推得之.
+   - 线性式的平方 $(x+a)^2$ :: \[ \frac{A}{(x+a)^2} + \frac{B}{x+a} \]
    - 二次多项式 $(x^2+ax+b)$ :: \[ \frac{Ax+B}{x^2+ax+b} \]
-   
+   - 二次多项式的平方 $(x^2+ax+b)^2$ :: \[ \frac{Ax+B}{(x^2+ax+b)^2} + \frac{Cx+D}{x^2+ax+b} \]
+   高阶可递推得之.
+
    被积函数 = 分部
 4. 计算常数的值. 
    - 换掉 $x$ 的值.
@@ -967,7 +969,7 @@ F'_{\lambda} = 0,
 
 *** 对称区域上的二重积分
 :PROPERTIES:
-:ex:       2018-6
+:ex:       2018-6 2018-17
 :END:
 - 若积分区域 $D$ 关于 $y$ 轴对称, 且 $f(x,y)$ 关于 $x$ 有奇偶性, 则 =偶倍奇零=.
 - 若积分区域 $D$ 关于 $x$ 轴对称, 且 $f(x,y)$ 关于 $y$ 有奇偶性, 则 =偶倍奇零=.
@@ -1017,7 +1019,10 @@ F(x, y, y', \cdots, y^{(n)}) = 0
 分离变量, 两端积分
 \[ \int \frac{\dd{u}}{\varphi(u)-u} = \int \frac{\dd{x}}{x} \]
 
-** 一阶线性微分方程
+** 一阶线性微分方程                                                  :drill:
+:PROPERTIES:
+:ex:       2018-16
+:END:
 \[ \dv{y}{x} + P(x)y = Q(x) \]
 的通解为
 \[ y=e^{-\int P(x) \dd{x}} \qty[\int Q(x) e^{\int P(x) \dd{x}} \dd{x} + C] \]
@@ -1053,13 +1058,9 @@ F(x, y, y', \cdots, y^{(n)}) = 0
 3. $\Delta < 0$, 即 $r_{1,2} = \alpha \pm \beta i$, 则其通解为 \[ y = e^{\alpha x}(C_1 \cos \beta x + C_2 \sin \beta x) \]
 
 ** 高于二阶的某些常系数齐次线性微分方程
-\[
-y^{(n)}+p_{1} y^{(n-1)}+p_{2} y^{(n-2)}+\cdots+p_{n-1} y'+p_{n} y=0
-\]
+\[ y^{(n)}+p_{1} y^{(n-1)}+p_{2} y^{(n-2)}+\cdots+p_{n-1} y'+p_{n} y=0 \]
 其中 $p_i(i=1,2,\cdots,n)$ 为常数, 对应的特征方程为
-\[
-r^{n}+p_{1} r^{n-1}+p_{2} r^{n-2}+\cdots+p_{n-1} r+p_{n}=0
-\]
+\[ r^{n}+p_{1} r^{n-1}+p_{2} r^{n-2}+\cdots+p_{n-1} r+p_{n}=0 \]
 1. $n$ 个相异实根 $r_1, r_2, \cdots, r_n$, 则其通解为 \[y = C_1 e^{r_1 x} + C_2 e^{r_2 x} + \cdots + C_n e^{r_n x} \]
 2. $k(k \leqslant n)$ 重实根 $r$, 则其通解中含有 \[ (C_1+C_2 x+ \cdots + C_k x^{k-1}) e^{rx} \]
 3. $k(k \leqslant \frac{n}{2})$ 重共轭复根 $\alpha \pm \beta i$, 则其通解中含有 \[ e^{\alpha x}\qty[\qty(C_{1}+C_{2} x+\cdots+C_{k} x^{k-1}) \cos \beta x+\qty(D_1+D_2 x+\cdots+D_k x^{k-1}) \sin \beta x] \]

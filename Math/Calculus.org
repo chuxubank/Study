@@ -1,10 +1,11 @@
-#+LATEX_HEADER: \usepackage{mathtools, amsthm, booktabs, physics}
+#+LATEX_HEADER: \usepackage{mathtools, amsthm, booktabs, physics, pgfplots}
 #+LATEX_HEADER: \renewcommand\arraystretch{1.5}
 #+LATEX_HEADER: \theoremstyle{definition} \newtheorem{definition}{定义}[section]
 #+LATEX_HEADER: \theoremstyle{plain} \newtheorem{theorem}{定理}[section]
 #+LATEX_HEADER: \theoremstyle{plain} \newtheorem*{deduction}{推论}
 #+LATEX_HEADER: \theoremstyle{remark} \newtheorem{remark}{注释}[section]
 #+LATEX_HEADER: \DeclareMathOperator{\lcm}{lcm}
+#+LATEX_HEADER: \usetikzlibrary{positioning}
 
 #+PROPERTY: ex
 
@@ -1079,3 +1080,67 @@ F(x, y, y', \cdots, y^{(n)}) = 0
    其中 $t= \max \qty{l,n}$, 而 $k$ 按 $\lambda \pm \omega i$ _不是特征方程的根_ / _是特征方程的单根_ 分别取 $0/1$.
 
 ** 微分方程的简单应用
+
+\twocolumn
+* 附录
+** 几种常用的曲线
+*** 半立方抛物线
+\begin{tikzpicture}[domain=0:1.6]
+\draw[->] (-.2,0) -- (2,0) node[below] {$x$};
+\draw[->] (0,-2) -- (0,2) node[left] {$y$};
+\draw plot(\x, {sqrt(\x^3)});
+\draw plot(\x, {-sqrt(\x^3)});
+\node [below] at (1,-2) {$y^2=ax^3$};
+\end{tikzpicture}
+
+*** 概率曲线
+\begin{tikzpicture}[domain=-2:2]
+\draw[->] (-2,0) -- (2,0) node[below] {$x$};
+\draw[->] (0,-.2) -- (0,2) node[left] {$y$};
+\draw plot(\x, {exp(-(\x)^2)});
+\node [below] at (0,-.2) {$y=e^{-x^2}$};
+\end{tikzpicture}
+
+*** 星形线(内摆线的一种)
+\begin{tikzpicture}[domain=0:2*pi]
+\draw[->] (-1.5,0) -- (1.5,0) node[below] {$x$};
+\draw[->] (0,-1.5) -- (0,1.5) node[left] {$y$};
+\draw[smooth, variable=\t] plot({cos(\t r)^3},{sin(\t r)^3});
+\draw (0,0) -- node[above left=1pt] {$a$} (1,0);
+\node [below] (A) at (0,-1.5) {$x^{\frac{2}{3}}+y^{\frac{2}{3}}=a^{\frac{2}{3}}$};
+\node [below] at (A.south) {$\begin{cases} x=a\cos^3\theta\\ y=a\sin^3\theta \end{cases}$};
+\end{tikzpicture}
+
+*** 摆线(Cycloid)
+:PROPERTIES:
+:ex:       2018-17
+:END:
+\begin{tikzpicture}[domain=-pi/2:2*pi+pi/2]
+\draw[->] (-1,0) -- (2*pi+1,0) node[below] {$x$};
+\draw[->] (0,-.5) -- (0,2.5) node[left] {$y$};
+\draw[smooth, variable=\t] plot({\t-sin(\t r)},{1-cos(\t r)});
+\node [below] at (pi,-.5) {$\begin{cases} x=a(\theta-\sin\theta)\\ y=a(1-\cos\theta) \end{cases}$};
+\end{tikzpicture}
+
+*** 心形线(外摆线的一种)
+\begin{tikzpicture}[domain=0:360]
+\draw[->] (-2.5,0) -- (.5,0) node[below] {$x$};
+\draw[->] (0,-1.5) -- (0,1.5) node[left] {$y$};
+\draw[smooth] plot(\x: {1-cos(\x)});
+\draw (-2,0) -- node[below] {$2a$} (0,0);
+\node [below] (A) at (-1,-1.5) {$x^2+y^2+ax=a \sqrt{x^2+y^2}$};
+\node [below] at (A.south) {$\rho=a(1-\cos\theta)$};
+\end{tikzpicture}
+
+*** 笛卡尔叶形线(Folium of Descartes)
+\begin{tikzpicture}[domain=120:-30]
+\draw[->] (-pi/2-.5,0) -- (pi/2+.5,0) node[below] {$x$};
+\draw[->] (0,-pi/2-.5) -- (0,pi/2+.5) node[left] {$y$};
+\draw[smooth] plot(\x: {3*sin(\x)*cos(\x)/(sin(\x)^3+cos(\x)^3)});
+\draw[dashed, domain=-pi/2-.5:pi/2-.5] plot(\x, {-\x -1});
+\node[left] at (-.5,-.5) {$x+y=-a$};
+\node [below] (A) at (0,-pi/2-.5) {$x^3+y^3-3axy=0$};
+\node [below] (B) at (A.south) {$x=\frac{3at}{1+t^3}, y=\frac{3at^2}{1+t^3}$};
+\node [below] at (B.south) {$\rho=\frac{3a\sin\theta\cos\theta}{\sin^3\theta+\cos^3\theta}$};
+\end{tikzpicture}
+

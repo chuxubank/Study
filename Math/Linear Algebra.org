@@ -6,7 +6,7 @@
 #+LATEX_HEADER: \theoremstyle{plain} \newtheorem*{deduction}{推论}
 #+LATEX_HEADER: \theoremstyle{remark} \newtheorem{remark}{注释}[section]
 #+LATEX_HEADER: \DeclareMathOperator{\diag}{diag}
-#+LATEX_HEADER: \DeclareMathOperator{\tr}{tr}
+# #+LATEX_HEADER: \DeclareMathOperator{\tr}{tr}
 #+LATEX_HEADER: \newcommand{\inner}[2]{[\bm{#1},\bm{#2}]}
 #+LATEX_HEADER: \newcommand{\trans}[1]{\bm{#1}^{\mathrm{T}}}
 #+LATEX_HEADER: \newcommand{\vg}[1]{\mathrm{(\uppercase\expandafter{\romannumeral#1})}}
@@ -304,7 +304,7 @@ SCHEDULED: <2019-11-11 Mon>
 #+attr_latex: :options [证明 6.]
 #+begin_proof
 \[ \underbrace{(\bm{A}+\bm{B})}_{\vg{1}} = \underbrace{(\bm{A},\bm{B})}_{\vg{2}} \mqty(\diag(1,\dots,1) \\ \diag(1,\dots,1)) \]
-即 \vg{1} 可由 \vg{2} 线性表出, 即 $R \vg{1} \leqslant R \vg{2}$ 
+即 $\vg{1}$ 可由 $\vg{2}$ 线性表出, 即 $R \vg{1} \leqslant R \vg{2}$
 #+end_proof
 
 #+attr_latex: :options [证明 7.]

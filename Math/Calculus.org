@@ -790,9 +790,15 @@ k \in \mathbf{N}^*.
 ** 定积分的应用
 *** 微元法
 *** 平面图形的面积
-- 直角坐标系 ::
-- 极坐标系 ::
-  \[ S = \frac{1}{2} \int_{\alpha}^{\beta} \varphi^2(\theta) \dd{\theta} \]
+:PROPERTIES:
+:ex:       2018-17
+:END:
+- 参数方程 :: $\begin{cases} x=x(t) \\ y=y(t) \end{cases}, x=x(\alpha), x=x(\beta), y=0$
+  \[ S = \int_{\alpha}^{\beta} \abs{y(t)} \dd{x(t)} = \int_{\alpha}^{\beta} \abs{y(t) x'(t)} \dd{t} \]
+- 直角坐标系 :: $y=f(x), y=g(x), x=a, x=b \quad (a<b)$
+  \[ S = \int_a^b \abs{f(x)-g(x)} \dd{x} \]
+- 极坐标系 :: $r=\varphi(\theta), \theta=\alpha, \theta=\beta \quad (\alpha<\beta)$
+  \[ S_{\text{曲边扇形}} = \frac{1}{2} \int_{\alpha}^{\beta} \varphi^2(\theta) \dd{\theta} \]
   \[ S_{\text{扇}} = \frac{1}{2} l r \qc l = \theta r \]
 
 *** 平面曲线的弧长                                                  :drill:
@@ -809,16 +815,15 @@ SCHEDULED: <2019-11-13 Wed>
 :DRILL_LAST_REVIEWED: [2019-11-09 Sat 23:47]
 :END:
 - 参数方程 ::
-  若曲线 $L$ 的方程为 $\begin{cases} x=x(t), \\ y=y(t),\end{cases} \alpha \leqslant t \leqslant \beta$,
-  则 $L$ 的弧长为 \[ s = \int_{\alpha}^{\beta} \sqrt{x'^2(t) + y'^2(t)} \dd{t} \]
+  $\begin{cases} x=x(t), \\ y=y(t),\end{cases} \alpha \leqslant t \leqslant \beta$
+  \[ s = \int_{\alpha}^{\beta} \sqrt{x'^2(t) + y'^2(t)} \dd{t} \]
 
 - 直角坐标系 ::
-  若曲线 $L$ 的方程为 $y=y(x) \qc a \leqslant x \leqslant b$,
-  则 $L$ 的弧长为 \[ s = \int_a^b \sqrt{1 + y'^2} \dd{x} \]
+  $y=y(x) \qc a \leqslant x \leqslant b$
+  \[ s = \int_a^b \sqrt{1 + y'^2} \dd{x} \]
 
 - 极坐标系 ::
-  若曲线 $L$ 的方程为 $r=r(\theta) \qc \alpha \leqslant \theta \leqslant \beta$,
-  则 $L$ 的弧长为
+  $r=r(\theta) \qc \alpha \leqslant \theta \leqslant \beta$
   \[ s = \int_{\alpha}^{\beta} \sqrt{r^2(\theta) + r'^2(\theta)} \dd{\theta} \]
 
 *** 旋转体的体积及侧面积                                            :drill:

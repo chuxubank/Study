@@ -1,13 +1,11 @@
-# eBook build output
-*.epub
-*.mobi
-*.pdf
+# ignore all
+*
 
-# org build output
-*.el
-*.tex
-*.svg
+# org
+!*.org
 
-# pgf gnuplot build output
-*.gnuplot
-*.table
+# markdown
+!*.md
+
+# images
+*/img

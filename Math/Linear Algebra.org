@@ -9,6 +9,7 @@
 # #+LATEX_HEADER: \DeclareMathOperator{\tr}{tr}
 #+LATEX_HEADER: \newcommand{\inner}[2]{[\bm{#1},\bm{#2}]}
 #+LATEX_HEADER: \newcommand{\trans}[1]{\bm{#1}^{\mathrm{T}}}
+#+LATEX_HEADER: \newcommand{\inver}[1]{\bm{#1}^{-1}}
 #+LATEX_HEADER: \newcommand{\vg}[1]{\mathrm{(\uppercase\expandafter{\romannumeral#1})}}
 
 #+PROPERTY: ex
@@ -168,7 +169,8 @@ $\bm{A}$ 是可逆矩阵的充分必要条件是 $|\bm{A}| \neq 0$, 即可逆矩
 
 ** 分块矩阵及其运算
 - 分块矩阵的线性运算和乘法与矩阵的相关运算相似.
-- 设 $\bm{A} = \smqty(\bm{A}_{11} & \cdots & \bm{A}_{1r} \\ \vdots & & \vdots \\ \bm{A}_{s1} & \cdots & \bm{A}_{sr})$, 则 $\trans{A} = \smqty(\bm{A}_{11}^{\mathrm{T}} & \cdots & \bm{A}_{s1}^{\mathrm{T}} \\ \vdots & & \vdots \\ \bm{A}_{1r}^{\mathrm{T}} & \cdots & \bm{A}_{sr}^{\mathrm{T}})$.
+- 设 $\bm{A} = \smqty(\bm{A}_{11} & \cdots & \bm{A}_{1r} \\ \vdots & & \vdots \\ \bm{A}_{s1} & \cdots & \bm{A}_{sr})$,
+  则 $\trans{A} = \smqty(\bm{A}_{11}^{\mathrm{T}} & \cdots & \bm{A}_{s1}^{\mathrm{T}} \\ \vdots & & \vdots \\ \bm{A}_{1r}^{\mathrm{T}} & \cdots & \bm{A}_{sr}^{\mathrm{T}})$.
 
 *** 分块对角矩阵
 \[ \bm{A} = \mqty(\dmat{\bm{A}_1,\bm{A}_2,\ddots,\bm{A}_s}) \]
@@ -177,7 +179,19 @@ $\bm{A}$ 是可逆矩阵的充分必要条件是 $|\bm{A}| \neq 0$, 即可逆矩
   - 若 $|\bm{A_i}| \neq 0 \quad (i=1,2,\dots,s)$, 则 $|\bm{A}| \neq 0$, 并有
     \[ \bm{A}^{-1} = \mqty(\dmat{\bm{A}_1^{-1},\bm{A}_2^{-1},\ddots,\bm{A}_s^{-1}}) \]
 
-*** TODO 分块矩阵的逆
+*** 分块矩阵的逆                                                    :drill:
+**** 主对角线矩阵
+1. 主对角线求逆.
+2. 左乘同行, 右乘同列, 加一负号.
+\[ \bm{A} = \mqty(\bm{B} & \bm{O} \\ \bm{D} & \bm{C}) \Rightarrow \inver{A} = \mqty(\inver{B} & \bm{O} \\ -\inver{C}\bm{D}\inver{B} & \inver{C}) \]
+\[ \bm{A} = \mqty(\bm{B} & \bm{D} \\ \bm{O} & \bm{C}) \Rightarrow \inver{A} = \mqty(\inver{B} & -\inver{B}\bm{D}\inver{C} \\ \bm{O} & \inver{C}) \]
+
+**** 负对角线矩阵
+1. 副对角线求逆.
+2. 左乘同行, 右乘同列, 加一负号.
+3. 主对负对全部换位.
+\[ \bm{A} = \mqty(\bm{O} & \bm{B} \\ \bm{C} & \bm{D}) \Rightarrow \inver{A} = \mqty(-\inver{C}\bm{D}\inver{B} & \inver{C} \\ \inver{B} & \bm{O}) \]
+\[ \bm{A} = \mqty(\bm{D} & \bm{B} \\ \bm{C} & \bm{O}) \Rightarrow \inver{A} = \mqty(\bm{O} & \inver{C} \\ \inver{B} & -\inver{B}\bm{D}\inver{C}) \]
 
 ** 矩阵的初等变换
 #+attr_latex: :options [矩阵的初等变换]
@@ -229,7 +243,7 @@ label:thr:3
 
 - 初等矩阵的性质
   1. 设 $\bm{A}_{m \times n}$, 对 $\bm{A}$ 施行一次初等行变换, 相当于 $\bm{A}$ 左乘一个相应的 $m$ 阶初等矩阵.
-   对 $\bm{A}$ 施行一次初等列变换, 相当于 $\bm{A}$ 右乘一个相应的 $n$ 阶初等矩阵. (左行右列)
+     对 $\bm{A}$ 施行一次初等列变换, 相当于 $\bm{A}$ 右乘一个相应的 $n$ 阶初等矩阵. (左行右列)
   2. 方阵 $\bm{A}$ 可逆的充分必要条件是存在有限个初等矩阵 $\bm{P}_1, \bm{P}_2, \dots, \bm{P}_l$, 使 $\bm{A}=\bm{P}_1\bm{P}_2 \cdots \bm{P}_l$
 
 由以上两条性质即可证明 cref:thr:3.
@@ -610,10 +624,14 @@ $V$ 中任一向量 $\bm{a}$ 应能由 $\bm{e}_1,\dots,\bm{e}_r$ 线性表示, �
 
 - 方阵 $\bm{A}$ 的迹 :: $\tr \bm{A} = a_{11}+a_{22}+\cdots +a_{nn}$
 
+*** 特征值和特征向量的性质                                          :drill:
 设 $n$ 阶矩阵 $\bm{A}=(a_{ij})$ 的特征值为 $\lambda_1,\lambda_2,\dots,\lambda_n$, 不难证明[fn:1]:
 1. $\lambda_1+\lambda_2+\cdots+\lambda_n=\tr \bm{A}$;
 2. $\lambda_1\lambda_2\cdots\lambda_n=|\bm{A}|$.
    1. $\bm{A}$ 可逆的充分必要条件是它的特征值不含零.
+
+3. $0$ 是不可逆矩阵的特征值.
+4. 矩阵的行和为同一数, 该数即是矩阵的特征值.
 
 设 $\lambda$ 是 $\bm{A}$ 的特征值, 则
 1. $\lambda^k$ 是 $\bm{A}^k$ 的特征值;
@@ -631,6 +649,7 @@ $\bm{A}$ 的 $k$ 重特征值对应线性无关的特征向量的个数小于或
 设 $\lambda_1$ 和 $\lambda_2$ 是方阵 $\bm{A}$ 的两个不同特征值, $\bm{\xi}_1,\bm{\xi}_2,\dots,\bm{\xi}_s$ 和 $\bm{\eta}_1,\bm{\eta}_2,\dots,\bm{\eta}_t$
 分别是对应于 $\lambda_1$ 和 $\lambda_2$ 的线性无关的特征向量, 则 $\bm{\xi}_1,\bm{\xi}_2,\dots,\bm{\xi}_s, \bm{\eta}_1,\bm{\eta}_2,\dots,\bm{\eta}_t$ 线性无关.
 #+end_deduction
+
 #+begin_proof
 留作习题?
 #+end_proof

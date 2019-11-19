@@ -299,7 +299,7 @@ SCHEDULED: <2019-11-11 Mon>
 3. $R(\bm{A}^n) = R(\bm{A}^{n+1})$.
 4. 若 $\bm{A} \sim \bm{B}$, 则 $R(\bm{A}) = R(\bm{B})$.
    1. 若 $\bm{P}, \bm{Q}$ 可逆, 则 $R(\bm{PAQ})=R(\bm{A})$.
-5. $\max \qty{R(\bm{A}), R(\bm{B})} \leqslant R(\bm{A}, \bm{B}) \leqslant R(\bm{A}) + R(\bm{B})$.
+5. $\max \qty{R(\bm{A}), R(\bm{B})} \leqslant R(\bm{A}, \bm{B})$.
    1. 特别地, 当 $\bm{B}=\bm{b}$ 为非零列向量时, 有 $R(\bm{A}) \leqslant R(\bm{A},\bm{b}) \leqslant R(\bm{A})+1$.
 6. $R(\bm{A}+\bm{B}) \leqslant R(\bm{A},\bm{B}) \leqslant R(\bm{A}) + R(\bm{B})$.
 7. $R(\bm{A})+R(\bm{B})-n \leqslant R(\bm{AB}) \leqslant \min \qty{R(\bm{A}), R(\bm{B})} \quad (\bm{A}_{m \times n}, \bm{B}_{n \times l})$.
@@ -493,6 +493,9 @@ $n$ 元齐次线性方程组 $\bm{Ax}=0$ 有非零解的充分必要条件是 $R
 #+end_theorem
 
 *** 非齐次线性方程组的通解
+:PROPERTIES:
+:ex:       2018-23
+:END:
 对于向量方程 $\bm{Ax}=\bm{b}$:
 1. 设 $\bm{x}=\bm{\eta}_1,\bm{x}=\bm{\eta}_2$ 都是该方程的解, 则 $x=\bm{\eta}_1-\bm{\eta}_2$ 为对应的齐次线性方程组 $\bm{Ax}=0$ 的解.
 2. 设 $\bm{x}=\bm{\eta}$ 是该方程的解, $\bm{x}=\bm{\xi}$ 是对应的齐次方程的解, 则 $\bm{x}=\bm{\xi}+\bm{\eta}$ 仍是该方程的解.
@@ -794,6 +797,9 @@ k_i=
 用正交变换化二次型成标准形, 具有保持几何形状不变的优点.
 
 *** 拉格朗日配方法化二次型为标准形
+:PROPERTIES:
+:ex:       2018-22
+:END:
 1. 依次将 $x_i^2$ 配成完全平方(需一次性将 $x_i$ 配完, 即配方后除第一项外不含 $x_i$).
    1. 若原式不含平方项, 则可先做换元 $\bm{x}=\bm{Ay}$ 凑出平方项(平方差公式), 再对 $y_i^2$ 配方.
 2. 此时即可直接看出所需的换元 $\bm{y}=\bm{Bx}$ 或 $\bm{z}=\bm{By}$.

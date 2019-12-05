@@ -26,19 +26,13 @@
 * 程序的机器级表示
 ** 程序编码
 *** 机器级代码
-- 
+
+-----
 
 * 处理器体系结构
 - ISA :: (Insturuction Set Architecture) 指令集体系结构
 
-         不同的处理器家族有不同的 ISA.
-
-- HCL :: (Hardware Control Language) 硬件控制语言
-
-- 冒险(Hazard) :: 指令的位置或操作数依赖于其他仍在流水线中的指令.
-
 ** CPU 中的时序电路
-
 
 ** 单周期处理器的设计
 

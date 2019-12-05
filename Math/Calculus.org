@@ -155,6 +155,9 @@
 (对于 $x \to x_0$, $\mathring{U}$ 表示 $0<\abs{x-x_0}<\delta$; 对于 $x \to \infty$, $\mathring{U}$ 表示 $\abs{x}>X$)
 
 **** 局部保号性
+:PROPERTIES:
+:ex:       2017-19
+:END:
 #+begin_theorem
 若 $\lim f(x) = A>B$, 则存在 $\mathring{U}$, 在 $\mathring{U}$ 内 $f(x)>B$.
 #+end_theorem
@@ -171,7 +174,16 @@
 #+end_theorem
 
 ** 函数的左极限和右极限
+:PROPERTIES:
+:ex:       2016-3
+:END:
+左极限与有极限统称为单侧极限.
 [[函数极限的定义]]
+*** 几个常用的单侧极限
+\begin{align*}
+\lim_{x\to -\infty} e^x = 0 & \lim_{x\to +\infty} e^x = +\infty \\
+\lim_{x\to 0^-} \frac{1}{x} = -\infty & \lim_{x\to 0^+} \frac{1}{x} = +\infty
+\end{align*}
 
 ** 无穷小量和无穷大量大概念及其关系
 *** 无穷小量与极限的关系
@@ -221,7 +233,7 @@ $f(x_0 + 0)$ 与 $f(x_0 - 0)$ 至少有一个不存在
 1. (有界性定理) $f(x)$ 在 $[a,b]$ 上有界.
 2. (最值定理) 存在 $\xi_1, \xi_2 \in [a,b]$, 使 \[ f(\xi_1) = M = \max_{x \in [a,b]}f(x), \quad f(\xi_2) = m = \min_{x \in [a,b]} f(x) \]
 3. (介值定理) 对于任意 $\mu: m \leqslant \mu \leqslant M$, 存在 $\xi \in [a,b]$, 使 $f(\xi)=\mu$.
-特别地, 若 $f(a)f(b)<0$, 则存在 $\xi \in (a,b)$, 使 $f(\xi)=0$.
+   特别地, 若 $f(a)f(b)<0$, 则存在 $\xi \in (a,b)$, 使 $f(\xi)=0$.
 
 ** *常用极限
 \[ \lim _{n\to\infty} \sqrt[n]{a^n_1+a^n_2+\cdots+a^n_m} = \max \qty{a_i} \]
@@ -320,6 +332,9 @@ $f(x) \leqslant f(x_0)$ (或 $f(x) \geqslant f(x_0)$), 则 $f'(x_0) = 0$.
 #+end_theorem
 
 *** 罗尔(Rolle)定理
+:PROPERTIES:
+:ex:       2017-19
+:END:
 #+begin_theorem
 设 $f(x)$ 在 $[a,b]$ 上连续, 在 $(a,b)$ 内可导, 且 $f(a)=f(b)$, 则存在 $\xi \in (a,b)$, 使
 \[ f'(\xi) = 0 \]
@@ -394,6 +409,7 @@ SCHEDULED: <2019-11-13 Wed>
 :DRILL_EASE: 2.22
 :DRILL_LAST_QUALITY: 3
 :DRILL_LAST_REVIEWED: [2019-11-09 Sat 23:39]
+:ex:       2017-18
 :END:
 
 - 必要条件 :: 设 $f(x)$ 在点 $x_0$ 处取得极值, 且 $f'(x_0)$ 存在, 则 $f'(x_0)=0$.
@@ -422,6 +438,7 @@ SCHEDULED: <2019-11-13 Wed>
 :DRILL_EASE: 2.22
 :DRILL_LAST_QUALITY: 3
 :DRILL_LAST_REVIEWED: [2019-11-09 Sat 23:39]
+:ex:       2016-4
 :END:
 
 - 必要条件 :: 设 $(x_0, f(x_0))$ 是曲线 $y=f(x)$ 的拐点, 且 $f''(x)$ 存在, 则 $f''(x_0)=0$.
@@ -434,6 +451,9 @@ SCHEDULED: <2019-11-13 Wed>
   则 $(x_0, f(x_0))$ 是曲线 $y=f(x)$ 的拐点.
 
 *** 曲线的渐近线
+:PROPERTIES:
+:ex:       2016-9
+:END:
 - 水平渐近线 :: 若 $\lim_{x \to \pm \infty} f(x) = a$, 则 $y=a$ 是曲线 $y=f(x)$ 的水平渐近线.
 - 铅直渐近线 :: 若 $\lim_{x \to x_0^{\pm}} f(x) = \infty$, 则 $x=x_0$ 是曲线 $y=f(x)$ 的铅直渐近线.
 - 斜渐近线 :: $y=ax+b$ 是曲线 $y=f(x)$ 的斜渐近线当且仅当
@@ -580,6 +600,9 @@ SCHEDULED: <2019-11-16 Sat>
 
 ** 定积分的概念和基本性质
 *** 定积分(黎曼 Riemann 积分)的定义
+:PROPERTIES:
+:ex:       2017-17 2016-10
+:END:
 设有常数 $I$, 如果对于任意 $\varepsilon > 0$, 总存在 $\delta >0$, 使得对于区间 $[a,b]$ 的任何分法, 不论 $\xi_i$ 在 $[x_{i-1}, x_i]$ 中怎样选取,
 只要 $\lambda = \max \qty{\Delta x_i} < \delta$, 总有
 \[ \abs{\sum_{i=1}^n f(\xi_i)\Delta x_i - I} < \varepsilon \]
@@ -617,9 +640,14 @@ SCHEDULED: <2019-11-16 Sat>
 #+end_theorem
 
 ** 定积分中值定理
+:PROPERTIES:
+:ex:       2016-21
+:END:
 #+begin_theorem
 如果函数 $f(x)$ 在积分区间 $[a,b]$ 上连续, 那么在 $[a,b]$ 上至少存在一个点 $\xi$, 使得
 \[ \int_a^b f(x) \dd{x} = f(\xi)(b-a) \quad (a \leqslant \xi \leqslant b) \]
+即
+\[ f(\xi) = \bar{f} \]
 #+end_theorem
 
 #+begin_deduction
@@ -629,7 +657,7 @@ SCHEDULED: <2019-11-16 Sat>
 
 ** 积分上限的函数及其导数
 :PROPERTIES:
-:ex:       2018-16
+:ex:       2018-16 2016-21
 :END:
 #+attr_latex: :options [原函数存在定理]
 #+begin_theorem
@@ -760,7 +788,7 @@ k \in \mathbf{N}^*.
 \end{align*}
 
 ** 反常(广义)积分
-*** 常用的反常积分
+*** 常用的反常积分                                                  :drill:
 \begin{align*}
 \int_1^{+\infty} \frac{1}{x^p} \dd{x} &=
 \begin{cases}
@@ -791,12 +819,19 @@ k \in \mathbf{N}^*.
 
 \[ \int_0^{+\infty} \frac{\sin x}{x} \dd{x} = \frac{\pi}{2} \]
 
-*** $\Gamma$ 函数
+*** $\Gamma$ 函数                                                   :drill:
+:PROPERTIES:
+:ex:       2017-11
+:END:
 \[ \Gamma(s) = \int_0^{+\infty} e^{-x} x^{s-1} \dd{x} \quad (s>0)\]
 - 递推公式 :: \[ \Gamma(s+1) = s\Gamma(s) \quad (s>0) \]
+  \[ \Gamma(n+1) = n! \]
 - 趋向 :: \[ \Gamma(s) \to +\infty \quad (s \to 0^+) \]
 - 余元公式 :: \[ \Gamma(s) \Gamma(1-s) = \frac{\pi}{\sin \pi s} \quad (0<s<1) \]
-- 常用公式 :: \[ \int_0^{+\infty} e^{-x^2} \dd{x} = \frac{\sqrt{\pi}}{2} \]
+  \[ \Gamma(\frac{1}{2})=\sqrt{\pi} \]
+在 $\Gamma(s)$ 中做代换 $x=u^2$, 有
+\[ \Gamma(s)=2\int_0^{+\infty}e^{-u^2}u^{2s-1} \dd{u} \]
+- 常用积分 :: \[ \int_0^{+\infty} e^{-x^2} \dd{x} = \frac{\sqrt{\pi}}{2} \]
 
 ** 定积分的应用
 *** 微元法
@@ -806,8 +841,10 @@ k \in \mathbf{N}^*.
 :END:
 - 参数方程 :: $\begin{cases} x=x(t) \\ y=y(t) \end{cases}, x=x(\alpha), x=x(\beta), y=0$
   \[ S = \int_{\alpha}^{\beta} \abs{y(t)} \dd{x(t)} = \int_{\alpha}^{\beta} \abs{y(t) x'(t)} \dd{t} \]
+
 - 直角坐标系 :: $y=f(x), y=g(x), x=a, x=b \quad (a<b)$
   \[ S = \int_a^b \abs{f(x)-g(x)} \dd{x} \]
+
 - 极坐标系 :: $r=\varphi(\theta), \theta=\alpha, \theta=\beta \quad (\alpha<\beta)$
   \[ S_{\text{曲边扇形}} = \frac{1}{2} \int_{\alpha}^{\beta} \varphi^2(\theta) \dd{\theta} \]
   \[ S_{\text{扇}} = \frac{1}{2} l r \qc l = \theta r \]
@@ -824,6 +861,7 @@ SCHEDULED: <2019-11-13 Wed>
 :DRILL_EASE: 2.36
 :DRILL_LAST_QUALITY: 3
 :DRILL_LAST_REVIEWED: [2019-11-09 Sat 23:47]
+:ex:       2016-20
 :END:
 - 参数方程 ::
   $\begin{cases} x=x(t), \\ y=y(t),\end{cases} \alpha \leqslant t \leqslant \beta$
@@ -849,6 +887,7 @@ SCHEDULED: <2019-11-13 Wed>
 :DRILL_EASE: 2.36
 :DRILL_LAST_QUALITY: 3
 :DRILL_LAST_REVIEWED: [2019-11-09 Sat 23:47]
+:ex:       2016-20
 :END:
 - 由曲线 $y=f(x)$ 与直线 $y=0, x=a, x=b (a<b)$ 所围成的平面图形绕 $x$ 轴旋转一周, 生成旋转体的体积和侧面积分别为
   \[ V_x = \pi \int_a^b f^2(x) \dd{x}, S_x = 2\pi \int_a^b f(x) \sqrt{1+f'^2(x)} \dd{x} \]
@@ -893,16 +932,25 @@ SCHEDULED: <2019-11-13 Wed>
 
 ** 多元函数的偏导数和全微分
 *** 全微分
+:PROPERTIES:
+:ex:       2017-12
+:END:
 如果函数 $z=f(x,y)$ 在点 $(x,y)$ 处的全增量 $\Delta z = f(x+\Delta x, y+\Delta y) - f(x,y)$ 可以表示为
 \[ \Delta z = A \Delta x + B \Delta y + o(\rho) \]
 其中 $A,B$ 不依赖于 $\Delta x, \Delta y$, 而仅与 $x,y$ 有关, $\rho = \sqrt{(\Delta x)^2 + (\Delta y)^2}$, 则称函数 $z=f(x,y)$ 在点 $(x,y)$
 处可微, 称 $A\Delta x+B \Delta y$ 为函数 $z=f(x,y)$ 处的全微分, 记作 $\dd{z}$.
-
-*** 可微的条件
-- 必要条件 :: 如果函数 $z=f(x,y)$ 在点 $(x,y)$ 处可微, 则偏导数 $\pdv{z}{x}, \pdv{z}{y}$ 都存在, 且 $\dd{z} = \pdv{z}{x}\dd{x} + \pdv{z}{y}\dd{y}$.
-- 充分条件 :: 如果函数 $z=f(x,y)$ 的偏导数 $\pdv{z}{x}, \pdv{z}{y}$ 在点 $(x,y)$ 处连续, 则函数在该点可微.
+- 可微的必要条件 :: 如果函数 $z=f(x,y)$ 在点 $(x,y)$ 处可微, 则偏导数 $\pdv{z}{x}, \pdv{z}{y}$ 都存在, 且 $\dd{z} = \pdv{z}{x}\dd{x} + \pdv{z}{y}\dd{y}$.
+- 可微的充分条件 :: 如果函数 $z=f(x,y)$ 的偏导数 $\pdv{z}{x}, \pdv{z}{y}$ 在点 $(x,y)$ 处连续, 则函数在该点可微.
 
 ** 多元复合函数、隐函数的求导法
+*** 复合函数求导法则
+:PROPERTIES:
+:ex:       2017-16
+:END:
+设函数 $u=u(x,y), v=v(x,y)$ 的偏导数存在, 且对应与 $(x,y)$ 的点 $(u,v)$ 处函数 $z=f(u,v)$ 可微,
+则复合函数 $z=f[u(x,y),v(x,y)]$ 对 $x$ 及 $y$ 的偏导数均存在, 且
+\[ \pdv{z}{x}=\pdv{f}{u}\pdv{u}{x} + \pdv{f}{v}\pdv{v}{x}, \pdv{z}{y}=\pdv{f}{u}\pdv{u}{y}+\pdv{f}{v}\pdv{v}{y} \]
+
 *** 隐函数求导法则
 - 对于由方程 $F(x,y) = 0$ 确定的隐函数 $y=f(x)$, 当 $F'_y(x,y) \neq 0$ 时, 有
 \[ \dv{y}{x} = -\frac{F'_x}{F'_y} \]
@@ -941,6 +989,9 @@ SCHEDULED: <2019-11-16 Sat>
 若 $f(x,y)$ 在点 $(x_0, y_0)$ 处具有偏导数且取得极值, 则 $f'_x=0, f'_y=0$. 这样的点称为驻点.
 
 *** 二元函数取得极值的充分条件
+:PROPERTIES:
+:ex:       2016-17
+:END:
 设函数 $z=f(x,y)$ 在点 $(x_0, y_0)$ 的某个领域内具有连续的二阶偏导数, 且 $f'_x=0, f'_y=0$, 令
 \[ A=f''_{xx}, B=f''_{xy}, C=f''_{yy} \]
 则有:
@@ -1020,10 +1071,10 @@ F'_{\lambda} = 0,
 \label{eq:1}
 F(x, y, y', \cdots, y^{(n)}) = 0
 \end{equation}
-- 解 :: 若函数 $y=\varphi(x)$ 代入方程 \eqref{eq:1} 成为恒等式, 则称 $y=\varphi(x)$ 为方程 \eqref{eq:1} 的解.
-- 通解 :: 若方程 \eqref{eq:1} 的解中含有 $n$ 个彼此无关的任意常数, 则称其为方程 \eqref{eq:1} 的通解.
+- 解 :: 若函数 $y=\varphi(x)$ 代入方程 eqref:eq:1 成为恒等式, 则称 $y=\varphi(x)$ 为方程 eqref:eq:1 的解.
+- 通解 :: 若方程 eqref:eq:1 的解中含有 $n$ 个彼此无关的任意常数, 则称其为方程 eqref:eq:1 的通解.
 - 初始条件 :: \[ \eval{y}_{x=x_0}=y_0, \eval{y'}_{x=x_0}=y'_0, \cdots, \eval{y^{(n-1)}}_{x=x_0}=y^{(n-1)}_0 \]
-- 特解 :: 确定了通解中任意常数的值后的解, 称为方程 \eqref{eq:1} 的特解.
+- 特解 :: 确定了通解中任意常数的值后的解, 称为方程 eqref:eq:1 的特解.
 
 ** 变量可分离的微分方程
 \[ \dv{y}{x} = f(x)g(y) \]
@@ -1033,6 +1084,9 @@ F(x, y, y', \cdots, y^{(n)}) = 0
 \[ \int \frac{\dd{y}}{g(y)} = \int f(x) \dd{x} \]
 
 ** 齐次微分方程
+:PROPERTIES:
+:ex:       2017-21
+:END:
 \[ \dv{y}{x} = \varphi(\frac{y}{x}) \]
 若令 $u=\frac{y}{x}$, 即 $y=ux$, 有 $\dv{y}{x}=u+x\dv{u}{x}$, 则原方程可变为
 \[ u+x\dv{u}{x} = \varphi(u) \]
@@ -1048,17 +1102,23 @@ F(x, y, y', \cdots, y^{(n)}) = 0
 \[ y=e^{-\int P(x) \dd{x}} \qty[\int Q(x) e^{\int P(x) \dd{x}} \dd{x} + C] \]
 
 ** 可降阶的高阶微分方程
+:PROPERTIES:
+:ex:       2016-19
+:END:
 - $y^{(n)}=f(x)$ 型方程 :: 只需逐次积分(若每次积分均可进行)即可求得通解.
 - $y''=f(x,y')$ 型方程(不含 $y$ 的二阶方程) :: 令 $p=y'$, 则可变为 \[ p'=f(x,p) \]
 - $y''=f(y,y')$ 型方程(不含 $x$ 的二阶方程) :: 令 $p=y'$, 则 $y''=\dv{p}{x}=\dv{p}{y} \cdot \dv{y}{x} = p\dv{p}{y}$, 原式可变为 \[ p\dv{p}{y} = f(y,p) \]
 
-** 线性微分方程解的性质及解的结构定理
+** 线性微分方程解的性质及解的结构定理                                :drill:
+:PROPERTIES:
+:ex:       2016-11
+:END:
 以二阶线性方程为例
 *** 解的性质
 1. 齐次线性方程的两个特解, 其 _线性组合_ 仍为该齐次线性方程的解.
 2. 非齐次线性方程的两个特解, 其 _差_ 为相应齐次方程的特解.
 3. 非齐次线性方程的一个特解 与 相应齐次方程的任意解之 _和_ 仍为该非齐次线性方程的解.
-4. (叠加原理)设 $y_1(x)$ 与 $y_2(x)$ 分别是方程 $y''+p(x)y'+q(x)y=f_1(x)$ 与 $y''+p(x)y'+q(x)y=f_2(x)$ 的特解, 则 $y_1(x) + y_2(x)$ 为方程 \[ y''+p(x)y'+q(x)y=f_1(x)+f_2(x) \] 的特解.
+4. (叠加原理) 设 $y_1(x)$ 与 $y_2(x)$ 分别是方程 $y''+p(x)y'+q(x)y=f_1(x)$ 与 $y''+p(x)y'+q(x)y=f_2(x)$ 的特解, 则 $y_1(x) + y_2(x)$ 为方程 \[ y''+p(x)y'+q(x)y=f_1(x)+f_2(x) \] 的特解.
 
 *** 解的结构
 1. 一阶线性方程的通解
@@ -1085,17 +1145,20 @@ F(x, y, y', \cdots, y^{(n)}) = 0
 2. $k(k \leqslant n)$ 重实根 $r$, 则其通解中含有 \[ (C_1+C_2 x+ \cdots + C_k x^{k-1}) e^{rx} \]
 3. $k(k \leqslant \frac{n}{2})$ 重共轭复根 $\alpha \pm \beta i$, 则其通解中含有 \[ e^{\alpha x}\qty[\qty(C_{1}+C_{2} x+\cdots+C_{k} x^{k-1}) \cos \beta x+\qty(D_1+D_2 x+\cdots+D_k x^{k-1}) \sin \beta x] \]
 
-** 简单的二阶常系数非齐次线性微分方程
+** 简单的二阶常系数非齐次线性微分方程                                :drill:
+:PROPERTIES:
+:ex:       2017-4
+:END:
 为求方程
 \[ y''+py'+qy=f(x) \]
 的通解, 只需求出它的一个特解 $y^{*}$, 并与其对应的齐次微分方程的通解作和即得.
 
 1. $f(x)=e^{\lambda x}P_m(x)$
-   \[ y^{*} = x^k e^{\lambda x} Q_m(x) \]
+   \[ y^{*} = x^k e^{\lambda x} R_m(x) \]
    其中 $k$ 按 $\lambda$ _不是特征方程的根_ / _是特征方程的单根_ / _是特征方程的复根_ 分别取 $0/1/2$.
 
 2. $f(x)=e^{\lambda x} \qty[P_l(x) \cos \omega x + Q_n(x) \sin \omega x]$
-   \[ y^{*} = x^k e^{\lambda x} \qty[R_m^{(1)}(x) \cos \omega x + R_m^{(2)}(x) \sin \omega x] \]
+   \[ y^{*} = x^k e^{\lambda x} \qty[R_t^{(1)}(x) \cos \omega x + R_t^{(2)}(x) \sin \omega x] \]
    其中 $t= \max \qty{l,n}$, 而 $k$ 按 $\lambda \pm \omega i$ _不是特征方程的根_ / _是特征方程的单根_ 分别取 $0/1$.
 
 ** 微分方程的简单应用

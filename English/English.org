@@ -2,6 +2,330 @@
 #+LATEX_HEADER: \setCJKmainfont{Source Han Serif SC}
 #+LATEX_HEADER: \setlist{nosep}
 
+* Word
+** 100 句
+\twocolumn
+** 常用前缀和后缀
+*** 常用前缀
+- aero- :: concerning the air or aircraft
+  : aeroplane aerospace
+
+- auto- :: of or by oneself
+  : autobiography autocriticism
+
+- be- :: to treat as the stated thing
+  : befriend belittle
+
+- bi- :: two; twice; double
+  : bilingual
+
+- bio- :: concerning living things
+  : biochemistry biosphere
+
+- by-, bye- :: less important
+  : by-product byway
+
+- centi- :: hundredth part of a unit
+  : centigrade centimeter
+
+- co-, col-, com-, con-, cor- :: together, with
+  #+begin_example
+    coauthor coexist collocation
+    compassion concentric confederation
+    correlate correspond
+  #+end_example
+  
+
+- contra- :: opposite
+  : contradiction contranatural
+
+- counter- :: opposite
+  : counteract counterattack
+
+- em- :: to cause to become
+  : embody empower
+
+- ex- :: former(and still living)
+  : ex-minister ex-wife
+
+- extra- :: outside; beyond
+  : extracurricular extraordinary
+
+- fore- :: in advance, before; in or at the front
+  : forearm forewarn
+
+- il-, im-, in-, ir- :: not
+  #+begin_example
+    illegel illiterate immoral impossible 
+    indirect insensitive irregular irresponsible
+  #+end_example
+
+- infra- :: below in a range; beyond
+  : infrared infrastructure
+
+- inter- :: between; among
+  : interchange international
+
+- intra- :: inside, within; into
+  : intracity intra-department
+
+- macro- :: large, exp. concerning a whole system rather than particular parts of
+  : macroeconomics macrostructure
+
+- mal- :: bad or badly
+  : malfunction maltreat
+
+- mono- :: one; single
+  : monoplane monotone
+
+- non- :: not
+  : nonresident nonsense
+
+- out- :: outside; beyond
+  : outlive outdoor
+
+- over- :: too much; above; additional
+  : overhead overtime
+
+- poly- :: many
+  : polycentric polysyllabic
+
+- post- :: later than; after
+  : postgraduate postwar
+
+- pre- :: before; in advance
+  : prepay prewar
+
+- pro- :: in favor of, supporting
+  : pro-America pro-abortion
+
+- pseudo- :: not real; false
+  : pseudonym pseudoscience
+
+- semi- :: half; partly
+  : semicricle semifinal
+
+- step- :: not by birth but through a parent who has remarried
+  : stepmother stepchildren
+
+- therm(o)- :: concerning heat
+  : thermochemistry thermometer
+
+- trans- :: across, on or to the other side of; between
+  : transatlantic transplant
+
+- ultra- :: beyond; very, extremely
+  : ultramodern ultrasound
+
+- uni- :: one; single
+  : uniform unidirectional
+
+- vice- :: next in the rank; below
+  : vice-chairman vice-president
+
+*** 常用后缀
+**** 名词后缀
+- -ability, -ibility ::
+  : ability flexibility
+- -age ::
+  : postage shortage
+- -al :: 
+  : arrival refusal
+- -an, -ian, -arian :: 
+  : librarian musician
+- -ancy, -ency :: 
+  : emergency expectancy
+- -ant, -ent :: 
+  : applicant correspondent
+- -dom :: 
+  : kingdom freedom
+- -ee :: 
+  : employee interviewee
+- -er, -or, -ar :: 
+  : painter begger
+- -ery :: 
+  : bravery slavery
+- -ess :: 
+  : actress waitress
+- -ful :: 
+  : handful spoonful
+- -ics :: 
+  : electronics linguistics
+- -ism :: 
+  : Marxism socialism
+- -ist :: 
+  : psychiatrist violinist
+- -ity, -ty :: 
+  : cruelty purity beauty
+- -ology :: 
+  : climatology futurology
+- -sion, -ssion :: 
+  : decision expansion
+- -ure :: 
+  : closure exposure
+
+**** 动词后缀
+- -en :: 
+  : deepen fasten
+- -ify :: 
+  : classify simplify
+- -ize, -ise :: 
+  : modernise/modernize
+  : popularise/popularize
+
+**** 形容词后缀
+- -an, -arian, -ian ::
+  : suburban Canadian
+- -ary, -ory :: 
+  : advisory customary
+- -free :: 
+  : carefree duty-free
+- -ous, -ious :: 
+  : dangerous poisnous
+- -some :: 
+  : tiresome troublesome awesome
+
+**** 副词后缀
+- -ward, -wards ::
+  : eastward(s) northward(s)
+- -wise :: 
+  : clockwise otherwise
+
+\onecolumn
+
+** 部分国家(或地区) 名称及相关信息
+#+attr_latex: :environment longtable :booktabs t 
+| 国家(或地区)    | 形容词        | 人            | 中文       | 国旗 |
+|-----------------+---------------+---------------+------------+------|
+| Afghanistan     | Afghan        | Afghan        | 阿富汗     | 🇦🇫   |
+| Algeria         | Algerian      | Algerian      | 阿尔及利亚 | 🇩🇿   |
+| Argentina       | Argentinian   | Argentinian   | 阿根廷     | 🇦🇷   |
+| Australia       | Australian    | Australian    | 澳大利亚   | 🇦🇺   |
+| Austria         | Austrian      | Austrian      | 奥地利     | 🇦🇹   |
+| Belgium         | Belgian       | Belgian       | 比利时     | 🇧🇪   |
+| Brazil          | Brazilian     | Brazilian     | 巴西       | 🇧🇷   |
+| Burma, Myanmar  | Burmese       | Burmese       | 缅甸       | 🇲🇲   |
+| Canada          | Canadian      | Canadian      | 加拿大     | 🇨🇦   |
+| China           | Chinese       | Chinese       | 中国       | 🇨🇳   |
+| Colombia        | Colombian     | Colombian     | 哥伦比亚   | 🇨🇴   |
+| Cuba            | Cuban         | Cuban         | 古巴       | 🇨🇺   |
+| Denmark         | Danish        | Dane          | 丹麦       | 🇩🇰   |
+| Egypt           | Egyptian      | Egyptian      | 埃及       | 🇪🇬   |
+| England         | English       | the English   | 英格兰     | 🏴󠁧󠁢󠁥󠁮󠁧󠁿   |
+| Finland         | Finnish       | Finn          | 芬兰       | 🇫🇮   |
+| France          | French        | the French    | 法国       | 🇫🇷   |
+| Germany         | German        | German        | 德国       | 🇩🇪   |
+| Greece          | Greek         | Greek         | 希腊       | 🇬🇷   |
+| Hungary         | Hungarian     | Hungarian     | 匈牙利     | 🇭🇺   |
+| India           | Indian        | Indian        | 印度       | 🇮🇳   |
+| Indonesia       | Indonesian    | Indonesian    | 印度尼西亚 | 🇮🇩   |
+| Iran            | Iranian       | Iranian       | 伊朗       | 🇮🇷   |
+| Iraq            | Iraqi         | Iraqi         | 伊拉克     | 🇮🇶   |
+| Ireland         | Irish         | the Irish     | 爱尔兰     | 🇮🇪   |
+| Israel          | Israeli       | Israeli       | 以色列     | 🇮🇱   |
+| Italy           | Italian       | Italian       | 意大利     | 🇮🇹   |
+| Japan           | Japanese      | Japanese      | 日本       | 🇯🇵   |
+| Jordan          | Jordanian     | Jordanian     | 约旦       | 🇯🇴   |
+| Kenya           | Kenyan        | Kenyan        | 肯尼亚     | 🇰🇪   |
+| North Korea     | North Korean  | North Korean  | 朝鲜       | 🇰🇵   |
+| South Korea     | South Korean  | South Korean  | 韩国       | 🇰🇷   |
+| Kuwait          | Kuwaiti       | Kuwaiti       | 科威特     | 🇰🇼   |
+| Lebanon         | Lebanese      | Lebanese      | 黎巴嫩     | 🇱🇧   |
+| Luxembourg      | Luxembourg    | Luxembourger  | 卢森堡     | 🇱🇺   |
+| Malaysia        | Malaysian     | Malaysian     | 马来西亚   | 🇲🇾   |
+| Mexico          | Mexican       | Mexican       | 墨西哥     | 🇲🇽   |
+| the Netherlands | Dutch         | the Dutch     | 荷兰       | 🇳🇱   |
+| New Zealand     | New Zealand   | New Zealander | 新西兰     | 🇳🇿   |
+| Norway          | Norwegian     | Norwegian     | 挪威       | 🇳🇴   |
+| Pakistan        | Pakistani     | Pakistani     | 巴基斯坦   | 🇵🇰   |
+| the Philippines | Philippine    | Filipino      | 菲律宾     | 🇵🇭   |
+| Poland          | Polish        | Pole          | 波兰       | 🇵🇱   |
+| Portugal        | Portuguese    | Portuguese    | 葡萄牙     | 🇵🇹   |
+| Russia          | Russian       | Russian       | 俄罗斯     | 🇷🇺   |
+| Scotland        | Scottish      | Scot          | 苏格兰     | 🏴󠁧󠁢󠁳󠁣󠁴󠁿   |
+| Singapore       | Singaporean   | Singaporean   | 新加坡     | 🇸🇬   |
+| South Africa    | South African | South African | 南非       | 🇿🇦   |
+| Spain           | Spanish       | Spaniard      | 西班牙     | 🇪🇸   |
+| Sweden          | Swedish       | Swede         | 瑞典       | 🇸🇪   |
+| Switzerland     | Swiss         | Swiss         | 瑞士       | 🇨🇭   |
+| Thailand        | Thai          | Thai          | 泰国       | 🇹🇭   |
+| Turkey          | Turkish       | Turk          | 土耳其     | 🇹🇷   |
+| (Great) Britain | British       | Briton        | 英国       | 🇬🇧   |
+| America         | American      | American      | 美国       | 🇺🇸   |
+| Vietnam         | Vietnamese    | Vietnamese    | 越南       | 🇻🇳   |
+| Wales           | Welsh         | the Welsh     | 威尔士     | 🏴󠁧󠁢󠁷󠁬󠁳󠁿   |
+
+** 大洲名和大洋名
+#+attr_latex: :booktabs t
+| 地理名称           | 形容词            | 中文   |
+|--------------------+-------------------+--------|
+| Africa             | African           | 非洲   |
+| Antarctica         | Antarctic         | 南极洲 |
+| Asia               | Asian             | 亚洲   |
+| Europe             | European          | 欧洲   |
+| North America      | North American    | 北美洲 |
+| South America      | South American    | 南美洲 |
+| Oceania            | Oceanian, Oceanic | 大洋洲 |
+| the Arctic Ocean   | Arctic            | 北冰洋 |
+| the Atlantic Ocean | Atlantic          | 大西洋 |
+| the Indian Ocean   |                   | 印度洋 |
+| the Pacific Ocean  | Pacific           | 太平洋 |
+
+\twocolumn
+** 常见缩写词
+- A.D. :: Anno Domini (=in the year of the Lord; since Christ was born)
+- A.M. :: ante meridiem (before noon)
+- Ave. :: avenue
+- BA :: Bachelor of Arts
+- B.C. :: before Christ
+- BS, BSc :: Bachelor of Science
+- C. :: Centigrade
+- cc :: cubic centimeter
+- CD :: compact disk
+- cf. :: confer (=compare)
+- Co. :: company
+- c/o :: care of
+- cp. :: compare
+- dept., Dept. :: department
+- Dr, Dr. :: doctor
+- e.g. :: exempli gratia (=for example)
+- esp. :: especially
+- et al. :: et alii (=and others), et alibi (=and elsewhere)
+- etc. :: etcetera (=and the reset)
+- F. :: Fahrenheit
+- ft. :: foot, feet
+- GMT :: Greenwich Mean Time
+- ID :: identification card
+- i.e. :: id est (=that is)
+- Inc. :: incorporated
+- Jr. :: junior
+- lb :: libra (=pound)
+- Ltd. :: limited
+- MA :: Master of Arts
+- Mr :: Mister
+- Mrs :: Mistress
+- Ms :: Mrs or Miss
+- MS, MSc :: Master of Science
+- Mt :: mount, mountain
+- Ph.D. :: Philosophiae Doctor
+- pl. :: plural
+- P.M. :: post meridiem (afternoon)
+- PRC :: People's Republic of China
+- Prof. :: professor
+- PS :: postscript
+- Rd. :: road
+- sing. :: singular
+- sq :: square
+- st. :: street
+- UK :: United Kingdom
+- UN :: United Nations
+- US :: United States (of America)
+- usu. :: usually
+- vs :: versus
+- vol. :: Volume
+- WC :: water closet
+\onecolumn
+
 * Writing
 ** Part A
 *** Private letter / e-mail
@@ -21,44 +345,44 @@ You should write at least 150 English words.
 #+CAPTION: Mobile-phone Subscriptions (billion/year)
 [[./img/2010.jpg]]
 
-**** P1
-1. From the information given in the above column chart, we can see a striking contrast between developing and developed countries in mobile-phone subscriptions from 2000 to 2008.
+1. 
+   1. From the information given in the above column chart, we can see a striking contrast between developing and developed countries in mobile-phone subscriptions from 2000 to 2008.
 
-   根据以上柱状图提供的信息, 我们可以看出, 从 2000 年到 2008 年, 发展中国家和发达国家在手机入网方面存在着惊人的对比.
+      根据以上柱状图提供的信息, 我们可以看出, 从 2000 年到 2008 年, 发展中国家和发达国家在手机入网方面存在着惊人的对比.
 
-2. During this period, there has been a dramatic increase from 0.4 to 4 billion mobile phone subscriptions in developing countries, while that of developed countries remained steady at just under 1 billion.
+   2. During this period, there has been a dramatic increase from 0.4 to 4 billion mobile phone subscriptions in developing countries, while that of developed countries remained steady at just under 1 billion.
 
-   在此期间, 发展中国家手机入网数从 4 亿急速增长到 40 亿, 而发达国家的相关数据在 10 亿之下保持平稳.
+      在此期间, 发展中国家手机入网数从 4 亿急速增长到 40 亿, 而发达国家的相关数据在 10 亿之下保持平稳.
 
-**** P2
-1. At least two fundamental factors could have contributed to this phenomenon.
+2. 
+   1. At least two fundamental factors could have contributed to this phenomenon.
 
-   至少有两点主要原因造成了这种现象.
+      至少有两点主要原因造成了这种现象.
 
-2. On the one hand, with the rapid increase in economic development happening in the developing countries, the telecommunication industry in those countries expanded greatly to meet the demand of globalization.
+   2. On the one hand, with the rapid increase in economic development happening in the developing countries, the telecommunication industry in those countries expanded greatly to meet the demand of globalization.
 
-   一方面, 随着在发展中国家发生的快速经济增长, 这些国家的电信产业必然会适应全球化的需求.
+      一方面, 随着在发展中国家发生的快速经济增长, 这些国家的电信产业必然会适应全球化的需求.
 
-3. As a result, the user base of mobile phones which can narrow the distance between people and link the whole world together, grew at an incredible speed.
+   3. As a result, the user base of mobile phones which can narrow the distance between people and link the whole world together, grew at an incredible speed.
 
-   因此, 使用手机缩短人们之间的距离并与全世界联系的人数以惊人的速度增长.
+      因此, 使用手机缩短人们之间的距离并与全世界联系的人数以惊人的速度增长.
 
-4. On the other hand, the extremely advanced civilization of developed countries means less potential in many aspects including in the area of private telecommunication tools and their demand for further enlargement of such tools tends to saturate.
+   4. On the other hand, the extremely advanced civilization of developed countries means less potential in many aspects including in the area of private telecommunication tools and their demand for further enlargement of such tools tends to saturate.
 
-   另一方面,发达国家极端先进的文明在私人电信工具等诸多领域意味着更少的发展潜力, 他们对进一步开发此类工具的需求趋于饱和.
+      另一方面,发达国家极端先进的文明在私人电信工具等诸多领域意味着更少的发展潜力, 他们对进一步开发此类工具的需求趋于饱和.
 
-**** P3
-1. In conclusion, while mobile phones subscriptions, if used carelessly or without restraint, could prove to be a double-edged sword,
+3. 
+   1. In conclusion, while mobile phones subscriptions, if used carelessly or without restraint, could prove to be a double-edged sword,
 
-   因此, 如果不小心或没有节制, 手机入网就是一把双刃剑.
+      因此, 如果不小心或没有节制, 手机入网就是一把双刃剑.
 
-2. the fact remains that such phones are already extremely prevalent in both developing and developed countries and even today continue to rise in popularity.
+   2. the fact remains that such phones are already extremely prevalent in both developing and developed countries and even today continue to rise in popularity.
 
-   但事实上, 手机入网在发展中国家和发达国家中均十分流行, 这种趋势甚至今天还在继续扩大.
+      但事实上, 手机入网在发展中国家和发达国家中均十分流行, 这种趋势甚至今天还在继续扩大.
 
-3. If people could imbue themselves with intelligence, prudence and discretion, I am sure that most of them will be able to sidestep the potential drawbacks of mobile phones while taking advantage of all the merits.
+   3. If people could imbue themselves with intelligence, prudence and discretion, I am sure that most of them will be able to sidestep the potential drawbacks of mobile phones while taking advantage of all the merits.
 
-   假如人们多动脑、谨慎些、具有判断力, 我确信大多数人都能克服手机的弊端, 并且利用其优势.
+      假如人们多动脑、谨慎些、具有判断力, 我确信大多数人都能克服手机的弊端, 并且利用其优势.
 
 *** 2012 年: 年龄与工作满意度
 Directions:
@@ -71,48 +395,48 @@ You should write at least 150 words.
 #+ATTR_LATEX: :float nil
 [[./img/2012.jpg]]
 
-**** P1
-1. The table clearly reflects the statistics of staff's job satisfaction in a certain company.
+1. 
+   1. The table clearly reflects the statistics of staff's job satisfaction in a certain company.
 
-   ﻿这张表格清楚地反映了某公司员工工作满意度的统计数据.
+      ﻿这张表格清楚地反映了某公司员工工作满意度的统计数据.
 
-2. According to the data given above, we can conclude that the percentage of people satisfied with their jobs is highest among those over 50 years old, at about 40%.
+   2. According to the data given above, we can conclude that the percentage of people satisfied with their jobs is highest among those over 50 years old, at about 40%.
 
-   ﻿根据给出的数据, 我们可以看出 50 岁以上的人工作满意度最高, 约为 40%.
+      ﻿根据给出的数据, 我们可以看出 50 岁以上的人工作满意度最高, 约为 40%.
 
-3. In contrast, the percentage of the staff not satisfied with their jobs is about 64% among those in their forties,the highest among all the three age groups.
+   3. In contrast, the percentage of the staff not satisfied with their jobs is about 64% among those in their forties,the highest among all the three age groups.
 
-   ﻿相反, 41 至 50 岁之间的人在三个群体中不满意度最高, 约为 64%.
+      ﻿相反, 41 至 50 岁之间的人在三个群体中不满意度最高, 约为 64%.
 
-**** P2
-1. The major determinant of satisfaction lies in people's attitudes.
+2. 
+   1. The major determinant of satisfaction lies in people's attitudes.
 
-   ﻿主要的决定因素是人们的态度.
+      ﻿主要的决定因素是人们的态度.
 
-2. On the one hand, staff members in their forties usually have to undertake a lot of responsibilities from both their families and their career.
+   2. On the one hand, staff members in their forties usually have to undertake a lot of responsibilities from both their families and their career.
 
-   ﻿一方面, 41 至 50 岁之间的员工通常不得不承担来自于家庭和事业的双重责任.
+      ﻿一方面, 41 至 50 岁之间的员工通常不得不承担来自于家庭和事业的双重责任.
 
-3. Sometimes they are even under pressure to pursue money, power, high social status, and so on, which are all symbols of success.
+   3. Sometimes they are even under pressure to pursue money, power, high social status, and so on, which are all symbols of success.
 
-   ﻿有时他们甚至承受着获取金钱、权力、较高的社会地位等压力, 而这些都象征着成功.
+      ﻿有时他们甚至承受着获取金钱、权力、较高的社会地位等压力, 而这些都象征着成功.
 
-4. So, they have the least satisfaction in their job.
+   4. So, they have the least satisfaction in their job.
 
-   ﻿因此, 他们对工作的满意度最低.
+      ﻿因此, 他们对工作的满意度最低.
 
-5. On the other hand, people over 50 generally have shifted their life goals from achieving the ultimate success to a relatively easy and comfortable life, and therefore are inclined to be much more satisfied with their jobs.
+   5. On the other hand, people over 50 generally have shifted their life goals from achieving the ultimate success to a relatively easy and comfortable life, and therefore are inclined to be much more satisfied with their jobs.
 
-   ﻿另一方面, 50 岁以上的人通常已经将人生目标从实现最终的成功转变为一种相对轻松、舒适的生活, 因而更容易对工作感到满意.
+      ﻿另一方面, 50 岁以上的人通常已经将人生目标从实现最终的成功转变为一种相对轻松、舒适的生活, 因而更容易对工作感到满意.
 
-**** P3
-1. In view of the above reasoning, I am convinced that it is difficult for everyone to be content with their jobs.
+3. 
+   1. In view of the above reasoning, I am convinced that it is difficult for everyone to be content with their jobs.
 
-   ﻿鉴于上述论证, 我认为很难做到每个人都对工作满意.
+      ﻿鉴于上述论证, 我认为很难做到每个人都对工作满意.
 
-2. And it is advisable that people should adjust their expectations for work, and that companies should pay more attention to the welfare of their staff.
+   2. And it is advisable that people should adjust their expectations for work, and that companies should pay more attention to the welfare of their staff.
 
-   ﻿建议人们调整对工作的期望, 而企业也应对员工的幸福多加重视.
+      ﻿建议人们调整对工作的期望, 而企业也应对员工的幸福多加重视.
 
 *** 2016 年: 学生旅游目的
 Directions:
@@ -125,44 +449,44 @@ You should write about 150 words on the ANSWER SHEET.
 #+ATTR_LATEX: :float nil
 [[./img/2016.jpg]]
 
-**** P1
-1. This pie chart clearly illustrates the purposes of touring for students in a certain university.
+1. 
+   1. This pie chart clearly illustrates the purposes of touring for students in a certain university.
 
-   ﻿这幅饼状图清楚地揭示了某高校大学生的旅游目的.
+      ﻿这幅饼状图清楚地揭示了某高校大学生的旅游目的.
 
-2. As is reflected by the diagram 37 percent of college students travel in order to appreciate the scenery. Next comes the aim of relieving pressure, accounting for 33 percent.
+   2. As is reflected by the diagram 37 percent of college students travel in order to appreciate the scenery. Next comes the aim of relieving pressure, accounting for 33 percent.
 
-   ﻿如图表所示, 37%的大学生为了欣赏风景而旅游, 接下来是为了缓解压力的目的, 占了 33%.
+      ﻿如图表所示, 37%的大学生为了欣赏风景而旅游, 接下来是为了缓解压力的目的, 占了 33%.
 
-3. By contrast, the percentages of students travelling aiming at other goals, making friends and cultivating independence account for 15%, 9% and 6% respectively.
+   3. By contrast, the percentages of students travelling aiming at other goals, making friends and cultivating independence account for 15%, 9% and 6% respectively.
 
-   ﻿相反, 为了其他、广交朋友、培养独立能力旅游的大学生百分比分别各占 15%、9%和 6%.
+      ﻿相反, 为了其他、广交朋友、培养独立能力旅游的大学生百分比分别各占 15%、9%和 6%.
 
-**** P2
-1. Several primary factors could contribute to this phenomenon. 
+2. 
+   1. Several primary factors could contribute to this phenomenon. 
 
-   ﻿一些主要原因可以解释这种现象.
+      ﻿一些主要原因可以解释这种现象.
 
-2. In the first place, travel can offer us a wide range of experiences. 
+   2. In the first place, travel can offer us a wide range of experiences. 
 
-   ﻿一方面, 旅游能够充实我们的人生经历.
+      ﻿一方面, 旅游能够充实我们的人生经历.
 
-3. In travelling, we may join tourists marveling at the incredible power of Niagara Falls, mingle with the happy throngs strolling in the Paris boulevards and experience the bitterness and joy of people on different lands and in different times.
+   3. In travelling, we may join tourists marveling at the incredible power of Niagara Falls, mingle with the happy throngs strolling in the Paris boulevards and experience the bitterness and joy of people on different lands and in different times.
 
-   ﻿在旅行中, 我们可以和游客一起, 赞叹尼亚加拉瀑布那雷霆万钧之势, 和喜洋洋的人群一起穿过巴黎的林荫大道, 还可以体验不同时代、不同国土上人们的酸甜苦辣.
+      ﻿在旅行中, 我们可以和游客一起, 赞叹尼亚加拉瀑布那雷霆万钧之势, 和喜洋洋的人群一起穿过巴黎的林荫大道, 还可以体验不同时代、不同国土上人们的酸甜苦辣.
 
-4. In the second place, college students, who have to juggle academic work, romantic relationships and a busy social calendar, are particularly susceptible to pressure. 
+   4. In the second place, college students, who have to juggle academic work, romantic relationships and a busy social calendar, are particularly susceptible to pressure. 
 
-   ﻿另一方面, 大学生不得不应对学习、恋爱和繁忙的社交日程, 很容易感受到压力.
+      ﻿另一方面, 大学生不得不应对学习、恋爱和繁忙的社交日程, 很容易感受到压力.
 
-5. By touring,they can successfully manage and reduce stress.
+   5. By touring,they can successfully manage and reduce stress.
 
-   ﻿通过旅游, 他们可以成功地应对并缓解压力.
+      ﻿通过旅游, 他们可以成功地应对并缓解压力.
 
-**** P3
-1. Taking all these factors into consideration, we may predict that with the quickening pace and ever-increasing pressure of campus life, the number of university students touring will keep growing in the forthcoming decade.
+3. 
+   1. Taking all these factors into consideration, we may predict that with the quickening pace and ever-increasing pressure of campus life, the number of university students touring will keep growing in the forthcoming decade.
 
-   ﻿考虑到所有这些因素, 我们可以预计：随着校园生活节奏的加快和日益增大的压力, 旅游的大学生数量在未来几年将持续增加.
+      ﻿考虑到所有这些因素, 我们可以预计：随着校园生活节奏的加快和日益增大的压力, 旅游的大学生数量在未来几年将持续增加.
 
 *** 2018 年: 选择餐厅的关注因素
 Directions:
@@ -175,34 +499,34 @@ You should write about 150 words neatly on the ANSWER SHEET.
 #+ATTR_LATEX: :float nil
 [[./img/2018.jpg]]
 
-**** P1
-1. The pie chart above clearly reveals the factors of consumers’ concern on choosing restaurants in a certain city in 2017.
+1. 
+   1. The pie chart above clearly reveals the factors of consumers’ concern on choosing restaurants in a certain city in 2017.
 
-   ﻿上述饼状图清晰揭示了 2017 年某市消费者选择餐厅时关注的因素.
+      ﻿上述饼状图清晰揭示了 2017 年某市消费者选择餐厅时关注的因素.
 
-2. Among all the five categories, the percentages of feature, service and environment are the highest, accounting for 36.3%, 27.4% and 24.3% respectively.
+   2. Among all the five categories, the percentages of feature, service and environment are the highest, accounting for 36.3%, 27.4% and 24.3% respectively.
 
-   ﻿在所有五组数据中, 特色、服务、环境的百分比是最高的, 分别占 36.3%, 27.4% 和 24.3%.
+      ﻿在所有五组数据中, 特色、服务、环境的百分比是最高的, 分别占 36.3%, 27.4% 和 24.3%.
 
-3. On the contrary, the statistics of price and other factors take up merely 7.3%and 4.7% respectively, the lowest among the five groups.
+   3. On the contrary, the statistics of price and other factors take up merely 7.3%and 4.7% respectively, the lowest among the five groups.
 
-   ﻿相反, 价格和其他因素的数据只占 7.3%和 4.7%, 在这五组中是最低的.
+      ﻿相反, 价格和其他因素的数据只占 7.3%和 4.7%, 在这五组中是最低的.
 
-**** P2
-1. Several primary causes that contribute to the above-mentioned phenomenon could be summarized as follows.
+2. 
+   1. Several primary causes that contribute to the above-mentioned phenomenon could be summarized as follows.
 
-   ﻿造成上述现象的主要原因可以概括如下.
+      ﻿造成上述现象的主要原因可以概括如下.
 
-2. In the first place, with the prosperity of economy in China and the increase of people’s income in recent decades, a large number of people are paying more attention to the features of a restaurant instead of prices.
+   2. In the first place, with the prosperity of economy in China and the increase of people’s income in recent decades, a large number of people are paying more attention to the features of a restaurant instead of prices.
 
-   ﻿首先, 随着中国经济的繁荣和近几十年来人们收入的增加, 很多人越来越关注餐厅的特色, 而不是价格.
+      ﻿首先, 随着中国经济的繁荣和近几十年来人们收入的增加, 很多人越来越关注餐厅的特色, 而不是价格.
 
-3. In the second place, in a bid to develop interpersonal relationship and enjoy comfortable life, consumers in mounting numbers prefer service and environment to other factors.
+   3. In the second place, in a bid to develop interpersonal relationship and enjoy comfortable life, consumers in mounting numbers prefer service and environment to other factors.
 
-   ﻿其次, 为了拓展人际关系, 享受舒适的生活, 越来越多的消费者选择服务与环境而非其他.
+      ﻿其次, 为了拓展人际关系, 享受舒适的生活, 越来越多的消费者选择服务与环境而非其他.
 
-**** P3
-1. With due consideration of all these contributors, we may predict that with the speedy development of our society, customers in expanding numbers will attach utmost significance to the feature, service as well as environment of a restaurant rather than prices or other factors.
+3. 
+   1. With due consideration of all these contributors, we may predict that with the speedy development of our society, customers in expanding numbers will attach utmost significance to the feature, service as well as environment of a restaurant rather than prices or other factors.
 
-   ﻿考虑到所有这些因素, 我们可以预计, 随着社会的迅速发展, 越来越多的消费者将更加重视餐厅的特色、服务、环境, 而不是价格或其他因素.
+      ﻿考虑到所有这些因素, 我们可以预计, 随着社会的迅速发展, 越来越多的消费者将更加重视餐厅的特色、服务、环境, 而不是价格或其他因素.
 

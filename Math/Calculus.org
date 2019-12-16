@@ -137,8 +137,8 @@
 |                 | $\lim f(x) = A$                                                              |
 |-----------------+------------------------------------------------------------------------------|
 | $x \to x_0$     | $\forall \varepsilon >0$, $\exists \delta>0$, 使当 $0<\abs{x-x_0}<\delta$ 时 |
-| $x \to x_{0^+}$ | $\forall \varepsilon >0$, $\exists \delta>0$, 使当 $0<x-x_0<\delta$ 时       |
-| $x \to x_{0^-}$ | $\forall \varepsilon >0$, $\exists \delta>0$, 使当 $0<x_0-x<\delta$ 时       |
+| $x \to x_0^+$   | $\forall \varepsilon >0$, $\exists \delta>0$, 使当 $0<x-x_0<\delta$ 时       |
+| $x \to x_0^-$   | $\forall \varepsilon >0$, $\exists \delta>0$, 使当 $0<x_0-x<\delta$ 时       |
 | $x \to \infty$  | $\forall \varepsilon >0$, $\exists X>0$, 使当 $\abs{x}>X$ 时                 |
 | $x \to +\infty$ | $\forall \varepsilon >0$, $\exists X>0$, 使当 $x>X$ 时                       |
 | $x \to -\infty$ | $\forall \varepsilon >0$, $\exists X>0$, 使当 $x<-X$ 时                      |

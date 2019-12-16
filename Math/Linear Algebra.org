@@ -55,25 +55,55 @@ a_{n1} & a_{n2} & \cdots & a_{nn} \\
 4. 行列式具有分行(列)的可加性.
 5. 行列式的某一行(列)中所有元素的 $k$ 倍加到另一行(列)对应的元素上去, 行列式不变.
 
-** 行列式按行(列)展开定理
+** 行列式按行(列)展开定理                                            :drill:
 - 余子式 :: 在 $n$ 阶行列式中, 把 $(i,j)$ 元 $a_{ij}$ 所在的第 $i$ 行和第 $j$ 列划去后, 留下来的 $n-1$ 阶行列式叫做 $(i,j)$ 元 $a_{ij}$ 的余子式, 记作 $M_{ij}$.
 - 代数余子式 :: $A_{ij} = (-1)^{i+j} M_{ij}$
 
-\begin{equation*}
-\sum_{k=1}^n a_{ki}A_{kj} = 
-\begin{cases}
-D & i=j. \\
-0 & i \neq j.
-\end{cases}
-\end{equation*}
-或
-\begin{equation*}
-\sum_{k=1}^n a_{ik}A_{jk} = 
-\begin{cases}
-D & i=j. \\
-0 & i \neq j.
-\end{cases}
-\end{equation*}
+$n$ 阶行列式 $D$ 等于它任意一行(列) 各元素与其对应的代数余子式乘积之和;
+$n$ 阶行列式任意一行(列) 各元素与另一行(列) 对应的代数余子式乘积之和等于零. 即
+- 按行展开 ::
+  \begin{equation*}
+  \sum_{k=1}^n a_{ik}A_{jk} = 
+  \begin{cases}
+  D & i=j. \\
+  0 & i \neq j.
+  \end{cases}
+  \end{equation*}
+- 按列展开 ::
+  \begin{equation*}
+  \sum_{k=1}^n a_{ki}A_{kj} = 
+  \begin{cases}
+  D & i=j. \\
+  0 & i \neq j.
+  \end{cases}
+  \end{equation*}
+
+#+attr_latex: :options [拉普拉斯定理]
+#+begin_theorem
+$n$ 阶行列式 $D$ 等于它任意 $k$ 行(列) 上的所有 $k$ 阶子式与其对应的代数余子式乘积之和. 即
+\[ D=\sum_{t=1}^{C_n^k}M_tA_t \]
+#+end_theorem
+
+** *几个主要公式
+1. 对角行列式与上(下)三角行列式
+   \begin{align*}
+     D &= \mqty|\dmat{a_{11},a_{22},\ddots,a_{nn}}| = a_{11} a_{22} \cdots a_{nn} \\
+     D &= \mqty|\admat{a_{1n},a_{2,n-1},\reflectbox{$\ddots$},a_{n1}}| = (-1)^{\frac{n(n-1)}{2}} a_{1n} a_{2,n-1} \cdots a_{n1}
+   \end{align*}
+   对换次数 $\frac{n(n-1)}{2}$ 可由握手公式得到.
+
+2. 两个特殊的拉普拉斯展开式
+   \begin{align*}
+     \mqty|\bm{A} & \bm{O} \\ * & \bm{B}| = \mqty|\bm{A} & * \\ \bm{O} & \bm{B}| &= |\bm{A}||\bm{B}| \\
+     \mqty|\bm{O} & \bm{A} \\ \bm{B} & *| = \mqty|* & \bm{A} \\ \bm{B} & \bm{O}| &= (-1)^{mn}|\bm{A}||\bm{B}|
+   \end{align*}
+   其中 * 表示任意 $m \times n$ 矩阵, $m,n$ 分别是 $\bm{A},\bm{B}$ 的阶数.
+
+3. 范德蒙行列式
+   \begin{equation*}
+     D_n = \mqty|1 & 1 & \cdots & 1 \\ x_1 & x_2 & \cdots & x_n \\ x_1^2 & x_2^2 & \cdots & x_n^2 \\ \vdots & \vdots & & \vdots \\ x_1^{n-1} & x_2^{n-1} & \cdots & x_n^{n-1}|
+     = \prod_{1 \leqslant i < j \leqslant n} (x_j-x_i)
+   \end{equation*}
 
 * 矩阵
 1. 理解矩阵的概念, 了解单位矩阵、数量矩阵、对角矩阵、三角矩阵、对称矩阵、反对称矩阵和[[正交矩阵和正交变换][正交矩阵]]以及它们的性质.
@@ -120,8 +150,11 @@ SCHEDULED: <2019-11-11 Mon>
 :DRILL_EASE: 2.36
 :DRILL_LAST_QUALITY: 3
 :DRILL_LAST_REVIEWED: [2019-11-07 Thu 14:56]
+:ex:       2015-22
 :END:
 \[ |\bm{AB}| = |\bm{A}||\bm{B}| \]
+由此,
+\[ |\bm{A}^n|=|\bm{A}|^n \]
 #+begin_proof
 仅就 $n=2$ 的情形写出证明, $n\geqslant 3$ 的情形类似可证.
 设 $\bm{A}=(a_{ij}), \bm{B}=(b_{ij})$. 记四阶行列式 $D = \mdet{\bm{A} & \bm{O} \\ -\bm{E} & \bm{B}}$
@@ -186,7 +219,7 @@ $\bm{A}$ 是可逆矩阵的充分必要条件是 $|\bm{A}| \neq 0$, 即可逆矩
 \[ \bm{A} = \mqty(\bm{B} & \bm{O} \\ \bm{D} & \bm{C}) \Rightarrow \inver{A} = \mqty(\inver{B} & \bm{O} \\ -\inver{C}\bm{D}\inver{B} & \inver{C}) \]
 \[ \bm{A} = \mqty(\bm{B} & \bm{D} \\ \bm{O} & \bm{C}) \Rightarrow \inver{A} = \mqty(\inver{B} & -\inver{B}\bm{D}\inver{C} \\ \bm{O} & \inver{C}) \]
 
-**** 负对角线矩阵
+**** 副对角线矩阵
 1. 副对角线求逆.
 2. 左乘同行, 右乘同列, 加一负号.
 3. 主对负对全部换位.
@@ -667,7 +700,7 @@ $\bm{A}$ 的 $k$ 重特征值对应线性无关的特征向量的个数小于或
 - 上三角矩阵、下三角矩阵、对角矩阵的特征值就是矩阵主对角线上的元素.
 - 若 $R(\bm{A})=1$, 则 $|\lambda \bm{E}-\bm{A}|=\lambda^3-\sum a_{ii}\lambda^2=(\lambda-\sum a_{ii})\lambda^2$, 即 $\lambda_1=\tr \bm{A}, \lambda_2=\lambda_3=0$.
   - 对于仅主对角线与其他元素不同的矩阵, 可拆成两个矩阵(其中一个秩为 1) 分别求特征值, 再相加.
-- 实对称矩阵凑零化简时需同时凑出公因式(以便凑出第二个零).
+- 关于主对角线对称的行列式凑零化简时需同时凑出公因式(以便凑出第二个零).
 - 对于较为复杂的含相同项的因式(带参数) 可将其看作整体进行化简.
 **** 特征向量的计算
 将特征值代入得到的方程必不满秩, 故可将一个方程直接无视(留下不成比例的和系数简单的方程).
@@ -695,7 +728,7 @@ $\bm{A}$ 的 $k$ 重特征值对应线性无关的特征向量的个数小于或
 #+begin_deduction
 若 $n$ 阶矩阵 $\bm{A}$ 与对角矩阵
 \[ \bm{\varLambda} = \diag(\lambda_1, \lambda_2, \dots, \lambda_n) \]
-相似, 则 $\lambda_1, \lambda_2, \dots, \lambda_n$ 即是 $\bm{\varLambda}$ 的 $n$ 个特征值.
+相似, 则 $\lambda_1, \lambda_2, \dots, \lambda_n$ 即是 $\bm{A}$ 的 $n$ 个特征值.
 #+end_deduction
 
 ** 矩阵可相似对角化的充分必要条件及相似对角矩阵                       :drill:

@@ -1210,6 +1210,20 @@ F(x, y, y', \cdots, y^{(n)}) = 0
 
 \twocolumn
 * 附录
+** 常用基础知识
+*** 数列基础
+**** 等差数列
+- 通项公式 :: $a_n=a_1+(n-1)d$
+- 前 $n$ 项和 :: $S_n=na_1+\frac{n(n-1)}{2}d=\frac{n}{2}(a_1+a_n)$
+**** 等比数列
+- 通项公式 :: $a_n=a_1r^{n-1}$
+- 前 $n$ 项和 :: $S_n=\frac{a_1(1-r^n)}{1-r}$
+**** 一些数列的前 $n$ 项和
+- $\sum\limits_{k=1}^n (2k-1) = n^2$
+- $\sum\limits_{k=1}^n k^2 = \frac{n(n+1)(2n+1)}{6}$
+- $\sum\limits_{k=1}^n k^3 = [\frac{n(n+1)}{2}]^2 = \qty(\sum\limits_{k=1}^n k)^2$
+- $\sum\limits_{k=1}^n k(k+1) = \frac{n(n+1)(n+2)}{3}$
+- $\sum\limits_{k=1}^n \frac{1}{k(k+1)} = \frac{n}{n+1}$
 ** 几种常用的曲线
 *** 半立方抛物线
 \begin{tikzpicture}[domain=0:1.6]
@@ -1270,4 +1284,3 @@ F(x, y, y', \cdots, y^{(n)}) = 0
 \node [below] (B) at (A.south) {$x=\frac{3at}{1+t^3}, y=\frac{3at^2}{1+t^3}$};
 \node [below] at (B.south) {$\rho=\frac{3a\sin\theta\cos\theta}{\sin^3\theta+\cos^3\theta}$};
 \end{tikzpicture}
-

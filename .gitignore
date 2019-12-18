@@ -1,11 +1,8 @@
-# ignore all
-*
+# org export
+*.pdf
+*.tex
+*.html
 
-# org
-!*.org
-
-# markdown
-!*.md
-
-# images
-*/img
+# emacs
+**/auto
+**/ltximg

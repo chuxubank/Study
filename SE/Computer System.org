@@ -27,8 +27,6 @@
 ** 程序编码
 *** 机器级代码
 
------
-
 * 处理器体系结构
 - ISA :: (Insturuction Set Architecture) 指令集体系结构
 

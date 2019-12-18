@@ -1,33 +1,639 @@
 #+LATEX_HEADER: \usepackage{mathtools, amsthm, booktabs, physics}
+* *综述                                                             :ARCHIVE:
+** C++ 类
+*** 基本的 class 语法
+- 类(class)
+  - 成员(members)
+    - 数据
+    - 成员函数(member function): 用于处理对象, 常被称为方法(method).
 
-* 表(List)、栈(Stack)、队列(Queue)
+- 对象(object): 类的实例
+  - 类所指定的数据成分
+
+#+begin_src cpp
+  class IntCell
+  {
+  public:
+    IntCell()
+    { storedValue = 0; }
+    IntCell(int initialValue)
+    { storedValue = initialValue; }
+    int read()
+    { return storedValue; }
+    void write( int x )
+    { storedValue = x; }
+  private:
+    int storedValue;
+  };
+#+end_src
+
+*** 构造函数的附加语法和访问函数
+**** 默认参数
+#+begin_src cpp
+  class IntCell
+  {
+  public:
+    explicit IntCell(int initialValue=0) : storedValue{initialValue}
+    {}
+    int read() const
+    { return storedValue; }
+    void write(int x)
+    { storedValue = x; }
+  private:
+    int storedValue;
+  };
+#+end_src
+**** 初始化表列
+- 代替赋值语句
+**** explicit 构造函数
+- 应使所有的单参数构造函数为 ~explicit~ 的, 以避免后台类型转换.
+**** 常成员函数
+- 访问函数(accessor) :: 检查但不改变其对象状态的成员函数(const)
+- 修改函数(mutator) :: 改变其对象状态的成员函数(默认)
+
+*** 接口与实现的分离
+#+name: IntCell.h
+#+begin_src cpp
+  #ifndef IntCell_H
+  #define IntCell_H
+  class IntCell
+  {
+  public:
+    explicit IntCell(int initialValue=0);
+    int read() const;
+    void write(int x);
+  private:
+    int storedValue;
+  };
+  #endif
+#+end_src
+
+#+name: IntCell.cpp
+#+begin_src cpp
+  #include "IntCell.h"
+  IntCell::IntCell(int initialValue) : storedValue{initialValue}
+  {
+  }
+  int IntCell::read() const
+  {
+    return storedValue;
+  }
+  void IntCell::write(int x)
+  {
+    storedValue = x;
+  }
+#+end_src
+**** 预处理命令
+- 避免在编译一个文件的过程中一个接口被读两次
+**** 作用域解析运算符
+- ~::~
+**** 特征必须完全匹配
+- ~const~
+**** 对象的声明同于基本类型
+#+begin_src cpp
+  IntCell obj1;                   // 零参数构造函数
+  IntCell obj2(12);               // 单参数构造函数
+  IntCell obj3 = 37;              // 不合法: 构造函数是 explicit 的
+  IntCell obj4();                 // 不合法: 函数声明
+  IntCell obj2{12};               // 单参数构造函数 better
+  IntCell obj4{};                 // 零参数构造函数
+#+end_src
+*** vector 类和 string 类
+#+begin_src cpp
+  vector<int> daysInMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}; // n=12
+  vector<int> daysInMonth { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 }; // n=12
+  vector<int> daysInMonth {12};   // n=1
+  vector<int> daysInMonth(12);    // n=12
+#+end_src
+** C++ 细节
+*** 指针(pointer)
+- 指针变量(pointer variable) :: 存放另一对象所占用的地址的变量.
+#+begin_src cpp
+  int main()
+  {
+    IntCell *m;
+    m = new IntCell{0};
+    m->write(5);
+    cout << "Cell contents: " << m->read() << endl;
+    delete m;
+    return 0;
+  }
+#+end_src
+**** 声明
+- 星号*表示 m 是一个指针变量
+**** 对象的动态创建
+#+begin_src cpp
+  m = new IntCell();              // OK
+  m = new IntCell{};              // C++11
+  m = new IntCell;                // Prefered
+#+end_src
+**** 垃圾收集与 delete
+- ~new~ 对象不再被引用时, 必须(通过一个指针)对该对象应用 ~delete~ 操作, 否则将导致内存漏洞(memory leak).
+**** 指针的赋值和比较
+- 基于指针所存储的内存地址进行
+**** 通过指针访问对象的成员
+- ~->~
+**** 取地址操作符(&)
+- 返回一个对象所占用的内存地址
+*** 左值、右值和引用
+- 左值(lvalue) :: 标识非临时性对象的表达式.
+- 右值(rvalue) :: 标识临时性对象的表达式, 或者是一个不与任何对象相联系的值(如字面值常数).
+
+
+- 左值引用
+  - ~&~
+  - 给结构复杂的名称起别名
+  - 范围 for 循环
+  - 避免复制
+- 右值引用
+  - ~&&~
+
+*** 参数传递
+- 传值调用(call-by-value)
+- 传引用调用(call-by-reference)
+  - 传左值引用调用(call-by-lvalue-reference)
+- 传对常量引用的调用(call-by-reference-to-a-constant)
+  - 传常量引用调用(call-by-constant reference)
+- 传右值引用调用(call-by-rvalue-reference)
+
+*** 返回值传递
+- 传值返回(return-by-value)
+- 传常量引用返回(return-by-constant-reference)
+- 传引用返回(return-by-reference)
+
+*** std::swap 和 std::move
+- std::move: 把任何左值(或右值) 转换称右值
+*** 五大函数(big-five)
+**** 析构函数(destructor)
+**** 拷贝构造函数(copy constructor)
+**** 移动构造函数(move constructor)
+**** 拷贝赋值 operator=(copy assignment operator)
+**** 移动赋值 operator=(move assignment operator)
+**** 默认情形
+- 浅拷贝(shallow copy) :: 指针指向相同的对象
+- 深拷贝(deep copy) :: 整个对象的复制品
+**** 当默认情形不起作用时
+*** C 风格数组和字符串
+** 模板
+*** 函数模板
+- 类型无关
+- 泛型算法
+*** 类模板
+*** Object、Comparable 和一个例子
+*** 函数对象
+*** 类模板的分离式编译
+
+* 表(List)、栈(Stack)、队列(Queue)                                  :ARCHIVE:
 ** 表的基本概念和性质
+- 抽象数据类型(Abstract Data Type, ADT) :: 带有一组操作的的一些对象的集合.
+
 *** 顺序表
+- 随机访问
+- 连续的存储空间
+
 *** 链表
+- 支持存储空间的动态分配
 **** 单链表
 **** 双向链表
 **** 环形链表
 **** 带哨兵节点的链表
+**** *静态链表
 
 ** 表 ADT 及其顺序、链接实现
-*** 顺序实现(vector)
-*** 链接实现(list)
+- ~printList~
+- ~makeEmpty~
+- ~find~
+- ~insert~
+- ~remove~
+- ~findKth~
+
+*** 简单数组实现
+- 虽然数组由固定容量所创建, 但 ~vector~ 类(其内部存储一个数组) 在需要的时候可以使其内容成倍地增长.
+  - 无需对表的大小进行估计.
+- ~printList~, ~find~: $O(N)$
+- ~findKth~: $O(1)$
+- ~insert~, ~remove~: 平均: $O(N)$; 表尾: $O(1)$
+- 若只在表尾(high end of the list) 进行插入删除, 此后只发生对数组的访问, 则数组是表的一种恰当实现.
+
+*** 简单链表
+- 链表由一系列节点组成, 这些节点不必在内存中相连
+  - 每个节点均含
+    - 表元素
+    - 链(link): ~next~ 链(next link)
+  - 最后一个单元的 ~next~ 链指向 ~nullptr~
+- ~printList~, ~find~: $O(N)$
+- ~findKth~: $O(i)$
+- ~remove~: $O(1)$; 通过修改一个 ~next~ 指针来实现.
+- ~insert~: $O(1)$; ~new~ 获取新节点, 两次调整 ~next~ 指针.
+
+- 双向链表(doubly linked list) :: 每个节点持有一个指向它在表中的前驱节点的链.
+  - 简化删除最后一项
+
+*** *STL
+- 标准模板库(Standard Template Library, STL) :: C++ 语言在其库中包含的一些常用数据结构的实现.
+  通常被称为集合(collection) 或容器(container).
+
+  - ~vector~ 提供表 ADT 的一种可增长的数组实现.
+  - ~list~ 指 STL 中的 _双向链表_, 而 list 指表 ADT.
+
+- 所有 STL 容器
+  - ~int size() const~
+  - ~void clear()~
+  - ~bool empty() const~
+- ~vector~ 和 ~list~
+  - ~void push_back(const Object & x)~
+  - ~void pop_back()~
+  - ~const Object & back() const~
+  - ~const Object & front() const~
+- ~vector~
+  - ~Object & operator[] (int idx)~
+  - ~Object & at(int idx)~
+  - ~int capacity() const~
+  - ~void reserve(int newCapacity)~: 设置新的容量. 如果有好的估计可用, 那么它可以用于避免扩展 ~vector~.
+- ~list~
+  - ~void push_front(const Object)~
+  - ~void pop_front()~
+
+**** 迭代器
+***** 获取迭代器
+- ~iterator begin()~
+- ~iterator end()~: 表示容器中的 *尾端(终端) 标记*(endmarker), 即容器中最后一项之后的位置.
+  #+begin_src cpp
+    for(int i = 0; i != v.size(); ++i)
+      cout << v[i] << endl;
+  #+end_src
+  使用迭代器重写
+  #+begin_src cpp
+    for(vector<int>::iterator itr = v.begin(); itr != v.end(); itr.???)
+      cout << itr.??? << endl;
+  #+end_src
+
+***** 迭代器方法
+- ~itr++~ 和 ~++itr~
+- ~*itr~
+- ~itr1==itr2~
+- ~itr1!=itr2~
+#+begin_src cpp
+  for(vector<int>::iterator itr = v.begin(); itr != v.end(); ++itr)
+    cout << *itr << endl;
+#+end_src
+运算符重载的使用使我们能够访问当前项, 于是
+#+begin_src cpp
+  vector<int>::iterator itr = v.begin();
+  while(itr !=v.end())
+    cout << *itr++ << endl;
+#+end_src
+
+***** 需要迭代器的容器操作
+- ~iterator insert(iterator pos, const Object & x)~
+- ~iterator erase(iterator pos)~
+- ~iterator erase(iterator start, iterator end)~
+
+**** ~const_iterators~
+- ~*itr~ 的结果不只是迭代器正在指向的项的值, 而且还有该项本身.
+- 对于 ~const_iterator~, ~operator*~ 返回一个常量引用, 因而对于 ~const_iterator~ 的 ~*itr~ 不能出现在赋值语句的左边.
 
 ** 栈的基本概念和性质
+- 栈(stack) 是一个带有限制的表, 它的插入和删除只能在一个位置上进行, 即只能在表的末端进行, 这个末端叫做 *栈顶* (top).
+- 栈有时又叫做 *LIFO(后进先出) 表* (Last in, First out list).
 
 ** 栈 ADT 及其顺序、链接实现
+- ~push~
+- ~pop~
+- ~top~
+
+*** 数组实现
+- ~vector~
+  - ~back~
+  - ~push_back~
+  - ~pop_back~
+
+*** 链表实现
 
 ** 栈的应用
 - 卡特兰(Catalan) 数 :: $n$ 个不同元素进栈后, 不同出栈序列的个数. [[https://en.wikipedia.org/wiki/Catalan_number][wikipedia]]
   \[ C_n = \frac{1}{n+1} \binom{2n}{n} = \frac{(2n)!}{(n+1)!n!} = \prod_{k=2}^n \frac{n+k}{k} \qfor n \geqslant 0 \]
 
+*** 平衡符号
+
+*** 后缀表达式
+
+*** 中缀到后缀的转换
+
 ** 栈与递归
+*** 函数调用
 
 ** 队列的基本概念和性质
 
 ** 队列 ADT 及其顺序、链接实现
 
 ** 队列的应用
+
+* 线性表
+** 顺序表
+- 一次分配
+- 连续的存储空间, 密度高
+- 随机存取
+- 插入删除费时
+#+begin_src cpp
+  #define maxSize 100
+  int A[maxSize];
+  int n;
+#+end_src
+*** 查找
+*** 插入
+*** 删除
+*** 初始化
+*** 求指定位置元素
+
+** 链表
+- 多次分配
+- 节点存储空间利用率较低
+- 顺序存取
+- 插入删除不费时
+
+*** 单链表
+- 带头节点
+  - 在第一个数据节点之前插入一个新节点和删除第一个数据节点的操作同表中部节点的操作统一.
+  - 头指针不随操作改变.
+#+begin_src cpp
+  typedef struct LNode {
+    int data;
+    struct LNode *next;
+  } LNode, *LinkList;
+#+end_src
+
+**** 头插
+#+begin_src cpp
+  void creastLinkedListF(LNode *&head) {
+    LNode *p = NULL;
+    int n;
+    cin >> n;
+    head = (LNode *)malloc(sizeof(LNode));
+    head->next = NULL;
+    for (int i = 0; i < n; ++i) {
+      p = (LNode *)malloc(sizeof(LNode));
+      cin >> p->data;
+      p->next = head->next;
+      head->next = p;
+    }
+  }
+#+end_src
+
+**** 尾插
+#+begin_src cpp
+  void createLinkedListR(LNode *&head) {
+    LNode *p = NULL, *r = head;
+    int n;
+    cin >> n;
+    head = (LNode *)malloc(sizeof(LNode));
+    head->next = NULL;
+    for (int i = 0; i < n; i++) {
+      p = (LNode *)malloc(sizeof(LNode));
+      cin >> p->data;
+      r->next = p;
+      r = r->next;
+    }
+    r->next = NULL;
+  }
+#+end_src
+
+**** 归并
+***** 递增
+#+begin_src cpp
+  void merge(LNode *A, LNode *B, LNode *&C) {
+    LNode *a = A->next, *b = B->next, *r;
+    C = A, r = C;
+    while (a && b) {
+      if (a->data < b->data) {
+        r->next = a, r = r->next;
+        a = a->next;
+      } else {
+        r->next = b, r = r->next;
+        b = b->next;
+      }
+    }
+    if (a->next != NULL)
+      r->next = a;
+    if (b->next != NULL)
+      r->next = b;
+  }
+#+end_src
+
+***** 递减
+#+begin_src cpp
+  void merge(LNode *A, LNode *B, LNode *&C) {
+    LNode *a = A->next, *b = B->next, *s;
+    C = A;
+    while (a && b) {
+      if (a->data < b->data) {
+        s = a,
+        a = a->next; // 对 s->next 赋值将破坏 a->next, 故将 a 先移动到 a->next
+        s->next = C->next, C->next = s;
+      } else {
+        s = b, b = b->next;
+        s->next = C->next, C->next = s;
+      }
+    }
+    while (a != NULL) {
+      s = a, a = a->next;
+      s->next = C->next, C->next = s;
+    }
+    while (b != NULL) {
+      s = b, b = b->next;
+      s->next = C->next, C->next = s;
+    }
+  }
+#+end_src
+
+*** 双链表
+#+begin_src cpp
+  typedef struct DLNode
+  {
+    int data;
+    struct DLNode *prev;
+    struct DLNode *next;
+  }DLNode;
+#+end_src
+
+**** 尾插
+#+begin_src cpp
+  void createDoublyLinkedListR(DLNode *&head) {
+    DLNode *p, *r = head;
+    int n;
+    cin >> n;
+    head = (DLNode *)malloc(sizeof(DLNode));
+    head->next = NULL;
+    head->prev = NULL;
+    for (int i = 0; i < n; ++i) {
+      p = (DLNode *)malloc(sizeof(DLNode));
+      cin >> p->data;
+      p->next = NULL;
+      p->prev = r;
+      r->next = p;
+      r = r->next;
+    }
+  }
+#+end_src
+
+**** 查找节点
+
+**** 插入节点
+
+**** 删除节点
+
+*** 循环单链表
+
+*** 循环双链表
+
+*** 静态链表
+#+begin_src cpp
+  typedef struct {
+    int data;
+    int next;
+  } SLNode;
+#+end_src
+
+* 栈和队列
+** 栈
+- 只能在一端进行插入或删除操作的线性表
+- 先进后出(FILO)
+- 栈顶
+  - 入栈
+  - 出栈
+- 栈底
+- 数学性质
+  \[ N=\frac{1}{n+1}C_{2n}^n \]
+*** 顺序栈
+#+begin_src cpp
+  int stack[maxSize];
+  int top = -1;
+#+end_src
+**** 栈空
+~top == -1~
+**** 栈满
+~top == maxSize - 1~
+**** 非法状态(上溢和下溢)
+**** 入栈
+#+begin_src cpp
+  stack[++top]=x;
+#+end_src
+**** 出栈
+#+begin_src cpp
+  x=stack[top--];
+#+end_src
+*** 链式栈
+节点定义与链表相同.
+**** 栈空
+~lst->next == NULL~
+**** 栈满
+不存在
+**** 入栈
+#+begin_src cpp
+  void push(LNode *lst, int x) {
+    LNode *p;
+    p = (LNode *)malloc(sizeof(LNode));
+    p->next = NULL;
+    // 头插法
+    p->data = x;
+    p->next = lst->next;
+    lst->next = p;
+  }
+#+end_src
+**** 出栈
+单链表删除
+*** 共享栈
+- 栈底在两端
+- 栈顶相遇
+*** 应用
+**** 符号匹配
+#+begin_src cpp
+  int match(char exp[], int n) {
+    char stack[maxSize];
+    int top = -1;
+    for (int i = 0; i < n; i++) {
+      if (exp[i] == '(')
+        stack[++top] = '(';
+      if (exp[i] == ')') {
+        if (top == -1)
+          return 0;
+        else
+          top--;
+      }
+    }
+    return top == -1;
+  }
+#+end_src
+**** 后缀表达式
+当遇到数值的时候入栈, 当遇到运算符的时候, 连续两次出栈, 将两个出栈元素结合运算符进行运算, 将结果当成新遇到的数值入栈.
+如此往复, 知道扫描到终止符号, 此时栈底元素值即为表达式的值.
+#+include: "src/stack.cpp" :lines "125-153" src cpp
+
+**** 中缀转后缀
+#+include: "src/stack.cpp" :lines "183-236" src cpp
+
+** 队列
+- 先进先出(FIFO)
+- 队尾(Rear)
+  - 入队
+- 队头(Front)
+  - 出队
+*** 顺序队(循环队列)
+#+begin_src cpp
+  int data[maxSize];
+  int front;
+  int rear;
+#+end_src
+**** 队空
+~rear == front~
+**** 队满
+~(rear+1)%maxSize == front~
+**** 入队
+#+begin_src cpp
+  rear = (rear + 1) % maxSize;
+  data[rear] = x;
+#+end_src
+**** 出队
+#+begin_src cpp
+  front = (front + 1) % maxSize;
+  x = data[front];
+#+end_src
+
+*** 链队
+#+begin_src cpp
+  typedef struct QNode {
+    int data;
+    struct QNode *next;
+  } QNode;
+  typedef struct {
+    QNode *front;
+    QNode *rear;
+  } LiQueue;
+#+end_src
+**** 队空
+~lqu->rear == NULL~ 或 ~lqu->front == NULL~
+**** 队满
+不存在
+**** 入队
+#+begin_src cpp
+  lqu->rear->next = p;
+  lqu->rear = p;
+#+end_src
+**** 出队
+#+begin_src cpp
+  p = lqu->front;
+  if (lqu->front == lqu->rear) { // 只有一个节点时出队时
+    lqu->front = lqu->rear = NULL;
+  } else {
+    lqu->front = p->next;
+  }
+  x = p->data;
+  free(p);
+#+end_src
+*** 双端队列
+*** 应用
+** 抽象数据类型
+- Abstract Data Type, ADT
 
 * 树
 ** 树的基本概念和术语
@@ -44,7 +650,55 @@
 
 ** 树的应用, Huffman 树的定义与应用
 
-* 查找(Search)
+* 图
+** 图的基本概念
+
+** 图的存储结构
+
+*** 邻接矩阵
+
+*** 邻接表
+
+** 图的遍历
+
+*** 广度度优先遍历
+
+*** 深度优先遍历
+
+** 最小生成树基本概念
+
+** Prim 算法
+
+** Kruskal 算法
+
+** 最短路径问题
+
+*** 广度优先遍历算法
+
+*** Dijkstra 算法
+
+*** Floyd 算法
+
+** 拓扑排序
+
+* 排序
+** 排序基本概念
+
+** 插入排序
+
+** 希尔排序
+
+** 选择排序
+
+** 快速排序
+
+** 合并排序
+
+** 基数排序
+
+** 其他排序算法基本思想, 算法代码及基本的时间复杂度分析
+
+* 查找
 ** 查找的基本概念
 
 ** 对线性关系结构的查找
@@ -86,52 +740,4 @@
 *** 调整算法
 
 ** 范围查询
-
-* 排序
-** 排序基本概念
-
-** 插入排序
-
-** 希尔排序
-
-** 选择排序
-
-** 快速排序
-
-** 合并排序
-
-** 基数排序
-
-** 其他排序算法基本思想, 算法代码及基本的时间复杂度分析
-
-* 图
-** 图的基本概念
-
-** 图的存储结构
-
-*** 邻接矩阵
-
-*** 邻接表
-
-** 图的遍历
-
-*** 广度度优先遍历
-
-*** 深度优先遍历
-
-** 最小生成树基本概念
-
-** Prim 算法
-
-** Kruskal 算法
-
-** 最短路径问题
-
-*** 广度优先遍历算法
-
-*** Dijkstra 算法
-
-*** Floyd 算法
-
-** 拓扑排序
 

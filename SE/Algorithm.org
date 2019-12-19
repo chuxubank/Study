@@ -1166,61 +1166,371 @@ O(n^2)
 
 * 排序
 ** 排序基本概念
+- 稳定性 :: 两个或两个以上相同关键字, 排序前后的相对位置.
+** 插入类
+在已经有序的序列中, 插入新的关键字.
+*** 直接插入排序
+#+begin_src cpp
+  void InsertSort(int A[], int n) {
+    for (int i = 1; i <= n - 1; i++) {
+      if (A[i] < A[i - 1]) {
+        int temp = A[i];  // 待插入关键字
+        int j = i - 1;
+        while (j >= 0 && temp < A[j]) {  // 后移
+          A[j + 1] = A[j];
+          j--;
+        }
+        A[j + 1] = temp;
+      }
+    }
+  }
+#+end_src
+- 时间: O(n^2)
+  - 最好(已有序): O(n)
+  - 最坏(逆序): O(n^2)
+- 空间: O(1)
+- 稳定
+*** 折半插入排序
+用折半查找法在有序序列中查找插入位置
+- 时间: O(n^2)
+  - 关键字移动次数于直接插入排序相同
+  - 最好: $O(n\log_2n)$
+- 空间: O(1)
+*** 希尔排序
+- 缩小增量排序
+- 时间
+  - 与增量选取有关
+  - Shell: O(n^2)
+  - Papernov & Stasevich: O(n^1.5)
+- 空间: O(1)
+- _不稳定_
+** 交换类
+*** *冒泡排序
+#+begin_src cpp
+  void BubbleSort(int A[], int n) {
+    int temp, flag = 1;
+    for (int i = n - 1; i >= 1 && flag == 1; i--) {  // 每趟排序将最大的关键字放到最后
+      flag = 0;  // 标记本趟排序是否发生了交换
+      for (int j = 0; j < i; j++) {
+        if (A[j] > A[j + 1]) {
+          temp = A[j];
+          A[j] = A[j + 1];
+          A[j + 1] = temp;
+          flag = 1;
+        }
+      }
+    }
+  }
+#+end_src
+- 时间: O(n^2)
+  - 最好: O(n)
+- 空间: O(1)
+- 稳定
+*** 快速排序
+每一趟选择当前所有子序列中的一个关键字(通常是第一个) 作为枢轴,
+将子序列中比枢轴小的移到枢轴前边, 比枢轴大的移到枢轴后边;
+将得到的新的一组更短的子序列, 成为下一趟的初始序列.
+- 交替扫描和交换(每趟都与枢轴比较)
+- 递归(分治)
+#+begin_src cpp
+  void QuickSort(int A[], int n) { QSort(A, 0, n - 1); }
+  void QSort(int A[], int low, int high) {
+    int pivotloc;
+    if (low < high) {
+      pivotloc = Partition(A, low, high);  // 一趟排序后枢轴的位置
+      QSort(A, low, pivotloc - 1);
+      QSort(A, pivotloc + 1, high);
+    }
+  }
+  int Partition(int A[], int low, int high) {
+    int pivot = A[low];  // 枢轴内容
+    // 从线性表的两端交替地向中间扫描
+    while (low < high) {
+      while (low < high && A[high] >= pivot)
+        high--;
+      A[low] = A[high];
+      while (low < high && A[low] <= pivot)
+        low++;
+      A[high] = A[low];
+    }
+    A[low] = pivot;
+    return low;
+  }
+#+end_src
+- 时间: $O(n\log_2n)$
+  - 最坏(有序): O(n^2)
+- 空间: $O(log_2n)$
+- _不稳定_
 
-** 插入排序
+** 选择类
+每一趟排序都选出一个最小的关键字, 与第一个交换.
+*** 简单选择排序
+#+begin_src cpp
+  void SelectSort(int A[], int n) {
+    for (int i = 0; i < n; i++) {
+      int min = i;
+      for (int j = i + 1; j < n; j++) {
+        if (A[min] > A[j])
+          min = j;
+      }
+      if (min != i) {
+        int temp = A[min];
+        A[min] = A[i];
+        A[i] = temp;
+      }
+    }
+  }
+#+end_src
+- 时间: O(n^2)
+- 空间: O(1)
+- _不稳定_
 
-** 希尔排序
+*** 堆排序
+- 堆 :: 任何一个非叶子结点的值都不大于(或不小于) 其左右孩子结点的值的完全二叉树.
 
-** 选择排序
 
-** 快速排序
+- 大顶堆, 小顶堆
+- 执行过程
+  1. 建堆: 创建完全二叉树后调整为大顶堆
+  2. 插入结点: 插入到最后, 再依次调整
+  3. 删除: 将最后的结点值赋值给要删除的结点, 并调整, 最后删除
+  4. 排序: 每趟排序将堆顶与最后一个结点交换, 使堆顶达到其最终位置;
+     再将除已达到最终位置的元素重新调整为大顶堆
+#+begin_src cpp
+  void HeapSort(int A[], int n) {   // 设 A[1] 为堆顶
+    for (int i = n / 2; i > 0; i--) // 建堆
+      HeapAdjust(A, i, n);
+    for (int i = n; i > 1; i--) {
+      int temp = A[1];
+      A[1] = A[i];
+      A[i] = temp;
+      HeapAdjust(A, 1, i-1); // 将 A[1..i-1] 重新调整
+    }
+  }
+  void HeapAdjust(int A[], int low, int high) {  // low 到 high 范围内对 low 的调整
+    int temp = A[low];
+    for (int i = 2 * low; i <= high; i = i * 2) { // i 不断取 low 的子孙结点
+      if (i < high && A[i] < A[i + 1]) // 令 i 为关键字较大的结点的下标
+        i++;
+      if (temp >= A[i])
+        break;
+      else {
+        A[low] = A[i];
+        low = i;
+      }
+    }
+    A[low] = temp; // 插入
+  }
+#+end_src
+- 时间: $O(n\log_2n)$
+- 空间: O(1)
+- _不稳定_
 
-** 合并排序
+** 归并类
+将两个或两个以上的有序序列合并成一个新的有序序列.
+*** 二路归并排序
+- 分治
+#+begin_src cpp
+  void mergeSort(int A[], int low, int high) {
+    if (low < high) {
+      int mid = (low + high) / 2;
+      mergeSort(A, low, mid);
+      mergeSort(A, mid + 1, high);
+      merge(A, low, mid, high);  // 将两个有序序列合并成一个有序序列
+    }
+  }
+#+end_src
+- 时间: $O(n\log_2n)$, 与初始序列无关
+- 空间: O(n)
 
 ** 基数排序
+多关键字排序
+*** 最高位优先
+先按最高位排成若干子序列, 再对每个子序列按次高位排序;
+- 最高位关键字不同
 
-** 其他排序算法基本思想, 算法代码及基本的时间复杂度分析
+*** 最低位优先
+分配、收集; 从最低位到最高位依次有序
+- 时间: O(d(n+r_d))
+- 空间: O(r_d)
+- n: 序列中的关键字数(分配)
+- d: 关键字的位数(趟)
+- r_d: 关键字基的个数(收集)
+
+** 总结
+*** 复杂度
+**** 时间复杂度
+***** 平均
+- $O(n\log_2n)$: *快些归队*
+  - 快: 快速; 些: 希尔; 归: 归并; 队: 堆
+- O(d(n+r_d)): 基数排序
+- O(n^2): 其他
+***** 最坏(有序)
+- 快速排序: O(n^2)
+- 其他与平均相同
+***** 最好(有序)
+- O(n): 容易 *插*, *起* 的好
+  - 插: 插入; 起: 冒泡
+**** 空间复杂度
+- 快速排序: $O(\log_2n)$
+- 归并排序: O(n)
+- 基数排序: O(r_d)
+- 其他: O(1)
+
+*** 稳定性
+#+begin_quote
+情绪不稳定, *快些选一堆* 好友来聊天
+#+end_quote
+- 快: 快速; 些: 希尔; 选: 简单选择; 堆: 堆
 
 * 查找
 ** 查找的基本概念
+给定一个值 k, 在含有 n 个记录的表中找出关键字等于 k 的记录.
+- 选择方法
+  - 表的数据结构(组织方式)
+  - 表中关键字是否有序
+
+
+- 平均比较次数/平均查找长度(ASL) :: \[ \sum_{i=1}^n p_ic_i \]
+  - p_i: 查找第 i 个记录的概率
+  - c_i: 找到第 i 个记录所需进行的比较次数, 即查找长度
 
 ** 对线性关系结构的查找
-
 *** 顺序查找
+- 无序
+- ASL_1: $\sum_{i=1}^n \frac{i}{n}=\frac{(n+1)}{2}$
+- ASL_2: n
+- 时间: O(n)
 
-*** 二分查找
+*** 二分查找(折半查找)
+- 有序
+#+begin_src cpp
+  int BinSearch(int A[], int n, int key) {
+    int low = 0, high = n - 1, mid;
+    while (low <= high) {
+      mid = (low + high) / 2;
+      if (key == A[mid])
+        return mid;
+      if (key > A[mid])
+        low = mid + 1;
+      else
+        high = mid – 1;
+    }
+    return -1;
+  }
+#+end_src
+- 判定树
+  - 比较次数为从根结点到待查找元素所经过的结点数
+  - 复杂度即为树的高度
+- ASL: $\log_2(n+1)-1$
+- 时间: $O(\log_2n)$
 
-** Hash 查找法
+** 二叉排序树(BST)
+*** 定义
+1. 若左子树不空, 则左子树上所有关键字的值均小于根关键字的值.
+2. 若右子树不空, 则右子树上所有关键字的值均大于根关键字的值.
+3. 左右子树又各是一颗二叉排序树.
+*** 存储结构
+与二叉树类似(孩子存储结构).
+*** 查找关键字算法
+#+begin_src cpp
+  BTNode *BSTSearch(BTNode *bt, int key) {
+    if (bt == NULL)
+      return NULL;
+    else {
+      if (bt->key == key)
+        return bt;
+      else if (key < bt->key)
+        return BSTSearch(bt->lchild, key);
+      else
+        return BSTSearch(bt->rchild, key);
+    }
+  }
+#+end_src
+*** 插入关键字算法
+- 对于一个不存在于二叉排序树中的关键字, 其查找不成功的位置即为要插入的位置
+#+begin_src cpp
+  int BSTInsert(BTNode *&bt, int key) {
+    if (bt == NULL) {
+      bt = (BTNode *)malloc(sizeof(BTNode));
+      bt->lchild = bt->rchild = NULL;
+      bt->key = key;
+      return 1;
+    } else {
+      if (bt->key == key)
+        return 0;
+      else if (key < bt->key)
+        return BSTInsert(bt->lchild, key);
+      else
+        return BSTInsert(bt->rchild, key);
+    }
+  }
+#+end_src
+- 总是插入在叶子结点上.
+*** 删除关键字的操作
+1. 叶子结点: 直接删除
+2. 只有一颗子树: 删除后将子树连接到其双亲结点
+3. 有两颗子树:
+   1. 沿左(右)子树的右(左)指针一直往右(左)走
+   2. 用此结点的关键字替换待删除的关键字
+   3. 判断此结点是否为叶子结点, 转化为 1)/2)
 
+** 平衡二叉树(AVL)
+- 特殊的二叉排序树
+- 左右子树高度之差的绝对值不超过 1
+- 平衡因子: 左子树的高度 - 右子树的高度
+*** 平衡调整
+1. 找出插入新结点后 _失去平衡的最小子树_
+   - 最小不平衡二叉树: 以距离插入结点最近, 且不平衡的结点作为根的子树
+2. 调整, 使之成为平衡子树
+   - 当 _失去平衡的最小子树_ 被调整为平衡子树后, 无须调整原有其他所有的不平衡树
+   - (对三个相关结点中序遍历, 取中间的为根结点)
+   - LL : 新插入结点在 _最小不平衡二叉树_ 的左孩子的左子树上; 右单旋转调整
+   - RR : 新插入结点在 _最小不平衡二叉树_ 的右孩子的右子树上; 左单旋转调整
+   - LR : 新插入结点在 _最小不平衡二叉树_ 的左孩子的右子树上; 先左后右双旋转调整
+   - RL : 新插入结点在 _最小不平衡二叉树_ 的右孩子的左子树上; 先右后左双旋转调整
+
+** 散列表
+- 根据给定的关键字来计算出关键字在表中的位置
+*** 建立方法
+- H(key)
 *** 常见的 Hash 函数
+**** 直接定址法
+- H(key)=key 或 H(key)= a \times key + b
+**** 随机数法(数字分析法)
+- 选取关键字的若干位组成 Hash 地址, 使得到的 Hash 地址尽量减少冲突, 即所选数位上的数字尽可能随机.
+**** *平方取中法
+**** *除留余数法
+- H(key)= key Mod p (p \leq m 且为素数);
 
-*** 直接定址法
+*** 冲突与解决冲突的方法
+当 key1 \neq key2, 而 H(key1)=H(key2)
+- 二次聚集现象 :: 冲突处理后所得到的另一个 Hash 地址 H_1 仍然发生冲突, 只能再求下一个地址 H_2, 以此类推,
+  直到 H_n 不发生冲突为止, H_n 即为记录在表中的 Hash 地址.
 
-*** 随机数法
+**** 闭散列方法/开放定址法
+- 以发生冲突的 Hash 地址为自变量, 通过某种冲突解决函数得到一个新的空闲的 Hash 地址.
+***** 线性探查法
+- 从发生冲突的地址开始依次探查 d 的下一个地址, 直到找到一个空位置.
+- H_i(k)=(H(k)+i) Mod m (i\leq i \leq m-1)
+- 容易产生堆积问题
+***** 平方探查法
+- 设发生冲突的地址为 d, 则新的地址序列为 d\pm1^2, d\pm2^2, ...
+- 减少出现堆积问题
+- 不能探查到 Hash 表上的所有单元, 但至少能探查到一半的单元.
+***** 伪随机序列法
+***** 双 Hash 函数法
+- H(H(k))
 
-*** Hash 冲突的概念, 解决冲突的方法
+**** 开散列方法/拉链法(链地址法)
+- 把所有的同义词用单链表连接起来
+- 存放同义词单链表的表头指针, 而非记录本身
 
-**** 开散列方法/拉链法
+*** 性能分析
+- 与关键字个数无关
+- 与装填因子有关
+  - 装填因子 :: 关键字个数和表长度的比值
 
-**** 闭散列方法/开址定址法
-
-**** 二次聚集现象
-
-** BST 树定义, 性质, ADT 及其实现
-
-** BST 树查找, 插入, 删除算法
-
-** 平衡树(AVL)的定义, 性质, ADT 及其实现
-
-** 平衡树查找, 插入算法, 平衡因子的概念
-
-** 优先队列与堆
-
-*** 堆的定义
-
-*** 堆的生成
-
-*** 调整算法
-
+** 优先队列
 ** 范围查询
 

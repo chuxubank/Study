@@ -1164,225 +1164,6 @@ O(n^2)
 1. 图中的最长路径
 2. 整个工期所完成的最短时间
 
-* 排序
-** 排序基本概念
-- 稳定性 :: 两个或两个以上相同关键字, 排序前后的相对位置.
-** 插入类
-在已经有序的序列中, 插入新的关键字.
-*** 直接插入排序
-#+begin_src cpp
-  void InsertSort(int A[], int n) {
-    for (int i = 1; i <= n - 1; i++) {
-      if (A[i] < A[i - 1]) {
-        int temp = A[i];  // 待插入关键字
-        int j = i - 1;
-        while (j >= 0 && temp < A[j]) {  // 后移
-          A[j + 1] = A[j];
-          j--;
-        }
-        A[j + 1] = temp;
-      }
-    }
-  }
-#+end_src
-- 时间: O(n^2)
-  - 最好(已有序): O(n)
-  - 最坏(逆序): O(n^2)
-- 空间: O(1)
-- 稳定
-*** 折半插入排序
-用折半查找法在有序序列中查找插入位置
-- 时间: O(n^2)
-  - 关键字移动次数于直接插入排序相同
-  - 最好: $O(n\log_2n)$
-- 空间: O(1)
-*** 希尔排序
-- 缩小增量排序
-- 时间
-  - 与增量选取有关
-  - Shell: O(n^2)
-  - Papernov & Stasevich: O(n^1.5)
-- 空间: O(1)
-- _不稳定_
-** 交换类
-*** *冒泡排序
-#+begin_src cpp
-  void BubbleSort(int A[], int n) {
-    int temp, flag = 1;
-    for (int i = n - 1; i >= 1 && flag == 1; i--) {  // 每趟排序将最大的关键字放到最后
-      flag = 0;  // 标记本趟排序是否发生了交换
-      for (int j = 0; j < i; j++) {
-        if (A[j] > A[j + 1]) {
-          temp = A[j];
-          A[j] = A[j + 1];
-          A[j + 1] = temp;
-          flag = 1;
-        }
-      }
-    }
-  }
-#+end_src
-- 时间: O(n^2)
-  - 最好: O(n)
-- 空间: O(1)
-- 稳定
-*** 快速排序
-每一趟选择当前所有子序列中的一个关键字(通常是第一个) 作为枢轴,
-将子序列中比枢轴小的移到枢轴前边, 比枢轴大的移到枢轴后边;
-将得到的新的一组更短的子序列, 成为下一趟的初始序列.
-- 交替扫描和交换(每趟都与枢轴比较)
-- 递归(分治)
-#+begin_src cpp
-  void QuickSort(int A[], int n) { QSort(A, 0, n - 1); }
-  void QSort(int A[], int low, int high) {
-    int pivotloc;
-    if (low < high) {
-      pivotloc = Partition(A, low, high);  // 一趟排序后枢轴的位置
-      QSort(A, low, pivotloc - 1);
-      QSort(A, pivotloc + 1, high);
-    }
-  }
-  int Partition(int A[], int low, int high) {
-    int pivot = A[low];  // 枢轴内容
-    // 从线性表的两端交替地向中间扫描
-    while (low < high) {
-      while (low < high && A[high] >= pivot)
-        high--;
-      A[low] = A[high];
-      while (low < high && A[low] <= pivot)
-        low++;
-      A[high] = A[low];
-    }
-    A[low] = pivot;
-    return low;
-  }
-#+end_src
-- 时间: $O(n\log_2n)$
-  - 最坏(有序): O(n^2)
-- 空间: $O(log_2n)$
-- _不稳定_
-
-** 选择类
-每一趟排序都选出一个最小的关键字, 与第一个交换.
-*** 简单选择排序
-#+begin_src cpp
-  void SelectSort(int A[], int n) {
-    for (int i = 0; i < n; i++) {
-      int min = i;
-      for (int j = i + 1; j < n; j++) {
-        if (A[min] > A[j])
-          min = j;
-      }
-      if (min != i) {
-        int temp = A[min];
-        A[min] = A[i];
-        A[i] = temp;
-      }
-    }
-  }
-#+end_src
-- 时间: O(n^2)
-- 空间: O(1)
-- _不稳定_
-
-*** 堆排序
-- 堆 :: 任何一个非叶子结点的值都不大于(或不小于) 其左右孩子结点的值的完全二叉树.
-
-
-- 大顶堆, 小顶堆
-- 执行过程
-  1. 建堆: 创建完全二叉树后调整为大顶堆
-  2. 插入结点: 插入到最后, 再依次调整
-  3. 删除: 将最后的结点值赋值给要删除的结点, 并调整, 最后删除
-  4. 排序: 每趟排序将堆顶与最后一个结点交换, 使堆顶达到其最终位置;
-     再将除已达到最终位置的元素重新调整为大顶堆
-#+begin_src cpp
-  void HeapSort(int A[], int n) {   // 设 A[1] 为堆顶
-    for (int i = n / 2; i > 0; i--) // 建堆
-      HeapAdjust(A, i, n);
-    for (int i = n; i > 1; i--) {
-      int temp = A[1];
-      A[1] = A[i];
-      A[i] = temp;
-      HeapAdjust(A, 1, i-1); // 将 A[1..i-1] 重新调整
-    }
-  }
-  void HeapAdjust(int A[], int low, int high) {  // low 到 high 范围内对 low 的调整
-    int temp = A[low];
-    for (int i = 2 * low; i <= high; i = i * 2) { // i 不断取 low 的子孙结点
-      if (i < high && A[i] < A[i + 1]) // 令 i 为关键字较大的结点的下标
-        i++;
-      if (temp >= A[i])
-        break;
-      else {
-        A[low] = A[i];
-        low = i;
-      }
-    }
-    A[low] = temp; // 插入
-  }
-#+end_src
-- 时间: $O(n\log_2n)$
-- 空间: O(1)
-- _不稳定_
-
-** 归并类
-将两个或两个以上的有序序列合并成一个新的有序序列.
-*** 二路归并排序
-- 分治
-#+begin_src cpp
-  void mergeSort(int A[], int low, int high) {
-    if (low < high) {
-      int mid = (low + high) / 2;
-      mergeSort(A, low, mid);
-      mergeSort(A, mid + 1, high);
-      merge(A, low, mid, high);  // 将两个有序序列合并成一个有序序列
-    }
-  }
-#+end_src
-- 时间: $O(n\log_2n)$, 与初始序列无关
-- 空间: O(n)
-
-** 基数排序
-多关键字排序
-*** 最高位优先
-先按最高位排成若干子序列, 再对每个子序列按次高位排序;
-- 最高位关键字不同
-
-*** 最低位优先
-分配、收集; 从最低位到最高位依次有序
-- 时间: O(d(n+r_d))
-- 空间: O(r_d)
-- n: 序列中的关键字数(分配)
-- d: 关键字的位数(趟)
-- r_d: 关键字基的个数(收集)
-
-** 总结
-*** 复杂度
-**** 时间复杂度
-***** 平均
-- $O(n\log_2n)$: *快些归队*
-  - 快: 快速; 些: 希尔; 归: 归并; 队: 堆
-- O(d(n+r_d)): 基数排序
-- O(n^2): 其他
-***** 最坏(有序)
-- 快速排序: O(n^2)
-- 其他与平均相同
-***** 最好(有序)
-- O(n): 容易 *插*, *起* 的好
-  - 插: 插入; 起: 冒泡
-**** 空间复杂度
-- 快速排序: $O(\log_2n)$
-- 归并排序: O(n)
-- 基数排序: O(r_d)
-- 其他: O(1)
-
-*** 稳定性
-#+begin_quote
-情绪不稳定, *快些选一堆* 好友来聊天
-#+end_quote
-- 快: 快速; 些: 希尔; 选: 简单选择; 堆: 堆
-
 * 查找
 ** 查找的基本概念
 给定一个值 k, 在含有 n 个记录的表中找出关键字等于 k 的记录.
@@ -1532,5 +1313,236 @@ O(n^2)
   - 装填因子 :: 关键字个数和表长度的比值
 
 ** 优先队列
-** 范围查询
+*** 插入(入队)
+*** 删除最小值(出队)
 
+** 范围查询
+* 排序
+** 排序基本概念
+- 稳定性 :: 两个或两个以上相同关键字, 排序前后的相对位置.
+** 插入排序
+在已经有序的序列中, 插入新的关键字.
+*** 直接插入排序
+#+begin_src cpp
+  void InsertSort(int A[], int n) {
+    for (int i = 1; i <= n - 1; i++) {
+      if (A[i] < A[i - 1]) {
+        int temp = A[i];  // 待插入关键字
+        int j = i - 1;
+        while (j >= 0 && temp < A[j]) {  // 后移
+          A[j + 1] = A[j];
+          j--;
+        }
+        A[j + 1] = temp;
+      }
+    }
+  }
+#+end_src
+- 时间: O(n^2)
+  - 最好(已有序): O(n)
+  - 最坏(逆序): O(n^2)
+- 空间: O(1)
+- 稳定
+*** 折半插入排序
+用折半查找法在有序序列中查找插入位置
+- 时间: O(n^2)
+  - 关键字移动次数于直接插入排序相同
+  - 最好: $O(n\log_2n)$
+- 空间: O(1)
+** 希尔排序
+- 缩小增量排序
+- 时间
+  - 与增量选取有关
+  - Shell: O(n^2)
+  - Papernov & Stasevich: O(n^1.5)
+- 空间: O(1)
+- _不稳定_
+
+** 堆排序
+- 二叉堆 :: 任何一个非叶子结点的值都不大于(或不小于) 其左右孩子结点的值的完全二叉树.
+  - 大顶堆, 小顶堆
+执行过程:
+1. 建堆: 创建完全二叉树后调整为大顶堆
+2. 插入结点: 插入到最后, 再依次调整
+3. 删除: 将最后的结点值赋值给要删除的结点, 并调整, 最后删除
+4. 排序: 每趟排序将堆顶与最后一个结点交换, 使堆顶达到其最终位置;
+   再将除已达到最终位置的元素重新调整为大顶堆
+#+begin_src cpp
+  void HeapSort(int A[], int n) {   // 设 A[1] 为堆顶
+    for (int i = n / 2; i > 0; i--) // 建堆
+      HeapAdjust(A, i, n);
+    for (int i = n; i > 1; i--) {
+      int temp = A[1];
+      A[1] = A[i];
+      A[i] = temp;
+      HeapAdjust(A, 1, i-1); // 将 A[1..i-1] 重新调整
+    }
+  }
+  void HeapAdjust(int A[], int low, int high) {  // low 到 high 范围内对 low 的调整
+    int temp = A[low];
+    for (int i = 2 * low; i <= high; i = i * 2) { // i 不断取 low 的子孙结点
+      if (i < high && A[i] < A[i + 1]) // 令 i 为关键字较大的结点的下标
+        i++;
+      if (temp >= A[i])
+        break;
+      else {
+        A[low] = A[i];
+        low = i;
+      }
+    }
+    A[low] = temp; // 插入
+  }
+#+end_src
+- 时间: $O(n\log_2n)$
+- 空间: O(1)
+- _不稳定_
+
+** 归并排序
+将两个或两个以上的有序序列合并成一个新的有序序列.
+*** 二路归并排序
+- 分治
+#+begin_src cpp
+  void mergeSort(int A[], int low, int high) {
+    if (low < high) {
+      int mid = (low + high) / 2;
+      mergeSort(A, low, mid);
+      mergeSort(A, mid + 1, high);
+      merge(A, low, mid, high);  // 将两个有序序列合并成一个有序序列
+    }
+  }
+#+end_src
+- 时间: $O(n\log_2n)$, 与初始序列无关
+- 空间: O(n)
+
+** 快速排序
+每一趟选择当前所有子序列中的一个关键字(通常是第一个) 作为枢轴,
+将子序列中比枢轴小的移到枢轴前边, 比枢轴大的移到枢轴后边;
+将得到的新的一组更短的子序列, 成为下一趟的初始序列.
+- 交替扫描和交换(每趟都与枢轴比较)
+- 递归(分治)
+#+begin_src cpp
+  void QuickSort(int A[], int n) { QSort(A, 0, n - 1); }
+  void QSort(int A[], int low, int high) {
+    int pivotloc;
+    if (low < high) {
+      pivotloc = Partition(A, low, high);  // 一趟排序后枢轴的位置
+      QSort(A, low, pivotloc - 1);
+      QSort(A, pivotloc + 1, high);
+    }
+  }
+  int Partition(int A[], int low, int high) {
+    int pivot = A[low];  // 枢轴内容
+    // 从线性表的两端交替地向中间扫描
+    while (low < high) {
+      while (low < high && A[high] >= pivot)
+        high--;
+      A[low] = A[high];
+      while (low < high && A[low] <= pivot)
+        low++;
+      A[high] = A[low];
+    }
+    A[low] = pivot;
+    return low;
+  }
+#+end_src
+- 时间: $O(n\log_2n)$
+  - 最坏(有序): O(n^2)
+- 空间: $O(log_2n)$
+- _不稳定_
+
+** 基数排序
+多关键字排序
+*** 最高位优先
+先按最高位排成若干子序列, 再对每个子序列按次高位排序;
+- 最高位关键字不同
+
+*** 最低位优先
+分配、收集; 从最低位到最高位依次有序
+- 时间: O(d(n+r_d))
+- 空间: O(r_d)
+- n: 序列中的关键字数(分配)
+- d: 关键字的位数(趟)
+- r_d: 关键字基的个数(收集)
+
+** *冒泡排序
+#+begin_src cpp
+  void BubbleSort(int A[], int n) {
+    int temp, flag = 1;
+    for (int i = n - 1; i >= 1 && flag == 1; i--) {  // 每趟排序将最大的关键字放到最后
+      flag = 0;  // 标记本趟排序是否发生了交换
+      for (int j = 0; j < i; j++) {
+        if (A[j] > A[j + 1]) {
+          temp = A[j];
+          A[j] = A[j + 1];
+          A[j + 1] = temp;
+          flag = 1;
+        }
+      }
+    }
+  }
+#+end_src
+- 时间: O(n^2)
+  - 最好: O(n)
+- 空间: O(1)
+- 稳定
+** *简单选择排序
+每一趟排序都选出一个最小的关键字, 与第一个交换.
+#+begin_src cpp
+  void SelectSort(int A[], int n) {
+    for (int i = 0; i < n; i++) {
+      int min = i;
+      for (int j = i + 1; j < n; j++) {
+        if (A[min] > A[j])
+          min = j;
+      }
+      if (min != i) {
+        int temp = A[min];
+        A[min] = A[i];
+        A[i] = temp;
+      }
+    }
+  }
+#+end_src
+- 时间: O(n^2)
+- 空间: O(1)
+- _不稳定_
+
+** 总结
+*** 复杂度
+**** 时间复杂度
+***** 平均
+- $O(n\log_2n)$: *快些归队*
+  - 快: 快速; 些: 希尔; 归: 归并; 队: 堆
+- O(d(n+r_d)): 基数排序
+- O(n^2): 其他
+***** 最坏(有序)
+- 快速排序: O(n^2)
+- 其他与平均相同
+***** 最好(有序)
+- O(n): 容易 *插*, *起* 的好
+  - 插: 插入; 起: 冒泡
+**** 空间复杂度
+- 快速排序: $O(\log_2n)$
+- 归并排序: O(n)
+- 基数排序: O(r_d)
+- 其他: O(1)
+
+*** 稳定性
+#+begin_quote
+情绪不稳定, *快些选一堆* 好友来聊天
+#+end_quote
+- 快: 快速; 些: 希尔; 选: 简单选择; 堆: 堆
+
+* 附录
+** k 小数
+- 将 n 个数排序(比如快速排序或归并排序)，选取排序后的第 k 个数，时间复杂度为 O(nlogn)。
+- 维护一个 k 个元素的最大堆，存储当前遇到的最小的 k 个数，时间复杂度为 O(nlogk)。这种方法同样适用于海量数据的处理。
+- 部分的快速排序（快速选择算法），每次划分之后判断第 k 个数在左右哪个部分，然后递归对应的部分，平均时间复杂度为 O(n)。但最坏情况下复杂度为 O(n^2)。
+- BFPRT 算法，修改快速选择算法的主元选取规则，使用中位数的中位数的作为主元，最坏情况下时间复杂度为 O(n)。
+** 约瑟夫问题
+n 个人(编号为 0,1,...,n-1)围成一个圈子，从 0 号开始依次报数，每数到第 m 个人，这个人就得自杀，之后从下个人开始继续报数，直到所有人都死亡为止。
+- 给出自杀顺序
+- 求最后一个人的编号
+[[http://maskray.me/blog/2013-08-27-josephus-problem-two-log-n-solutions][约瑟夫问题的两个O(log n)解法]]
+** Mark Allen Weiss
+http://users.cis.fiu.edu/~weiss/

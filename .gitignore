@@ -2,6 +2,7 @@
 *.pdf
 *.tex
 *.html
+!index.html
 
 # emacs
 **/auto

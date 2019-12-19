@@ -1284,3 +1284,9 @@ F(x, y, y', \cdots, y^{(n)}) = 0
 \node [below] (B) at (A.south) {$x=\frac{3at}{1+t^3}, y=\frac{3at^2}{1+t^3}$};
 \node [below] at (B.south) {$\rho=\frac{3a\sin\theta\cos\theta}{\sin^3\theta+\cos^3\theta}$};
 \end{tikzpicture}
+** 需要检验的题目
+1. 渐近线条数
+2. 微分方程的解
+3. $e^{f(x)}$ 记得代回
+4. 不定积分记得 +C
+5. 换元求积分后记得代回

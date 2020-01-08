@@ -68,7 +68,7 @@
 
 ** 翻译和映射
 
-** TLB
+** 翻译后备存储器(Translation Lookaside Buffer, TLB)
 
 ** 动态存储器分配和垃圾收集
 

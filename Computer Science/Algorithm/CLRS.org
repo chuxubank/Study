@@ -1,0 +1,63 @@
+#  LocalWords:  Emde Warshall FFT cryptographic
+#+LATEX_HEADER: \setmainfont{Source Serif Pro}
+
+* Foundations
+** The Role of Algorithm in Computing
+*** Algorithms
+*** Algorithm as a technology
+** Getting Started
+*** Insertion sort
+*** Analyzing algorithms
+*** Designing algorithms
+** Growth of Functions
+** Divide-and-Conquer
+** Probabilistic Analysis and Randomized Algorithms
+* Sorting and Order Statistics
+** Heapsort
+** Quicksort
+** Sorting in Linear Time
+** Medians and Order Statistics
+* Data Structures
+** Elementary Data Structures
+** Hash Tables
+** Binary Search Trees
+** Red-Black Trees
+** Augmenting Data Structures
+* Advanced Design and Analysis Techniques
+** Dynamic Programming
+** Greedy Algorithms
+** Amortized Analysis
+* Advanced Data Structures
+** B-Trees
+** Fibonacci Heaps
+** van Emde Boas Trees
+** Data Structures for Disjoint Sets
+* Graph Algorithms
+** Elementary Graph Algorithms
+** Minimum Spanning Trees
+** Single-Source Shortest Paths
+*** The Bellman-Ford algorithm
+*** Dijkstra's algorithm
+** All-Pairs Shortest Paths
+*** The Floyd-Warshall algorithm
+** Maximum Flow
+* Selected Topics
+** Multithreaded Algorithms
+** Matrix Operations
+** Linear Programming
+** Polynomials and the FFT
+** Number-Theoretic Algorithms
+- Today number-theoretic algorithms are used widely, due in large part to the invention of _cryptographic_ schemes based on large prime numbers.
+*** Elementary number-theoretic notions
+**** Common divisors and greatest common divisors
+
+
+** String Matching
+** Computational Geometry
+** NP-Completeness
+** Approximation Algorithms
+* Appendix: Mathematical Background
+** Summations
+** Sets, Etc.
+** Counting and Probability
+** Matrices

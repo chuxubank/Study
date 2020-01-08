@@ -188,13 +188,15 @@
     compassion concentric confederation
     correlate correspond
   #+end_example
-  
 
 - contra- :: opposite
   : contradiction contranatural
 
 - counter- :: opposite
   : counteract counterattack
+
+- crypto- :: secret
+  : cryptographic crypto-communist cryptosystem
 
 - em- :: to cause to become
   : embody empower

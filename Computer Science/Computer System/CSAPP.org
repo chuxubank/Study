@@ -1,0 +1,47 @@
+#+LATEX_HEADER: \setmainfont{Source Serif Pro}
+
+* Computer System: A Programmer's Perspective
+** A Tour of Computer Systems
+Specific implementations of systems change over time, but the underlying concepts do not.
+
+*** Information Is Bits + Context
+All information in a system:
+- /text files/ :: consist exclusively of ASCII characters.
+- /binary files/ :: all other files.
+
+*** Programs Are Translated by Other Programs into Different Forms
+Assembly language is useful because it provides a common output language for different compilers for different high-level languages.
+
+#+CAPTION: The compilation system
+| Order | Extension | Notes                       | Type   | Phase        | Program |
+|-------+-----------+-----------------------------+--------+--------------+---------|
+|     1 | =.c=      | Source program              | text   | Preprocessor | cpp     |
+|     2 | =.i=      | Modified source program     | text   | Compiler     | cc1     |
+|     3 | =.s=      | Assembly program            | text   | Assembler    | as      |
+|     4 | =.o=      | Relocatable object programs | binary | Linker       | ld      |
+|     5 | none      | Executable object program   | binary |              |         |
+
+*** It Pays to Understand How Compilation Systems Work
+- Optimizing program performance.
+- Understanding link-time errors.
+- Avoiding security holes.
+
+*** Processors Read and Interpret Instructions Stored in Memory
+**** Hardware Organization of a System
+- Buses
+- I/O Devices
+- Main Memory
+- Processor (CPU)
+  - program counter (PC)
+  - register file
+  - arithmetic/logic unit (ALU)
+     
+**** Running the =hello= Program
+Using a technique known as direct memory access (DMA, discussed in Chapter 6), the data travel directly from disk to main memory, without passing through the processor.
+
+*** Caches Matter
+The idea behind caching is that a system can get the effect of both a very large memory and a very fast one by exploiting /locality/, the tendency for programs to access data and code in localized regions.
+
+One of the most important lessons in this book is that application programmers who are aware of cache memories can exploit them to improve the performance of their programs by an order of *magnitude*.
+
+*** Storage Devices Form a Hierarchy

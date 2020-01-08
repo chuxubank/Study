@@ -1,4 +1,4 @@
-#+LATEX_HEADER: \usepackage{mathtools, amsthm, booktabs, physics, pgfplots}
+#+LATEX_HEADER: \usepackage{mathtools, amsthm, physics, pgfplots}
 #+LATEX_HEADER: \renewcommand\arraystretch{1.5}
 #+LATEX_HEADER: \theoremstyle{definition} \newtheorem{definition}{定义}[section]
 #+LATEX_HEADER: \theoremstyle{plain} \newtheorem{theorem}{定理}[section]
@@ -415,7 +415,8 @@ SCHEDULED: <2019-11-17 Sun>
 |    $\tan{x}$    |        |   $x$    |                        |    $\frac{1}{3}x^3$     | $\sum\limits_{n=0}^{\infty} \frac{U_{2n+1} x^{2n+1}}{(2n+1)!}$             | $e^x$ 偶数项(去阶乘)          |
 |  $\arctan{x}$   |        |   $x$    |                        |    $-\frac{1}{3}x^3$    | $\sum\limits_{n=1}^{\infty} \frac{(-1)^{n+1}}{2n-1} x^{2n-1}$              | $\tan{x}$ (+正负交错)         |
 |   $\ln(1+x)$    |        |   $x$    |   $-\frac{1}{2}x^2$    |    $\frac{1}{3}x^3$     | $\sum\limits_{n=1}^{\infty} \frac{(-1)^{n+1}}{n} x^n$                      | $e^x$ 去首项(去阶乘+正负交错) |
-| $\frac{1}{1-x}$ |  $1$   |   $x$    |         $x^2$          |          $x^3$          | $\sum\limits_{n=0}^{\infty} x^n$                                           | 等比数列求和                  |
+| $\frac{1}{1+x}$ |  $1$   |   $-x$   |         $x^2$          |         $-x^3$          | $\sum\limits_{n=0}^{\infty} (-1)^n x^n$                                    | $\ln(1+x)$ 求导               |
+| $\frac{1}{1-x}$ |  $1$   |   $x$    |         $x^2$          |          $x^3$          | $\sum\limits_{n=0}^{\infty} x^n$                                           | $\frac{1}{1+x}$ (-正负交错)   |
 
 [[http://mathworld.wolfram.com/MaclaurinSeries.html][其他公式查询]]
 
@@ -1211,6 +1212,9 @@ F(x, y, y', \cdots, y^{(n)}) = 0
 \twocolumn
 * 附录
 ** 常用基础知识
+*** 常用公式
+- 换底公式: $\log_a b=\frac{\log_c b}{\log_c a}=\frac{\ln b}{\ln a}$
+  - 低数与真数互换: $\log_a b \cdot \log_b a = 1$
 *** 数列基础
 **** 等差数列
 - 通项公式 :: $a_n=a_1+(n-1)d$

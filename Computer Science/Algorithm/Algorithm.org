@@ -1,5 +1,5 @@
 #+LATEX_HEADER: \usepackage{mathtools, amsthm, booktabs, physics}
-* *综述                                                             :ARCHIVE:
+* *综述
 ** C++ 类
 *** 基本的 class 语法
 - 类(class)
@@ -183,7 +183,7 @@
 *** 函数对象
 *** 类模板的分离式编译
 
-* 表(List)、栈(Stack)、队列(Queue)                                  :ARCHIVE:
+* 表(List)、栈(Stack)、队列(Queue)
 ** 表的基本概念和性质
 - 抽象数据类型(Abstract Data Type, ADT) :: 带有一组操作的的一些对象的集合.
 

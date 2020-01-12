@@ -7,3 +7,6 @@
 # emacs
 **/auto
 **/ltximg
+
+# auctex
+**/.auctex-auto

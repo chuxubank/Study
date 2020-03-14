@@ -584,7 +584,7 @@ SCHEDULED: <2019-10-25 Fri>
 :ex:       2018-20
 :END:
 
-* 一元函数积分学 
+* 一元函数积分学
 1. 理解原函数的概念, 理解不定积分和定积分的概念
 2. 掌握不定积分的基本公式, 掌握不定积分和定积分的性质及定积分中值定理, 掌握换元积分法与分部积分法.
 3. 会求有理函数、三角函数有理式和简单无理函数的积分.
@@ -1228,6 +1228,7 @@ F(x, y, y', \cdots, y^{(n)}) = 0
 - $\sum\limits_{k=1}^n k^3 = [\frac{n(n+1)}{2}]^2 = \qty(\sum\limits_{k=1}^n k)^2$
 - $\sum\limits_{k=1}^n k(k+1) = \frac{n(n+1)(n+2)}{3}$
 - $\sum\limits_{k=1}^n \frac{1}{k(k+1)} = \frac{n}{n+1}$
+
 ** 几种常用的曲线
 *** 半立方抛物线
 \begin{tikzpicture}[domain=0:1.6]
@@ -1288,6 +1289,7 @@ F(x, y, y', \cdots, y^{(n)}) = 0
 \node [below] (B) at (A.south) {$x=\frac{3at}{1+t^3}, y=\frac{3at^2}{1+t^3}$};
 \node [below] at (B.south) {$\rho=\frac{3a\sin\theta\cos\theta}{\sin^3\theta+\cos^3\theta}$};
 \end{tikzpicture}
+
 ** 需要检验的题目
 1. 渐近线条数
 2. 微分方程的解

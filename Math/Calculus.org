@@ -110,7 +110,7 @@
 给定数列 ${x_n}$, $a$ 为常数, 如果对于任意 $\varepsilon > 0$, 存在正整数 $N$, 当 $n>N$ 时, 有
 \[ \abs{x_n-a} <\varepsilon \]
 则称数列 ${x_n}$ 以 $a$ 为极限, 或称数列 ${x_n}$ 收敛于 $a$, 记为
-\[ \lim_{n \to \infty} x_n = a \qq{或} x_n \to a (n \to \infty) \]
+\[ \lim\limits_{n \to \infty} x_n = a \qq{或} x_n \to a (n \to \infty) \]
 #+end_definition
 
 *** 收敛数列的性质
@@ -129,7 +129,7 @@
 使得当 $0<\abs{x-x_0}<\delta$ 时, 有 
 \[ \abs{f(x)-A}<\varepsilon \]
 则称函数 $f(x)$ 当 $x \to x_0$ 时以 $A$ 为极限, 记为
-\[ \lim_{x \to x_0} f(x) = A \qq{或} f(x) \to A \quad (x \to x_0) \]
+\[ \lim\limits_{x \to x_0} f(x) = A \qq{或} f(x) \to A \quad (x \to x_0) \]
 #+end_definition
 
 #+CAPTION: 函数极限的定义
@@ -169,8 +169,8 @@
 **** 一致性
 #+attr_latex: :options [函数极限与数列极限的关系]
 #+begin_theorem
-如果极限 $\lim_{x \to x_0}f(x)$ 存在, ${x_n}$ 为函数 $f(x)$ 的定义域内任一收敛于 $x_0$ 的数列,
-且满足: $x_n \neq x_0 (n \in N_+)$, 那么相应的函数值数列 ${f(x_n)}$ 必收敛, 且 $\lim_{n \to +\infty} f(x_n) = \lim_{x \to x_0} f(x)$.
+如果极限 $\lim\limits_{x \to x_0}f(x)$ 存在, ${x_n}$ 为函数 $f(x)$ 的定义域内任一收敛于 $x_0$ 的数列,
+且满足: $x_n \neq x_0 (n \in N_+)$, 那么相应的函数值数列 ${f(x_n)}$ 必收敛, 且 $\lim\limits_{n \to +\infty} f(x_n) = \lim\limits_{x \to x_0} f(x)$.
 #+end_theorem
 
 ** 函数的左极限和右极限
@@ -183,14 +183,14 @@
 
 *** 几个常用的单侧极限
 \begin{align*}
-\lim_{x\to -\infty} e^x = 0 & \lim_{x\to +\infty} e^x = +\infty \\
-\lim_{x\to 0^-} \frac{1}{x} = -\infty & \lim_{x\to 0^+} \frac{1}{x} = +\infty
+\lim\limits_{x\to -\infty} e^x = 0 & \lim\limits_{x\to +\infty} e^x = +\infty \\
+\lim\limits_{x\to 0^-} \frac{1}{x} = -\infty & \lim\limits_{x\to 0^+} \frac{1}{x} = +\infty
 \end{align*}
 
 ** 无穷小量和无穷大量大概念及其关系
 *** 无穷小量与极限的关系
-\[ \lim_{x \to x_0} f(x) = A \Leftrightarrow A + \alpha(x) \]
-其中 $\lim_{x \to x_0} \alpha(x) = 0$.
+\[ \lim\limits_{x \to x_0} f(x) = A \Leftrightarrow A + \alpha(x) \]
+其中 $\lim\limits_{x \to x_0} \alpha(x) = 0$.
 
 ** 无穷小量的性质及无穷小量的比较
 *** 无穷小量的比较
@@ -202,24 +202,24 @@
 ** 极限存在的两个准则：单调有界准则和夹逼准则
 *** 单调有界准则
 若数列 ${x_n}$ 单调增加(或单调减少)且有上界 $M$ (或有下界 $m$ ), 则 $x_n$ 收敛,
-且 $\lim_{n \to \infty} x_n \leqslant M$(或 $\lim_{n \to \infty} x_n \geqslant m$).
+且 $\lim\limits_{n \to \infty} x_n \leqslant M$(或 $\lim\limits_{n \to \infty} x_n \geqslant m$).
 
 *** 夹逼准则
-设三个数列满足 $y_n \leqslant x_n \leqslant z_n$, 且 $\lim_{n \to \infty} y_n = \lim_{n \to \infty} z_n = a$, 则 $\lim_{n \to \infty} x_n = a$.
+设三个数列满足 $y_n \leqslant x_n \leqslant z_n$, 且 $\lim\limits_{n \to \infty} y_n = \lim\limits_{n \to \infty} z_n = a$, 则 $\lim\limits_{n \to \infty} x_n = a$.
 
 夹逼准则对于函数极限也成立.
 
 ** 两个重要极限
-\[ \lim_{x \to 0} \frac{\sin x}{x} = 1 \]
-\[ \lim_{x \to 0} (1+x)^{\frac{1}{x}} = \lim_{x \to \infty}\left( 1+\frac{1}{x} \right)^x = e \]
+\[ \lim\limits_{x \to 0} \frac{\sin x}{x} = 1 \]
+\[ \lim\limits_{x \to 0} (1+x)^{\frac{1}{x}} = \lim\limits_{x \to \infty}\left( 1+\frac{1}{x} \right)^x = e \]
 
 ** 函数连续的概念
 #+attr_latex: :options [函数连续]
 #+begin_definition
 设函数 $y=f(x)$ 在点 $x_0$ 的某一领域内有定义, 如果
-\[ \lim_{\Delta x \to 0} \Delta y = \lim_{\Delta x \to 0}[f(x_0+\Delta x)-f(x_0)]=0 \]
+\[ \lim\limits_{\Delta x \to 0} \Delta y = \lim\limits_{\Delta x \to 0}[f(x_0+\Delta x)-f(x_0)]=0 \]
 即
-\[ \lim_{x\to x_0}f(x)=f(x_0) \]
+\[ \lim\limits_{x\to x_0}f(x)=f(x_0) \]
 那么就称函数 $y=f(x)$ 在点 $x_0$ 连续.
 #+end_definition
 
@@ -230,8 +230,8 @@
 ** 函数间断点的类型
 设函数 $f(x)$ 在点 $x_0$ 的某去心邻域内有定义, 且有下列三种情形之一:
 1. 在 $x=x_0$ 没有定义;
-2. 在 $x=x_0$ 有定义, 但 $\lim_{x\to x_0}f(x)$ 不存在;
-3. 在 $x=x_0$ 有定义, 且 $\lim_{x\to x_0}f(x)$ 存在, 但 $\lim_{x\to x_0}f(x) \neq f(x_0)$.
+2. 在 $x=x_0$ 有定义, 但 $\lim\limits_{x\to x_0}f(x)$ 不存在;
+3. 在 $x=x_0$ 有定义, 且 $\lim\limits_{x\to x_0}f(x)$ 存在, 但 $\lim\limits_{x\to x_0}f(x) \neq f(x_0)$.
 那么函数 $f(x)$ 在点 $x_0$ 为不连续, 而点 $x_0$ 称为函数 $f(x_0)$ 的不连续点或间断点.
   
 *** 第一类间断点
@@ -272,15 +272,15 @@ $f(x_0^-)$ 与 $f(x_0^+)$ 至少有一个不存在
 *** 导数的定义
 #+begin_definition
 设函数 $f(x)$ 在 $U(x_0)$ 内有定义, 若极限
-\[ \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim_{\Delta x \to 0} \frac{f(x_0+\Delta x) - f(x_0)}{\Delta x} \]
+\[ \lim\limits_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim\limits_{\Delta x \to 0} \frac{f(x_0+\Delta x) - f(x_0)}{\Delta x} \]
 存在, 则称函数 $f(x)$ 在点 $x=x_0$ 处可导,并称这个极限为 $f(x)$ 在点 $x_0$ 处的导数,
 记为 $f'(x_0)$ 或 $\eval{\dv{y}{x}}_{x=x_0}$ 等.
 #+end_definition
 
 导数定义的等价形式:
 \[
-f'(x_0) = \lim_{h \to 0} \frac{f(x_0)+h - f(x_0)}{h}
-= \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0}
+f'(x_0) = \lim\limits_{h \to 0} \frac{f(x_0)+h - f(x_0)}{h}
+= \lim\limits_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0}
 \]
 
 *** 微分的定义
@@ -483,10 +483,10 @@ SCHEDULED: <2019-11-13 Wed>
 :PROPERTIES:
 :ex:       2016-9
 :END:
-- 水平渐近线 :: 若 $\lim_{x \to \pm \infty} f(x) = a$, 则 $y=a$ 是曲线 $y=f(x)$ 的水平渐近线.
-- 铅直渐近线 :: 若 $\lim_{x \to x_0^{\pm}} f(x) = \infty$, 则 $x=x_0$ 是曲线 $y=f(x)$ 的铅直渐近线.
+- 水平渐近线 :: 若 $\lim\limits_{x \to \pm \infty} f(x) = a$, 则 $y=a$ 是曲线 $y=f(x)$ 的水平渐近线.
+- 铅直渐近线 :: 若 $\lim\limits_{x \to x_0^{\pm}} f(x) = \infty$, 则 $x=x_0$ 是曲线 $y=f(x)$ 的铅直渐近线.
 - 斜渐近线 :: $y=ax+b$ 是曲线 $y=f(x)$ 的斜渐近线当且仅当
-  \[ \lim_{x \to \pm \infty} \frac{f(x)}{x} = a, \lim_{x \to \pm \infty} [f(x) - ax] = b \]
+  \[ \lim\limits_{x \to \pm \infty} \frac{f(x)}{x} = a, \lim\limits_{x \to \pm \infty} [f(x) - ax] = b \]
 
 ** 函数图形的描绘
 ** 函数的最大值与最小值
@@ -519,7 +519,7 @@ SCHEDULED: <2019-11-13 Wed>
 :DRILL_LAST_REVIEWED: [2019-11-09 Sat 23:38]
 :END:
 \[
-K = \lim_{\Delta s \to 0} \abs{\frac{\Delta \alpha}{\Delta s}} = \abs{\dv{\alpha}{s}} 
+K = \lim\limits_{\Delta s \to 0} \abs{\frac{\Delta \alpha}{\Delta s}} = \abs{\dv{\alpha}{s}}
 = \frac{\frac{\Delta s}{a}}{\Delta s} = \frac{1}{a}
 \]
 
@@ -636,7 +636,7 @@ SCHEDULED: <2019-11-16 Sat>
 只要 $\lambda = \max \qty{\Delta x_i} < \delta$, 总有
 \[ \abs{\sum_{i=1}^n f(\xi_i)\Delta x_i - I} < \varepsilon \]
 成立, 那么称 $I$ 是 $f(x)$ 在区间 $[a,b]$ 上的定积分, 记作 $\int_a^b f(x) \dd{x}$, 即
-\[ \int_a^b f(x) \dd{x} = I = \lim_{\lambda \to 0} \sum_{i=1}^n f(\xi_i)\Delta x_i \]
+\[ \int_a^b f(x) \dd{x} = I = \lim\limits_{\lambda \to 0} \sum_{i=1}^n f(\xi_i)\Delta x_i \]
 
 *** 可积的条件
 - 必要条件 :: 若 $f(x)$ 在 $[a,b]$ 上可积, 则 $f(x)$ 在 $[a,b]$ 上一定有界.
@@ -955,10 +955,10 @@ SCHEDULED: <2019-11-13 Wed>
 *** 二元函数极限的定义
 设函数 $z=f(x,y)$ 在点 $(x_0,y_0)$ 的某去心邻域内有定义, $A$ 为常数. 如果对于任意 $\varepsilon > 0$, 存在 $\delta > 0$,
 当 $0<\sqrt{(x-x_0)^2 + (y-y_0)^2}<\delta$ 时, 有 $\abs{f(x,y)-A} < \varepsilon$, 则称函数 $z=f(x,y)$ 当 $(x,y)$ 趋于 $(x_0, y_0)$ 时,
-以 $A$ 为极限, 记作 \[ \lim_{(x,y) \to (x_0,y_0)} f(x,y) = A \]
+以 $A$ 为极限, 记作 \[ \lim\limits_{(x,y) \to (x_0,y_0)} f(x,y) = A \]
 
 *** 二元函数的连续性
-设函数 $z=f(x,y)$ 在点 $P_0(x_0, y_0)$ 的某领域内有定义, 若 $\lim_{(x,y) \to (x_0,y_0)} f(x,y) = f(x_0, y_0)$,
+设函数 $z=f(x,y)$ 在点 $P_0(x_0, y_0)$ 的某领域内有定义, 若 $\lim\limits_{(x,y) \to (x_0,y_0)} f(x,y) = f(x_0, y_0)$,
 则称函数 $z=f(x,y)$ 在点 $P_0(x_0, y_0)$ 处连续.
 
 ** 有界闭区域上二元连续函数的性质
@@ -1063,7 +1063,7 @@ F'_{\lambda} = 0,
 ** 二重积分的概念、基本性质和计算
 *** 二重积分的概念
 设函数 $f(x,y)$ 在有界闭区域 $D$ 上有界, $f(x,y)$ 在 $D$ 上的二重积分定义为
-\[ \iint \limits_D f(x,y) \dd{\sigma} = \lim_{\lambda \to 0} \sum_{i=1}^n f(\xi_i, \eta_i) \Delta\sigma_i \]
+\[ \iint \limits_D f(x,y) \dd{\sigma} = \lim\limits_{\lambda \to 0} \sum_{i=1}^n f(\xi_i, \eta_i) \Delta\sigma_i \]
 
 *** 二重积分的性质
 1. 常数可提

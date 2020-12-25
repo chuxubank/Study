@@ -1,5 +1,3 @@
-#+LATEX_HEADER: \setmainfont{Source Serif Pro}
-#+LATEX_HEADER: \setCJKmainfont{Source Han Serif SC}
 #+LATEX_HEADER: \setlist{nosep}
 
 * Word

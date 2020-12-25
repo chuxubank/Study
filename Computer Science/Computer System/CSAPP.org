@@ -1,5 +1,3 @@
-#+LATEX_HEADER: \setmainfont{Source Serif Pro}
-
 * Computer System: A Programmer's Perspective
 ** A Tour of Computer Systems
 Specific implementations of systems change over time, but the underlying concepts do not.

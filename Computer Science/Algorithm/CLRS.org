@@ -1,5 +1,4 @@
 #  LocalWords:  Emde Warshall FFT cryptographic
-#+LATEX_HEADER: \setmainfont{Source Serif Pro}
 
 * Foundations
 ** The Role of Algorithm in Computing

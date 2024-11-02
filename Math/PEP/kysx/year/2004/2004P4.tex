@@ -1,0 +1,160 @@
+% -*- coding: utf-8 -*-
+% !TEX program = xelatex
+\documentclass[plain,noanswer,medmath]{../../template/jnuexam}
+\usepackage{../../template/kysx}
+
+\begin{document}
+
+
+\examtitle{2004}{4}
+
+
+\loadproblems{1}{2004P1}%载入试卷一
+\loadproblems{2}{2004P2}%载入试卷二
+\loadproblems{3}{2004P3}%载入试卷三
+
+
+\makepart{填空题}{1～6小题，每小题4分，共24分}
+
+
+\useproblem{3}{1}{1}%【同试卷三第一(1)题】
+
+
+\begin{problem}
+设$y = \arctan \e^x - \ln \sqrt{\frac{\e^{2x}}{\e^{2x} + 1}}$，
+则$\frac{\dy}{\dx}\Big|_{x = 1} =$ \fillin{}．
+\end{problem}
+
+
+\useproblem{3}{1}{3}%【同试卷三第一(3)题】
+
+
+\begin{problem}
+设$A = \begin{pmatrix}
+  0 & -1 & 0 \\
+  1 &  0 & 0 \\
+  0 &  0 & -1
+\end{pmatrix}$，$B = P^{-1} AP$，其中$P$为三阶可逆矩阵，则$B^{2004} - 2A^2 =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设$A = (a_{ij})_{3 \times 3}$是实正交矩阵，且$a_{11} = 1$, $b = (1,0,0)^T$，
+则线性方程组$Ax = b$的解是 \fillin{}．
+\end{problem}
+
+
+\useproblem{1}{1}{6}%【同试卷一第一(6)题】
+
+
+\makepart{选择题}{7～14小题，每小题4分，共32分}
+
+
+\useproblem{3}{2}{7}%【同试卷三第二(7)题】
+
+
+\useproblem{3}{2}{8}%【同试卷三第二(8)题】
+
+
+\useproblem{2}{2}{8}%【同试卷二第二(8)题】
+
+
+\begin{problem}
+设$f(x) = \begin{cases}
+   1, & x > 0, \\
+   0, & x = 0, \\
+  -1, & x < 0,
+\end{cases}$ $F(x) = \int_0^x f(t)\dt$，则\pickout{}
+\begin{abcd}
+\item $F(x)$在$x = 0$点不连续．
+\item $F(x)$在$(-\infty , +\infty)$内连续，但在$x = 0$点不可导．
+\item $F(x)$在$(-\infty , +\infty)$内可导，且满足$F'(x) = f(x)$．
+\item $F(x)$在$(-\infty , +\infty)$内可导，但不一定满足$F'(x) = f(x)$．
+\end{abcd}
+\end{problem}
+
+
+\useproblem{3}{2}{11}%【同试卷三第二(11)题】
+
+
+\useproblem{3}{2}{12}%【同试卷三第二(12)题】
+
+
+\useproblem{1}{2}{13}%【同试卷一第二(13)题】
+
+
+\useproblem{1}{2}{14}%【同试卷一第二(14)题】
+
+
+\makepart{解答题}{15～23小题，共94分}
+
+
+\useproblem[points=8]{3}{3}{15}%【同试卷三第三(15)题】
+
+
+\useproblem[points=8]{3}{3}{16}%【同试卷三第三(16)题】
+
+
+\begin{problem}[points=8]
+设$f(u,v)$具有连续偏导数，且满足$f'_u(u,v) + f'_v(u,v) = uv$．
+求$y(x) = \e^{- 2x} f(x,x)$所满足的一阶微分方程，并求其通解．
+\end{problem}
+
+
+\useproblem[points=9]{3}{3}{18}%【同试卷三第三(18)题】
+
+
+\begin{problem}[points=9]
+设$F(x) = \begin{cases}
+    \e^{2x}, & x \le 0, \\
+  \e^{- 2x}, & x > 0,
+\end{cases}$ $S$表示夹在$x$轴与曲线$y = F(x)$之间的面积．
+对任何$t > 0$，$S_1(t)$表示矩形$- t \le x \le t,\;0 \le y \le F(t)$的面积．求：\par
+\begin{enumerate*}
+\item $S(t) = S - S_1(t)$的表达式；
+\item $S(t)$的最小值．
+\end{enumerate*}
+\end{problem}
+
+
+\begin{problem}[points=13]
+设线性方程组
+$$\begin{cases}
+  x_1 + \lambda x_2 + \mu x_3 + x_4 = 0, \\
+  2x_1 + x_2 + x_3 + 2x_4 = 0, \\
+  3x_1 + (2 + \lambda)x_2 + (4 + \mu)x_3 + 4x_4 = 1.
+\end{cases}$$
+已知$(1, - 1,1, - 1)^T$是该方程组的一个解，试求：
+\begin{enumerate}
+\item 方程组的全部解，并用对应的齐次线性方程组的基础解系表示全部解；
+\item 该方程组满足$x_2 = x_3$的全部解．
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}[points=13]
+设三阶实对称矩阵$A$的秩为$2$，$\lambda_1 = \lambda_2 = 6$是$A$的二重特征值．
+若$\alpha_1 = (1,1,0)^T$, $\alpha_2 = (2,1,1)^T$, $\alpha_3 = (- 1,2, - 3)^T$
+都是$A$的属于特征值$6$的特征向量．\par
+\begin{enumerate*}
+\item 求$A$的另一特征值和对应的特征向量；
+\item 求矩阵$A$．
+\end{enumerate*}
+\end{problem}
+
+
+\useproblem[points=13]{3}{3}{22}%【同试卷三第三(22)题】
+
+
+\begin{problem}[points=13]
+设随机变量$X$在区间$(0,1)$上服从均匀分布，在$X = x$（$0 < x < 1$）的条件下，
+随机变量$Y$在区间$(0,x)$上服从均匀分布，求：
+\begin{enumerate}
+\item 随机变量$X$和$Y$的联合概率密度；
+\item $Y$的概率密度；
+\item 概率$P\{X + Y > 1\}$．
+\end{enumerate}
+\end{problem}
+
+
+\end{document}

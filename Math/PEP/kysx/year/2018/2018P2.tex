@@ -1,0 +1,168 @@
+% -*- coding: utf-8 -*-
+% !TEX program = xelatex
+\documentclass[plain,noanswer,medmath]{../../template/jnuexam}
+\usepackage{../../template/kysx}
+
+\begin{document}
+
+
+\examtitle{2018}{2}
+
+
+\loadproblems{1}{2018P1}%载入试卷一
+
+
+\makepart{选择题}{1～8小题，每小题4分，共32分}
+
+
+\begin{problem}
+若$\lim_{x \to 0} \left(\e^x + ax^2 + bx \right)^{\frac{1}{x^2}} = 1$，则\pickout{}
+\begin{abcd}
+\item $a = \frac{1}{2}\;,\;b = - 1$．
+\item $a = - \frac{1}{2}\;,\;b = - 1$．
+\item $a = \frac{1}{2}\;,\;b = 1$．
+\item $a = - \frac{1}{2}\;,\;b = 1$．
+\end{abcd}
+\end{problem}
+
+
+\useproblem{1}{1}{1}%【同试卷一第一(1)题】
+
+
+\begin{problem}
+设函数$f(x) = \begin{cases}
+  -1, & x < 0, \\
+   1, & x \ge 0;
+\end{cases}$，$g(x) = \begin{cases}
+  2 - ax, & x \le - 1, \\
+       x, & -1 < x < 0, \\
+   x - b, & x \ge 0.
+\end{cases}$若$f(x) + g(x)$在$R$上连续，则\pickout{}
+\begin{abcd}
+\item $a = 3\;,\;b = 1$．
+\item $a = 3\;,\;b = 2$．
+\item $a = - 3\;,\;b = 1$．
+\item $a = - 3\;,\;b = 2$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设函数$f(x)$在$[0,1]$上二阶可导，且$\int_0^1 f(x)\dx = 0$，则\pickout{}
+\begin{abcd}
+\item 当$f'(x) < 0$时，$f\left(\frac{1}{2} \right) < 0$．
+\item 当$f''(x) < 0$时，$f\left(\frac{1}{2} \right) < 0$．
+\item 当$f'(x) > 0$时，$f\left(\frac{1}{2} \right) < 0$．
+\item 当$f''(x) > 0$时，$f\left(\frac{1}{2} \right) < 0$．
+\end{abcd}
+\end{problem}
+
+
+\useproblem{1}{1}{4}%【同试卷一第一(4)题】
+
+
+\begin{problem}
+$\int_{-1}^0\dx \int_{-x}^{2 - x^2}(1 - xy)\dy + \int_0^1\dx \int_x^{2 - x^2}(1 - xy)\dy =$\pickout{}
+\begin{abcd}
+\item $\frac{5}{3}$．
+\item $\frac{5}{6}$．
+\item $\frac{7}{3}$．
+\item $\frac{7}{6}$．
+\end{abcd}
+\end{problem}
+
+
+\useproblem{1}{1}{5}%【同试卷一第一(5)题】
+
+
+\useproblem{1}{1}{6}%【同试卷一第一(6)题】
+
+
+\makepart{填空题}{9～14小题，每小题4分，共24分}
+
+
+\begin{problem}
+$\lim_{x \to +\infty} x^2[\arctan(x + 1) - \arctan x] =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+曲线$y = x^2 + 2\ln x$在其拐点处的切线方程是 \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+$\int_5^{+\infty} \frac{1}{x^2 - 4x + 3}\dx =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+曲线$\begin{cases}
+  x = \cos^3 t \\
+  y = \sin^3 t
+\end{cases}$在$t = \frac{\pi}{4}$对应点的曲率为 \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设函数$z = z(x,y)$由方程$\ln z + \e^{z - 1} = xy$确定，
+则$\left.\frac{\pdz}{\pdx}\right|_{\left(2,\frac{1}{2}\right)} =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设$A$为$3$阶矩阵，$\alpha_1,\alpha_2,\alpha_3$为线性无关的向量组，
+若$A\alpha_1 = 2\alpha_1 + \alpha_2 + \alpha_3$，
+$A\alpha_2 = \alpha_2 + 2\alpha_3$，$A\alpha_3 = - \alpha_2 + \alpha_3$，
+则$A$的实特征值为 \fillin{}．
+\end{problem}
+
+
+\makepart{解答题}{15～23小题，共94分}
+
+
+\useproblem[points=10]{1}{3}{15}%【同试卷一第三(15)题】
+
+
+\begin{problem}[points=10]
+已知连续函数$f(x)$满足$\int_0^x f(t)\dt + \int_0^x tf(x - t)\dt = ax^2$．
+\begin{enumerate}
+\item 求$f(x)$；
+\item 若$f(x)$在区间$[0,1]$上的平均值为$1$，求$a$的值．
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}[points=10]
+设平面区域$D$由曲线$\begin{cases}
+  x = t - \sin t \\
+  y = 1 - \cos t
+\end{cases}$（$0 \le t \le 2\pi$）与$x$轴围成，计算二重积分$\iint_D \left(x + 2y \right)\dx\dy$．
+\end{problem}
+
+
+\begin{problem}[points=10]
+已知常数$k \ge \ln 2 - 1$，证明：$(x - 1)\left(x - \ln^2 x + 2k\ln x - 1 \right) \ge 0$．
+\end{problem}
+
+
+\useproblem[points=10]{1}{3}{16}%【同试卷一第三(16)题】
+
+
+\begin{problem}[points=11]
+已知曲线$L:y = \frac{4}{9}x^2\left(x \ge 0 \right)$，点$O\left(0,0 \right)$，点$A\left(0,1 \right)$．
+设$P$是$L$上的动点，$S$是直线$OA$与直线$AP$及曲线$L$所围图形的面积．
+若$P$运动到$\left(3,4 \right)$时沿$x$轴正向的速度是$4$，求此时$S$关于时间$t$的变化率．
+\end{problem}
+
+
+\useproblem[points=11]{1}{3}{19}%【同试卷一第三(19)题】
+
+
+\useproblem[points=11]{1}{3}{20}%【同试卷一第三(20)题】
+
+
+\useproblem[points=11]{1}{3}{21}%【同试卷一第三(21)题】
+
+
+\end{document}

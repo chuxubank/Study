@@ -1,0 +1,233 @@
+% -*- coding: utf-8 -*-
+% !TEX program = xelatex
+\documentclass[plain,noanswer,medmath]{../../template/jnuexam}
+\usepackage{../../template/kysx}
+
+\begin{document}
+
+
+\examtitle{1987}{4}
+
+
+\makepart{判断题}{本题满分10分，每小题2分}
+
+
+\begin{problem}
+$\lim_{x \to 0} \e^{\tfrac{1}{x}} = \infty$．\tickout{}
+\end{problem}
+
+
+\begin{problem}
+$\int_{-\pi}^{\pi} x^4\sin x\dx = 0$．\tickout{}
+\end{problem}
+
+
+\begin{problem}
+若级数$\sum_{n = 1}^{\infty}a_n$和$\sum_{n = 1}^{\infty}b_n$均发散，
+则级数$\sum_{n = 1}^{\infty}(a_n + b_n)$也必发散．\tickout{}
+\end{problem}
+
+
+\begin{problem}
+假设$D$是矩阵$A$的$r$阶子式，且$D \ne 0$，但含$D$的一切$r + 1$阶子式都等于$0$，
+那么矩阵$A$的一切$r + 1$阶子式都等于$0$．\tickout{}
+\end{problem}
+
+
+\begin{problem}
+连续型随机变量取任何给定实数值的概率都等于$0$．\tickout{}
+\end{problem}
+
+
+\makepart{选择题}{本题满分10分，每小题2分}
+
+
+\begin{problem}
+函数\pickin{}在其定义域内连续．
+\begin{abcd}
+\item $f(x) = \ln x + \sin x$
+\item $f(x) = \begin{cases}
+  \sin x, & x \le 0, \\
+  \cos x, & x > 0 \\
+\end{cases}$
+\item $f(x) = \begin{cases}
+  x + 1, &  x < 0, \\
+      0, &  x = 0, \\
+  x - 1, &  x > 0 \\
+\end{cases}$
+\item $f(x) = \begin{cases}
+  \frac{1}{\sqrt{|x|}}, & x \ne 0, \\
+                     0, & x = 0 \\
+\end{cases}$
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+若函数$f(x)$在区间$(a,b)$内可导，$x_1$和$x_2$是区间$(a,b)$内任意两点，
+且$x_1 < x_2$，则至少存在一点$\xi$，使\pickout{}
+\begin{abcd}
+\item $f(b) - f(a) = f'(\xi)(b - a)$，其中$a < \xi < b$．
+\item $f(b) - f(x_1) = f'(\xi)(b - x_1)$，其中$x_1 < \xi < b$．
+\item $f(x_2) - f(x_1) = f'(\xi)(x_2 - x_1)$，其中$x_1 < \xi < x_2$．
+\item $f(x_2) - f(a) = f'(\xi)(x_2 - a)$，其中$a < \xi < x_2$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+广义积分\pickin{}收敛．
+\begin{abcd}
+\item $\int_{\e}^{+\infty} \frac{\ln x}{x}\dx$．
+\item $\int_{\e}^{+\infty} \frac{\dx}{x\ln x}$．
+\item $\int_{\e}^{+\infty} \frac{\dx}{x(\ln x)^2}$．
+\item $\int_{\e}^{+\infty} \frac{\dx}{x\sqrt{\ln x}}$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+假设$A$是$n$阶方阵，其秩$r<n$，那么在$A$的$n$个行向量中\pickout{}
+\begin{abcd}
+\item 必有$r$个行向量线性无关．
+\item 任意$r$个行向量都线性无关．
+\item 任意$r$个行向量都构成极大线性无关向量组．
+\item 任意$r$个行向量都可以由其他$r$个行向量线性表示．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+若二事件$A$和$B$同时出现的概率$P(AB)=0$，则\pickout{}
+\begin{abcd}
+\item $A$和$B$不相容（相斥）．
+\item $AB$是不可能事件．
+\item $AB$未必是不可能事件．
+\item $P(A) = 0$或$P(B) = 0$．
+\end{abcd}
+\end{problem}
+
+
+\makepart{计算题}{本题满分16分，每小题4分}
+
+
+\begin{problem}
+求极限$\lim_{x \to 0} (1 + x\e^x)^{\tfrac{1}{x}}$．
+\end{problem}
+
+
+\begin{problem}
+$y = \ln \frac{\sqrt{1 + x^2} - 1}{\sqrt{1 + x^2} + 1}$，求$y'$．
+\end{problem}
+
+
+\begin{problem}
+$z = \arctan \frac{x + y}{x - y}$，求$\dz$．
+\end{problem}
+
+
+\begin{problem}
+求不定积分$\int \e^{\sqrt{2x - 1}} \dx$．
+\end{problem}
+
+
+\makepart{}{本题满分10分}
+
+\begin{problem}
+考虑函数$y = \sin x$, $0 \le x \le \frac{\pi}{2}$（如图），问：\par
+\centerline{\includegraphics[width=0.5\linewidth]{1987D}}
+\begin{enumerate}
+\item $t$取何值时，图中阴影部分的面积$S_1$与$S_2$之和$S = S_1 + S_2$最小？
+\item $t$取何值时，面积$S = S_1 + S_2$最大？
+\end{enumerate}
+\end{problem}
+
+
+\makepart{}{本题满分6分}
+
+\begin{problem}
+将函数$f(x) = \frac{1}{x^2 - 3x + 2}$ 展成$x$的幂级数，并指出其收敛区间．
+\end{problem}
+
+
+\makepart{}{本题满分5分}
+
+\begin{problem}
+计算二重积分$I =\iint_D \e^{x^2} \dx\dy$，
+其中$D$是第一象限中由直线$y=x$和$y=x^3$所围成的封闭区域．
+\end{problem}
+
+
+\makepart{}{本题满分6分}
+
+\begin{problem}
+已知某商品的需求量$x$对价格$p$的弹性为$\eta = -3p^3$，
+而市场对该商品的最大需求量为$1$（万件），求需求函数．
+\end{problem}
+
+
+\makepart{}{本题满分8分}
+
+\begin{problem}
+解线性方程组$\begin{cases}
+  2x_1-x_2+4x_3-3x_4=-4, \\
+  x_1+x_3-x_4=-3,\\
+  3x_1+x_2+x_3=1,\\
+  7x_1+7x_3-3x_4=3.
+\end{cases}$
+\end{problem}
+
+
+\makepart{}{本题满分7分}
+
+\begin{problem}
+假设矩阵$A$和$B$满足如下关系式$AB = A + 2B$，其中$A = \begin{pmatrix}
+   4 & 2 & 3 \\
+   1 & 1 & 0 \\
+  -1 & 2 & 3
+\end{pmatrix}$，求矩\text{阵$B$．}
+\end{problem}
+
+
+\makepart{}{本题满分6分}
+
+\begin{problem}
+求矩阵$A = \begin{pmatrix}
+  -3 & -1 & 2 \\
+   0 & -1 & 4 \\
+  -1 &  0 & 1
+\end{pmatrix}$的实特征值及对应的特征向量．
+\end{problem}
+
+
+\makepart{计算题}{本题满分8分，每小题4分}
+
+
+\begin{problem}
+已知随机变量$X$的概率分布为
+$$P\{X = 1\} = 0.2,\ P\{X = 2\} = 0.3,\ P\{X = 3\} = 0.5,$$
+试写出其分布函数$F(x)$．
+\end{problem}
+
+
+\begin{problem}
+已知随机变量$Y$的概率密度为$f(y) = \begin{cases}
+  \frac{y}{a^2}\e^{-\frac{u^2}{a^2}}, & y > 0, \\
+                                   0, & y \le 0,
+\end{cases}$ 求随机变量$Z=\frac{1}{Y}$的数学期望$EZ$．
+\end{problem}
+
+
+\makepart{}{本题满分8分}
+
+\begin{problem}
+假设有两箱同种零件：第一箱内装$50$件，其中$10$件一等品；第二箱内装$30$件，其中$18$件一等品，
+现从两箱中任意挑出一箱，然后从该箱中先后随机取出两个零件（取出的零件均不放回）．试求：
+\begin{enumerate}
+\item 先取出的零件是一等品的概率$p$；
+\item 在先取出的是一等品的条件下，第二次取出的零件仍然是一等品的条件概率$q$．
+\end{enumerate}
+\end{problem}
+
+
+\end{document}

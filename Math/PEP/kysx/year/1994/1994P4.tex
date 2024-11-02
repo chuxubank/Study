@@ -1,0 +1,218 @@
+% -*- coding: utf-8 -*-
+% !TEX program = xelatex
+\documentclass[plain,noanswer,medmath]{../../template/jnuexam}
+\usepackage{../../template/kysx}
+
+\begin{document}
+
+
+\examtitle{1994}{4}
+
+
+\loadproblems{1}{1994P1}%载入试卷一
+\loadproblems{3}{1994P3}%载入试卷三
+
+
+\makepart{填空题}{本题共5小题，每小题3分，满分15分}
+
+
+\begin{problem}
+$\int_{-2}^2\frac{x + |x|}{2 + x^2} \dx =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+已知$f'(x) = - 1$，则$\lim_{x \to 0} \frac{x}{f(x_0 - 2x) - f(x_0 - x)} =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设方程$\e^{xy} + y^2 = \cos x$确定$y$为$x$的函数，则$\frac{\dy}{\dx} =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设$A = \begin{pmatrix}
+       0 &    a_1 &      0 & \cdots & 0 \\
+       0 &      0 &    a_2 & \cdots & 0 \\
+  \vdots & \vdots & \vdots &        & \vdots \\
+       0 &      0 &      0 & \cdots & a_{n - 1} \\
+     a_n &      0 &      0 & \cdots & 0
+\end{pmatrix}$，其中$a_i \ne 0,i = 1,2, \cdots ,n$，则$A^{-1} =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设随机变量$X$的概率密度为$f(x) = \begin{cases}
+  2x, & 0 < x < 1, \\
+   0, & \text{其他}.
+\end{cases}$
+以$Y$表示对$X$的三次独立重复观察中事件$\left\{X \le \frac{1}{2} \right\}$出现的次数，
+则$P\{Y = 2\} =$ \fillin{}．
+\end{problem}
+
+
+\makepart{选择题}{本题共5小题，每小题3分，满分15分}
+
+
+\useproblem{3}{2}{4}%【同试卷三第二(4)题】
+
+
+\useproblem{1}{2}{3}%【同试卷一第二(3)题】
+
+
+\begin{problem}
+设$A$是$m \times n$矩阵，$C$是$n$阶可逆矩阵，矩阵$A$的秩为$r$，矩阵$B = AC$的秩为$r_1$，则\pickout{}
+\begin{abcd}
+\item $r > r_1$．                            
+\item $r < r_1$．
+\item $r = r_1$．                            
+\item $r$与$r_1$的关系由$C$而定．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设$0 < P(A) < 1$, $0 < P(B) < 1$, $P(\left. A \right|B) + P(\left. \bar A \right|\bar B) = 1$，则\pickout{}
+\begin{abcd}
+\item 事件$A$和$B$互不相容．          
+\item 事件$A$和$B$相互对立．
+\item 事件$A$和$B$互不独立．          
+\item 事件$A$和$B$相互独立．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设$X_1,X_2, \cdots ,X_n$是来自正态总体$N(\mu ,\sigma^2)$的简单随机样本，$\overline{X}$是样本均值，记
+\begin{align*}
+  S_1^2&= \frac{1}{n - 1}\sum_{i = 1}^n (X_i - \overline{X})^2, &
+  S_2^2&= \frac{1}{n}\sum_{i = 1}^n (X_i - \overline{X})^2, \\
+  S_3^2&= \frac{1}{n - 1}\sum_{i = 1}^n (X_i - \mu)^2, &
+  S_4^2&= \frac{1}{n}\sum_{i = 1}^n (X_i - \mu)^2,
+\end{align*}
+则服从自由度为$n - 1$的$t$分布的随机变量是\pickout{}
+\begin{abcd}
+\item $t = \frac{\overline{X}- \mu}{S_1/\sqrt{n - 1}}$．					
+\item $t = \frac{\overline{X}- \mu}{S_2/\sqrt{n - 1}}$．
+\item $t = \frac{\overline{X}- \mu}{S_3/\sqrt{n}}$							
+\item $t = \frac{\overline{X}- \mu}{S_4/\sqrt{n}}$．
+\end{abcd}
+\end{problem}
+
+
+\makepart{}{本题满分6分}
+
+\begin{problem}
+计算二重积分$\iint_D (x + y)\dx\dy$，其中$D = \left\{\left. (x,y) \right| x^2 + y^2 \le x + y + 1 \right\}$．
+\end{problem}
+
+
+\makepart{}{本题满分5分}
+
+\begin{problem}
+设函数$y = y(x)$满足条件$\begin{cases}
+ y'' + 4y' + 4y = 0, \\
+ y(0) = 2,y'(0) = - 4, \\
+\end{cases}$求广义积分$\int_0^{+\infty} y(x)\dx$．
+\end{problem}
+
+
+\makepart{}{本题满分5分}
+
+\begin{problem}
+已知$f(x,y) = x^2\arctan \frac{y}{x} - y^2\arctan \frac{x}{y}$，求$\frac{\pd^2 f}{\pdx\pd y}$．
+\end{problem}
+
+
+\makepart{}{本题满分5分}
+
+\begin{problem}
+设函数$f(x)$可导，且$f(0) = 0$, $F(x) = \int_0^x t^{n - 1} f(x^n - t^n)\dt$，求$\lim_{x \to 0} \frac{F(x)}{x^{2n}}$．
+\end{problem}
+
+
+\makepart{}{本题满分8分}
+
+\begin{problem}
+已知曲线$y = a\sqrt{x}$（$a > 0$）与曲线$y = \ln \sqrt{x}$在点$(x_0,y_0)$处有公共切线，求：
+\begin{enumerate}
+\item 常数$a$及切点$(x_0,y_0)$；
+\item 两曲线与$x$轴围成的平面图形绕$x$轴旋转所得旋转体的体积$V_x$．
+\end{enumerate}
+\end{problem}
+
+
+\makepart{}{本题满分6分}
+
+\begin{problem}
+假设$f(x)$在$[a, +\infty)$上连续，$f''(x)$在$\left(a, +\infty \right)$内存在且大于零，记
+$$F(x) = \frac{f(x) - f(a)}{x - a}\quad (x > a),$$
+证明$F(x)$在$\left(a, +\infty \right)$内单调增加．
+\end{problem}
+
+
+\makepart{}{本题满分11分}
+
+\begin{problem}
+设线性方程组$\begin{cases}
+ x_1 + a_1x_2 + a_1^2x_3 = a_1^3, \\
+ x_1 + a_2x_2 + a_2^2x_3 = a_2^3, \\
+ x_1 + a_3x_2 + a_3^2x_3 = a_3^3, \\
+ x_1 + a_4x_2 + a_4^2x_3 = a_4^3. \\
+\end{cases}$
+\begin{enumerate}
+\item 证明：若$a_1,a_2,a_3,a_4$两两不相等，则此线性方程组无解；
+\item 设$a_1 = a_3 = k$, $a_2 = a_4 = - k$（$k \ne 0$），
+      且已知$\beta_1$, $\beta_2$是该方程组的两个解，其中
+$$\beta_1 = \begin{pmatrix}
+  -1 \\
+  1 \\
+  1
+\end{pmatrix},\beta_2 = \begin{pmatrix}
+  1 \\
+  1 \\
+  -1
+\end{pmatrix},$$
+写出此方程组的通解．
+\end{enumerate}
+\end{problem}
+
+
+\makepart{}{本题满分8分}
+
+\begin{problem}
+设$A = \begin{pmatrix}
+  0 & 0 & 1 \\
+  x & 1 & y \\
+  1 & 0 & 0
+\end{pmatrix}$有三个线性无关的特征向量，求$x$和$y$应满足的条件．
+\end{problem}
+
+
+\makepart{}{本题满分8分}
+
+\begin{problem}
+假设随机变量$X_1,X_2,X_3,X_4$相互独立，且同分布
+$$P\left\{X_i = 0 \right\} = 0.6,\quad P\left\{X_i = 1 \right\} = 0,\quad (i = 1,2,3,4).$$
+求行列式$X = \begin{vmatrix}
+  X_1 & X_2 \\
+  X_3 & X_4
+\end{vmatrix}$的概率分布．
+\end{problem}
+
+
+\makepart{}{本题满分8分}
+
+\begin{problem}
+假设由自动线加工的某种零件的内径$X$(毫米)服从正态分布$N(\mu ,1)$，内径小于$10$ 或大于$12$的为不合格品，其余为合格品，销售每件合格品获利，销售每件不合格品亏损．已知销售利润$T$(单位:元)与销售零件的内径$X$有如下关系:
+$$T = \begin{cases}
+  -1, & X < 10, \\
+  20, & 10 \le X \le 12, \\
+  -5, & X > 12.
+\end{cases}$$
+问平均内径$\mu$取何值时，销售一个零件的平均利润最大?
+\end{problem}
+
+
+\end{document}

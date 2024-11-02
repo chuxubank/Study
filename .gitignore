@@ -10,3 +10,7 @@
 
 # auctex
 **/.auctex-auto
+
+# PEP
+!**/PEP/**/*.pdf
+!**/PEP/**/*.tex

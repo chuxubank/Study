@@ -1,0 +1,160 @@
+% -*- coding: utf-8 -*-
+% !TEX program = xelatex
+\documentclass[plain,noanswer,medmath]{../../template/jnuexam}
+\usepackage{../../template/kysx}
+
+\begin{document}
+
+
+\examtitle{2014}{2}
+
+
+\loadproblems{1}{2014P1}%载入试卷一
+
+
+\makepart{选择题}{1～8小题．每小题4分，共32分}
+
+
+\begin{problem}
+当$x \to 0^+$时，若$\ln^{\alpha}(1 + 2x)$，$(1 - \cos x)^{\frac{1}{\alpha}}$
+均是比$x$高阶的无穷小，则$\alpha$的可能取值范围是\pickout{}
+\begin{abcd}
+\item $(2, +\infty)$．
+\item $(1,2)$．
+\item $\left(\frac{1}{2},1 \right)$．
+\item $\left(0,\frac{1}{2} \right)$．
+\end{abcd}
+\end{problem}
+
+
+\useproblem{1}{1}{1}%【同试卷一第一(1)题】
+
+
+\useproblem{1}{1}{2}%【同试卷一第一(2)题】
+
+
+\begin{problem}
+曲线$\begin{cases}
+  x = t^2 + 7, \\
+  y = t^2 + 4t + 1
+\end{cases}$上对应于$t = 1$的点处的曲率半径是\pickout{}
+\begin{abcd}
+\item $\frac{\sqrt{10}}{50}$．
+\item $\frac{\sqrt{10}}{100}$．
+\item $10\sqrt{10}$．
+\item $5\sqrt{10}$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设函数$f(x) = \arctan x$，若$f(x) = xf'(\xi)$，则$\lim_{x \to 0} \frac{\xi^2}{x^2} =$\pickout{}
+\begin{abcd}
+\item $1$．
+\item $\frac{2}{3}$．
+\item $\frac{1}{2}$．
+\item $\frac{1}{3}$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设$u(x,y)$在平面有界闭区域$D$上连续，在$D$的内部具有二阶连续偏导数，
+且满足$\frac{\pd^2 u}{\pdx\pd y} \ne 0$及
+$\frac{\pd^2 u}{\pd x^2} + \frac{\pd^2 u}{\pd y^2} = 0$，则\pickout{}
+\begin{abcd}
+\item $u(x,y)$的最大值点和最小值点必定都在区域$D$的边界上．
+\item $u(x,y)$的最大值点和最小值点必定都在区域$D$的内部．
+\item $u(x,y)$的最大值点在区域$D$的内部，最小值点在区域$D$的边界上．
+\item $u(x,y)$的最小值点在区域$D$的内部，最大值点在区域$D$的边界上．
+\end{abcd}
+\end{problem}
+
+
+\useproblem{1}{1}{5}%【同试卷一第一(5)题】
+
+
+\useproblem{1}{1}{6}%【同试卷一第一(6)题】
+
+
+\makepart{填空题}{9～14小题，每小题4分，共24分}
+
+
+\begin{problem}
+$\int_{-\infty}^{1} \frac{1}{x^2 + 2x + 5}\dx =$ \fillin{}．
+\end{problem}
+
+
+\useproblem{1}{2}{10}%【同试卷一第二(10)题】
+
+
+\begin{problem}
+设$z = z(x,y)$是由方程$e^{2yz} + x + y^2 + z = \frac{7}{4}$确定的函数，
+则$\dz\Big|_{\left(\frac{1}{2},\frac{1}{2}\right)} =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+曲线$L$的极坐标方程为$r = \theta$，
+则$L$在点$(r,\theta) = \left(\frac{\pi}{2},\frac{\pi}{2}\right)$处的切线方程为 \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+一根长为$1$的细棒位于$x$轴的区间$[0,1]$上，若其线密度$\rho (x) = - x^2 + 2x + 1$，
+则该细棒的质心坐标$\overline{x} =$ \fillin{}．
+\end{problem}
+
+
+\useproblem{1}{2}{13}%【同试卷一第二(13)题】
+
+
+\makepart{解答题}{15～23小题，共94分}
+
+
+\useproblem[points=10]{1}{3}{15}%【同试卷一第三(15)题】
+
+
+\begin{problem}[points=10]
+已知函数$y = y(x)$满足微分方程$x^2 + y^2 y' = 1 - y'$，且$y(2) = 0$，求$y(x)$的极大值和极小值．
+\end{problem}
+
+
+\begin{problem}[points=10]
+设平面区域$D = \left\{(x,y)\middle|1 \le x^2 + y^2 \le 4,x \ge 0.y \ge 0 \right\}$．计算
+$$\iint_D \frac{x\sin(\pi \sqrt{x^2 + y^2})}{x + y}\dx\dy.$$
+\end{problem}
+
+
+\useproblem[points=10]{1}{3}{17}%【同试卷一第三(17)题】
+
+
+\begin{problem}[points=10]
+设函数$f(x),g(x)$在区间$[a.b]$上连续，且$f(x)$单调增加，$0 \le g(x) \le 1$，证明：
+\begin{enumerate}
+\item $0 \le \int_a^x g(t)\dt \le x - a$，$x \in [a,b]$；
+\item $\int_a^{a + \int_a^b g(t)\dt} f(x)\dx \le \int_a^b f(x)g(x)\dx$．
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}[points=11]
+设函数$f(x) = \frac{x}{1 + x}$，$x \in [0,1]$．定义函数列
+$$f_1(x) = f(x),\quad f_2(x) = f(f_1(x)),\quad \cdots,\quad f_n(x) = f(f_{n - 1}(x)), \cdots$$
+设$S_n$是曲线$y = f_n(x)$，直线$x = 1$, $y = 0$所围平面图形的面积．求极限$\lim_{n \to \infty} nS_n$．
+\end{problem}
+
+
+\begin{problem}[points=11]
+已知函数$f(x,y)$满足$\frac{\pdf}{\pdy} = 2(y + 1)$，且$f(y,y) = (y + 1)^2 - (2 - y)\ln y$，
+求曲线$f(x,y) = 0$所围成的图形绕直线$y = - 1$旋转所成的旋转体的体积．
+\end{problem}
+
+
+\useproblem[points=11]{1}{3}{20}%【同试卷一第三(20)题】
+
+
+\useproblem[points=11]{1}{3}{21}%【同试卷一第三(21)题】
+
+
+\end{document}

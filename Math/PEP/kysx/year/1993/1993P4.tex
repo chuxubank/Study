@@ -1,0 +1,203 @@
+% -*- coding: utf-8 -*-
+% !TEX program = xelatex
+\documentclass[plain,noanswer,medmath]{../../template/jnuexam}
+\usepackage{../../template/kysx}
+
+\begin{document}
+
+
+\examtitle{1993}{4}
+
+
+\makepart{填空题}{本题共5小题，每小题3分，满分15分}
+
+
+\begin{problem}
+$\lim_{x \to \infty} \frac{3x^2 + 5}{5x + 3}\sin \frac{2}{x} =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+已知$y = f\left(\frac{3x - 2}{3x + 2} \right),f'(x)
+= \arctan x^2$，则$\left. \frac{\dy}{\dx} \right|_{x = 0} =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+级数$\sum_{n = 0}^{\infty}\frac{(\ln 3)^n}{2^n}$的和为 \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设$4$阶方阵$A$的秩为$2$，则其伴随矩阵$A^*$的秩为 \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设总体$X$的方差为1，根据来自$X$的容量为$100$的简单随机样本，测得样本均值为$5$,
+则$X$的数学期望的置信度近似等于$0.95$的置信区间为 \fillin{}．
+\end{problem}
+
+
+\makepart{选择题}{本题共5小题，每小题3分，满分15分}
+
+
+\begin{problem}
+设$f(x) =$$\begin{cases}
+ \sqrt{|x|}\sin\frac{1}{x^2}, & x \ne 0, \\
+ 0, & x = 0,
+\end{cases}$则$f(x)$在点$x=0$处\pickout{}
+\begin{abcd}
+\item 极限不存在．
+\item 极限存在但不连续．
+\item 连续但不可导．
+\item 可导．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设$f(x)$为连续函数，且$F(x) = \int_{\frac{1}{x}}^{\ln x} f(t) \dt$，
+则$F'(x)$等于\pickout{}
+\begin{abcd}
+\item $\frac{1}{x}f\left(\ln x \right) + \frac{1}{x^2}f\left(\frac{1}{x} \right)$．
+\item $\frac{1}{x}f\left(\ln x \right) + f\left(\frac{1}{x} \right)$．
+\item $\frac{1}{x}f\left(\ln x \right) - \frac{1}{x^2}f\left(\frac{1}{x} \right)$．
+\item $f\left(\ln x \right) - f\left(\frac{1}{x} \right)$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+$n$阶方阵$A$具有$n$个不同的特征值是$A$与对角阵相似的\pickout{}
+\begin{abcd}
+\item 充分必要条件．					
+\item 充分而非必要条件．
+\item 必要而非充分条件．				
+\item 既非充分也非必要条件．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+假设事件$A$和$B$满足$P(B|A) = 1$，则\pickout{}
+\begin{abcd}
+\item $A$是必然事件．					
+\item $P(B|\overline{A}) = 0$．
+\item $A \supset B$．							
+\item $A \subset B$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设随机变量$X$的密度函数为$\varphi (x)$，且$\varphi(-x)=\varphi(x)$，
+$F(x)$是$X$的分布函数，则对任意实数$a$，有\pickout{}
+\begin{abcd}
+\item $F(- a) = 1 - \int_0^a \varphi(x)\dx$．
+\item $F(- a) = \frac{1}{2} - \int_0^a \varphi(x)\dx$．
+\item $F(- a) = F(a)$．
+\item $F(- a) = 2F(a) - 1$．
+\end{abcd}
+\end{problem}
+
+
+\makepart{}{本题满分5分}
+
+\begin{problem}
+设$z = f\left(x,y \right)$是由方程$z - y - x + x\e^{z - y - x} = 0$所确定的二元函数，求$\dz$．
+\end{problem}
+
+
+\makepart{}{本题满分7分}
+
+\begin{problem}
+已知$\lim_{x \to \infty} \left(\frac{x - a}{x + a} \right)^x
+= \int_a^{+\infty} 4x^2\e^{- 2x} \dx$，求常数$a$的值．
+\end{problem}
+
+
+\makepart{}{本题满分9分}
+
+\begin{problem}
+设某产品的成本函数为$C = aq^2 + bq + c$，需求函数为$q = \frac{1}{e}(d - p)$，其中$C$为成本，
+$q$为需求量（即产量），$p$为单价，$a$, $b$, $c$, $d$, $e$都是正的常数，且$d > b$，求：
+\begin{enumerate}
+\item 利润最大时的产量及最大利润；
+\item 需求对价格的弹性；
+\item 需求对价格弹性的绝对值为$1$时的产量．
+\end{enumerate}
+\end{problem}
+
+
+\makepart{}{本题满分8分}
+
+\begin{problem}
+假设：
+\begin{enumerate}
+\item 函数$y = f(x)$（$0 \le x < +\infty$）满足条件$f(0) = 0$和$0 \le f(x) \le \e^x - 1$；
+\item 平行于$y$轴的动直线$MN$与曲线$y = f(x)$和$y = \e^x - 1$分别相交于点$P_1$和$P_2$；
+\item 曲线$y = f(x)$，直线$MN$与$x$轴所围封闭图形面积$S$恒等于线段$P_1P_2$的长度．
+\end{enumerate}
+求函数$y = f(x)$的表达式．
+\end{problem}
+
+
+\makepart{}{本题满分6分}
+
+\begin{problem}
+假设函数$f(x)$在$[0,1]$上连续，在$(0,1)$内二阶可导，
+过点$A(0,f(0))$与$B(1,f(1))$的直线与曲线$y = f(x)$相交于点$C(c,f(c))$，其中$0 < c < 1$．
+证明：在$(0,1)$内至少存在一点$\xi$，使$f''(\xi) = 0$．
+\end{problem}
+
+
+\makepart{}{本题满分10分}
+
+\begin{problem}
+$k$为何值时，线性方程组
+$$\begin{cases}
+  x_1 + x_2 + kx_3 = 4, \\
+  -x_1 + kx_2 + x_3 = k^2, \\
+  x_1 - x_2 + 2x_3 = - 4
+\end{cases}$$
+有惟一解、无解、有无穷多组解？在有解情况下，求出其全部解．
+\end{problem}
+
+
+\makepart{}{本题满分9分}
+
+\begin{problem}
+设二次型$f = x_1^2+ x_2^2+ x_3^2+ 2\alpha x_1x_2 + 2\beta x_2x_3 + 2x_1x_3$经正交变换$X = PY$化成$f = y_2^2+ 2y_3^2$，其中$X = (x_1,x_2,x_3)^T$和$Y = (y_1,y_2,y_3)^T$是三维列向量，$P$是$3$阶正交矩阵．试求常数$\alpha$,$\beta$．
+\end{problem}
+
+
+\makepart{}{本题满分8分}
+
+\begin{problem}
+设随机变量$X$和$Y$同分布，$X$的概率密度为
+$$f(x) = \begin{cases}
+  \frac{3}{8}x^2, & 0 < x < 2, \\
+               0, & \text{其他}.
+\end{cases}$$
+\begin{enumerate}
+\item 已知事件$A = \{X > a\}$和$B = \{Y > a\}$独立，
+      且$P\left(A \cup B \right) = \frac{3}{4}$．求常数$a$．
+\item 求$\frac{1}{X^2}$的数学期望．
+\end{enumerate}
+\end{problem}
+
+
+\makepart{}{本题满分8分}
+
+\begin{problem}
+假设一大型设备在任何长为$t$的时间内发生故障的次数$N(t)$服从参数为$\lambda t$的泊松分布．
+\begin{enumerate}
+\item 求相继两次故障之间时间间隔$T$的概率分布；
+\item 求在设备已经无故障工作$8$小时的情形下，再无故障运行$8$小时的概率$Q$．
+\end{enumerate}
+\end{problem}
+
+
+
+\end{document}

@@ -1,0 +1,158 @@
+% -*- coding: utf-8 -*-
+% !TEX program = xelatex
+\documentclass[plain,noanswer,medmath]{../../template/jnuexam}
+\usepackage{../../template/kysx}
+
+\begin{document}
+
+
+\examtitle{2011}{2}
+
+
+\loadproblems{1}{2011P1}%载入试卷一
+
+
+\makepart{选择题}{1～8小题，每小题4分，共32分}
+
+
+\begin{problem}
+已知当$x \to 0$时，$f(x) = 3\sin x - \sin 3x$与$cx^k$是等价无穷小，则\pickout{}
+\begin{abcd}
+\item $k = 1,c = 4$．
+\item $k = 1,c = - 4$．
+\item $k = 3,c = 4$．
+\item $k = 3,c = - 4$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+已知$f(x)$在$x = 0$处可导，且$f(0) = 0$，
+则$\lim_{x \to 0} \frac{x^2 f(x) - 2f\left(x^3 \right)}{x^3} =$\pickout{}
+\begin{abcd}
+\item $- 2f'(0)$．
+\item $- f'(0)$．
+\item $f'(0)$．
+\item $0$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+函数$f(x) = \ln \left| (x - 1)(x - 2)(x - 3) \right|$的驻点个数为\pickout{}
+\begin{abcd}
+\item $0$．
+\item $1$．
+\item $2$．
+\item $3$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+微分方程$y'' - \lambda^2 y = \e^{\lambda x} + \e^{- \lambda x}$（$\lambda > 0$）的特解形式为\pickout{}
+\begin{abcd}
+\item $a(\e^{\lambda x} + \e^{- \lambda x})$．
+\item $ax(\e^{\lambda x} + \e^{- \lambda x})$．
+\item $x(a\e^{\lambda x} + b\e^{- \lambda x})$．
+\item $x^2(a\e^{\lambda x} + b\e^{- \lambda x})$．
+\end{abcd}
+\end{problem}
+
+
+\useproblem{1}{1}{3}%【同试卷一第一(3)题】
+
+
+\useproblem{1}{1}{4}%【同试卷一第一(4)题】
+
+
+\useproblem{1}{1}{5}%【同试卷一第一(5)题】
+
+
+\useproblem{1}{1}{6}%【同试卷一第一(6)题】
+
+
+\makepart{填空题}{9～14小题，每小题4分，共24分}
+
+
+\begin{problem}
+$\lim_{x \to 0} \left(\frac{1 + 2^x}{2} \right)^{\frac{1}{x}} =$ \fillin{}．
+\end{problem}
+
+
+\useproblem{1}{2}{10}%【同试卷一第二(10)题】
+
+
+\useproblem{1}{2}{9}%【同试卷一第二(9)题】
+
+
+\begin{problem}
+设函数$f(x) = \begin{cases}
+  \lambda \e^{- \lambda x}, & x > 0, \\
+                         0, & x \le 0,
+\end{cases}$ $\lambda > 0$，则$\int_{-\infty}^{+\infty} xf(x)\dx =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设平面区域$D$由直线$y = x$，圆$x^2 + y^2 = 2y$及$y$轴围成，则二重积分$\iint_D xy\d\sigma =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+二次型$f(x_1,x_2,x_3) = x_{1}^{2} + 3x_2^2 + x_3^2 + 2x_1x_2 + 2x_1x_3 + 2x_2x_3$，
+则$f$的正惯性指数为 \fillin{}．
+\end{problem}
+
+
+\makepart{解答题}{15～23小题，共94分}
+
+
+\begin{problem}[points=10]
+已知函数$F(x) = \frac{\int_0^x \ln(1 + t^2)\dt}{x^a}$，
+设$\!\!\lim_{x \to +\infty}\!\!\! F(x) = \!\lim_{x \to 0^+}\! F(x) = 0$，试求$a$的取值范围．
+\end{problem}
+
+
+\begin{problem}[points=11]
+设函数$y = y(x)$由参数方程$\begin{cases}
+  x = \frac{1}{3}t^3 + t + \frac{1}{3}, \\
+  y = \frac{1}{3}t^3 - t + \frac{1}{3},
+\end{cases}$确定，求$y = y(x)$的极值和曲线$y = y(x)$的凹凸区间及拐点．
+\end{problem}
+
+
+\useproblem[points=9]{1}{3}{16}%【同试卷一第三(16)题】
+
+
+\begin{problem}[points=10]
+设函数$y(x)$具有二阶导数，且曲线$l:y = y(x)$与直线$y = x$相切于原点，
+记$\alpha$为曲线$l$在点$(x,y)$处切线的倾角，若$\frac{\d\alpha}{\dx} = \frac{\dy}{\dx}$，求$y(x)$的表达式．
+\end{problem}
+
+
+\useproblem[points=10]{1}{3}{18}%【同试卷一第三(18)题】
+
+
+\begin{problem}[points=11]
+一容器的内侧是由图中曲线绕$y$轴旋转一周而成的曲面，
+该曲线由$x^2 + y^2 = 2y$（$y \ge \frac{1}{2}$）与$x^2 + y^2 = 1$（$y \le \frac{1}{2}$）连接而成．
+\par\centerline{\includegraphics[width=0.5\linewidth]{2011B}}
+\begin{enumerate}
+\item 求容器的容积；
+\item 若将容器内盛满的水从容器顶部全部抽出，至少需要做多少功？
+\end{enumerate}
+（长度单位：$\text{m}$，重力加速度为$g\text{m/s}^2$，水的密度为$10^3\text{kg/m}^3$．）
+\end{problem}
+
+
+\useproblem[points=11]{1}{3}{19}%【同试卷一第三(19)题】
+
+
+\useproblem[points=11]{1}{3}{20}%【同试卷一第三(20)题】
+
+
+\useproblem[points=11]{1}{3}{21}%【同试卷一第三(21)题】
+
+
+\end{document}

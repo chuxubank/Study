@@ -1,0 +1,180 @@
+% -*- coding: utf-8 -*-
+% !TEX program = xelatex
+\documentclass[plain,noanswer,medmath]{../../template/jnuexam}
+\usepackage{../../template/kysx}
+
+\begin{document}
+
+
+\examtitle{2006}{3}
+
+
+\loadproblems{1}{2006P1}%载入试卷一
+\loadproblems{2}{2006P2}%载入试卷二
+
+
+\makepart{填空题}{1～6小题，每小题4分，共24分}
+
+
+\begin{problem}
+$\lim_{n \to \infty} \left(\frac{n + 1}{n} \right)^{(- 1)^n} =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设函数$f(x)$在$x = 2$的某邻域内可导，且$f'(x) = \e^{f(x)}$,$f(2) = 1$，则$f'''(2) =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设函数$f(u)$可微，且$f'(0) = \frac{1}{2}$，
+则$z = f\left(4x^2 - y^2 \right)$在点$(1,2)$处的全微分$\dz\big|_{\left(1,2 \right)} =$ \fillin{}．
+\end{problem}
+
+
+\useproblem{1}{1}{5}%【同试卷一第一(5)题】
+
+
+\useproblem{1}{1}{6}%【同试卷一第一(6)题】
+
+
+\begin{problem}
+设总体$X$的概率密度为$f(x) = \frac{1}{2}\e^{- |x|}$（$-\infty < x < +\infty$），
+$x_1,x_2, \cdots ,x_n$为总体$X$的简单随机样本，其样本方差$S^2$，则$ES^2 =$ \fillin{}．
+\end{problem}
+
+
+\makepart{选择题}{7～14小题，每小题4分，共32分}
+
+
+\useproblem{1}{2}{7}%【同试卷一第二(7)题】
+
+
+\begin{problem}
+设函数$f(x)$在$x = 0$处连续，且$\lim_{h \to 0}\frac{f\left(h^2\right)}{h^2} = 1$，则\pickout{}
+\begin{abcd}
+\item $f(0) = 0$且$f'_-(0)$存在．
+\item $f(0) = 1$且$f'_-(0)$存在．
+\item $f(0) = 0$且$f'_+(0)$存在．
+\item $f(0) = 1$且$f'_+(0)$存在．
+\end{abcd}
+\end{problem}
+
+
+\useproblem{1}{2}{9}%【同试卷一第二(9)题】
+
+
+\begin{problem}
+设非齐次线性微分方程$y' + P(x)y = Q(x)$有两个不同的解$y_1(x),y_2(x)$，$C$为任意常数，
+则该方程通解是\pickout{}
+\begin{abcd}
+\item $C\left[y_1(x) - y_2(x) \right]$．
+\item $y_1(x) + C\left[y_1(x) - y_2(x) \right]$．
+\item $C\left[y_1(x) + y_2(x) \right]$．
+\item $y_1(x) + C\left[y_1(x) + y_2(x) \right]$．
+\end{abcd}
+\end{problem}
+
+
+\useproblem{1}{2}{10}%【同试卷一第二(10)题】
+
+
+\useproblem{1}{2}{11}%【同试卷一第二(11)题】
+
+
+\useproblem{1}{2}{12}%【同试卷一第二(12)题】
+
+
+\useproblem{1}{2}{14}%【同试卷一第二(14)题】
+
+
+\makepart{解答题}{15～23小题，共94分}
+
+
+\begin{problem}[points=7]
+设$f(x,y) = \frac{y}{1 + xy} - \frac{1 - y\sin \frac{\pi x}{y}}{\arctan x}$, $x > 0,y > 0$，求\par
+\begin{enumerate*}
+\item $g(x) = \lim_{y \to +\infty} f\left(x,y \right)$；
+\item $\lim_{x \to 0^+} g(x)$．
+\end{enumerate*}
+\end{problem}
+
+
+\begin{problem}[points=7]
+计算二重积分$\iint_D \sqrt{y^2 - xy} \dx\dy$，其中$D$是由直线$y = x,y = 1,x = 0$所围成的平面区域．
+\end{problem}
+
+
+\useproblem[points=10]{2}{3}{19}%【同试卷二第三(19)题】
+
+
+\begin{problem}[points=8]
+在$xOy$坐标平面上，连续曲线$L$过点$M\left(1,0 \right)$，
+其上任意点$P\left(x,y \right)$（$x \ne 0$）处的切线斜率与直线$OP$的斜率之差等于$ax$（常数$a > 0$）．
+\begin{enumerate}
+\item 求$L$的方程；
+\item 当$L$与直线$y = ax$所围成平面图形的面积为$\frac{8}{3}$时，确定$a$的值．
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}[points=10]
+求幂级数$\sum_{n = 1}^{\infty}\frac{(- 1)^{n - 1}x^{2n + 1}}{n(2n - 1)}$的收敛域及和函数$S(x)$．
+\end{problem}
+
+
+\begin{problem}[points=13]
+设$4$维向量组$\alpha_1 = (1 + a,1,1,1)^T$, $\alpha_2 = (2,2 + a,2,2)^T$, 
+$\alpha_3 = (3,3,3 + a,3)^T$, $\alpha_4 = (4,4,4,4 + a)^T$．
+问$a$为何值时$\alpha_1,\alpha_2,\alpha_3,\alpha_4$线性相关？
+当$\alpha_1,\alpha_2,\alpha_3,\alpha_4$线性相关时，
+求其一个极大线性无关组，并将其余向量用该极大线性无关组线性表示．
+\end{problem}
+
+
+\begin{problem}[points=13]%【推广试卷一第三(21)题】
+设$3$阶实对称矩阵$A$的各行元素之和均为$3$，
+向量$\alpha_1 = \left(- 1,2, - 1 \right)^T$,$\alpha_2 = \left(0, - 1,1 \right)^T$
+是线性方程组$Ax = 0$的两个解．
+\begin{enumerate}
+\item 求$A$的特征值与特征向量；
+\item 求正交矩阵$Q$和对角矩阵$\Lambda$，使得$Q^T AQ = \Lambda$；
+\item 求$A$及$\left(A - \frac{3}{2}E \right)^6$，其中$E$为$3$阶单位矩阵．
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}[points=13]%【推广试卷一第三(22)题】
+随机变量$x$的概率密度为
+$$f_X(x) = \begin{cases}
+  \frac{1}{2}, & -1 < x < 0; \\
+  \frac{1}{4}, & 0 \le x < 2; \\
+            0, & \text{其他}.
+\end{cases}$$
+令$Y = X^2$，$F(x,y)$为二维随机变量$(X,Y)$的分布函数．求\par
+\begin{enumerate*}
+\item $Y$的概率密度$f_Y(y)$；
+\item $\Cov(X,Y)$；
+\item $F\left(-\frac{1}{2},4\right)$．
+\end{enumerate*}
+\end{problem}
+
+
+\begin{problem}[points=13]%【推广试卷一第三(23)题】
+设总体$X$的概率密度为
+$$f(x,\theta) = \begin{cases}
+      \theta , & 0 < x < 1, \\
+  1 - \theta , & 1 \le x < 2, \\
+            0, & \text{其它},
+\end{cases}$$
+其中$\theta$是未知参数（$0 < \theta < 1$），
+$X_1,X_2\cdots ,X_{n}$为来自总体$X$的简单随机样本，
+记$N$为样本值$x_1,x_2\cdots ,x_n$中小于$1$的个数，求：\par
+\begin{enumerate*}
+\item $\theta$的矩估计；
+\item $\theta$的最大似然估计．
+\end{enumerate*}
+\end{problem}
+
+
+\end{document}

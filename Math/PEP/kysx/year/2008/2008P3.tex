@@ -1,0 +1,144 @@
+% -*- coding: utf-8 -*-
+% !TEX program = xelatex
+\documentclass[plain,noanswer,medmath]{../../template/jnuexam}
+\usepackage{../../template/kysx}
+
+\begin{document}
+
+
+\examtitle{2008}{3}
+
+
+\loadproblems{1}{2008P1}%载入试卷一
+\loadproblems{2}{2008P2}%载入试卷二
+
+
+\makepart{选择题}{1～8小题，每小题4分，共32分}
+
+
+\begin{problem}
+设函数$f(x)$在区间$[-1,1]$上连续，
+则$x = 0$是函数$g(x) = \frac{\int_0^x f(t)\dt}{x}$的\pickout{}
+\begin{abcd}
+\item 跳跃间断点．
+\item 可去间断点．
+\item 无穷间断点．
+\item 振荡间断点．
+\end{abcd}
+\end{problem}
+
+
+\useproblem{2}{1}{2}%【同试卷二第一(2)题】
+
+
+\begin{problem}
+设$f(x,y) = \e^{\sqrt{x^2 + y^4}}$，则\pickout{}
+\begin{abcd}
+\item $f'_x(0,0)$和$f'_y(0,0)$都存在．
+\item $f'_x(0,0)$存在，$f'_y(0,0)$不存在．
+\item $f'_x(0,0)$不存在，$f'_y(0,0)$存在．
+\item $f'_x(0,0)$和$f'_y(0,0)$都不存在．
+\end{abcd}
+\end{problem}
+
+
+\useproblem{2}{1}{6}%【同试卷二第一(6)题】
+
+
+\useproblem{1}{1}{5}%【同试卷一第一(5)题】
+
+
+\useproblem{2}{1}{8}%【同试卷二第一(8)题】
+
+
+\useproblem{1}{1}{7}%【同试卷一第一(7)题】
+
+
+\useproblem{1}{1}{8}%【同试卷一第一(8)题】
+
+
+\makepart{填空题}{9～14小题，每小题4分，共24分}
+
+
+\begin{problem}
+设函数$f(x) = \begin{cases}
+        x^2 + 1, & |x| \le c, \\
+  \frac{2}{|x|}, & |x| > c
+\end{cases}$在$(-\infty , +\infty)$内连续，则$c =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设$f\left(x + \frac{1}{x} \right) = \frac{x + x^3}{1 + x^4}$，
+则积分$\int_2^{2\sqrt{2}} f (x)\dx =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设$D = \left\{(x,y)|x^2 + y^2 \le 1 \right\}$，则$\iint_D (x^2 - y)\dx\dy =$ \fillin{}．
+\end{problem}
+
+
+\useproblem{1}{2}{9}%【同试卷一第二(9)题】
+
+
+\begin{problem}
+设$3$阶矩阵$A$的特征值为$1$,$2$,$2$，$E$为$3$阶单位矩阵，
+则$\left| 4A^{-1} - E \right| =$ \fillin{}．
+\end{problem}
+
+
+\useproblem{1}{2}{14}%【同试卷一第二(14)题】
+
+
+\makepart{解答题}{15～23小题，共94分}
+
+
+\begin{problem}[points=9]
+计算$\lim_{x \to 0} \frac{1}{x^2}\ln \frac{\sin x}{x}$．
+\end{problem}
+
+
+\begin{problem}[points=10]
+设$z = z$$(x,y)$是由方程$x^2 + y^2 - z = \varphi(x + y + z)$所确定的函数，
+其中$\varphi$具有$2$阶导数且$\varphi' \ne -1$．\par
+\begin{enumerate*}
+\item 求$\dz$；
+\item 记$u(x,y) = \frac{1}{x-y}\left(\frac{\pdz}{\pdx}-\frac{\pdz}{\pdy}\right)$，
+      求$\frac{\pdu}{\pdx}$．
+\end{enumerate*}
+\end{problem}
+
+
+\useproblem[points=11]{2}{3}{18}%【同试卷二第三(18)题】
+
+
+\begin{problem}[points=10]%【类似试卷一第三(18)题】
+设$f(x)$是周期为$2$的连续函数．
+\begin{enumerate}
+\item 证明对任意实数$t$都有$\int_t^{t + 2} f(x)\dx = \int_0^2 f(x)\dx$；
+\item 证明$G(x) = \int_0^x \left[2f(t) - \int_t^{t + 2} f(s)\ds \right]\dt$是周期为$2$的周期函数．
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}[points=10]
+设银行存款的年利率为$r = 0.05$，并依年复利计算．
+某基金会希望通过存款$A$万元实现第一年提取$19$万元，第二年提取$28$万元，……，
+第$n$年取出$10 + 9n$万元，并能按此规律一直提取下去，问$A$至少应为多少万元？
+\end{problem}
+
+
+\useproblem[points=12]{1}{3}{21}%【同试卷一第三(21)题】
+
+
+\useproblem[points=10]{2}{3}{23}%【同试卷二第三(23)题】
+
+
+\useproblem[points=11]{1}{3}{22}%【同试卷一第三(22)题】
+
+
+\useproblem[points=11]{1}{3}{23}%【同试卷一第三(23)题】
+
+
+\end{document}

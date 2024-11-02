@@ -1,0 +1,205 @@
+% -*- coding: utf-8 -*-
+% !TEX program = xelatex
+\documentclass[plain,noanswer,medmath]{../../template/jnuexam}
+\usepackage{../../template/kysx}
+
+\begin{document}
+
+
+\examtitle{1987}{1}
+
+
+\makepart{填空题}{本题满分15分，每小题3分}
+
+
+\begin{problem}
+与两直线$\begin{cases}
+  x = 1 \\
+  y = - 1 + t \\
+  z = 2 + t
+\end{cases}$
+及$\frac{x + 1}{1} = \frac{y + 2}{2} = \frac{z - 1}{1}$都平行，且过原点的平面方程为 \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+当$x =$      时，函数$y = x2^x$取得极小值 \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+由曲线$y = \ln x$与两直线$y = (\e + 1) - x$及$y = 0$所围成的平面图形的面积是 \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设$L$为取正向的圆周$x^2 + y^2 = 9$，则曲线积分$\oint_L (2xy - 2y)\dx + (x^2 - 4x)\dy$的值是 \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+已知三维线性空间的一组基底为$\alpha_1 = (1,1,0)^T$,$\alpha_2 = (1,0,1)^T$,$\alpha_3 = (0,1,1)^T$,
+则向量$\beta = (2,0,0)^T$在上述基底下的坐标是 \fillin{}．
+\end{problem}
+
+
+\makepart{}{本题满分8分}
+
+\begin{problem}
+求正的常数$a$与$b$，使等式
+$\smash[t]{\lim_{x \to 0}\frac{1}{bx-\sin x}\int_0^x \frac{t^2}{\sqrt{a + t^2}}\dt = 1}$成立．
+\end{problem}
+
+
+\makepart{计算题}{本题满分7分}
+
+
+\begin{problem}[points=3]
+设$f$, $g$为连续可微函数，$u = f(x,xy)$, $v = g(x+xy)$,
+求$\frac{\pdu}{\pdx}$，$\frac{\pdv}{\pdx}$．
+\end{problem}
+
+
+\begin{problem}[points=4]
+设矩阵$A$和$B$满足关系式$AB = A + 2B$，其中$\smash[t]{A=\begin{pmatrix}
+ 3&0&1 \\
+ 1&1&0 \\
+ 0&1&4
+\end{pmatrix}}$，求矩阵$B$．
+\end{problem}
+
+
+\makepart{}{本题满分8分}
+
+\begin{problem}
+求微分方程$y''' + 6y'' + (9 + a^2)y' = 1$的通解（一般解），其中常数$a > 0$．
+\end{problem}
+
+
+\makepart{选择题}{本题满分12分，每小题3分}
+
+
+\begin{problem}
+设常数$k > 0$，则级数$\sum_{n = 1}^{\infty}(- 1)^n\frac{k + n}{n^2}$\pickout{}
+\begin{abcd}
+\item 发散．						
+\item 绝对收敛．
+\item 条件收敛．				
+\item 收敛或发散与k的取值有关．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设$f(x)$为已知连续函数，$I=t\int_0^{s/t}\!\!f(tx)\dx$，其中$s>0$, $t>0$，则$I$的值\pickout{}
+\begin{abcd}
+\item 依赖于$s$和$t$．
+\item 依赖于$s$,$t$,$x$．
+\item 依赖于$t$和$x$，不依赖于$s$．
+\item 依赖于$s$，不依赖于$t$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设$\lim_{x \to a} \frac{f(x)-f(a)}{(x-a)^2}=-1$，则在点$x=a$处\pickout{}
+\begin{abcd}
+\item $f(x)$的导数存在，且$f'(a) \ne a$．			
+\item $f(x)$取得极大值．
+\item $f(x)$取得极小值．					
+\item $f(x)$的导数不存在．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设$A$为$n$阶方阵，且$A$的行列式$|A|=a \ne 0$，而$A^*$为$A$的伴随矩阵，则$|A^*|$等于\pickout{}
+\begin{abcd}
+\item $a$．       
+\item $\frac{1}{a}$．     
+\item $a^{n - 1}$．
+\item $a$．
+\end{abcd}
+\end{problem}
+
+
+\makepart{}{本题满分10分}
+
+\begin{problem}
+求幂级数$\sum_{n = 1}^{\infty}\frac{1}{n2^n}x^{n + 1}$的收敛域，并求其和函数．
+\end{problem}
+
+
+\makepart{}{本题满分10分}
+
+\begin{problem}
+计算曲面积分
+$$I = \iint_{\Sigma}x(8y + 1)\dy\dz + 2(1 - y^2)\dz\dx - 4yz\dx\dy,$$
+其中$\Sigma$是由曲线$\begin{cases}
+  z = \sqrt{y - 1} \\
+  x = 0
+\end{cases}$（$1 \le y \le 3$）
+绕$y$轴旋转一周所形成的曲面，它的法向量与$y$轴正向的夹角恒大于$\frac{\pi}{2}.$
+\end{problem}
+
+
+\makepart{}{本题满分10分}
+
+\begin{problem}
+设函数$f(x)$在闭区间$[0,1]$上可微，对于$[0,1]$上的每一个$x$，
+函数$f(x)$的值都在开区间$(0,1)$内，且$f'(x) \ne 1$，
+证明在$(0,1)$内有且仅有一个$x$，使$f(x) = x$．
+\end{problem}
+
+
+\makepart{}{本题满分8分}
+
+\begin{problem}
+问$a$, $b$为何值时，线性方程组$\begin{cases}
+  x_1 + x_2 + x_3 + x_4 = 0, \\
+  x_2 + 2x_3 + 2x_4 = 1, \\
+  -x_2 + (a - 3)x_3 - 2x_4 = b, \\
+  3x_1 + 2x_2 + x_3 + ax_4 = - 1
+\end{cases}$有唯一解、无解、有无穷多组解？并求出有无穷多组解时的通解．
+\end{problem}
+
+
+\makepart{填空题}{本题满分6分，每小题2分}
+
+
+\begin{problem}
+设在一次试验中事件$A$发生的概率为$p$，现进行$n$次独立试验，
+则$A$至少发生一次的概率为 \fillin{}；而事件$A$至多发生一次的概率为 \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+三个箱子，第一个箱子中有$4$个黑球$1$个白球，第二个箱子中有$3$个黑球$3$个白球，
+第三个箱子中有$3$个黑球$5$个白球．现随机地取一个箱子，再从这个箱子中取出$1$个球，
+这个球为白球的概率等于 \fillin{}．已知取出的球是白球，此球属于第二个箱子的概率为 \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+已知连续随机变量$X$的概率密度为$f(x)=\frac{1}{\sqrt{\pi}}\e^{-x^2+2x-1}$，
+则$X$的数学期望为 \fillin{}；$X$的方差为 \fillin{}．
+\end{problem}
+
+
+\makepart{}{本题满分6分}
+
+\begin{problem}
+设随机变量$X$, $Y$相互独立，其概率密度函数分别为
+$$f_X(x) = \begin{cases}
+  1, & 0 \le x \le 1, \\
+  0, & \text{其它},
+\end{cases}\qquad
+f_Y(y) = \begin{cases}
+  \e^{-y}, & y > 0, \\
+        0, & y \le 0,
+\end{cases}$$
+求随机变量$Z = 2X + Y$的概率密度函数．
+\end{problem}
+
+
+\end{document}

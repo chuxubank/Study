@@ -1,0 +1,227 @@
+% -*- coding: utf-8 -*-
+% !TEX program = xelatex
+\documentclass[plain,noanswer,medmath]{../../template/jnuexam}
+\usepackage{../../template/kysx}
+
+\begin{document}
+
+
+\examtitle{2019}{2}
+
+
+\loadproblems{1}{2019P1}%载入试卷一
+
+
+\makepart{选择题}{1～8小题，每小题4分，共32分}
+
+
+\useproblem{1}{1}{1}%【同试卷一第一(1)题】
+
+
+\begin{problem}
+曲线$y = x\sin x + 2\cos x$（$- \frac{\pi}{2} < x < \frac{3\pi}{2}$）的拐点是\pickout{}
+\begin{abcd}
+\item $\left(\frac{\pi}{2},\frac{\pi}{2} \right)$．
+\item $(0,2)$．
+\item $(\pi , - 2)$．
+\item $\left(\frac{3\pi}{2}, - \frac{3\pi}{2} \right)$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+下列反常积分发散的是\pickout{}
+\begin{abcd}
+\item $\int_0^{+\infty} x\e^{- x} \dx$．
+\item $\int_0^{+\infty} x\e^{- x^2} \dx$．
+\item $\int_0^{+\infty} \frac{\arctan x}{1 + x^2}\dx$．
+\item $\int_0^{+\infty} \frac{x}{1 + x^2}\dx$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+已知微分方程$y'' + ay' + by = c\e^x$的通解为$y = (C_1 + C_2 x) \e^{- x} + \e^x$，则$a,b,c$依次为\pickout{}
+\begin{abcd}
+\item $1,0,1$．
+\item $1,0,2$．
+\item $2,1,3$．
+\item $2,1,4$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+已知平面区域$D = \left\{(x,y)\middle||x| + |y| \le \frac{\pi}{2} \right\}$，
+记$I_1 = \iint_D \sqrt{x^2 + y^2} \dx\dy$，\goodbreak $I_2 = \iint_D \sin \sqrt{x^2 + y^2} \dx\dy$，
+$I_3 = \iint_D \left(1 - \cos \sqrt{x^2 + y^2} \right) \dx\dy$，则\pickout{}
+\begin{abcd}
+\item $I_3 < I_2 < I_1$．
+\item $I_2 < I_1 < I_3$．
+\item $I_1 < I_2 < I_3$．
+\item $I_2 < I_3 < I_1$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设函数$f(x),g(x)$的二阶导函数在$x = a$处连续，
+则$\lim_{x \to a} \frac{f(x) - g(x)}{(x - a)^2} = 0$
+是两条曲线$y = f(x)$，$y = g(x)$在$x = a$对应的点处相切及曲率相等的\pickout{}
+\begin{abcd}
+\item 充分不必要条件．
+\item 充分必要条件．
+\item 必要不充分条件．
+\item 既不充分也不必要条件．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设$A$是四阶矩阵，$A^*$为其伴随矩阵，若线性方程组$Ax = 0$的基础解系中只有两个向量，则$r(A^*) =$\pickout{}
+\begin{abcd}
+\item $0$．
+\item $1$．
+\item $2$．
+\item $3$．
+\end{abcd}
+\end{problem}
+
+
+\useproblem{1}{1}{5}%【同试卷一第一(5)题】
+
+
+\makepart{填空题}{9～14小题，每小题4分，共24分}
+
+
+\begin{problem}
+$\lim_{x \to 0} \left(x + 2^x \right)^{\frac{2}{x}} =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+曲线$\begin{cases}
+  x = t - \sin t \\
+  y = 1 - \cos t
+\end{cases}$在$t = \frac{3\pi}{2}$对应点处的切线在$y$轴的截距为 \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设函数$f(u)$可导，$z = yf\left(\frac{y^2}{x} \right)$，
+则$2x\frac{\pdz}{\pdx} + y\frac{\pdz}{\pdy} =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+曲线$y = \ln \cos x$（$0 \le x \le \frac{\pi}{6}$）的弧长为 \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+已知函数$f(x) = x\int_1^x \frac{\sin t^2}{t} \dt$，则$\int_0^1 f(x)\dx =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+已知矩阵$A = \begin{pmatrix}
+   1 & -1 &  0 & 0 \\
+  -2 &  1 & -1 & 1 \\
+   3 & -2 &  2 & -1 \\
+   0 &  0 &  3 & 4
+\end{pmatrix}$，$A_{ij}$表示$|A|$中元$(i,j)$元的的代数余子式，则$A_{11} - A_{12} =$ \fillin{}．
+\end{problem}
+
+
+\makepart{解答题}{15～23题，共94分}
+
+
+\begin{problem}[points=10]
+已知函数$f(x) = \begin{cases}
+     x^{2x}, & x > 0, \\
+  x\e^x + 1, & x \le 0.
+\end{cases}$求$f'(x)$，并求函数$f(x)$的极值．
+\end{problem}
+
+
+\begin{problem}[points=10]
+求不定积分$\int \frac{3x + 6}{(x - 1)^2(x^2 + x + 1)}\dx$．
+\end{problem}
+
+
+\begin{problem}[points=10]
+设函数$y(x)$是微分方程$y'-xy=\frac{1}{2\sqrt{x}}\e^{\frac{x^2}{2}}$满足条件$y(1)=\sqrt{\e}$的特解．
+\begin{enumerate}
+\item 求$y(x)$的表达式；
+\item 设平面区域$D = \{(x,y)|1 \le x \le 2,0 \le y \le y(x)\}$，
+      求$D$绕$x$轴旋转一周所形成的旋转体的体积．
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}[points=10]
+设平面区域$D = \left\{(x,y)\middle||x| \le y, (x^2 + y^2)^3 \le y^4\right\}$，
+计算二重积分$$\iint_D \frac{x + y}{\sqrt{x^2 + y^2}}\dx\dy.$$
+\end{problem}
+
+
+\begin{problem}[points=10]%【类似试卷一第三(17)题】
+设$n$是正整数，记$S_n$为曲线$y = \e^{- x}\sin x$（$0 \le x \le n\pi$）%
+与$x$轴所围成图形的面积，求$S_n$，并求$\lim_{n \to \infty} S_n$．
+\end{problem}
+
+
+\begin{problem}[points=11]
+已知函数$u(x,y)$满足关系式
+$2\frac{\pd^2 u}{\pd x^2} - 2\frac{\pd^2 u}{\pd y^2} + 3\frac{\pdu}{\pdx} + 3\frac{\pdu}{\pdy} = 0$．
+求$a$, $b$的值，使得在变换$u(x,y) = v(x,y) \e^{ax + by}$之下，
+上述等式可化为函数$v(x,y)$的不含一阶偏导数的等式．
+\end{problem}
+
+
+\begin{problem}[points=11]
+已知函数$f(x)$在$[0,1]$上具有二阶导数，且
+$$f(0) = 0,\quad f(1) = 1,\quad \int_0^1 f(x)\dx = 1.$$
+证明：
+\begin{enumerate*}
+\item 存在$\xi \in(0,1)$，使得$f'(\xi) = 0$；
+\item 存在$\eta \in(0,1)$，使得$f''(\eta) < - 2$．
+\end{enumerate*}
+\end{problem}
+
+
+\begin{problem}[points=11]
+已知向量组Ⅰ：$\alpha_1 = \begin{pmatrix}
+  1 \\
+  1 \\
+  4
+\end{pmatrix}$, $\alpha_2 = \begin{pmatrix}
+  1 \\
+  0 \\
+  4
+\end{pmatrix}$, $\alpha_3 = \begin{pmatrix}
+  1 \\
+  2 \\
+  a^2 + 3
+\end{pmatrix}$；
+向量组Ⅱ：$\beta_1 = \begin{pmatrix}
+  1 \\
+  1 \\
+  a + 3
+\end{pmatrix}$, $\beta_2 = \begin{pmatrix}
+  0 \\
+  2 \\
+  1 - a
+\end{pmatrix}$, $\beta_3 = \begin{pmatrix}
+  1 \\
+  3 \\
+  a^2 + 3
+\end{pmatrix}$．若向量组Ⅰ和向量组Ⅱ等价，求常数$a$的值，
+并将$\beta_3$用$\alpha_1,\alpha_2,\alpha_3$线性表示．
+\end{problem}
+
+
+\useproblem[points=11]{1}{3}{21}%【同试卷一第三(21)题】
+
+
+\end{document}

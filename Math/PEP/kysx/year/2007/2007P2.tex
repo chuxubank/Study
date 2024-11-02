@@ -1,0 +1,156 @@
+% -*- coding: utf-8 -*-
+% !TEX program = xelatex
+\documentclass[plain,noanswer,medmath]{../../template/jnuexam}
+\usepackage{../../template/kysx}
+
+\begin{document}
+
+
+\examtitle{2007}{2}
+
+
+\loadproblems{1}{2007P1}%载入试卷一
+
+
+\makepart{选择题}{1～10小题，每小题4分，共40分}
+
+
+\useproblem{1}{1}{1}%【同试卷一第一(1)题】
+
+
+\begin{problem}
+函数$f(x) = \frac{(\e^{\frac{1}{x}} + \e)\tan x}{x(\e^{\frac{1}{x}} - \e)}$
+在$\left[- \pi ,\pi \right]$上的第一类间断点是$x =$\pickout{}
+\begin{abcd}
+\item $0$．
+\item $1$．
+\item $- \frac{\pi}{2}$．
+\item $\frac{\pi}{2}$．
+\end{abcd}
+\end{problem}
+
+
+\useproblem{1}{1}{3}%【同试卷一第一(3)题】
+
+
+\useproblem{1}{1}{4}%【同试卷一第一(4)题】
+
+
+\useproblem{1}{1}{2}%【同试卷一第一(2)题】
+
+
+\useproblem{1}{1}{5}%【同试卷一第一(5)题】
+
+
+\begin{problem}
+二元函数$f(x,y)$在点$(0,0)$处可微的一个充分条件是\pickout{}
+\begin{abcd}
+\item $\lim_{(x,y) \to(0,0)} \left[f(x,y) - f(0,0) \right] = 0$．
+\item $\lim_{x \to 0} \frac{\left[f(x,0) - f(0,0) \right]}{x} = 0$
+      且$\lim_{y \to 0} \frac{\left[f(0,y) - f(0,0) \right]}{y} = 0$．
+\item $\lim_{(x,y) \to(0,0)} \frac{\left[f(x,y) - f(0,0) \right]}{\sqrt{x^2 + y^2}} = 0$．
+\item $\lim_{x \to 0} \left[f'_x(x,0) - f'_x(0,0) \right] = 0$
+      且$\lim_{y \to 0} \left[f'_y(0,y) - f'_y(0,0) \right] = 0$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设函数$f(x,y)$连续，则二次积分$\int_{\frac{\pi}{2}}^{\pi}\dx\int_{\sin x}^1 f(x,y)\dy$等于\pickout{}
+\begin{abcd}
+\item $\int_0^1 \dy\int_{\pi + \arcsin y}^{\pi}f(x,y)\dx$．
+\item $\int_0^1 \dy\int_{\pi - \arcsin y}^{\pi}f(x,y)\dx$．
+\item $\int_0^1 \dy\int_{\frac{\pi}{2}}^{\pi + \arcsin y} f(x,y)\dx$．
+\item $\int_0^1 \dy\int_{\frac{\pi}{2}}^{\pi - \arcsin y} f(x,y)\dx$．
+\end{abcd}
+\end{problem}
+
+
+\useproblem{1}{1}{7}%【同试卷一第一(7)题】
+
+
+\useproblem{1}{1}{8}%【同试卷一第一(8)题】
+
+
+\makepart{填空题}{11～16小题，每小题4分，共24分}
+
+
+\begin{problem}
+$\lim_{x \to 0} \frac{\arctan x - \sin x}{x^3} =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+曲线$\begin{cases}
+  x = \cos t + \cos^2 t \\
+  y = 1 + \sin t
+\end{cases}$上对应于$t = \frac{\pi}{4}$的点处的法线斜率为 \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设函数$y = \frac{1}{2x + 3}$，则$y^{(n)}(0) =$ \fillin{}．
+\end{problem}
+
+
+\useproblem{1}{2}{13}%【同试卷一第二(13)题】
+
+
+\begin{problem}
+设$f(u,v)$是二元可微函数，$z = f\left(\frac{y}{x},\frac{x}{y} \right)$，
+则$x\frac{\pdz}{\pdx} - y\frac{\pdz}{\pdy} =$ \fillin{}．
+\end{problem}
+
+
+\useproblem{1}{2}{15}%【同试卷一第二(15)题】
+
+
+\makepart{解答题}{17～24小题，共86分}
+
+
+\begin{problem}[points=10]
+设$f(x)$是区间$\left[0,\frac{\pi}{4} \right]$上的单调、可导函数，且满足
+$$\int_0^{f(x)} f^{-1}(t) \dt = \int_0^x t \frac{\cos t - \sin t}{\sin t + \cos t}\dt,$$
+其中$f^{-1}$是$f$的反函数，求$f(x)$．
+\end{problem}
+
+
+\begin{problem}[points=11]
+设$D$是位于曲线$y = \sqrt{x} a^{- \frac{x}{2a}}(a > 1,0 \le x < +\infty)$下方、$x$轴上方的无界区域．
+\begin{enumerate}
+  \item 求区域$D$绕$x$轴旋转一周所成旋转体的体积$V(a)$；
+  \item 当$a$为何值时，$V(a)$最小？并求出最小值．
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}[points=11]
+求微分方程$y''(x + y'^2) = y'$满足初始条件$y(1) = y'(1) = 1$的特解．
+\end{problem}
+
+
+\begin{problem}[points=10]
+已知函数$f(u)$具有二阶导数，且$f'(0) = 1$，函数$y = y(x)$由方程$y - x\e^{y - 1} = 1$所确定．
+设$z = f(\ln y - \sin x)$，求$\frac{\dz}{\dx}\Big|_{x = 0}$, $\frac{\d^2z}{\dx^2}\Big|_{x = 0}$．
+\end{problem}
+
+
+\useproblem[points=11]{1}{3}{19}%【同试卷一第三(19)题】
+
+
+\begin{problem}[points=11]
+设二元函数$f(x,y) = \begin{cases}
+  x^2, & |x| + |y| \le 1, \\
+  \frac{1}{\sqrt{x^2 + y^2}}, & 1 < |x| + |y| \le 2,
+\end{cases}$
+计算二重积分$\iint_D f(x,y)\d\sigma$，其中$D = \left\{(x,y)\left| |x| + |y| \le 2 \right. \right\}$．
+\end{problem}
+
+
+\useproblem[points=11]{1}{3}{21}%【同试卷一第三(21)题】
+
+
+\useproblem[points=11]{1}{3}{22}%【同试卷一第三(22)题】
+
+
+\end{document}

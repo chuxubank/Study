@@ -1,0 +1,228 @@
+% -*- coding: utf-8 -*-
+% !TEX program = xelatex
+\documentclass[plain,noanswer,medmath]{../../template/jnuexam}
+\usepackage{../../template/kysx}
+
+\begin{document}
+
+
+\examtitle{2000}{2}
+
+
+\loadproblems{1}{2000P1}%载入试卷一
+
+
+\makepart{填空题}{本题共5小题，每小题3分，满分15分}
+
+
+\begin{problem}
+$\lim_{x \to 0} \frac{\arctan x - x}{\ln(1 + 2x^3)} =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设函数$y = y(x)$由方程$2^{xy} = x + y$所确定，则$\dy\big|_{x = 0} =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+$\int_2^{+\infty} \frac{\dx}{(x + 7)\sqrt{x - 2}} =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+曲线$y = (2x - 1)\e^{1/x}$的斜渐近线方程为 \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设$A = \begin{pmatrix}
+   1 &  0 &  0 & 0 \\
+  -2 &  3 &  0 & 0 \\
+   0 & -4 &  5 & 0 \\
+   0 &  0 & -6 & 7
+\end{pmatrix}$，$E$为$4$阶单位矩阵，而且$B = (E + A)^{-1}(E - A)$，则$(E + B)^{-1}=$\fillin{}．
+\end{problem}
+
+
+\makepart{选择题}{本题共5小题，每小题3分，共15分}
+
+
+\begin{problem}
+设函数$f(x) = \frac{x}{a + \e^{bx}}$在$(-\infty , +\infty)$内连续，且$\lim_{x \to -\infty} f(x) = 0$，则常数$a,b$满足 \pickout{}
+\begin{abcd}
+\item $a < 0,b < 0$．
+\item $a > 0,b > 0$．
+\item $a \le 0,b > 0$．
+\item $a \ge 0,b < 0$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设函数$f(x)$满足关系式$f''(x) + [f'(x)]^2 = x$，且$f'(0) = 0$，则\pickout{}
+\begin{abcd}
+\item $f(0)$是$f(x)$的极大值．
+\item $f(0)$是$f(x)$的极小值．
+\item 点$(0,f(0))$是曲线$y = f(x)$的拐点．
+\item $f(0)$不是$f(x)$的极值，点$(0,f(0))$也不是曲线$y = f(x)$的拐点．
+\end{abcd}
+\end{problem}
+
+
+\useproblem{1}{2}{1}%【同试卷一第二(1)题】
+
+
+\begin{problem}
+若$\lim_{x \to 0} \left(\frac{\sin 6x + xf(x)}{x^3} \right) = 0$，则$\lim_{x \to 0} \frac{6 + f(x)}{x^2}$为\pickout{}
+\begin{abcd}
+\item $0$．
+\item $6$．
+\item $36$．
+\item $\infty$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+具有特解$y_1 = \e^{- x},y_2 = 2x\e^{- x},y_3 = 3\e^x$的3阶常系数齐次线性微分方程是\pickout{}
+\begin{abcd}
+\item $y''' - y'' - y' + y = 0$．
+\item $y''' + y'' - y' - y = 0$．
+\item $y''' - 6y'' + 11y' - 6y = 0$．
+\item $y''' - 2y'' - y' + 2y = 0$．
+\end{abcd}
+\end{problem}
+
+
+\makepart{}{本题满分5分}
+
+\begin{problem}
+设$f(\ln x) = \frac{\ln(1 + x)}{x}$，计算$\int f(x)\dx$．
+\end{problem}
+
+
+\makepart{}{本题满分5分}
+
+\begin{problem}
+设$xOy$平面上有正方形$D = \left\{(x,y)\left| 0 \le x \le 1,0 \le y \le 1 \right. \right\}$
+及直线$l:x + y = t$（$t \ge 0$）．若$S(t)$表示正方形$D$位于直线$l$左下方部分的面积，
+试求$\int_0^x S(t)\dt$（$x \ge 0$）．
+\end{problem}
+
+
+\makepart{}{本题满分5分}
+
+\begin{problem}
+求函数$f(x) = x^2\ln(1 + x)$在$x = 0$处的$n$阶导数$f^n(0)$（$n \ge 3$）．
+\end{problem}
+
+
+\makepart{}{本题满分6分}
+
+\begin{problem}
+设函数$S(x) = \int_0^x |\cos t| \dt$，
+\begin{enumerate}
+\item 当$n$为正整数，且$n\pi \le x \le(n + 1)\pi$时，证明$2n \le S(x) < 2(n + 1)$；
+\item 求$\lim_{x \to +\infty} \frac{S(x)}{x}$．
+\end{enumerate}
+\end{problem}
+
+
+\makepart{}{本题满分7分}
+
+\begin{problem}
+某湖泊的水量为$V$，每年排入湖泊内含污染物$A$的污水量为$\frac{V}{6}$，流入湖泊内不含$A$的水量为$\frac{V}{6}$，
+流出湖泊的水量为$\frac{V}{3}$，已知1999年底湖中$A$的含量为$5m_0$，超过国家规定指标．
+为了治理污染，从2000年初起，限定排入湖泊中含$A$污水的浓度不超过$\frac{m_0}{V}$．问至多需要经过多少年，
+湖泊中污染物$A$的含量降至$m_0$以内？（注：设湖水中$A$的浓度是均匀的．）
+\end{problem}
+
+
+\makepart{}{本题满分6分}%【同试卷一第九题】
+
+\useproblem{1}{9}{0}
+
+
+\makepart{}{本题满分7分}
+
+\begin{problem}
+已知$f(x)$是周期为$5$的连续函数，它在$x = 0$的某个邻域内满足关系式
+$$f(1 + \sin x) - 3f(1 - \sin x) = 8x + \alpha(x),$$
+其中$\alpha (x)$是当$x \to 0$时比$x$高阶的无穷小，且$f(x)$在$x = 1$处可导，求曲线$y = f(x)$在点$(6,f(6))$处的切线方程．
+\end{problem}
+
+
+\makepart{}{本题满分8分}
+
+\begin{problem}
+设曲线$y = ax^2$（$a > 0$, $x \ge 0$）与$y = 1 - x^2$交于点$A$，
+过坐标原点$O$和点$A$的直线与曲线$y = ax^2$围成一平面图形．
+问$a$为何值时，该图形绕$x$轴旋转一周所得的旋转体体积最大？最大体积是多少？
+\end{problem}
+
+
+\makepart{}{本题满分8分}
+
+\begin{problem}
+函数$f(x)$在$[0, +\infty)$上可导，$f(0) = 1$且满足等式
+$$f'(x) + f(x) - \frac{1}{x + 1}\int_0^x f(t)\dt = 0,$$
+\begin{enumerate}
+\item 求导数$f'(x)$；
+\item 证明：当$x \ge 0$时，不等式$\e^{- x} \le f(x) \le 1$成立．
+\end{enumerate}
+\end{problem}
+
+
+\makepart{}{本题满分6分}
+
+\begin{problem}
+设$\alpha = \begin{pmatrix}
+  1 \\
+  2 \\
+  1
+\end{pmatrix},\beta = \begin{pmatrix}
+  1 \\
+  \frac{1}{2} \\
+  0
+\end{pmatrix},\gamma = \begin{pmatrix}
+  0 \\
+  0 \\
+  8
+\end{pmatrix}$，$A = \alpha \beta^T,B = \beta^T\alpha$．其中$\beta^T$是$\beta$的转置，
+求解方程$2B^2A^2 x = A^4 x + B^4 x + \gamma$．
+\end{problem}
+
+
+\makepart{}{本题满分7分}
+
+\begin{problem}
+已知向量组$\beta_1 = \begin{pmatrix}
+  0 \\
+  1 \\
+  -1
+\end{pmatrix}$, $\beta_2 = \begin{pmatrix}
+  a \\
+  2 \\
+  1
+\end{pmatrix}$, $\beta_3 = \begin{pmatrix}
+  b \\
+  1 \\
+  0
+\end{pmatrix}$与向量组$\alpha_1 = \begin{pmatrix}
+  1 \\
+  2 \\
+  -3
+\end{pmatrix}$, $\alpha_2 = \begin{pmatrix}
+  3 \\
+  0 \\
+  1
+\end{pmatrix}$,$\alpha_3 = \begin{pmatrix}
+  9 \\
+  6 \\
+  -7
+\end{pmatrix}$具有相同的秩，且$\beta_3$可由$\alpha_1,\alpha_2,\alpha_3$线性表示，求$a,b$的值．
+\end{problem}
+
+
+\end{document}

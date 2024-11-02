@@ -1,0 +1,163 @@
+% -*- coding: utf-8 -*-
+% !TEX program = xelatex
+\documentclass[plain,noanswer,medmath]{../../template/jnuexam}
+\usepackage{../../template/kysx}
+
+\begin{document}
+
+
+\examtitle{2012}{3}
+
+
+\loadproblems{1}{2012P1}%载入试卷一
+\loadproblems{2}{2012P2}%载入试卷二
+
+
+\makepart{选择题}{1～8小题，每小题4分，共32分}
+
+
+\useproblem{1}{1}{1}%【同试卷一第一(1)题】
+
+
+\useproblem{1}{1}{2}%【同试卷一第一(2)题】
+
+
+\begin{problem}
+设函数$f(t)$连续，则二次积分$\int_0^{\frac{\pi}{2}} \d\theta \int_{2\cos \theta}^2 f(r^2)r\dr =$\pickout{}
+\begin{abcd}
+\item $\int_0^2 \dx \int_{\sqrt{2x - x^2}}^{\sqrt{4 - x^2}} \sqrt{x^2 + y^2} f(x^2 + y^2)\dy$．
+\item $\int_0^2 \dx \int_{\sqrt{2x - x^2}}^{\sqrt{4 - x^2}} f(x^2 + y^2)\dy$．
+\item $\int_0^2 \dx \int_{1 + \sqrt{2x - x^2}}^{\sqrt{4 - x^2}} \sqrt{x^2 + y^2} f(x^2 + y^2)\dy$．
+\item $\int_0^2 \dx \int_{1 + \sqrt{2x - x^2}}^{\sqrt{4 - x^2}} f(x^2 + y^2)\dy$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+已知级数$\sum_{n = 1}^{\infty}(- 1)^n\sqrt{n} \sin \frac{1}{n^{\alpha}}$绝对收敛，
+$\sum_{n = 1}^{\infty}\frac{(- 1)^n}{n^{2 - \alpha}}$条件收敛，则$\alpha$范围为\pickout{}
+\begin{abcd}
+\item $0 < \alpha \le \frac{1}{2}$．
+\item $\frac{1}{2} < \alpha \le 1$．
+\item $1 < \alpha \le \frac{3}{2}$．
+\item $\frac{3}{2} < \alpha < 2$．
+\end{abcd}
+\end{problem}
+
+
+\useproblem{1}{1}{5}%【同试卷一第一(5)题】
+
+
+\useproblem{1}{1}{6}%【同试卷一第一(6)题】
+
+
+\begin{problem}
+设随机变量$X$与$Y$相互独立，且都服从区间$\left(0,1 \right)$上的均匀分布，\goodbreak
+则$P\left\{X^2 + Y^2 \le 1 \right\} =$\pickout{}
+\begin{abcd}
+\item $\frac{1}{4}$．
+\item $\frac{1}{2}$．
+\item $\frac{\pi}{8}$．
+\item $\frac{\pi}{4}$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设$|A| = 3$为来自总体$N\left(1,\sigma^2 \right)\left(\sigma > 0 \right)$的简单随机样本，
+则统计量$\frac{X_1 - X_2}{\left| X_3 + X_4 - 2 \right|}$的分布为\pickout{}
+\begin{abcd}
+\item $N\left(0,1 \right)$．
+\item $t(1)$．
+\item $\chi^2(1)$．
+\item $F\left(1,1 \right)$．
+\end{abcd}
+\end{problem}
+
+
+\makepart{填空题}{9～14小题，每小题4分，共24分}
+
+
+\begin{problem}
+$\lim_{x \to \frac{\pi}{4}} \left(\tan x \right)^{\frac{1}{\cos x - \sin x}} =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设函数$f(x) = \begin{cases}
+  \ln \sqrt{x} , & x \ge 1 \\
+         2x - 1, & x < 1
+\end{cases}$，$y=f(f(x))$，则$\left.\frac{\dy}{\dx}\right|_{x=\e}$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+函数$z = f(x,y)$满足$\lim_{\begin{subarray}{l}
+  x \to 0 \\
+  y \to 1
+\end{subarray}} \frac{f(x,y) - 2x + y - 2}{\sqrt{x^2 + (y - 1)^2}} = 0$，则$\dz\big|_{(0,1)} =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+由曲线$y = \frac{4}{x}$和直线$y = x$及$y = 4x$在第一象限中所围图形的面积为 \fillin{}．
+\end{problem}
+
+
+\useproblem{2}{2}{14}%【同试卷二第二(14)题】
+
+
+\useproblem{1}{2}{14}%【同试卷一第二(14)题】
+
+
+\makepart{解答题}{15～23小题，共94分}
+
+
+\begin{problem}[points=10]
+计算$\lim_{x \to 0} \frac{\e^{x^2} - \e^{2 - 2\cos x}}{x^4}$．
+\end{problem}
+
+
+\begin{problem}[points=10]
+计算二重积分$\iint_D \e^x xy\dx\dy$，其中$D$是以曲线$y = \sqrt{x}$，$y = \frac{1}{\sqrt{x}}$
+及$y$轴为边界的无界区域．
+\end{problem}
+
+
+\begin{problem}[points=10]
+某企业为生产甲、乙两种型号的产品，投入的固定成本为$10000$（万元），
+设该企业生产甲、乙两种产品的产量分别为$x$（件）和$y$（件），
+且这两种产品的边际成本分别为$20 + \frac{x}{2}$（万元/件）与$6 + y$（万元/件）．
+\begin{enumerate}
+\item 求生产甲、乙两种产品的总成本函数$C(x,y)$(万元)；
+\item 当总产量为$50$件时，甲乙两种的产量各为多少时可以使总成本最小？求最小的成本；
+\item 求总产量为$50$件时且总成本最小时甲产品的边际成本，并解释其经济意义．
+\end{enumerate}
+\end{problem}
+
+
+\useproblem[points=10]{1}{3}{15}%【同试卷一第三(15)题】
+
+
+\useproblem[points=11]{2}{3}{19}%【同试卷二第三(19)题】
+
+
+\useproblem[points=11]{1}{3}{20}%【同试卷一第三(20)题】
+
+
+\useproblem[points=11]{1}{3}{21}%【同试卷一第三(21)题】
+
+
+\useproblem[points=11]{1}{3}{22}%【同试卷一第三(22)题】
+
+
+\begin{problem}[points=10]
+设随机变量$X$和$Y$相互独立，且均服从参数为$1$的指数分布，$U = \max(X,Y)$，$V = \min(X,Y)$．\par
+\begin{enumerate*}
+\item 求随机变量$V$的概率密度$f_V(v)$；
+\item 求$E\left(U + V \right)$．
+\end{enumerate*}
+\end{problem}
+
+
+\end{document}

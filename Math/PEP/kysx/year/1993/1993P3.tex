@@ -1,0 +1,186 @@
+% -*- coding: utf-8 -*-
+% !TEX program = xelatex
+\documentclass[plain,noanswer,medmath]{../../template/jnuexam}
+\usepackage{../../template/kysx}
+
+\begin{document}
+
+
+\examtitle{1993}{3}
+
+
+\loadproblems{1}{1993P1}%载入试卷一
+
+
+\makepart{填空题}{本题共5小题，每小题3分，满分15分}
+
+
+\begin{problem}
+$\lim_{x \to 0^+} x\ln x =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+函数$y = y(x)$由方程$\sin (x^2 + y^2) + \e^x - xy^2 = 0$所确定，则$\frac{\dy}{\dx} =$ \fillin{}．
+\end{problem}
+
+
+\useproblem{1}{1}{1}%【同试卷一第一(1)题】
+
+
+\begin{problem}
+$\int \frac{\tan x}{\sqrt{\cos x}} \dx =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+已知曲线$y = f(x)$过点$\left(0, - \frac{1}{2} \right)$，
+且其上任一点$(x,y)$处的切线斜率为$x\ln(1 + x^2)$，则$f(x)=$ \fillin{}．
+\end{problem}
+
+
+\makepart{选择题}{本题共5小题，每小题3分，满分15分}
+
+
+\begin{problem}
+当$x \to 0$时，变量$\frac{1}{x^2}\sin \frac{1}{x}$是\pickout{}
+\begin{abcd}
+\item 无穷小．						
+\item 无穷大．
+\item 有界的，但不是无穷小．		
+\item 有界的，但不是无穷大．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设$f(x) = \begin{cases}
+ \frac{|x^2-1|}{x-1}, & x \ne 1, \\
+                   2, & x = 1,
+\end{cases}$则在点$x=1$处函数$f(x)$\pickout{}
+\begin{abcd}
+\item 不连续．
+\item 连续，但不可导．
+\item 可导，但导数不连续．
+\item 可导，且导数连续．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+已知$f(x) = \begin{cases}
+  x^2, & 0 \le x < 1, \\
+    1, & 1 \le x \le 2,
+\end{cases}$设$F(x) = \int_1^xf (t)\dt$（$0 \le x \le 2$），则$F(x)$为\pickout{}
+\begin{abcd}
+\item $\begin{cases}
+  \frac{1}{3}x^3, & 0 \le x < 1; \\
+               x, & 1 \le x \le 2.
+\end{cases}$
+\item $\begin{cases}
+  \frac{1}{3}x^3 - \frac{1}{3}, & 0 \le x < 1; \\
+                             x, & 1 \le x \le 2.
+\end{cases}$
+\item $\begin{cases}
+  \frac{1}{3}x^3, & 0 \le x < 1; \\
+           x - 1, & 1 \le x \le 2.
+\end{cases}$
+\item $\begin{cases}
+  \frac{1}{3}x^3 - \frac{1}{3}, & 0 \le x < 1; \\
+                         x - 1, & 1 \le x \le 2.
+\end{cases}$
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设常数$k > 0$，函数$f(x) = \ln x - \frac{x}{e} + k$在$(0, +\infty)$内的零点个数为\pickout{}
+\begin{abcd}
+\item $3$．			
+\item $2$．			
+\item $1$．			
+\item $0$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设$f(x) = - f(- x)$，在$(0, +\infty)$内$f'(x) > 0$,$f''(x) > 0$，则$f(x)$在$(-\infty ,0)$内\pickout{}
+\begin{abcd}
+\item $f'(x) < 0,f''(x) < 0$．		
+\item $f'(x) < 0,f''(x) > 0$．
+\item $f'(x) > 0,f''(x) < 0$．		
+\item $f'(x) > 0,f''(x) > 0$．
+\end{abcd}
+\end{problem}
+
+
+\makepart{计算题}{本题共5小题，每小题5分，满分25分}
+
+
+\begin{problem}
+设$y = \sin[f(x^2)]$，其中$f$具有二阶导数，求$\frac{\d^2y}{\dx^2}$．
+\end{problem}
+
+
+\begin{problem}
+求$\lim_{x \to -\infty} x(\sqrt{x^2 + 100 + x})$．
+\end{problem}
+
+
+\begin{problem}
+求$\int_0^{\frac{\pi}{4}} \frac{x}{1 + \cos 2x} \dx$．
+\end{problem}
+
+
+\begin{problem}
+求$\int_0^{+\infty} \frac{x}{\left(1 + x \right)^3} \dx$．
+\end{problem}
+
+
+\begin{problem}
+求微分方程$(x^2 - 1)\dy + (2xy - \cos x)\dx = 0$满足初始条件$y|_{x = 0} = 0$的特解．
+\end{problem}
+
+
+\makepart{}{本题满分9分}
+
+\begin{problem}
+设二阶常系数线性微分方程$y'' + \alpha y' + \beta y = \gamma \e^x$的一个特解为$y =\e^{2x} + (1 + x)\e^x$，
+试确定常数$\alpha$, $\beta$, $\gamma$，并求该方程的通解．
+\end{problem}
+
+
+\makepart{}{本题满分9分}
+
+\begin{problem}
+设平面图形$A$由$x^2 + y^2 \le 2x$与$y \ge x$所确定，
+求图形$A$绕$x = 2$旋转一周所得旋转体的体积．
+\end{problem}
+
+
+\makepart{}{本题满分9分}
+
+\begin{problem}
+作半径为$r$的球的外切正圆锥，问此圆锥的高$h$为何值时，其体积$V$最小，并求出该最小值．
+\end{problem}
+
+
+\makepart{}{本题满分9分}
+
+\begin{problem}
+设$x > 0$，常数$a > \e$，证明：$(a + x)^a < a^{a + x}$．
+\end{problem}
+
+
+\makepart{}{本题满分9分}
+
+\begin{problem}
+设$f'(x)$在$[0,a]$上连续，且$f(0) = 0$，证明：
+$$\left| \int_0^a f(x)\dx \right| \le \frac{Ma^2}{2},$$
+其中$M = \max\limits_{0 \le x \le a} \left| f'(x) \right|$．
+\end{problem}
+
+
+
+\end{document}

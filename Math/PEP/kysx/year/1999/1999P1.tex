@@ -1,0 +1,228 @@
+% -*- coding: utf-8 -*-
+% !TEX program = xelatex
+\documentclass[plain,noanswer,medmath]{../../template/jnuexam}
+\usepackage{../../template/kysx}
+
+\begin{document}
+
+
+\examtitle{1999}{1}
+
+
+\makepart{填空题}{本题共5个小题，每小题3分，满分15分}
+
+
+\begin{problem}
+$\lim_{x \to 0} \left(\frac{1}{x^2} - \frac{1}{x\tan x} \right) =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+$\frac{\d}{\dx}\int_0^x \sin \left((x - t)^2 \right)\dt =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+微分方程$y''-4y=\e^{2x}$的通解为$y =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设$n$阶矩阵$A$的元素全为$1$，则$A$的$n$个特征值是 \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设两两相互独立的三事件$A$, $B$和$C$满足条件：
+$$ABC = \emptyset ,\quad P(A) = P(B) = P(C) < \frac{1}{2},\quad P(A \cup B \cup C) = \frac{9}{16},$$
+则$P(A) =$ \fillin{}．
+\end{problem}
+
+
+\makepart{选择题}{本题共5小题，每小题3分，满分15分}
+
+
+\begin{problem}
+设$f(x)$是连续函数，$F(x)$是$f(x)$的原函数，则\pickout{}
+\begin{abcd}
+\item 当$f(x)$是奇函数时，$F(x)$必是偶函数．
+\item 当$f(x)$是偶函数时，$F(x)$必是奇函数．
+\item 当$f(x)$是周期函数时，$F(x)$必是周期函数．
+\item 当$f(x)$是单调增函数时，$F(x)$必是单调增函数．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设$f(x) = \begin{cases}
+  \frac{1 - \cos x}{\sqrt{x}}, & x > 0, \\
+  x^2 g(x), & x \le 0,
+\end{cases}$其中$g(x)$是有界函数，则$f(x)$在$x = 0$处\pickout{}
+\begin{abcd}
+\item 极限不存在．
+\item 极限存在，但不连续．
+\item 连续，但不可导．
+\item 可导．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设$f(x) = \begin{cases}
+  x, & 0 \le x \le \frac{1}{2} \\
+  2 - 2x, & \frac{1}{2} < x < 1 \\
+\end{cases}$，$S(x) = \frac{a_0}{2} + \sum_{n = 1}^{\infty}a_n\cos n\pi x$,
+$-\infty < x < +\infty$，其中$a_n = 2\int_0^1 f(x)\cos n\pi x\dx$（$n = 0,1,2,\cdots$），
+则$S\left(- \frac{5}{2} \right)$等于\pickout{}
+\begin{abcd}
+  \item $\frac{1}{2}$．
+  \item $- \frac{1}{2}$．
+  \item $\frac{3}{4}$．
+  \item $- \frac{3}{4}$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设$A$是$m \times n$矩阵，$B$是$n \times m$矩阵，则\pickout{}
+\begin{abcd}
+\item 当$m > n$时，必有行列式$|AB| \ne 0$．
+\item 当$m > n$时，必有行列式$|AB| = 0$．
+\item 当$n > m$时，必有行列式$|AB| \ne 0$．
+\item 当$n > m$时，必有行列式$|AB| = 0$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设两个相互独立的随机变量$X$和$Y$分别服从正态分布$N(0,1)$和$N(1,1)$，则\pickout{}
+\begin{abcd}
+\item $P\left\{X + Y \le 0 \right\} = \frac{1}{2}$．
+\item $P\left\{X + Y \le 1 \right\} = \frac{1}{2}$．
+\item $P\left\{X - Y \le 0 \right\} = \frac{1}{2}$．
+\item $P\left\{X - Y \le 1 \right\} = \frac{1}{2}$．
+\end{abcd}
+\end{problem}
+
+
+\makepart{}{本题满分5分}
+
+\begin{problem}
+设$y = y(x)$，$z = z(x)$是由方程$z = xf(x + y)$和$F(x,y,z) = 0$所确定的函数，
+其中$f$和$F$分别具有一阶连续导数和一阶连续偏导数，求$\frac{\dz}{\dx}$．
+\end{problem}
+
+
+\makepart{}{本题满分5分}
+
+\begin{problem}
+求$I = \int_L \left(\e^x\sin y - b(x + y) \right) \dx + \left(\e^x\cos y - ax \right)\dy$，
+其中$a$, $b$为正常数，$L$为从点$A\left(2a,0 \right)$沿曲线$y = \sqrt{2 ax - x^2}$到点$O(0,0)$的弧．
+\end{problem}
+
+
+\makepart{}{本题满分6分}
+
+\begin{problem}
+设函数$y(x)$（$x \ge 0$）二阶可导，且$y'(x) > 0$，$y(0) = 1$．
+过曲线$y = y(x)$上任意一点$P\left(x, y \right)$作该曲线的切线及$x$轴的垂线，
+上述两直线与$x$轴所围成的三角形的面积记为$S_1$，区间$[0,x]$上以$y = y(x)$为曲边的曲边梯形面积记为$S_2$，
+并设$2S_1 - S_2$恒为$1$，求此曲线$y = y(x)$的方程．
+\end{problem}
+
+
+\makepart{}{本题满分6分}
+
+\begin{problem}
+试证：当$x > 0$时，$\left(x^2 - 1 \right)\ln x \ge(x - 1)^2$．
+\end{problem}
+
+
+\makepart{}{本题满分6分}
+
+\begin{problem}
+为清除井底的污泥，用缆绳将抓斗放入井底，抓起污泥后提出井口（见图），已知井深$30m$，抓斗自重$400N$，
+缆绳每米重$50N$，抓斗抓起的污泥重$2000N$，提升速度为$3m/s$，在提升过程中，
+污泥以$20N/s$的速度从抓斗缝隙中漏掉，现将抓起污泥的抓斗提升至井口，问克服重力需作多少焦耳的功？\\
+（说明：①$1N \times 1m = 1J$；其中$m,N,s,J$分别表示米，牛顿，秒，焦耳；\\
+\hspace*{3.33em} ②\ 抓斗的高度及位于井口上方的缆绳长度忽略不计．）
+\par\centerline{\includegraphics[width=0.5\linewidth]{1999A2}}
+\end{problem}
+
+
+\makepart{}{本题满分7分}
+
+\begin{problem}
+设$S$为椭球面$\frac{x^2}{2} + \frac{y^2}{2} + z^2 = 1$的上半部分，
+点$P(x,y,z) \in S$，$\pi$为$S$在点$P$处的切平面，$\rho (x,y,z)$为点$O(0,0,0)$到平面$\pi$的距离，
+求$\iint_S \frac{z}{\rho(x,y,z)} \dS$．
+\end{problem}
+
+
+\makepart{}{本题满分7分}
+
+\begin{problem}
+设$a_n = \int_0^{\frac{\pi}{4}} \tan^n x\dx$，
+\begin{enumerate}
+\item 求$\sum_{n = 1}^{\infty}\frac{1}{n} \left(a_n + a_{n + 2} \right)$的值；
+\item 试证：对任意的常数$\lambda > 0$，级数$\sum_{n = 1}^{\infty}\frac{a_n}{n^{\lambda}}$收敛．
+\end{enumerate}
+\end{problem}
+
+
+\makepart{}{本题满分8分}
+
+\begin{problem}
+设矩阵$A = \begin{pmatrix}
+      a & -1 & c \\
+      5 &  b & 3 \\
+  1 - c &  0 & -a
+\end{pmatrix}$，其行列式$|A| = - 1$，又$A$的伴随矩阵$A^*$有一个特征值$\lambda_0$，
+属于$\lambda_0$的一个特征向量为$\alpha = (- 1, - 1,1)^T$，求$a,b,c$和$\lambda_0$的值．
+\end{problem}
+
+
+\makepart{}{本题满分6分}
+
+\begin{problem}
+设$A$为$m$阶实对称矩阵且正定，$B$为$m \times n$实矩阵，$B^T$为$B$的转置矩阵，
+试证：$B^T AB$为正定矩阵的充分必要条件是$B$的秩$r(B) = n$．
+\end{problem}
+
+
+\makepart{}{本题满分8分}
+
+\begin{problem}
+设随机变量$X$与$Y$相互独立，下表列出了二维随机变量$(X,Y)$的联合分布律及
+关于$X$和关于$Y$的边缘分布律中的部分数值，试将其余数值填入表中的空白处．
+$$\begin{array}{|c|*{3}{>{\qquad}5c<{\qquad}|}c|}
+\hline
+  \diagboxtwo[width=8em]{X}{Y} &         y_1 &         y_2 & y_3 & P\{X = x_i\} = p_i \\
+\hline
+                           x_1 &             & \frac{1}{8} &     & \\
+\hline
+                           x_2 & \frac{1}{8} &             &     & \\
+\hline
+            P\{Y = y_j\} = p_j & \frac{1}{6} &             &     & 1 \\
+\hline
+\end{array}$$
+\end{problem}
+
+
+\makepart{}{本题满分6分}
+
+\begin{problem}
+设总体$X$的概率密度为
+$$f(x) = \begin{cases}
+  \frac{6x}{\theta^3}(\theta - x), & 0 < x < \theta; \\
+                                0, & \text{其他}.
+\end{cases}$$
+$X_1,X_2, \cdots ,X_n$是取自总体$X$的简单随机样本．\par
+\begin{enumerate*}
+\item 求$\theta$的矩估计量$\widehat{\theta}$；
+\item 求$\widehat{\theta}$的方差$D\left(\widehat{\theta} \right)$．
+\end{enumerate*}
+\end{problem}
+
+
+\end{document}

@@ -1,0 +1,215 @@
+% -*- coding: utf-8 -*-
+% !TEX program = xelatex
+\documentclass[plain,noanswer,medmath]{../../template/jnuexam}
+\usepackage{../../template/kysx}
+
+\begin{document}
+
+
+\examtitle{2001}{1}
+
+
+\makepart{填空题}{本题共5小题，每小题3分，满分15分}
+
+
+\begin{problem}
+设$y = \e^x(c_1\sin x + c_2\cos x)$（$c_1,c_2$为任意常数）为某二阶常系数线性齐次微分方程的通解，则该方程为 \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设$r = \sqrt{x^2 + y^2 + z^2} $，则$\div (\grad r) |_{(1, - 2,2)} =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+交换二次积分的积分次序：$\int_{-1}^0 \dy \int_2^{1 - y} f(x,y) \dx =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设矩阵$A$满足$A^2$$+ A - 4E = 0$，其中$E$为单位矩阵，则$(A - E)^{-1}$= \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设随机变量$X$的方差为$2$，则根据切比雪夫不等式有估计$P\left\{\left| X - E(X) \right| \ge 2 \right\} \le$ \fillin{}．
+\end{problem}
+
+
+\makepart{选择题}{本题共5小题，每小题3分，满分15分}
+
+
+\begin{problem}
+设函数$f(x)$在定义域内可导，$y = f(x)$的图形如下图所示，
+\par\centerline{\includegraphics[width=0.4\linewidth]{2001A1}}
+则导函数$y = f'(x)$的图形为\pickout{}
+\begin{abcd}
+\item \raisebox{-0.45\height}{\includegraphics[width=0.4\linewidth]{2001A2}}
+\item \raisebox{-0.45\height}{\includegraphics[width=0.4\linewidth]{2001A3}}
+\item \raisebox{-0.45\height}{\includegraphics[width=0.4\linewidth]{2001A4}}
+\item \raisebox{-0.45\height}{\includegraphics[width=0.4\linewidth]{2001A5}}
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设函数$f(x,y)$在点$(0,0)$附近有定义，且$f_x'(0,0) = 3,f_y'(0,0) = 1$，则\pickout{}
+\begin{abcd}
+\item $\dz |_{(0,0)} = 3\dx + \dy$．
+\item 曲面$z = f(x,y)$在点$(0,0,f(0,0))$的法向量为$(3,1,1)$．
+\item 曲线$\begin{cases}
+  z = f(x,y) \\
+  y = 0
+\end{cases}$在点$(0,0,f(0,0))$的切向量为$(1,0,3)$．
+\item 曲线$\begin{cases}
+  z = f(x,y) \\
+  y = 0
+\end{cases}$在点$(0,0,f(0,0))$的切向量为$(3,0,1)$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设$f(0) = 0$，则$f(x)$在点$x = 0$可导的充要条件为\pickout{}
+\begin{abcd}
+\item $\lim_{h \to 0} \frac{1}{h^2}f(1 - \cosh)$存在．
+\item $\lim_{h \to 0} \frac{1}{h}f(1 - \e^h)$存在．
+\item $\lim_{h \to 0} \frac{1}{h^2}f(h - \sinh)$存在．
+\item $\lim_{h \to 0} \frac{1}{h}\left[f(2h) - f(h) \right]$存在．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设$A = \begin{pmatrix}
+  1 & 1 & 1 & 1 \\
+  1 & 1 & 1 & 1 \\
+  1 & 1 & 1 & 1 \\
+  1 & 1 & 1 & 1
+\end{pmatrix},B = \begin{pmatrix}
+  4 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0
+\end{pmatrix}$，则$A$与$B$\pickout{}
+\begin{abcd}
+\item 合同且相似．
+\item 合同但不相似．
+\item 不合同但相似．
+\item 不合同且不相似．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+将一枚硬币重复掷$n$次，以$X$和$Y$分别表示正面向上和反面向上的次数，则$X$和$Y$的相关系数等于\pickout{}
+\begin{abcd}
+\item $- 1$．
+\item $0$．
+\item $\frac{1}{2}$．
+\item $1$．
+\end{abcd}
+\end{problem}
+
+
+\makepart{}{本题满分6分}
+
+\begin{problem}
+求$\int \frac{\arctan \e^x}{\e^{2x}} \dx$．
+\end{problem}
+
+
+\makepart{}{本题满分6分}
+
+\begin{problem}
+设函数$z = f(x,y)$在点(1,1) 处可微，且
+$$f(1,1) = 1,\frac{\pdf}{\pdx}\Big|_{(1,1)} = 2,\frac{\pdf}{\pdy}\Big|_{(1,1)} = 3,\varphi(x) = f(x,f(x,x)).$$
+求$\frac{\d}{\dx}\varphi^3(x)\Big|_{x = 1}$．
+\end{problem}
+
+
+\makepart{}{本题满分8分}
+
+\begin{problem}
+设$f(x) = \begin{cases}
+  \frac{1 + x^2}{x}\arctan x, & x \ne 0; \\
+                           1, & x = 0.
+\end{cases}$ 试将$f(x)$展开成$x$的幂级数，并求级数$\sum_{n = 1}^{\infty}\frac{(- 1)^n}{1 - 4n^2}$ 的和．
+\end{problem}
+
+
+\makepart{}{本题满分7分}
+
+\begin{problem}
+计算$I = \oint_L (y^2 - z^2) \dx + (2z^2 - x^2)\dy + (3x^2 - y^2)\dz$，
+其中$L$是平面$x + y + z = 2$ 与柱面$|x| + |y| = 1$的交线，从$z$轴正向看去，$L$为逆时针方向．
+\end{problem}
+
+
+\makepart{}{本题满分7分}
+
+\begin{problem}
+设$y = f(x)$在$(- 1,1)$内具有二阶连续导数且$f''(x) \ne 0$，试证：
+\begin{enumerate}
+\item 对于$(- 1,1)$内的任意$x \ne 0$，存在唯一的$\theta (x) \in \left(0,1 \right)$，
+      使得\goodbreak $f(x) = f(0) + xf'\left(\theta(x)x \right)$成立；
+\item $\lim_{x \to 0} \theta(x) = \frac{1}{2}$．
+\end{enumerate}
+\end{problem}
+
+
+\makepart{}{本题满分8分}
+
+\begin{problem}
+设有一高度为$h(t)$（$t$为时间）的雪堆在融化过程中，其侧面满足方程
+$$z = h(t) - \frac{2(x^2 + y^2)}{h(t)}$$
+（设长度单位为厘米，时间单位为小时），已知体积减少的速率与侧面积成正比（比例系数$0.9$），
+问高度为$130$厘米的雪堆全部融化需多少小时？
+\end{problem}
+
+
+\makepart{}{本题满分6分}
+
+\begin{problem}
+设$\alpha_1,\alpha_2, \cdots ,\alpha_s$为线性方程组$Ax = 0$的一个基础解系，
+$$\beta_1 = t_1\alpha_1 + t_2\alpha_2,\beta_2 = t_1\alpha_2 + t_2\alpha_3, \cdots ,\beta_s = t_1\alpha_s + t_2\alpha_1,$$
+其中$t_1,t_2$为实常数．试问$t_1,t_2$满足什么关系时，$\beta_1,\beta_2, \cdots ,\beta_s$也为$Ax = 0$的一个基础解系？
+\end{problem}
+
+
+\makepart{}{本题满分8分}
+
+\begin{problem}
+已知$3$阶矩阵$A$与三维向量$x$，使得向量组$x,Ax, A^2 x$线性无关，且满足$$A^3 x = 3Ax - 2A^2 x.$$
+\begin{enumerate}
+\item 记$P = \left(x,Ax, A^2 x \right)$，求$3$阶矩阵$B$，使$A = PB P^{-1}$；
+\item 计算行列式$\left| A + E \right|$．
+\end{enumerate}
+\end{problem}
+
+
+\makepart{}{本题满分7分}
+
+\begin{problem}
+设某班车起点站上客人数$X$服从参数$\lambda$（$\lambda > 0$）的泊松分布，
+每位乘客在中途下车的概率为$p$（$0 < p < 1$），且途中下车与否相互独立，以$Y$表示在中途下车的人数，求：
+\begin{enumerate}
+\item 在发车时有$n$个乘客的条件下，中途有$m$人下车的概率；
+\item 二维随机变量$(X,Y)$的概率分布．
+\end{enumerate}
+\end{problem}
+
+
+\makepart{}{本题满分7分}
+
+\begin{problem}
+设总体$X$服从正态分布$N(\mu ,\sigma^2)$（$\sigma > 0$），
+从该总体中抽取简单随机样本$X_1$, $X_2$, $\cdots$, $X_{2n}$（$n \ge 2$），
+其样本均值为$\overline{X} = \smash[b]{\frac{1}{2n}\sum_{i = 1}^{2n} X_i}$，求统计量
+$$Y = \sum_{i = 1}^n \left(X_i + X_{n + i} - 2\overline{X} \right)^2$$
+的数学期望$E(Y)$．
+\end{problem}
+
+
+\end{document}

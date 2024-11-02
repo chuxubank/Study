@@ -1,0 +1,220 @@
+% -*- coding: utf-8 -*-
+% !TEX program = xelatex
+\documentclass[plain,noanswer,medmath]{../../template/jnuexam}
+\usepackage{../../template/kysx}
+
+\begin{document}
+
+
+\examtitle{1988}{1}
+
+
+\makepart{计算题}{本题满分15分，每小题5分}
+
+
+\begin{problem}
+求幂级数$\sum_{n=1}^{\infty}\frac{(x-3)^n}{n\cdot 3^n}$的收敛域．
+\end{problem}
+
+
+\begin{problem}
+已知$f(x)=\e^{x^2}$,$f[\phi(x)]=1-x$且$\phi(x)\ge 0$，求$\phi(x)$，并写出它的定义域．
+\end{problem}
+
+
+\begin{problem}
+设$S$为曲面$x^2+y^2+z^2=1$的外侧，计算曲面积分
+$$I=\oiint_S x^3\dy\dz + y^3\dz\dx + z^3\dx\dy.$$
+\end{problem}
+
+
+\makepart{填空题}{本题满分12分，每小题3分}
+
+
+\begin{problem}
+若$f(t)=\lim_{x\to\infty}t\left(1+\frac{1}{x}\right)^{2tx}$，则$f'(t)=$ \fillin{}.
+\end{problem}
+
+
+\begin{problem}
+设$f(x)$是周期为$2$的周期函数，它在区间$(-1,1]$上的定义为
+$$f(x)=\begin{cases}
+    2, & -1<x\le 0, \\
+  x^3, & 0<x\le 1,
+\end{cases}$$
+则$f(x)$的傅里叶（Fourier）级数在$x=1$处收敛于 \fillin{}.
+\end{problem}
+
+
+\begin{problem}
+设$f(x)$是连续函数，且$\int_0^{x^3-1}f(t)\dt=x$，则$f(7)=$ \fillin{}.
+\end{problem}
+
+
+\begin{problem}
+设$4\times 4$矩阵$A=(\alpha ,\gamma_2,\gamma_3,\gamma_4)$，$B=(\beta ,\gamma_2,\gamma_3,\gamma_4)$，
+其中$\alpha$, $\beta$, $\gamma_2$, $\gamma_3$, $\gamma_4$均为$4$维列向量，
+且已知行列式$|A|=4$，$|B|=1$，则行列式$|A+B|=$ \fillin{}.
+\end{problem}
+
+
+\makepart{选择题}{本题满分15分，每小题3分}
+
+
+\begin{problem}
+若函数$y=f(x)$可导，且有$f'(x_0)=\frac{1}{2}$，
+则当$\Delta x\to 0$时，该函数在$x= x_0$处的微分$\dy$是 \pickout{}
+\begin{abcd}
+\item 与$\Delta x$等价的无穷小．
+\item 与$\Delta x$同阶的无穷小．
+\item 比$\Delta x$低阶的无穷小． 
+\item 比$\Delta x$高阶的无穷小．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设$y=f(x)$是方程$y''-2y'+4y=0$的一个解，若$f(x_0)>0$，
+且$f'(x_0)=0$，则函数$f(x)$在点$x_0$ \pickout{}
+\begin{abcd}
+\item 取得极大值．
+\item 取得极小值．
+\item 某个邻域内单调增加．
+\item 某个邻域内单调减少．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设有空间区域$\Omega_1:x^2+y^2+z^2\le R^2,z\ge 0$；\newline
+及$\Omega_2:x^2+y^2+z^2\le R^2,~x\ge 0,y\ge 0,z\ge 0$，则 \pickout{}
+\begin{abcd}
+\item $\iiint_{\Omega_1}x\dv=4\iiint_{\Omega_2}x\dv$．
+\item $\iiint_{\Omega_1}y\dv=4\iiint_{\Omega_2}y\dv$．
+\item $\iiint_{\Omega_1}z\dv=4\iiint_{\Omega_2}z\dv$．
+\item $\iiint_{\Omega_1}xyz\dv=4\iiint_{\Omega_2}xyz\dv$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+若$\sum_{n=1}^{\infty}a_n(x-1)^n$在$x=-1$处收敛，则此级数在$x=2$处 \pickout{}
+\begin{abcd}
+\item 条件收敛．
+\item 绝对收敛．
+\item 发散．
+\item 收敛性不能确定．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+$n$维向量组$\alpha_1,\alpha_2,\cdots,\alpha_s$（$3\le s\le n$）%
+线性无关的充分必要条件是 \pickout{}
+\begin{abcd}
+\item 存在一组不全为$0$的数$k_1,k_2,\ldots,k_s$，使$\alpha_1k_1+\alpha_2k_2+\cdots+\alpha_sk_s\ne 0$．
+\item $\alpha_1,\alpha_2,\cdots,\alpha_s$中任意两个向量都线性无关．
+\item $\alpha_1,\alpha_2,\cdots,\alpha_s$中存在一个向量，它不能用其余向量线性表示．
+\item $\alpha_1,\alpha_2,\cdots,\alpha_s$中任意一个向量都不能用其余向量线性表示．
+\end{abcd}
+\end{problem}
+
+
+\makepart{}{本题满分6分}
+
+\begin{problem}
+设$u=yf\left(\frac{x}{y} \right)+xg\left(\frac{y}{x} \right)$，
+其中函数$f,g$具有二阶连续导数，
+求$x\frac{\pd^2 u}{\pd x^2}+y\frac{\pd^2 u}{\pdx\pd y}$．
+\end{problem}
+
+
+\makepart{}{本题满分8分}
+
+\begin{problem}
+设函数$y=y(x)$满足微分方程$y''-3y'+2y=2\e^x$，且其图形在点$(0,1)$处的切线与曲线
+$y= x^2-x+1$在该点的切线重合，求函数$y=y(x)$．
+\end{problem}
+
+
+\makepart{}{本题满分9分}
+
+\begin{problem}
+设位于点$(0,1)$的质点$A$对质点$M$的引力大小为$\frac{k}{r^2}$（$k>0$为常数，
+$r$为质点$A$与$M$之间的距离），质点$M$沿曲线$y=\sqrt{2x- x^2}$自$B(2,0)$运动到$O(0,0)$，
+求在此运动过程中质点$A$对质点$M$的引力所作的功．
+\end{problem}
+
+
+\makepart{}{本题满分6分}
+
+\begin{problem}
+已知$AP=PB$，其中$B=\begin{pmatrix}
+  1 & 0 & 0 \\
+  0 & 0 & 0 \\
+  0 & 0 & -1
+\end{pmatrix}$，$P=\begin{pmatrix}
+  1 &  0 & 0 \\
+  2 & -1 & 0 \\
+  2 &  1 & 1
+\end{pmatrix}$，求$A$及$A^5$．
+\end{problem}
+
+
+\makepart{}{本题满分8分}
+
+\begin{problem}
+已知矩阵$A=\begin{pmatrix}
+  2 & 0 & 0 \\
+  0 & 0 & 1 \\
+  0 & 1 & x
+\end{pmatrix}$与$B=\begin{pmatrix}
+  2 & 0 & 0 \\
+  0 & y & 0 \\
+  0 & 0 & -1
+\end{pmatrix}$相似，\par
+\begin{enumerate*}
+\item 求$x$与$y$；
+\item 求一个满足$P^{-1} AP=B$的可逆矩阵$P$．
+\end{enumerate*}
+\end{problem}
+
+
+\makepart{}{本题满分9分}
+
+\begin{problem}
+设函数$f(x)$在区间$[a,b]$上连续，且在$(a,b)$内有$f'(x)>0$．
+证明：在$(a,b)$内存在唯一的$\xi$，使曲线$y=f(x)$与两直线$y=f(\xi)$, $x=a$所围平面图形$S_1$
+是曲线$y=f(x)$与两直线$y=f(\xi)$, $x=b$所围平面图形面积$S_2$的$3$倍．
+\end{problem}
+
+
+\makepart{填空题}{本题满分6分，每小题2分}
+
+
+\begin{problem}
+设三次独立试验中，事件$A$出现的概率相等，若已知$A$至少出现一次的概率等于$\frac{19}{27}$，
+则事件$A$在一次试验中出现的概率为\fillin{}.
+\end{problem}
+
+
+\begin{problem}
+在区间$(0,1)$中随机地取两个数，则事件“两数之和小于$\frac{6}{5}$”的概率为 \fillin{}.
+\end{problem}
+
+
+\begin{problem}
+设随机变量$X$服从均值为$10$，均方差为$0.02$的正态分布．已知
+$$\Phi(x)=\int_{-\infty}^x\frac{1}{\sqrt{2\pi}}\e^{-\frac{u^2}{2}}\du,\qquad \Phi(2.5)=0.9938,$$
+则$X$落在区间$(9.95,10.05)$内的概率为 \fillin{}.
+\end{problem}
+
+
+\makepart{}{本题满分6分}
+
+\begin{problem}
+设随机变量$X$的概率密度函数为$f_X(x)=\frac{1}{\pi(1+x^2)}$，求随机变量$Y=1-\sqrt[3]{X}$的概率密度函数$f_Y(y)$．
+\end{problem}
+
+
+\end{document}

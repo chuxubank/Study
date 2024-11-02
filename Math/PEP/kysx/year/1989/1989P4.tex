@@ -1,0 +1,227 @@
+% -*- coding: utf-8 -*-
+% !TEX program = xelatex
+\documentclass[plain,noanswer,medmath]{../../template/jnuexam}
+\usepackage{../../template/kysx}
+
+\begin{document}
+
+
+\examtitle{1989}{4}
+
+
+\loadproblems{1}{1989P1}%载入试卷一
+
+
+\makepart{填空题}{本题满分15分，每小题3分}
+
+
+\begin{problem}
+曲线$y=x+\sin^2 x$在点$\left(\frac{\pi}{2},1+\frac{\pi}{2}\right)$处的切线方程是\fillin{}.
+\end{problem}
+
+
+\begin{problem}
+幂级数$\sum_{n=0}^{\infty}\frac{x^n}{\sqrt{n+1}}$的收敛域是\fillin{}.
+\end{problem}
+
+
+\begin{problem}
+齐次线性方程组$\begin{cases}
+  \lambda x_1+x_2+x_3=0, \\
+  x_1+\lambda x_2+x_3=0, \\
+  x_1+x_2+x_3=0 \\
+\end{cases}$只有零解，则$\lambda$应满足的条件是\fillin{}.
+\end{problem}
+
+
+\begin{problem}
+设随机变量$X$的分布函数为
+$$F(x)=\begin{cases}
+        0, & x<0, \\
+  A\sin x, & 0\le x\le \frac{\pi}{2}, \\
+        1, & x>\frac{\pi}{2},
+\end{cases}$$
+则$A=$\fillin{}，$P\left\{|X|<\frac{\pi}{6}\right\}=$\fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设随机变量$X$的数学期望$E(X)=\mu$，方差$D(X)=\sigma^2$,
+则由切比雪夫(Chebyshev)不等式，有$P\{|X-\mu|\ge 3\sigma\}\le$ \fillin{}．
+\end{problem}
+
+
+\makepart{选择题}{本题满分15分，每小题3分}
+
+\begin{problem}
+设$f(x)=2^x+3^x-2$，则当$x\to 0$时 \pickout{}
+\begin{abcd}
+\item $f(x)$与$x$是等价无穷小量．
+\item $f(x)$与$x$是同阶但非等价无穷小量．
+\item $f(x)$是比$x$较高阶的无穷小量．
+\item $f(x)$是比$x$较低阶的无穷小量．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+在下列等式中，正确的结果是 \pickout{}
+\begin{abcd}
+\item $\int f'(x)\dx=f(x)$．
+\item $\int \d f(x)=f(x)$．
+\item $\frac{\d}{\dx}\int f(x)\dx=f(x)$．
+\item $\d\int f(x)\dx=f(x)$．
+\end{abcd}
+\end{problem}
+
+
+\useproblem{1}{2}{5}
+
+
+\begin{problem}
+设$A$和$B$均为$n\times n$矩阵，则必有 \pickout{}
+\begin{abcd}
+\item $|A+B|=|A|+|B|$．
+\item $AB=BA$．
+\item $|AB|=|BA|$．
+\item $(A+B)^{-1}=A^{-1}+B^{-1}$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+以$A$表示事件“甲种产品畅销，乙种产品滞销”，则其对立事件$\overline{A}$为 \pickout{}
+\begin{abcd}
+\item “甲种产品滞销，乙种产品畅销”．
+\item “甲、乙两种产品均畅销”．
+\item “甲种产品滞销”．
+\item “甲种产品滞销或乙种产品畅销”．
+\end{abcd}
+\end{problem}
+
+
+\makepart{计算题}{本题满分15分，每小题5分}
+
+\begin{problem}
+求极限$\lim_{x\to \infty}\left(\sin\frac{1}{x}+\cos\frac{1}{x}\right)^x$．
+\end{problem}
+
+
+\begin{problem}
+已知$z=f(u,v),u=x+y,v=xy$，且$f(u,v)$的二阶偏导数都连续．
+求$\frac{\pd^2 z}{\pdx\pd y}$．
+\end{problem}
+
+
+\begin{problem}
+求微分方程$y''+5y'+6y=2\e^{-x}$的通解．
+\end{problem}
+
+
+\makepart{}{本题满分9分}
+
+\begin{problem}
+设某厂家打算生产一批商品投放市场．已知该商品的需求函数为
+$$P=P(x)=10\e^{-\frac{x}{2}},$$
+且最大需求量为$6$，其中$x$表示需求量，$P$表示价格．
+\begin{enumerate}
+\item 求该商品的收益函数和边际收益函数．%(2分)
+\item 求使收益最大时的产量、最大收益和相应的价格．%(4分)
+\item 画出收益函数的图形．%(3分)
+\end{enumerate}
+\end{problem}
+
+
+\makepart{}{本题满分9分}
+
+\begin{problem}
+已知函数$f(x)=\begin{cases}
+    x, & 0\le x\le 1, \\
+  2-x, & 1\le x\le 2. \\
+\end{cases}$ 试计算下列各题：\par
+\begin{enumerate*}[itemjoin=\relax]
+\item $S_0=\int_0^2f(x)\e^{-x}\dx$；\hspace*{1em}%(4分)
+\item $S_1=\int_2^4f(x-2)\e^{-x}\dx$；\\%(2分)
+\item $S_n=\int_{2n}^{2n+2}f(x-2n)\e^{-x}\dx(n=2,3,\cdots)$；\hspace*{1em}%(1分)
+\item $S=\sum_{n=0}^{\infty}S_n$．%(2分)
+\end{enumerate*}
+\end{problem}
+
+
+\makepart{}{本题满分6分}
+
+\begin{problem}
+假设函数$f(x)$在$[a,b]$上连续，在$(a,b)$内可导，且$f'(x)\le 0$，记
+$$F(x)=\frac{1}{x-a}\int_a^x f(t)\dt,$$
+证明在$(a,b)$内，$F'(x)\le 0$．
+\end{problem}
+
+
+\makepart{}{本题满分5分}
+
+\begin{problem}
+已知$X=AX+B$，其中$A=\begin{pmatrix}
+   0 & 1 & 0 \\
+  -1 & 1 & 1 \\
+  -1 & 0 & -1
+\end{pmatrix}$, $B=\begin{pmatrix}
+  1 & -1 \\
+  2 & 0 \\
+  5 & -3
+\end{pmatrix}$，求矩阵$X$．
+\end{problem}
+
+
+\makepart{}{本题满分6分}
+
+\begin{problem}
+设$\alpha_1=(1,1,1)$, $\alpha_2=(1,2,3)$, $\alpha_3=(1,3,t)$．
+\begin{enumerate}
+\item 问当$t$为何值时，向量组$\alpha_1,\alpha_2,\alpha_3$线性无关？%(3分)
+\item 问当$t$为何值时，向量组$\alpha_1,\alpha_2,\alpha_3$线性相关？%(1分)
+\item 当向量组$\alpha_1,\alpha_2,\alpha_3$线性相关时，
+将$\alpha_3$表示为$\alpha_1$和$\alpha_2$的线性组合．%(2分)
+\end{enumerate}
+\end{problem}
+
+
+\makepart{}{本题满分5分}
+
+\begin{problem}
+设$A=\begin{pmatrix}
+  -1 &  2 & 2 \\
+   2 & -1 & -2 \\
+   2 & -2 & -1
+\end{pmatrix}.$
+\begin{enumerate}
+\item 试求矩阵$A$的特征值；%(2分)
+\item 利用(I)小题的结果，求矩阵$E+ A^{-1}$的特征值，其中$E$是$3$阶单位矩阵．%(3分)
+\end{enumerate}
+\end{problem}
+
+
+\makepart{}{本题满分7分}
+
+\begin{problem}
+已知随机变量$X$和$Y$的联合密度为
+$$f(x,y)=\begin{cases}
+ \e^{-(x+y)}, & 0<x<+\infty, 0<y<+\infty, \\
+           0, & \text{其他}. \\
+\end{cases}$$
+试求：
+\begin{enumerate*}
+\item $P\{X<Y\}$；%(5分)
+\item $E(XY)$．%(2分)
+\end{enumerate*}
+\end{problem}
+
+
+\makepart{}{本题满分8分}
+
+\begin{problem}
+设随机变量$X$在$[2,5]$上服从均匀分布，现在对$X$进行三次独立观测，
+试求至少有两次观测值大于$3$的概率．
+\end{problem}
+
+
+\end{document}

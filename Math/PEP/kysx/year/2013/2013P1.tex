@@ -1,0 +1,255 @@
+% -*- coding: utf-8 -*-
+% !TEX program = xelatex
+\documentclass[plain,noanswer,medmath]{../../template/jnuexam}
+\usepackage{../../template/kysx}
+
+\begin{document}
+
+
+\examtitle{2013}{1}
+
+
+\makepart{选择题}{1～8小题，每小题4分，共32分}
+
+
+\begin{problem}
+已知极限$\lim_{x \to 0} \frac{x - \arctan x}{x^k} = c$，其中$c,k$为常数，且$c \ne 0$，则\pickout{}
+\begin{abcd}
+\item $k = 2,c = - \frac{1}{2}$．
+\item $k = 2,c = \frac{1}{2}$．
+\item $k = 3,c = - \frac{1}{3}$．
+\item $k = 3,c = \frac{1}{3}$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+曲面$x^2 + \cos(xy) + yz + x = 0$在点$(0,1, - 1)$处的切平面方程为\pickout{}
+\begin{abcd}
+\item $x - y + z = - 2$．
+\item $x + y + z = 2$．
+\item $x - 2y + z = - 3$．
+\item $x - y - z = 0$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设$f(x) = \left| x - \frac{1}{2} \right|$，$b_n = 2\int_0^1 f(x)\sin n\pi x\dx$（$n = 1,2, \cdots$），
+令$S(x) = \sum_{n = 1}^{\infty}b_n\sin n\pi x$，则$S\left(- \frac{9}{4} \right) =$\pickout{}
+\begin{abcd}
+\item $\frac{3}{4}$．
+\item $\frac{1}{4}$．
+\item $- \frac{1}{4}$．
+\item $- \frac{3}{4}$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设$L_1:x^2 + y^2 = 1$，$L_2:x^2 + y^2 = 2$，$L_3:x^2 + 2y^2 = 2$，
+$L_4:2x^2 + y^2 = 2$为四条逆时针的平面曲线，
+记$I_i = \oint_{L_i} \left(y + \frac{y^3}{6}\right)\dx + \left(2x - \frac{x^3}{3}\right)\dy$%
+（$i = 1,2,3,4$），则$\max\{I_1,I_2,I_3,I_4\} =$\pickout{}
+\begin{abcd}
+\item $I_1$．
+\item $I_2$．
+\item $I_3$．
+\item $I_4$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设矩阵$A$, $B$, $C$均为$n$阶矩阵，若$AB = C$，且$C$可逆，则\pickout{}
+\begin{abcd}
+\item 矩阵$C$的行向量组与矩阵$A$的行向量组等价．
+\item 矩阵$C$的列向量组与矩阵$A$的列向量组等价．
+\item 矩阵$C$的行向量组与矩阵$B$的行向量组等价．
+\item 矩阵$C$的行向量组与矩阵$B$的列向量组等价．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+矩阵$\begin{pmatrix}
+  1 & a & 1 \\
+  a & b & a \\
+  1 & a & 1
+\end{pmatrix}$与$\begin{pmatrix}
+  2 & 0 & 0 \\
+  0 & b & 0 \\
+  0 & 0 & 0
+\end{pmatrix}$相似的充分必要条件为\pickout{}
+\begin{abcd}
+\item $a = 0$, $b = 2$．
+\item $a = 0$, $b$为任意常数．
+\item $a = 2$, $b = 0$．
+\item $a = 2$, $b$为任意常数．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设$X_1,X_2,X_3$是随机变量，且$X_1\sim N(0,1)$，$X_2\sim N(0,2^2)$，$X_3\sim N(5,3^2)$，\goodbreak
+$p_j = P\{-2 \le X_j \le 2\}$（$j = 1,2,3$），则\pickout{}
+\begin{abcd}
+\item $p_1 > p_2 > p_3$．
+\item $p_2 > p_1 > p_3$．
+\item $p_3 > p_1 > p_2$．
+\item $p_1 > p_3 > p_2$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设随机变量$X\sim t(n)$，$Y\sim F(1,n)$，给定$\alpha$（$0 < \alpha < 0.5$），
+常数$c$满足$P\{X > c\} = \alpha$，则$P\{Y > c^2\} =$\pickout{}
+\begin{abcd}
+\item $\alpha$．
+\item $1 - \alpha$．
+\item $2\alpha$．
+\item $1 - 2\alpha$．
+\end{abcd}
+\end{problem}
+
+
+\makepart{填空题}{9～14小题，每小题4分，共24分}
+
+
+\begin{problem}
+设函数$f(x)$由方程$y - x = \e^{x(1 - y)}$确定，
+则$\lim_{n \to \infty} n\left(f\left(\frac{1}{n} \right) - 1 \right) =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+已知$y_1 = \e^{3x} - x\e^{2x}$，$y_2 = \e^x - x\e^{2x}$，$y_3 = - x\e^{2x}$
+是某二阶常系数非齐次线性微分方程的$3$个解，该方程的通解为$y =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设$\begin{cases}
+  x = \sin t \\
+  y = t\sin t + \cos t
+\end{cases}$（$t$为参数），则$\left. \frac{\d^2y}{\dx^2} \right|_{t = \frac{\pi}{4}} =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+$\int_1^{+\infty} \frac{\ln x}{(1 + x)^2}\dx =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设$A = (a_{ij})$是三阶非零矩阵，$|A|$为$A$的行列式，$A_{ij}$为$a_{ij}$的代数余子式，
+若$a_{ij} + A_{ij} = 0$（$i,j = 1,2,3$），则$|A| =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设随机变量$Y$服从参数为$1$的指数分布，$a$为常数且大于零，\goodbreak 则$P\{Y \le a + 1|Y > a\}$ \fillin{}．
+\end{problem}
+
+
+\makepart{解答题}{15～23小题，共94分}
+
+
+\begin{problem}[points=10]
+计算$\int_0^1\frac{f(x)}{\sqrt{x}}\dx$，其中$f(x) = \int_1^x \frac{\ln(t + 1)}{t}\dt$．
+\end{problem}
+
+
+\begin{problem}[points=10]
+设数列$\{a_n\}$满足条件：$a_0 = 3$，$a_1 = 1$，$a_{n - 2} - n(n - 1)a_n = 0$（$n \ge 2$）．
+$S(x)$是幂级数$\sum_{n = 0}^{\infty}a_n x^n$的和函数．\par
+\begin{enumerate*}
+\item 证明：$S''(x) - S(x) = 0$；
+\item 求$S(x)$的表达式．
+\end{enumerate*}
+\end{problem}
+
+
+\begin{problem}[points=10]
+求函数$f(x,y) = \left(y + \frac{x^3}{3} \right) \e^{x + y}$的极值．
+\end{problem}
+
+
+\begin{problem}[points=10]
+设奇函数$f(x)$在$[- 1,1]$上具有$2$阶导数，且$f(1) = 1$．证明：
+\begin{enumerate}
+\item 存在$\xi \in(0,1)$，使得$f'(\xi) = 1$；
+\item 存在$\eta \in (-1,1)$，使得$f''(\eta) + f'(\eta) = 1$．
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}[points=10]
+设直线$L$过$A(1,0,0),B(0,1,1)$两点，
+将$L$绕$z$轴旋转一周得到曲面$\Sigma$，$\Sigma$与平面$z = 0,z = 2$所围成的立体为$\Omega$．\par
+\begin{enumerate*}
+\item 求曲面$\Sigma$的方程；
+\item 求$\Omega$的形心坐标．
+\end{enumerate*}
+\end{problem}
+
+
+\begin{problem}[points=11]
+设$A = \begin{pmatrix}
+  1 & a \\
+  1 & 0
+\end{pmatrix},B = \begin{pmatrix}
+  0 & 1 \\
+  1 & b
+\end{pmatrix}$，当$a,b$为何值时，存在矩阵$C$使得$AC - CA = B$，并求所有矩阵$C$．
+\end{problem}
+
+
+\begin{problem}[points=11]
+设二次型$f(x_1,x_2,x_3) = 2(a_1x_1 + a_2x_2 + a_3x_3)^2 + (b_1x_1 + b_2x_2 + b_3x_3)^2$，记
+$$\alpha = \begin{pmatrix}
+  a_1 \\
+  a_2 \\
+  a_3
+\end{pmatrix},\quad\beta = \begin{pmatrix}
+  b_1 \\
+  b_2 \\
+  b_3
+\end{pmatrix}.$$
+\begin{enumerate}
+\item 证明二次型$f$对应的矩阵为$2\alpha^T\alpha + \beta^T\beta$；
+\item 若$\alpha ,\beta$正交且均为单位向量，证明二次型$f$在正交变换下的标准形为二次型$2y_1^2 + y_2^2$．
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}[points=11]
+设随机变量$X$的概率密度为$f(x) = \begin{cases}
+  \frac{1}{9}x^2, & 0 < x < 3, \\
+               0, & \text{其他}.
+\end{cases}$，令随机变量$$Y = \begin{cases}
+  2, & X \le 1; \\
+  X, & 1 < X < 2; \\
+  1, & X \ge 2.
+\end{cases}$$
+\begin{enumerate*}
+\item 求$Y$的分布函数；
+\item 求概率$P\{X \le Y\}$．
+\end{enumerate*}
+\end{problem}
+
+
+\begin{problem}[points=11]
+设总体$X$的概率密度为$f(x) = \begin{cases}
+  \frac{\theta^2}{x^3}\e^{- \frac{\theta}{x}}, & x > 0, \\
+                                            0, & \text{其它},
+\end{cases}$其中$\theta$为未知参数且大于零，$X_1,X_2, \cdots X_n$为来自总体$X$的简单随机样本．\par
+\begin{enumerate*}
+\item 求$\theta$的矩估计量；
+\item 求$\theta$的最大似然估计量．
+\end{enumerate*}
+\end{problem}
+
+
+\end{document}

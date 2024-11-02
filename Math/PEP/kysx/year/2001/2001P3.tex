@@ -1,0 +1,245 @@
+% -*- coding: utf-8 -*-
+% !TEX program = xelatex
+\documentclass[plain,noanswer,medmath]{../../template/jnuexam}
+\usepackage{../../template/kysx}
+
+\begin{document}
+
+
+\examtitle{2001}{3}
+
+
+\loadproblems{1}{2001P1}%载入试卷一
+
+
+\makepart{填空题}{本题共5小题，每小题3分，满分15分}
+
+
+\begin{problem}
+设生产函数为$Q = AL^{\alpha}K^{\beta}$，其中$Q$是产出量，$L$是劳动投入量，$K$是资本投入量，
+而$A$,$\alpha$,$\beta$均为大于零的参数，则当$Q = 1$时$K$关于$L$的弹性为 \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+某公司每年的工资总额比上一年增加$20\%$的基础上再追加$2$百万．若以$W_t$表示第$t$年的工资总额（单位：百万元），
+则$W_t$满足的差分方程是 \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设矩阵$A = \begin{pmatrix}
+  k & 1 & 1 & 1 \\
+  1 & k & 1 & 1 \\
+  1 & 1 & k & 1 \\
+  1 & 1 & 1 & k
+\end{pmatrix}$，且秩$r(A) = 3$，则$k =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设随机变量$X,Y$的数学期望分别为$- 2$和$2$，方差分别为$1$和$4$，而相关系数为$- 0.5$．
+则根据切比雪夫不等式$P\left\{\left| X + Y \right| \ge 6 \right\} \le$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设总体$X$服从正态分布$N(0,0.2^2)$，而$X_1,X_2, \cdots X_{15}$是来自总体$X$的简单随机样本，
+则随机变量$Y = \frac{X_1^2 + \cdots + X_{10}^2}{2\left(X_{11}^2 + \cdots + X_{15}^2 \right)}$
+服从 \fillin{} 分布，参数为 \fillin{}．
+\end{problem}
+
+
+\makepart{选择题}{本题共5小题，每小题3分，满分15分}
+
+
+\begin{problem}
+设函数$f(x)$的导数在$x = a$处连续，又$\lim_{x \to a} \frac{f'(x)}{x - a} = - 1$，则\pickout{}
+\begin{abcd}
+\item $x = a$是$f(x)$的极小值点．
+\item $x = a$是$f(x)$的极大值点．
+\item $(a,f(a))$是曲线$y = f(x)$的拐点．
+\item $x = a$不是$f(x)$的极值点，$(a,f(a))$也不是曲线$y = f(x)$的拐点．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设函数$g(x) = \int_0^x f(u)\du$，其中$f(x) = \begin{cases}
+  \frac{1}{2}(x^2 + 1), & 0 \le x \le 1, \\
+    \frac{1}{3}(x - 1), & 1 \le x \le 2.
+\end{cases}$ 则$g(x)$在区间$(0,2)$内\pickout{}
+\begin{abcd}
+\item 无界．
+\item 递减．
+\item 不连续．
+\item 连续．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设$A = \begin{pmatrix}
+  a_{11} & a_{12} & a_{13} & a_{14} \\
+  a_{21} & a_{22} & a_{23} & a_{24} \\
+  a_{31} & a_{32} & a_{33} & a_{34} \\
+  a_{41} & a_{42} & a_{43} & a_{44}
+\end{pmatrix}$，$B = \begin{pmatrix}
+  a_{14} & a_{13} & a_{12} & a_{11} \\
+  a_{24} & a_{23} & a_{22} & a_{21} \\
+  a_{34} & a_{33} & a_{32} & a_{31} \\
+  a_{44} & a_{43} & a_{42} & a_{41}
+\end{pmatrix}$，$P_1 = \begin{pmatrix}
+  0 & 0 & 0 & 1 \\
+  0 & 1 & 0 & 0 \\
+  0 & 0 & 1 & 0 \\
+  1 & 0 & 0 & 0
+\end{pmatrix}$，\goodbreak $P_2 = \begin{pmatrix}
+  1 & 0 & 0 & 0 \\
+  0 & 0 & 1 & 0 \\
+  0 & 1 & 0 & 0 \\
+  0 & 0 & 0 & 1
+\end{pmatrix}$，其中$A$可逆，则$B^{-1}$等于\pickout{}
+\begin{abcd}
+\item $A^{-1}P_1P_2$．
+\item $P_1A^{-1}P_2$．
+\item $P_1P_2A^{-1}$．
+\item $P_2A^{-1}P_1$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设$A$是$n$阶矩阵，$\alpha$是$n$维列向量．若秩$r\begin{pmatrix}
+         A & \alpha \\
+  \alpha^T & 0
+\end{pmatrix} = r(A)$，则线性方程组\pickout{}
+\begin{abcd}
+\item $AX = \alpha$必有无穷多解．
+\item $AX = \alpha$必有惟一解．
+\item $\begin{pmatrix}
+         A & \alpha \\
+  \alpha^T & 0
+\end{pmatrix}\begin{pmatrix}
+  X \\
+  y
+\end{pmatrix} = 0$仅有零解．
+\item $\begin{pmatrix}
+         A & \alpha \\
+  \alpha^T & 0
+\end{pmatrix}\begin{pmatrix}
+  X \\
+  y
+\end{pmatrix} = 0$必有非零解．
+\end{abcd}
+\end{problem}
+
+
+\useproblem{1}{2}{5}%【同试卷一第二(5)题】
+
+
+\makepart{}{本题满分5分}
+
+\begin{problem}
+设$u = f(x,y,z)$有连续的一阶偏导数，又函数$y = y(x)$及$z = z(x)$分别由下列两式确定：
+$\e^{xy} - xy = 2$和$\e^x = \int_0^{x - z} \frac{\sin t}{t} \dt$，求$\frac{\du}{\dx}$．
+\end{problem}
+
+
+\makepart{}{本题满分6分}
+
+\begin{problem}
+已知$f(x)$在$(-\infty , +\infty)$内可导，且
+$$\lim_{x \to \infty} f'(x) = \e,\quad
+  \lim_{x \to \infty} \left(\frac{x + c}{x - c} \right)^x= \lim_{x \to \infty} [f(x) - f(x - 1)],$$
+求$c$的值．
+\end{problem}
+
+
+\makepart{}{本题满分6分}
+
+\begin{problem}
+求二重积分$\iint_D y[1 + x\e^{\frac{1}{2}(x^2 + y^2)}]\dx\dy$的值，
+其中$D$是由直线$y = x$，$y = - 1$及$x = 1$围成的平面区域．
+\end{problem}
+
+
+\makepart{}{本题满分7分}
+
+\begin{problem}
+已知抛物线$y = px^2 + qx$（其中$p < 0$,$q > 0$）在第一象限与直线$x + y = 5$相切，
+且此抛物线与$x$轴所围成的平面图形的面积为$S$．\par
+\begin{enumerate*}
+\item 问$p$和$q$为何值时，$S$达到最大？
+\item 求出此最大值．
+\end{enumerate*}
+\end{problem}
+
+
+\makepart{}{本题满分6分}
+
+\begin{problem}
+设$f(x)$在区间$[0,1]$上连续，在$(0,1)$内可导，且满足$f(1) = k\int_0^{\frac{1}{3}} x\e^{1 - x} f(x)\dx$（$k > 1$）．
+证明：存在$\xi \in \left(0,1 \right)$，使得$f'(\xi) = 2(1 - \xi^{-1})f(\xi)$．
+\end{problem}
+
+
+\makepart{}{本题满分7分}
+
+\begin{problem}
+已知$f_n(x)$满足$f'_n(x) = f_n(x) + x^{n - 1}\e^x$（$n$为正整数）且$f_n(1) = \frac{\e}{n}$，
+求函数项级数$\sum_{i = 1}^{\infty}f_n^{}(x)$之和．
+\end{problem}
+
+
+\makepart{}{本题满分9分}
+
+\begin{problem}
+设矩阵$A = \begin{pmatrix}
+  1 & 1 & a \\
+  1 & a & 1 \\
+  a & 1 & 1
+\end{pmatrix},\beta = \begin{pmatrix}
+  1 \\
+  1 \\
+  -2
+\end{pmatrix}$．已知线性方程组$Ax = \beta$有解但不唯一，试求：
+\begin{enumerate*}
+\item $a$的值；
+\item 正交矩阵$Q$，使$Q^T AQ$为对角矩阵．
+\end{enumerate*}
+\end{problem}
+
+
+\makepart{}{本题满分8分}
+
+\begin{problem}
+设$A$为$n$阶实对称矩阵，秩$r(A) = n$，$A_{ij}$是
+$A = \left(a_{ij} \right)_{n \times n}$中元素$a_{ij}$的代数余子式($i,j = 1,2, \cdots ,n$)，
+二次型$f(x_1,x_2, \cdots x_n) = \sum_{i = 1}^n \sum_{j = 1}^n \frac{A_{ij}}{A} x_i x_j.$
+\begin{enumerate}
+\item 记$A = (x_1,x_2, \cdots x_n)$，把$f(x_1,x_2, \cdots x_n) = \sum_{i = 1}^n \sum_{j = 1}^n \frac{A_{ij}}{A} x_i x_j$
+写成矩阵形式，并证明二次型$f(X)$的矩阵为$A^{-1}$；
+\item 二次型$g(X) = X^T AX$与$f(X)$的规范形是否相同？说明理由．
+\end{enumerate}
+\end{problem}
+
+
+\makepart{}{本题满分8分}
+
+\begin{problem}
+生产线生产的产品成箱包装，每箱的重量是随机的，假设每箱平均重$50$千克，标准差为$5$千克．
+若用最大载重量为$5$吨的汽车承运，试利用中心极限定理说明每辆车最多可以装多少箱，
+才能保障不超载的概率大于$0.977$（$\Phi (2) = 0.977$，其中$\Phi (x)$是标准正态分布函数）．
+\end{problem}
+
+
+\makepart{}{本题满分8分}
+
+\begin{problem}
+设随机变量$X$和$Y$的联合分布是正方形$G = \{(x,y)|1 \le x \le 3,1 \le y \le 3\}$上的均匀分布，
+试求随机变量$U = |X - Y|$的概率密度$p(u)$．
+\end{problem}
+
+
+\end{document}

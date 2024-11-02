@@ -1,0 +1,194 @@
+% -*- coding: utf-8 -*-
+% !TEX program = xelatex
+\documentclass[plain,noanswer,medmath]{../../template/jnuexam}
+\usepackage{../../template/kysx}
+
+\begin{document}
+
+
+\examtitle{2009}{2}
+
+
+\loadproblems{1}{2009P1}%载入试卷一
+
+
+\makepart{选择题}{1～8小题，每小题4分，共32分}
+
+
+\begin{problem}
+函数$f(x) = \frac{x - x^3}{\sin nx}$的可去间断点的个数为\pickout{}
+\begin{abcd}
+\item $1$．
+\item $2$．
+\item $3$．
+\item 无穷多个．
+\end{abcd}
+\end{problem}
+
+
+\useproblem{1}{1}{1}%【同试卷一第一(1)题】
+
+
+\begin{problem}
+设函数$z = f\left(x,y \right)$的全微分为$\dz = x\dx + y\dy$，则点$\left(0,0 \right)$\pickout{}
+\begin{abcd}
+\item 不是$f\left(x,y \right)$的连续点．
+\item 不是$f\left(x,y \right)$的极值点．
+\item 是$f\left(x,y \right)$的极大值点．
+\item 是$f\left(x,y \right)$的极小值点．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+设函数$f\left(x,y \right)$连续，
+则$\int_1^2 \dx \int_x^2 f(x,y)\dy + \int_1^2 \dy \int_y^{4 - y} f(x,y)\dx =$\pickout{}
+\begin{abcd}
+\item $\int_1^2 \dx \int_1^{4 - x} f(x,y)\dy$．
+\item $\int_1^2 \dx \int_x^{4 - x} f(x,y)\dy$．
+\item $\int_1^2 \dy \int_1^{4 - y} f(x,y)\dx$．
+\item $\int_1^2 \dy \int_y^2 f(x,y)\dx$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+若$f''(x)$不变号，且曲线$y = f(x)$在点$\left(1,1 \right)$上的曲率圆为$x^2 + y^2 = 2$，则$f(x)$在区间$\left(1,2 \right)$内\pickout{}
+\begin{abcd}
+\item 有极值点，无零点．
+\item 无极值点，有零点．
+\item 有极值点，有零点．
+\item 无极值点，无零点．
+\end{abcd}
+\end{problem}
+
+
+\useproblem{1}{1}{3}%【同试卷一第一(3)题】
+
+
+\useproblem{1}{1}{6}%【同试卷一第一(6)题】
+
+
+\begin{problem}
+设$A$,$P$均为$3$阶矩阵，$P^T$为$P$的转置矩阵，且$P^T AP = \begin{pmatrix}
+  1 & 0 & 0 \\
+  0 & 1 & 0 \\
+  0 & 0 & 2
+\end{pmatrix}$，若$P = (\alpha_1,\alpha_2,\alpha_3)$，$Q = (\alpha_1 + \alpha_2,\alpha_2,\alpha_3)$，则$Q^T AQ$为\pickout{}
+\begin{abcd}
+\item $\begin{pmatrix}
+  2 & 1 & 0 \\
+  1 & 1 & 0 \\
+  0 & 0 & 2
+\end{pmatrix}$．
+\item $\begin{pmatrix}
+  1 & 1 & 0 \\
+  1 & 2 & 0 \\
+  0 & 0 & 2
+\end{pmatrix}$．
+\item $\begin{pmatrix}
+  2 & 0 & 0 \\
+  0 & 1 & 0 \\
+  0 & 0 & 2
+\end{pmatrix}$．
+\item $\begin{pmatrix}
+  1 & 0 & 0 \\
+  0 & 2 & 0 \\
+  0 & 0 & 2
+\end{pmatrix}$．
+\end{abcd}
+\end{problem}
+
+
+\makepart{填空题}{9～14小题，每小题4分，共24分}
+
+
+\begin{problem}
+曲线$\begin{cases}
+  x = \int_0^{1\text{-} t} \e^{- u^2} \du \\
+  y = t^2\ln(2 - t^2)
+\end{cases}$在$(0,0)$处的切线方程为 \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+已知$\int_{-\infty}^{+\infty}\e^{k|x|}\dx = 1$，则$k=$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+$\lim_{n \to \infty} \int_{0}^{1} \e^{- x}\sin nx\dx =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设$y = y(x)$是由方程$xy + \e^y = x + 1$确定的隐函数，
+则$\frac{\pd^2 y}{\pd x^2}\Big|_{x = 0} =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+函数$y = x^{2x}$在区间$(0,1]$上的最小值为 \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设$\alpha ,\beta$为3维列向量，$\beta^{T}$为$\beta$的转置，
+若矩阵$\alpha \beta^{T}$相似于$\begin{pmatrix}
+  2 & 0 & 0 \\
+  0 & 0 & 0 \\
+  0 & 0 & 0
+\end{pmatrix}$，则$\beta^{T}\alpha =$ \fillin{}．
+\end{problem}
+
+
+\makepart{解答题}{15～23小题，共94分}
+
+
+\begin{problem}[points=9]
+求极限$\lim_{x \to 0} \frac{\left(1 - \cos x \right)\left[x - \ln(1 + \tan x) \right]}{\sin^4 x}$．
+\end{problem}
+
+
+\begin{problem}[points=10]
+计算不定积分$\int \ln \left(1 + \sqrt{\frac{1 + x}{x}} \right)\dx$（$x > 0$）．
+\end{problem}
+
+
+\begin{problem}[points=10]
+设$z=f(x+y,x-y,xy)$，其中$f$具有$2$阶连续偏导数，
+求$\dz$与$\frac{\pd^2 z}{\pdx\pd y}$．
+\end{problem}
+
+
+\begin{problem}[points=10]
+设非负函数$y = y(x)$（$x \ge 0$）满足微分方程$xy'' - y' + 2 = 0$，
+当曲线$y = y(x)$过原点时，其与直线$x = 1$及$y = 0$围成平面区域$D$的面积为$2$，
+求$D$绕$y$轴旋转所得旋转体体积．
+\end{problem}
+
+
+\begin{problem}[points=10]
+计算二重积分$\iint_D (x - y)\dx\dy$，
+其中$D = \left\{(x,y) \middle| (x - 1)^2 + (y - 1)^2 \le 2,y \ge x \right\}$．
+\end{problem}
+
+
+\begin{problem}[points=12]
+设$y = y(x)$是区间$(- \pi ,\pi)$内过点
+$\left(- \frac{\pi}{\sqrt{2}},\frac{\pi}{\sqrt{2}} \right)$的光滑曲线，
+当$- \pi < x < 0$时，曲线上任一点处的法线都过原点，
+当$0 \le x < \pi$时，函数$y(x)$满足$y'' + y + x = 0$．求$y(x)$的表达式．
+\end{problem}
+
+
+\useproblem[points=11]{1}{3}{18}%【同试卷一第三(18)题】
+
+
+\useproblem[points=11]{1}{3}{20}%【同试卷一第三(20)题】
+
+
+\useproblem[points=11]{1}{3}{21}%【同试卷一第三(21)题】
+
+
+\end{document}

@@ -1,0 +1,179 @@
+% -*- coding: utf-8 -*-
+% !TEX program = xelatex
+\documentclass[plain,noanswer,medmath]{../../template/jnuexam}
+\usepackage{../../template/kysx}
+
+\begin{document}
+
+
+\examtitle{2013}{3}
+
+
+\loadproblems{1}{2013P1}%载入试卷一
+\loadproblems{2}{2013P2}%载入试卷二
+
+
+\makepart{选择题}{1～8小题，每小题4分，共32分}
+
+
+\begin{problem}
+当$x \to 0$时，用$o(x)$表示比$x$高阶的无穷小，则下列式子中错误的是\pickout{}
+\begin{abcd}
+\item $x \cdot o(x^2) = o(x^3)$．
+\item $o(x) \cdot o(x^2) = o(x^3)$．
+\item $o(x^2) + o(x^2) = o(x^2)$．
+\item $o(x) + o(x^2) = o(x^2)$．
+\end{abcd}
+\end{problem}
+
+
+\begin{problem}
+函数$f(x) = \frac{|x|^x - 1}{x(x + 1)\ln |x|}$的可去间断点的个数为\pickout{}
+\begin{abcd}
+\item $0$．
+\item $1$．
+\item $2$．
+\item $3$．
+\end{abcd}
+\end{problem}
+
+
+\useproblem{2}{1}{6}%【同试卷二第一(6)题】
+
+
+\begin{problem}
+设$\{a_n\}$为正项数列，下列选项正确的是\pickout{}
+\begin{abcd}
+\item 若$a_n > a_{n + 1}$，则$\sum_{n = 1}^{\infty}(- 1)^{n - 1}a_n$收敛．
+\item 若$\sum_{n = 1}^{\infty}(- 1)^{n - 1}a_n$收敛，则$a_n > a_{n + 1}$．
+\item 若$\sum_{n = 1}^{\infty}a_n$收敛，则存在常数$p > 1$，使$\lim_{n \to \infty} n^p a_n$存在．
+\item 若存在常数$p > 1$，使$\lim_{n \to \infty} n^p a_n$存在，则$\sum_{n = 1}^{\infty}a_n$收敛．
+\end{abcd}
+\end{problem}
+
+
+\useproblem{1}{1}{5}%【同试卷一第一(5)题】
+
+
+\useproblem{1}{1}{6}%【同试卷一第一(6)题】
+
+
+\useproblem{1}{1}{7}%【同试卷一第一(7)题】
+
+
+\begin{problem}
+设随机变量$X$和$Y$相互独立，则$X$和$Y$的概率分布分别为
+$$\begin{array}{|c|5cccc|}
+\hline
+  X &           0 &           1 &           2 & 3 \\
+\hline
+  P & \frac{1}{2} & \frac{1}{4} & \frac{1}{8} & \frac{1}{8} \\
+\hline
+\end{array}\quad \quad \begin{array}{|c|5ccc|}
+\hline
+  Y &          -1 &           0 & 1 \\
+\hline
+  P & \frac{1}{3} & \frac{1}{3} & \frac{1}{3} \\
+\hline
+\end{array}$$
+则$P\{X + Y = 2\} =$\pickout{}
+\begin{abcd}
+\item $\frac{1}{12}$．
+\item $\frac{1}{8}$．
+\item $\frac{1}{6}$．
+\item $\frac{1}{2}$．
+\end{abcd}
+\end{problem}
+
+
+\makepart{填空题}{9～14小题，每小题4分，共24分}
+
+
+\begin{problem}
+设曲线$y = f(x)$和$y = x^2 - x$在点$(1,0)$处有公共的切线，
+则$\lim_{n \to \infty} nf\left(\frac{n}{n + 2} \right) =$ \fillin{}．
+\end{problem}
+
+
+\begin{problem}
+设函数$z = z(x,y)$由方程$(z + y)^x = xy$确定，则$\frac{\pdz}{\pdx}\big|_{(1,2)} =$ \fillin{}．
+\end{problem}
+
+
+\useproblem{1}{2}{12}%【同试卷一第二(12)题】
+
+
+\begin{problem}
+微分方程$y'' - y' + \frac{1}{4}y = 0$通解为$y =$ \fillin{}．
+\end{problem}
+
+
+\useproblem{1}{2}{13}%【同试卷一第二(13)题】
+
+
+\begin{problem}
+设随机变量$X$服从标准正态分布$X\sim N(0,1)$，则$E(X\e^{2X}) =$ \fillin{}．
+\end{problem}
+
+
+\makepart{解答题}{15～23小题，共94分}
+
+
+\useproblem[points=10]{2}{3}{15}%【同试卷二第三(15)题】
+
+
+\useproblem[points=10]{2}{3}{16}%【同试卷二第三(16)题】
+
+
+\useproblem[points=10]{2}{3}{17}%【同试卷二第三(17)题】
+
+
+\begin{problem}[points=10]
+设生产某产品的固定成本为$6000$元，可变成本为$20$元/件，价格函数为$P=60-\frac{Q}{1000}$，%
+（$P$是单价，单位：元；$Q$是销量，单位：件），已知产销平衡，求：
+\begin{enumerate}
+\item 该商品的边际利润；
+\item 当$P = 50$时的边际利润，并解释其经济意义；
+\item 使得利润最大的定价$P$．
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}[points=10]
+设函数$f(x)$在$[0, +\infty)$上可导，$f(0) = 0$，且$\lim_{x \to +\infty} f(x) = 2$，证明：
+\begin{enumerate}
+\item 存在$a > 0$，使得$f(a) = 1$；
+\item 对(Ⅰ)中的$a$，存在$\xi \in(0,a)$，使得$f'(\xi) = \frac{1}{a}$．
+\end{enumerate}
+\end{problem}
+
+
+\useproblem[points=11]{1}{3}{20}%【同试卷一第三(20)题】
+
+
+\useproblem[points=11]{1}{3}{21}%【同试卷一第三(21)题】
+
+
+\begin{problem}[points=11]
+设$\left(X,Y \right)$是二维随机变量，$X$的边缘概率密度为
+$$f_X(x) = \begin{cases}
+  3x^2, & 0 < x < 1, \\
+     0, & \text{其他}.
+\end{cases}$$
+在给定$X = x$（$0 < x < 1$）的条件下，$Y$的条件概率密度
+$$f_{Y|X}(y|x) = \begin{cases}
+  \frac{3y^2}{x^3}, & 0 < y < x, \\
+                 0, & \text{其他}.
+\end{cases}$$
+\begin{enumerate*}
+\item 求$(X,Y)$的概率密度$f(x,y)$；
+\item $Y$的边缘概率密度$f_Y(y)$；
+\item 求$P\{X > 2Y\}$．
+\end{enumerate*}
+\end{problem}
+
+
+\useproblem[points=11]{1}{3}{23}%【同试卷一第三(23)题】
+
+
+\end{document}

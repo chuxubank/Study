@@ -1,0 +1,206 @@
+% -*- coding: utf-8 -*-
+% ----------------------------------------------------------------------------
+% Author:  Jianrui Lyu <tolvjr@163.com>
+% Website: https://lvjr.bitbucket.io/kysx.html
+% License: The LaTeX Project Public License 1.3
+% ----------------------------------------------------------------------------
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{kysx}[2020/11/16 v1.0]
+
+\RequirePackage{graphicx}
+\RequirePackage{docmute}
+
+
+% 所有图片放在 graphics 目录
+\graphicspath{{../../graphics/}{../graphics/}}
+
+% 旧版本的 XeTeX 默认不查找 png 等图片文件
+\DeclareGraphicsExtensions{.png,.jpg,.pdf,.eps,.ps,.bmp,.tif,.gif}
+
+
+\InputIfFileExists{../../template/jnuexam.cfg}{}{}
+\InputIfFileExists{../template/jnuexam.cfg}{}{}
+
+
+\RequirePackage{bookmark}% 自动载入 hyperref 宏包
+\hypersetup{
+  pdfstartview={FitH},
+  unicode=true,
+  colorlinks,
+  citecolor=black,
+  filecolor=black,
+  linkcolor=black,
+  urlcolor=black
+}
+
+\newcommand{\gettitle}[2]{%
+  \CJKdigits{#1}年考研数学试卷\CJKdigits{#2}\ifanswer 解答\else 真题\fi
+}
+
+\newcommand{\examtitle}[2]{%
+  \ifnumless{#1}{2004}{\resetnumbertrue}{\resetnumberfalse}%
+  \setcounter{section}{0}%
+  \bookmark[page=\thepage,level=1]{\gettitle{#1}{#2}}%
+  %\unskip\unskip\unskip\unskip
+  \par\begingroup\centering\Large\sffamily
+  \color{\ifanswer red!50!black\else blue!50!black\fi}\gettitle{#1}{#2}%
+  \par\endgroup
+}
+
+\colorlet{problem number}{black}
+\colorlet{solution name}{red!80!black}
+
+\renewcommand{\problempointstext}[1]{（本题满分#1 分）\par}
+
+\appto{\endproblem}{\medskip}
+\appto{\endsolution}{\medskip}
+
+\newcommand{\loadpath}{}
+
+\newcommand{\loadproblems}[2]{%
+  \begingroup
+    \renewcommand{\examtitle}[2]{%
+      \ifnumless{##1}{2004}{\resetnumbertrue}{\resetnumberfalse}%
+      \setcounter{totalproblems}{0}%
+      \setcounter{section}{0}\ignorespaces
+    }%
+    \renewcommand{\makepart}[2]{%
+      \setcounter{totalproblems}{\value{totalproblems}+\value{problem}}%
+      \stepcounter{section}%
+      \setcounter{problem}{0}%
+      \ignorespaces
+    }%
+    \renewcommand{\useproblem}[4][]{%
+      \stepcounter{problem}%
+      \setcounter{choice}{0}%
+    }%
+    % 在旧版本 environ 宏包中使用 \RenewEnviron 命令有效，
+    % 但是此命令在新版本中失效了，因此我们改用 \NewEnviron
+    \let\problem=\relax
+    \let\endproblem=\relax
+    \let\env@problem@save@env=\relax %用旧版本 environ 需要此行
+    \let\env@problem@process=\relax  %用旧版本 environ 需要此行
+    \NewEnviron{problem}[1][]{%
+      \stepcounter{problem}%
+      \setcounter{choice}{0}%
+      \ifbool{resetnumber}{%
+        \setcounter{problemreal}{\value{problem}}%
+      }{%
+        \setcounter{problemreal}{\value{totalproblems}+\value{problem}}%
+      }%
+      \expandafter\global\expandafter\let
+        \csname savedproblem@#1@\the\value{section}@\the\value{problemreal}\endcsname=\BODY
+      \setkeys{jnuexam@problem}{##1}%
+      \ifdefvoid{\my@problem@points}{}{%
+      \expandafter\global\expandafter\let
+        \csname savedpoints@#1@\the\value{section}@\the\value{problemreal}\endcsname=\my@problem@points
+      }%
+      \ignorespaces
+      %\ignorespacesafterend
+    }%
+    \let\solution=\relax
+    \let\endsolution=\relax
+    \let\env@solution@save@env=\relax %用旧版本 environ 需要此行
+    \let\env@solution@process=\relax  %用旧版本 environ 需要此行
+    \NewEnviron{solution}{%
+      \expandafter\global\expandafter\let
+        \csname savedsolution@#1@\the\value{section}@\the\value{problemreal}\endcsname=\BODY
+      \ignorespaces
+      %\ignorespacesafterend
+    }%
+    \input{\loadpath #2}%
+  \endgroup
+  \setcounter{section}{0}%
+  \setcounter{problem}{0}%
+  \setcounter{totalproblems}{0}%
+  \ignorespaces
+}
+
+\newcommand{\useproblemshow}[4][]{%
+  \ifnum#4=0 %
+    \def\my@temp@num{1}%
+  \else
+    \def\my@temp@num{#4}%
+  \fi
+  \begin{problemreal}%
+    \setkeys{jnuexam@problem}{#1}%
+    \ifdefvoid{\my@problem@points}{}{%
+      \ifnumgreater{\my@problem@points}{0}{%
+        \problempointstext{\my@problem@points}%
+      }{%
+        \ifcsvoid{savedpoints@#2@#3@\my@temp@num}{}{%
+          \problempointstext{\csname savedpoints@#2@#3@\my@temp@num\endcsname}%
+        }%
+      }%
+    }%
+    \csname savedproblem@#2@#3@\my@temp@num\endcsname
+  \end{problemreal}
+  \ifanswer
+    \medskip
+    \begin{solutionreal}%
+      \csname savedsolution@#2@#3@\my@temp@num\endcsname
+    \end{solutionreal}
+  \fi
+  \medskip
+}
+
+\newcommand{\useproblemhide}[4][]{%
+  \begin{problemreal}%
+    同试卷\CJKnumber{#2}第\CJKnumber{#3}\ifnum#4>0[#4]\fi 题．
+  \end{problemreal}
+  \medskip
+}
+
+\newif\ifshowsameproblems \showsameproblemstrue
+\let\showsame=\showsameproblemstrue
+\let\hidesame=\showsameproblemsfalse
+
+\AtBeginDocument{%
+  \ifshowsameproblems
+    \let\useproblem=\useproblemshow
+  \else
+    \let\useproblem=\useproblemhide
+  \fi
+}
+
+\newcommand{\includefile}[2]{%
+  \clearpage
+  \setcounter{section}{0}%
+  \setcounter{problem}{0}%
+  \setcounter{totalproblems}{0}%
+  \renewcommand{\loadpath}{../year/#1/}%
+  \input{../year/#1/#1#2}%
+}
+
+\newcommand{\@RomanFW}[1]{%
+  \ifcase#1\relax
+    \or Ⅰ\or Ⅱ\or Ⅲ\or Ⅳ\or Ⅴ\or Ⅵ\or Ⅶ\or Ⅷ\or Ⅸ\or Ⅹ\or Ⅺ\or Ⅻ%
+  \else
+    \@Roman#1%
+  \fi
+}
+\newcommand{\@romanFW}[1]{%
+  \ifcase#1\relax
+    \or ⅰ\or ⅱ\or ⅲ\or ⅳ\or ⅴ\or ⅵ\or ⅶ\or ⅷ\or ⅸ\or ⅹ\or ⅺ\or ⅻ%
+  \else
+    \@roman#1%
+  \fi
+}
+\newcommand{\RomanFW}[1]{%
+  \kern-0.1em\protect\scalebox{0.85}{%
+    \expandafter\@RomanFW\csname c@#1\endcsname
+  }\kern-0.1em%
+}
+\newcommand{\romanFW}[1]{%
+  \kern-0.1em\protect\scalebox{0.85}{%
+    \expandafter\@romanFW\csname c@#1\endcsname
+  }\kern-0.1em%
+}
+
+\AddEnumerateCounter*{\RomanFW}{\@RomanFW}{3}
+\AddEnumerateCounter*{\romanFW}{\@romanFW}{3}
+
+\setlist[enumerate,1]{label=(\RomanFW*)}
+\setlist[enumerate,2]{label=(\romanFW*)}
+
